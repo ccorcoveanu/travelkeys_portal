@@ -1,6 +1,7 @@
 {
     "require": {
         "slim/slim": "^3.4",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "smarty/smarty": "^3.1"
     }
 }
