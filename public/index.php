@@ -10,11 +10,20 @@ if (PHP_SAPI == 'cli-server') {
 
 require __DIR__ . '/../vendor/autoload.php';
 
+// Start session
 session_start();
 
+// set env variables
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+$dotenv->load();
+
 // Instantiate the app
+$env = getenv('APP_ENV');
 $settings = require __DIR__ . '/../src/settings.php';
-$app = new \Slim\App($settings);
+$env_settings = require __DIR__ . '/../src/settings.' . $env . '.php';
+$configuration = Zend\Stdlib\ArrayUtils::merge($settings, $env_settings);
+
+$app = new \Slim\App($configuration);
 
 // Set up dependencies
 require __DIR__ . '/../src/dependencies.php';
