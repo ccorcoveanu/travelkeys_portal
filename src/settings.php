@@ -14,6 +14,10 @@ return [
             'password' => getenv('API_ENDPOINT_PASSWORD') ? getenv('API_ENDPOINT_PASSWORD') : '',
         ],
 
+        'cache' => [
+            'on' => true
+        ],
+
         // Monolog settings
         'logger' => [
             'name' => 'slim-app',

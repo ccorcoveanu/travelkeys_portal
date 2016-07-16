@@ -20,7 +20,7 @@ $container['logger'] = function ($c) {
 };
 
 $container['sites'] = function ($container) {
-    return new App\Services\DataApi\Sites($container->get('settings')['api_endpoint']);
+    return new App\Services\Redis\Sites($container->get('settings')['api_endpoint']);
 }; // Register Sites service
 
 $container['Home'] = function($container) {

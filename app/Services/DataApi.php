@@ -102,7 +102,7 @@ class DataApi
             'query' => $query_string
         ])->then(
             function (GuzzleHttp\Psr7\Response $res){
-                return $res->getBody();
+                return $res->getBody()->getContents();
             },
             function (\Exception $e) {
                 throw new DataApiException('Api exception: ' . $e->getMessage(), DataApiException::REMOTE_CLIENT_EXCEPTION);
