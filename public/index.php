@@ -9,7 +9,6 @@ if (PHP_SAPI == 'cli-server') {
 }
 
 require __DIR__ . '/../vendor/autoload.php';
-
 // Start session
 session_start();
 
@@ -24,6 +23,9 @@ $env_settings = require __DIR__ . '/../src/settings.' . $env . '.php';
 $configuration = Zend\Stdlib\ArrayUtils::merge($settings, $env_settings);
 
 $app = new \Slim\App($configuration);
+
+// Register constants needed in the application
+require __DIR__ . '/../src/defines.php';
 
 // Set up dependencies
 require __DIR__ . '/../src/dependencies.php';

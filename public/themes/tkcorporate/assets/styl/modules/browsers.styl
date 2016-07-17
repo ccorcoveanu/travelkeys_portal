@@ -1,0 +1,60 @@
+// Name: Browsers
+// Author: Graffino (http://www.graffino.com)
+// !Browsers
+
+
+// Firefox
+.browser-moz {
+    .mega-nav__container {
+        +below(690px) {
+            height: 102%
+        }
+        
+        +below(520px) {
+            height: 100%
+        }
+        
+        +below(480px) {
+            height: rem(490)
+        }
+    }
+    
+    .button__expand {
+        &::after {
+            margin-top: 1px
+        }
+    }
+    
+    .main-nav__item--cta {
+        &::after {
+            top: rem(13)
+        }
+    }
+}
+
+// Iphone Safari
+.browser-ios {
+    .mega-sub {
+        .button__expand {
+            &::after {
+                top: rem(8)
+            }
+            
+            &.-is-expanded {
+                &::after {
+                    top: 0
+                }
+            }
+        }
+    }
+}
+
+
+// Internet Explorer
+.browser.msie {
+    .search {
+        .button.-shape-trapezoid {
+            border-style: solid
+        }
+    }
+}

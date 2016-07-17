@@ -1,0 +1,966 @@
+// Name: Home
+// Author: Graffino (http://www.graffino.com)
+
+// !Home
+// ==|=========================================================================
+.concierge {
+	position: relative
+	margin-top: rem(-4)
+
+	.button--next-section.-shape-trapezoid {
+		  position: absolute
+		  top: -6%
+		  right: 0
+		  left: 0
+		  margin: 0 auto
+		  border-bottom-color: $dark-gray
+
+		  .icon {
+			  margin-top: rem(15)
+		  }
+
+		+below(960px) {
+		  display: none
+		}
+	}
+
+	&__button {
+		padding: rem(8) rem(30)
+		min-width: rem(380)
+		font-size: rem(18)
+
+		+below(960px) {
+			min-width: 0
+		}
+
+		+below(480px) {
+			width: 100%
+		}
+	}
+
+	p&__reminder {
+		margin: rem(30) auto rem(45)
+		font-family: $caslon-font-family
+		font-size: rem(32)
+		font-style: italic
+
+		+below(960px) {
+			margin: rem(30) auto
+			font-size: rem(22)
+		}
+	}
+
+	&__list,
+	&__featured {
+		list-style-type: none
+		padding: 0
+
+		&__item {
+			display: inline-block
+		}
+	}
+
+	&__list {
+		cf()
+		text-align: left
+
+		+below(960px) {
+			center(400px)
+		}
+
+		&__item {
+			span(1/4)
+			padding: rem(14) 0
+			font-family: $montserrat-font-family
+			font-size: rem(16)
+			color: #fff
+			text-transform: uppercase
+
+			+below(960px) {
+				span(2/4)
+				padding: rem(6) 0
+				font-size: rem(11)
+			}
+
+			// Custon bullets
+			&::before {
+				content: ''
+				display: inline-block
+				vertical-align: middle
+				margin-right: rem(5)
+				width: rem(20)
+				height: rem(20)
+				background-image: url('../images/svg/icon-checkmark.svg')
+				background-repeat: no-repeat
+
+				+below(960px) {
+					background-image: url('../images/svg/icon-checkmark-mobile.svg')
+				}
+			 }
+		}
+	}
+
+	&__featured {
+		margin-top: rem(25)
+
+		+below(960px) {
+			margin-top: rem(15)
+		}
+
+		&__wrapper {
+			margin-top: rem(65)
+
+			+below(960px) {
+				margin-top: rem(55)
+			}
+		}
+
+		&__item {
+			vertical-align: middle
+			padding-right: rem(45)
+
+			&:last-child {
+				padding-right 0
+			}
+
+			// Keeps logos on one line
+			+below(990px) {
+				padding-right: rem(20)
+			}
+
+			+below(960px) {
+				padding-right: 0
+			}
+
+			+below(850px) {
+				padding-right: rem(40)
+			}
+
+			+below(600px) {
+				padding-right: rem(0)
+			}
+
+			+below(400px) {
+				width: rem(120)
+			}
+
+			img {
+				display: inline-block
+				vertical-align: super
+
+				+below(960px) {
+					width: 80%
+				}
+
+				+below(850px) {
+					width: 100%
+				}
+
+				+below(600px) {
+					width: 80%
+				}
+			}
+		}
+	}
+}
+
+.experience {
+	.section__container {
+		+between(375px, 480px) {
+			max-width: rem(290)
+		}
+	}
+
+ 	&__title {
+		margin: rem(10) 0 rem(20) 0
+	}
+
+	.location {
+		display: block
+	}
+
+	p {
+		color: #808080
+
+		+below(960px) {
+			font-size: rem(15)
+			line-height: rem(24)
+		}
+
+		+below(480px) {
+			text-align: left
+		}
+	}
+
+	&__strong {
+		display: block
+
+		+below(960px) {
+			margin-bottom: rem(10)
+		}
+	}
+
+	&__list {
+		display: inline-block
+		list-style-type: none
+		margin-top rem(30)
+		border: 1px solid #e5e5e5
+		padding: rem(10)
+		background-color: #fff
+		text-align: center
+
+		+below(960px) {
+			center(rem(620))
+			border: 0
+			padding: 0
+			background-color: transparent
+		}
+
+		+below(650px) {
+			width: 100%
+		}
+
+		&__item {
+			position: relative
+			display: inline-block
+			margin-right: rem(5)
+			width: rem(235)
+
+			&:last-child {
+				margin-right: 0
+			}
+
+			+below(960px) {
+				// Gutter explicitly declares padding , 1 = 10px
+				col(1/2, gutter: 2, cycle: 2 )
+				margin-bottom: rem(10)
+				width: rem(300)
+				height: rem(270)
+			}
+
+			+below(650px) {
+				stack()
+				margin-right: 0
+				width: 100%
+				height: auto
+			}
+
+			img {
+				margin-bottom: -1px
+				display: block
+				width: 100%
+			}
+
+			.button {
+				position: absolute
+				top: calc(50% - 20px)
+				right: 0
+				left: 0
+				margin: 0 auto
+				max-width: rem(200)
+				width: 100%
+
+				+below(650px) {
+					max-width: rem(220)
+				}
+			}
+		}
+	}
+}
+
+.featured {
+	padding: rem(90) 0
+	background-color: $light-gray
+	background-image: url('../images/bg/bg-villa.jpg')
+	background-repeat: no-repeat
+	background-size: 100% rem(450)
+
+	+below(960px) {
+		padding: rem(25) 0 rem(50)
+		background-size: 100% rem(400)
+
+		.button__secondary {
+			display: none
+		}
+	}
+
+	+below(670px) {
+		background-size: 150% rem(300)
+	}
+
+	&__title {
+		margin: rem(14) auto
+		font-size: rem(74)
+
+		+below(960px) {
+			font-size: rem(30)
+
+			&::after,
+			&::before {
+				content: ''
+				display: inline-block
+				opacity: .6
+				position: relative
+				top: rem(-5)
+				width: rem(55)
+				height: 1px
+				background-color: #fff
+			}
+
+			&::before {
+				margin-right: rem(20)
+			}
+
+			&::after {
+				margin-left: rem(20)
+			}
+		}
+
+		+below(670px) {
+			margin-top: rem(5)
+			&::after,
+			&::before {
+				content: none
+			}
+		}
+	}
+
+	&__subtitle {
+		font-weight: 400
+
+		&.-color-white {
+			&::after,
+			&::before {
+				background-color: #fff
+			}
+		}
+
+		+below(960px) {
+			font-size: rem(12)
+
+			&::after,
+			&::before {
+				content: none
+			}
+		}
+
+		+below(670px) {
+			margin-bottom: rem(5)
+
+			&::after,
+			&::before {
+				content: ''
+				background-color: #d8d8d8
+			}
+		}
+	}
+}
+
+.featured__item {
+	cf()
+
+	position: relative
+	margin-top: rem(16)
+	margin-bottom: rem(16)
+	border: 1px solid #e5e5e5
+	padding: rem(10) rem(10) rem(16)
+	background-color: #fff
+	width: 100%
+
+	+below(670px) {
+		padding-top: rem(5)
+		padding-right: rem(5)
+		padding-left: rem(5)
+	}
+
+	&.-is-special {
+		border-color: $aqua
+
+		&::after {
+			content:''
+			display: block
+			position: absolute
+			top: rem(-23)
+			left: rem(-30)
+			width: rem(160)
+			height: rem(160)
+			background-image: url('../images/svg/no-sprite/ribbon.svg')
+			background-repeat: no-repeat
+			background-size: contain
+
+			+below(960px) {
+				top: rem(-17)
+				left: rem(-22)
+				width: rem(120)
+				height: rem(120)
+			}
+
+			+below(670px) {
+				top: rem(-14)
+				left: rem(-17)
+				width: rem(100)
+				height: rem(100)
+			}
+		}
+	}
+
+	&__title {
+		position: relative
+		margin-top: rem(5)
+		margin-bottom: 0
+		font-family: $bebas-font-family
+		font-size: rem(36)
+		line-height: 1.2
+		text-align: center
+		font-weight: 300
+		color: #333
+		white-space: nowrap
+
+		a {
+			text-decoration: none
+			color: inherit
+
+			&:hover {
+				.icon {
+					@extends .icon__heart-featured-full
+				}
+			}
+		}
+
+		span {
+			overflow: hidden
+			display: block
+			margin: 0 auto
+		    max-width: 80%
+		    text-overflow: ellipsis
+		}
+
+		.icon {
+			position: absolute
+			top: rem(10)
+			left: 0
+		}
+	}
+
+	&__description {
+		margin-top: rem(5)
+		text-align: center
+		font-family: $montserrat-font-family
+		font-size: rem(12)
+		font-weight: 700
+		line-height: 1.5
+		color: gray
+		text-transform: uppercase
+		text-overflow: ellipsis
+		white-space: nowrap
+	}
+
+	&__section {
+		cf()
+
+		margin: rem(15) auto rem(20)
+		max-width: rem(270)
+
+		+below(400px) {
+			margin-bottom: rem(15)
+		}
+	}
+
+	&__facilities {
+		float: left
+	    border-right: 1px solid #d3d3d3
+		padding-top: rem(10)
+		padding-bottom: rem(10)
+	    width: 50%
+	    height: 100%
+	    text-align: left
+	    font-family: $montserrat-font-family
+	    font-size: rem(12)
+	    font-weight: 400
+	    color: gray
+	    text-transform: uppercase
+
+		span {
+			display: block
+			line-height: 1.5
+		}
+	}
+
+	&__price {
+		padding-top: rem(10)
+		padding-left: 9%
+	    width: 50%
+	    text-align: left
+	    border-right: 0
+		float: left
+	    clear: none
+	}
+
+	&__buttons {
+		cf()
+	}
+
+	&__button {
+		display: inline-block
+		width: 50%
+
+		.button {
+			width: 100%
+
+			+below(960px) {
+				padding-right: 0
+				padding-left: 0
+				text-align: center
+			}
+		}
+
+		&:first-child {
+			float: left
+			padding-right: rem(3)
+
+			.button {
+				padding-top: rem(11)
+				padding-bottom: rem(9)
+				font-size: rem(16)
+			}
+		}
+
+		&:last-child {
+			float: right
+			padding-left: rem(3)
+		}
+
+		+below(400px) {
+			width: 100%
+			margin-top: rem(5)
+			margin-bottom: rem(5)
+
+			&:first-child,
+			&:last-child {
+				padding-right: 0
+				padding-left: 0
+			}
+		}
+	}
+}
+
+.price {
+	&__text {
+		display: block
+		margin-top: rem(3)
+		margin-left: rem(12)
+		font-family: $montserrat-font-family
+		font-size: rem(12)
+	    letter-spacing: rem(1)
+	    font-weight: 400
+	    color: gray
+	    text-transform: uppercase
+		text-align: left
+	}
+
+	&__number {
+		font-size: 1.4375rem
+	    line-height: 1
+		display: block
+	    font-family: Caslon,Arial,sans-serif
+	    letter-spacing: .03125rem
+	    font-weight: 600
+	    font-style: italic
+	    color: #00a2a7
+	}
+}
+
+.featured__picture__container {
+	position: relative
+    max-width: 60.9375rem
+    max-height: 25.9375rem
+}
+
+.featured__picture {
+	display: block
+	width: 100%
+}
+
+.featured__wrapper {
+	margin: rem(5)
+}
+
+.featured__row {
+	cf()
+
+	margin: 0 auto rem(35)
+	max-width: rem(2560)
+
+	&.-three-columns {
+		.featured__item {
+			col(1/3, cycle: 3)
+
+			+below(960px) {
+				col(1/2, uncycle: 3, cycle: 2)
+			}
+
+			+below(670px) {
+				col(1/1, uncycle: 2, cycle: 1)
+			}
+		}
+	}
+
+	&.-two-columns {
+		.featured__item {
+			col(1/2, cycle: 2)
+
+			+below(960px) {
+				col(1/1, uncycle: 2, cycle: 1)
+			}
+		}
+	}
+}
+
+.featured__row__container {
+
+	&.-has-separator {
+		position: relative
+
+		&::after {
+			content: ''
+			display: block
+			margin: rem(65) auto
+			max-width: rem(540)
+			width: 80%
+			height: 1px
+			background-color: darken(#eaeaea, 20%)
+		}
+	}
+}
+
+.testimonial {
+	+below(960px) {
+		margin-top: rem(50)
+		padding-bottom: rem(32)
+	}
+
+	p&__review {
+		position: relative
+		margin: 0 auto
+		max-width: rem(700)
+		font-family: $caslon-font-family
+		font-size: rem(24)
+		font-weight: 600
+		font-style: italic
+		color: #424242
+
+		+below(960px) {
+			font-size: rem(18)
+			font-weight: 400
+		}
+
+		&::before {
+			content: '“'
+			display: inline-block
+			position: absolute
+			top: rem(-40)
+			right: 0
+			left: 0
+			font-family: 'TisaOT'
+			font-size: rem(72)
+			font-weight: 400
+			font-style: normal
+			color: #a2a2a2
+
+			+below(960px) {
+				top: rem(-30)
+				font-size: rem(55)
+			}
+		}
+	}
+
+	&__title {
+		margin: rem(5) 0
+		font-family: $bebas-font-family
+		font-size: rem(30)
+		font-weight: 700
+		color: #333
+	}
+
+	&__subtitle {
+		margin: 0
+		font-family: $montserrat-font-family
+		font-size: rem(12)
+		font-weight: 400
+		color: #808080
+		text-transform: uppercase
+	}
+}
+
+// Map
+.villa-search {
+	&__section {
+		padding: 0 rem(30)
+
+		&.-no-padding {
+			padding: 0
+		}
+
+		+below(960px) {
+			display: none
+		}
+
+		&__title {
+			margin: rem(60) auto rem(20)
+			font-size: rem(74)
+
+			&.-has-arrow {
+				position: relative
+
+				&::after {
+					content: ''
+					position: absolute
+					z-index: 10
+					right: 0
+					bottom: rem(-37px)
+					left: 0
+					display: block
+					margin-right: auto
+					margin-left: auto
+					width: 0
+					height: 0
+					border-style: solid
+					border-width: rem(18) rem(20) 0 rem(20)
+					border-color: #191d21 transparent transparent transparent
+				}
+			}
+		}
+
+		.map {
+			position: relative
+			min-height: rem(790)
+
+			&__container {
+				width: 100%
+				min-height: rem(790)
+			}
+			&__overlay {
+				position: absolute
+				z-index: 1
+				background-color: rgba(#101316, 0.9)
+				width: 100%
+				height: rem(100)
+
+				&.-position-top {
+					top: 0
+
+					&::after {
+						position: absolute
+						top: 100%
+						border: solid transparent
+						content: ''
+						height: 0
+						width: 0
+						pointer-events: none
+						border-top-color: rgba(16, 19, 22, .95)
+						border-width: 15px 20px 20px
+					}
+				}
+			}
+
+			.-position-bottom {
+				position: absolute
+				right: 0
+				left: 0
+				bottom: 60px
+				height: initial
+				background-color: transparent
+			}
+
+			.gm-style .gm-style-iw{
+				overflow: visible
+			}
+
+			.gm-style-cc {
+				display: none
+			}
+
+			.gmnoprint.gm-style-cc {
+				display: none
+			}
+
+			img[src*="google4"] {
+    			display: none
+			}
+
+			.gm-style-iw {
+				top: 0 !important
+				left: 0 !important
+				right: 0 !important
+				bottom: 0 !important
+				height: 305px !important
+				width: 272px !important
+				& > div {
+					width: 270px
+				}
+				+ div { display: none }
+			}
+
+			// Remove copyright stuff
+			.gmnoscreen {
+				display: none
+			}
+			.gmnoprint span {
+				display: none
+			}
+			img[src='https://maps.gstatic.com/mapfiles/api-3/images/google_white2.png'] {
+				display: none
+			}
+			a[href='https://www.google.com/intl/en-US_US/help/terms_maps.html'] {
+				display: none
+			}
+
+			.marker {
+				&__content {
+					position: absolute
+					top: 10px
+					left: 10px
+					right: 10px
+					bottom: 10px
+					width: 252px
+				}
+				&__image {
+					display: block
+					width: 252px
+					height: 160px
+				}
+				&__favorite {
+					color: #333
+					text-decoration: none
+
+					.icon__heart {
+						margin-right: 5px
+					}
+
+					&:hover {
+						.icon__heart {
+							@extends .icon__heart-full
+						}
+					}
+				}
+				&__title {
+					display: block
+					overflow: hidden
+					text-overflow: ellipsis
+					margin: 7px 0
+					width: 252px
+					height: 39px
+
+					font-family: BebasNeueBook, Arial,sans-serif
+					font-size: 36px
+					font-weight: 300
+
+					color: #333
+					text-transform: uppercase
+					text-decoration: none
+				}
+				&__body {
+					display: block
+					overflow: hidden
+					text-overflow: ellipsis
+					margin: 0
+					width: 252px
+					height: 35px
+					color: gray
+					font-family: Montserrat, Arial,sans-serif
+					font-size: 12px
+					line-height: 1.5
+					font-weight: 300
+					letter-spacing: -0.3px
+					text-align: left
+					text-transform: uppercase
+					text-decoration: none
+				}
+
+				&__buttons {
+					margin: 10px auto 10px auto
+					width: 258px
+				}
+			}
+		}
+	}
+}
+
+.map__markers {
+    display: none
+}
+
+.map__input {
+	display: inline-block
+	padding: rem(16)
+	font-family: $montserrat-font-family
+	font-size: rem(12)
+	line-height: 1
+	font-weight: 400
+	text-transform: uppercase
+	background-color: #101f316
+	cursor: pointer
+
+	.checkbox:checked + label span {
+		vertical-align: middle
+	}
+
+	.filter__option__label {
+		color: #99d4d6
+
+		span {
+			vertical-align: middle
+			margin: rem(-3) rem(7) 0 0
+			width: rem(11)
+			height: rem(11)
+			background-size: cover
+		}
+	}
+}
+
+.map__input {
+	display: inline-block
+	padding: rem(16)
+	font-family: $montserrat-font-family
+	font-size: rem(12)
+	line-height: 1
+	font-weight: 400
+	text-transform: uppercase
+	background-color: #101f31
+	cursor: pointer
+
+	.checkbox:checked + label span {
+		vertical-align: middle
+	}
+
+	.filter__option__label {
+		color: #99d4d6
+
+		span {
+			vertical-align: middle
+			margin: rem(-3) rem(7) 0 0
+			width: rem(11)
+			height: rem(11)
+			background-size: cover
+		}
+	}
+
+}
+
+body.is-collapsed {
+	.map-aside.-fixed-top {
+		.map__input {
+			top: rem(100)
+		}
+	}
+}
+
+.search-aside.villa-search__section {
+	+below(960px) {
+		display: block
+	}
+
+	+below(670px) {
+		display: none
+	}
+}

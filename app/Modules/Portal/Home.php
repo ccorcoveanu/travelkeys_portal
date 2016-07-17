@@ -5,16 +5,15 @@ use App\Services;
 
 class Home
 {
-    public function __construct($sites)
+    public function __construct($sites, $view)
     {
         $this->sites = $sites;
+        $this->view = $view;
     }
 
     public function index($request, $response, $args)
     {
         $data = $this->sites->get(2);
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
+        return $this->view->render($response, 'index.tpl', []);
     }
 }

@@ -1,0 +1,511 @@
+// Name: Buttons
+// Author: Graffino (http://www.graffino.com)
+// !Buttons
+// ==|=========================================================================
+.button {
+	display: inline-block
+	z-index: 2
+	border: rem(3) solid $aqua
+	padding: rem(12) rem(30) rem(10)
+	text-align: center
+	font-family: $montserrat-font-family
+	font-size: rem(14)
+	color: #fff
+	text-transform: uppercase
+	text-decoration: none
+	white-space: nowrap
+	background-color: $aqua
+	box-shadow: inset 0px 0px 0px 1px #fff
+	transition: background-color 200ms ease-out, color 200ms ease-out, border 200ms ease-out
+
+	+below(960px) {
+		font-size: rem(15)
+	}
+
+	// changes both the body color
+	// and the outer border color
+	&:hover {
+	    border-color: #000
+		background-color: #000
+	}
+
+	.icon {
+		vertical-align: middle
+		margin-left: rem(2)
+	}
+
+	&.-size-wide {
+		max-width: rem(400)
+		width: 100%
+
+		+below(670px) {
+			width: 96%
+		}
+	}
+
+	&.-has-arrow-down {
+		position: relative
+
+		&::after {
+			content: url(../images/svg/icon-arrow-down-white.svg)
+			position: absolute
+			right: 0
+			bottom: rem(-22)
+			left: 0
+			display: block
+			margin: 0 auto
+			width: rem(13)
+			height: rem(23)
+
+			+below(960px) {
+				width: rem(10)
+			}
+		}
+	}
+
+	&.-color-gray {
+		border-color: #e7e3e3
+		background-color: #e7e3e3
+		color: #646668
+
+		&:hover {
+			border-color: $aqua
+			background-color: $aqua
+			color: #fff
+		}
+	}
+
+	&.-shadow-black {
+		box-shadow: inset 0px 0px 0px 1px #000
+	}
+
+	&--ghost {
+		border: 2px solid #fff
+		padding: rem(10) rem(10) rem(8)
+		min-width: rem(200)
+		background-color: transparent
+		box-shadow: none
+
+		&:hover {
+			border-color: transparent
+		}
+
+		&.-alt {
+			background-color: rgba(white, 0.3)
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
+
+		&.-color-aqua {
+			border-color: $aqua
+			color: $aqua
+
+			&:hover {
+				border-color: #000
+				color: #000
+				background-color: transparent
+			}
+
+			&.-hover-alt {
+				&:hover {
+					border-color: #fff
+					color: #fff
+					background-color: transparent
+				}
+			}
+		}
+
+		&.-hover-aqua:hover {
+			background-color: #fff
+			color: $aqua
+			border-color: #fff
+			box-shadow: inset 0px 0px 0px 1px $aqua
+		}
+
+		&.-color-gray {
+			color: #808080
+			border-color: #808080
+			background-color: transparent
+
+			&:hover {
+				border-color: $aqua
+				background-color: $aqua
+				color: #fff
+			}
+		}
+
+		&.-hover-alt {
+			.icon {
+				vertical-align: top
+			}
+
+			&:hover {
+
+				.icon__arrow-right {
+					@extends .icon__arrow-right-blue
+					vertical-align: inherit
+				}
+			}
+		}
+
+		&.-anchor-hero {
+			min-width: rem(300)
+			padding: rem(15) rem(35) rem(13)
+			font-family: $montserrat-font-family
+			font-size: rem(18)
+			line-height: 1
+			font-weight: 400
+			text-transform: uppercase
+			background-color: rgba(256, 256, 256, .2)
+
+			&:hover {
+				border-color: #fff
+				background-color: rgba(256, 256, 256, .5)
+			}
+
+			+below(960px) {
+				min-width: rem(180)
+				font-size: rem(14)
+				padding: rem(8)
+			}
+		}
+	}
+
+	&--action {
+		+above(960px) {
+			padding: rem(10) rem(30) rem(8)
+			font-size: rem(18)
+		}
+	}
+
+	&--popup-cancel {
+		border: 2px solid #dfdfdf
+		background: transparent
+		font-size: 12px
+		padding: 10px
+		min-width: 120px
+		margin-left: 12px
+		color: #808080
+
+		&:hover {
+			background-color: #dfdfdf
+			color: #fff
+		}
+	}
+
+	&--search {
+		vertical-align: middle
+		margin-left: rem(-4)
+		border-radius: 0 3px 3px 0
+		padding: 0
+		width: rem(36)
+		height: rem(30)
+		background-color: #00a2a7
+		transition: none
+		box-shadow: none
+
+		+below(960px) {
+			border-radius: 0
+			width: rem(45)
+			height: rem(45)
+		}
+
+		+below(480px) {
+			position: absolute
+			top: 0
+			right: 0
+		}
+
+		i {
+			margin: 0 auto
+		}
+
+		&:hover {
+			background-color: $aqua
+			border-color: $aqua
+		}
+	}
+
+	&--next-section {
+		background-color: transparent
+	}
+
+	&--load-more {
+		border: 0
+		padding-left: rem(5)
+		color: transparent
+		background-color: transparent
+		box-shadow: none
+
+		&:hover {
+			background-color: transparent
+		}
+
+		+below(960px) {
+			border: 2px solid $aqua
+			padding: rem(8) rem(20) rem(6) rem(15)
+			width: initial
+			font-size: rem(10)
+			color: $aqua
+
+			&:hover {
+				background-color: #000
+			}
+		}
+	}
+
+	&.-color-black {
+		background-color: #000
+		border: rem(3) solid #000
+
+		&:hover {
+			border-color: $aqua
+			background-color: $aqua
+		}
+
+		&.-hover-aqua:hover {
+			border-color: #fff
+			color: $aqua
+			background-color: #fff
+			box-shadow: inset 0px 0px 0px 1px $aqua
+		}
+	}
+
+	&.-color-white {
+		vertical-align: middle
+		border-color: $light-gray
+		padding: rem(10) rem(15)
+		background-color: $light-gray
+		box-shadow: inset 0px 0px 0px 1px #000
+		color: $dark-gray
+
+		&:hover {
+			border-color: #000
+			color: #fff
+			background-color: #000
+		}
+	}
+
+	&.-has-calendar {
+		padding-right: rem(18)
+		padding-left: rem(20)
+
+		.icon {
+			margin-top: rem(-6)
+			margin-left: rem(10)
+		}
+
+		&:hover {
+			.icon {
+				@extends .icon__date-square-white
+			}
+		}
+	}
+
+	&.-ui-cancel {
+		border: 1px solid #c5c5c5
+		background-color: #fff
+		color: #adadad
+		box-shadow: none
+
+		&:hover {
+			box-shadow: none
+		}
+	}
+
+	&.-hover-alt {
+		&:hover {
+			color: $aqua
+			background-color: #fff
+			border-color: #fff
+			box-shadow: inset 0px 0px 0px 1px $aqua
+		}
+	}
+
+	&.-size-small {
+		font-size: rem(12)
+		padding: rem(6) rem(5) rem(4)
+	}
+	&.-size-popup {
+		font-size: 12px
+		padding: 10px 8px 8px
+	}
+	&.-shape-trapezoid {
+	    border-top: 0px transparent
+	    border-left: 15px solid transparent
+	    border-right: 15px solid transparent
+	    border-bottom: 50px solid $aqua
+	    padding: 0
+		height: 0
+	    width: rem(80)
+
+	    &:hover {
+		    background-color: transparent
+	    }
+
+		i {
+			margin-left: 0
+		}
+	}
+}
+
+.button__secondary {
+	display: block
+	font-family: $montserrat-font-family
+	font-size: rem(14)
+	font-weight: 400
+	color: #00a2a7
+	text-transform: uppercase
+	cursor: pointer
+
+	.icon {
+		vertical-align: text-top
+		margin-left: rem(3)
+	}
+}
+
+.search-filters {
+	display: none
+	vertical-align: middle
+	margin-left: rem(15)
+	border: 1px solid #02868a
+	padding: rem(7) rem(15) rem(9)
+	font-size: rem(13)
+	color: #fff
+	background-color: $aqua
+	text-transform: uppercase
+	cursor: pointer
+	transition: background-color 200ms ease-in-out
+	text-decoration: none
+
+	span {
+		display: none
+	}
+
+	+below(960px) {
+		font-size: rem(10)
+
+		span {
+			display: inline-block
+			margin-right: rem(5)
+			margin-top: rem(10)
+		}
+
+		i {
+			margin-bottom: 0
+		}
+	}
+
+	.icon {
+		vertical-align: bottom
+		margin-right: rem(10)
+
+		+below(960px) {
+			vertical-align: middle
+			margin-bottom: rem(3)
+		}
+	}
+}
+
+.search-toggle {
+	position: relative
+	z-index: 2
+	display: inline-block
+	vertical-align: middle
+	margin-right: rem(-6)
+	border: 1px solid #bfbfbf
+	width: rem(36)
+	height: rem(36)
+	color: transparent
+	background-color: #ececec
+	background-repeat: no-repeat
+	background-position: center center
+	cursor: pointer
+	transition: background-color 200ms ease-in-out
+
+	+below(960px) {
+		display: none
+	}
+
+	&:hover {
+		background-color: $aqua
+	}
+
+	&.-active {
+		z-index: 1
+		background-color: $aqua
+		border-color: $dark-aqua
+
+		&:hover {
+			background-color: #000
+		}
+	}
+
+	&.-anchor-map {
+		background-image: url('../images/svg/icon-pin-gray.svg')
+
+		&:hover {
+			background-image: url('../images/svg/icon-pin-white.svg')
+		}
+
+		&.-active {
+			background-image: url('../images/svg/icon-pin-white.svg')
+		}
+	}
+
+	&.-anchor-filters {
+		background-image: url('../images/svg/icon-thumbs-gray.svg')
+
+		&:hover {
+			background-image: url('../images/svg/icon-thumbs-white.svg')
+		}
+
+		&.-active {
+			background-image: url('../images/svg/icon-thumbs-white.svg')
+		}
+	}
+
+	&:last-child {
+		margin-right: 0
+	}
+}
+
+.button__expand {
+	margin-top: rem(5)
+	position: relative
+	display: inline-block
+	border: 1px solid currentColor
+	padding: rem(8) rem(20) rem(8) rem(10)
+	font-family: "Arial"
+	font-size: rem(10)
+	font-weight: 700
+	text-transform: uppercase
+	color: #9f9e9e
+
+	&::after {
+		content: ''
+		display: inline-block
+		position: absolute
+		top: rem(11)
+		right: rem(7)
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: rem(5) rem(4) 0 rem(4)
+		border-color: currentColor transparent transparent transparent
+		transition: transform 200ms ease-in-out
+	}
+
+	&.-is-expanded {
+		&:after {
+			transform: rotate(180deg)
+		}
+	}
+
+	&:hover {
+		color: $aqua
+		cursor: pointer
+	}
+}
