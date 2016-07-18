@@ -9,12 +9,19 @@ $container['view'] = function ($c) {
     $view = new \Slim\Views\Smarty($settings['template_path'], [
         'cacheDir' => $settings['template_cache'],
         'compileDir' => $settings['template_compile'],
-        //'pluginsDir' => ['path/to/plugins', 'another/path/to/plugins']
     ]);
 
     // Add Slim specific plugins
-    //$smartyPlugins = new \Slim\Views\SmartyPlugins($c['router'], $c['request']->getUri());
-    //$view->registerPlugin('function', 'path_for', [$smartyPlugins, 'pathFor']);
+    $smartyPlugins = new \Slim\Views\SmartyPlugins($c['router'], $c['request']->getUri());
+
+    function isEmpty($param) {
+        var_dump($param);die;
+        if ( !$param ) return "";
+        return $param;
+
+    }
+
+    $view->registerPlugin('modifier', 'is_empty', 'isEmpty');
     //$view->registerPlugin('function', 'base_url', [$smartyPlugins, 'baseUrl']);
 
     return $view;
@@ -33,6 +40,16 @@ $container['sites'] = function ($container) {
     return new App\Services\Redis\Sites($container->get('settings')['api_endpoint']);
 }; // Register Sites service
 
+
+// Route dependencies - all bellow will handle route classes
 $container['Home'] = function($container) {
     return new \App\Modules\Portal\Home($container->get('sites'), $container->get('view'));
+};
+
+$container['VillaListing'] = function($container) {
+    return new \App\Modules\Portal\VillaListing($container->get('view'));
+};
+
+$container['StaticPages'] = function($container) {
+    return new \App\Modules\Portal\StaticPages($container->get('view'));
 };

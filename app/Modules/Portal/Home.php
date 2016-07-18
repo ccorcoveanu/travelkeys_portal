@@ -13,8 +13,11 @@ class Home
 
     public function index($request, $response, $args)
     {
-        $data = $this->sites->get();
-        echopre($data);die;
-        return $this->view->render($response, 'index.tpl', []);
+        return $this->view->render($response, 'home.tpl', [
+            'page' => [
+                'title' => 'Luxury Villa Rentals & Vacation Rentals',
+                'body_classes' => 'home'
+            ]
+        ]);
     }
 }
