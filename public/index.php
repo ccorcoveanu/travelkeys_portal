@@ -24,6 +24,10 @@ $configuration = Zend\Stdlib\ArrayUtils::merge($settings, $env_settings);
 
 $app = new \Slim\App($configuration);
 
+if ( $env === 'local' ) {
+    require __DIR__ . '/../src/debug.php';
+}
+
 // Register constants needed in the application
 require __DIR__ . '/../src/defines.php';
 

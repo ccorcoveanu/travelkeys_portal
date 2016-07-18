@@ -13,7 +13,8 @@ class Home
 
     public function index($request, $response, $args)
     {
-        $data = $this->sites->get(2);
+        $data = $this->sites->get();
+        echopre($data);die;
         return $this->view->render($response, 'index.tpl', []);
     }
 }
