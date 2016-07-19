@@ -52,6 +52,14 @@
                         </div>
                     </div>
                     <ul class="mega-nav">
+                        {foreach name='menu_items' item=header from=$menu}
+                            <li class="mega-nav__item">
+                                {assign 'clength' $header.children|@count }
+                                <ul class="js-mega-sub mega-sub">
+                                    
+                                </ul>
+                            </li>
+                        {/foreach}
                         <li class="mega-nav__item">
                             <ul class="js-mega-sub mega-sub">
                                 <li class="mega-sub__item__section">
@@ -88,9 +96,6 @@
                                         <li class="mega-sub__item a-arrow-fade-in"><a href="#" class="mega-nav__link">Turks and Caicos<sup class="mega-sub__item__count">(23)</sup></a></li>
                                         <li class="mega-sub__item a-arrow-fade-in"><a href="#" class="mega-nav__link">Virgin Gorda<sup class="mega-sub__item__count">(23)</sup></a></li>
                                     </ul>
-                                </li>
-                                <li>
-                                    <a class="js-button-expand button__expand" data-text-swap="Close">Explore</a>
                                 </li>
                             </ul>
                         </li>

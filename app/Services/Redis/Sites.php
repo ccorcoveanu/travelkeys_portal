@@ -21,9 +21,9 @@ class Sites extends Services\CacheClient
 
     public function get($id = null)
     {
-        $_cacheKey = md5(__METHOD__);
+        $_cache_key = md5(__METHOD__);
 
-        if ( $data = parent::get($_cacheKey) ) {
+        if ( $data = parent::get($_cache_key) ) {
             $data = unserialize($data);
 
             return $this->parse($data, $id);
@@ -33,7 +33,7 @@ class Sites extends Services\CacheClient
             $this->resource->get()->wait()
         );
 
-        parent::set($_cacheKey, serialize($data->result));
+        parent::set($_cache_key, serialize($data->result));
 
         if ( $id ) {
             return $this->parse($data->result);

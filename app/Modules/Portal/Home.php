@@ -14,6 +14,7 @@ class Home
     public function index($request, $response, $args)
     {
         return $this->view->render($response, 'home.tpl', [
+            'menu' => $request->getAttribute('menu'),
             'page' => [
                 'title' => 'Luxury Villa Rentals & Vacation Rentals',
                 'body_classes' => 'home'

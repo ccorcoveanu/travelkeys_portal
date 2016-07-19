@@ -40,8 +40,16 @@ $container['sites'] = function ($container) {
     return new App\Services\Redis\Sites($container->get('settings')['api_endpoint']);
 }; // Register Sites service
 
+$container['locations'] = function ($container) {
+    return new App\Services\Redis\Locations($container->get('settings')['api_endpoint']);
+}; // Register Locations service
+
 
 // Route dependencies - all bellow will handle route classes
+$container['Dummy'] = function($container) {
+    return new \App\Modules\Portal\Dummy($container->get('locations'));
+};
+
 $container['Home'] = function($container) {
     return new \App\Modules\Portal\Home($container->get('sites'), $container->get('view'));
 };

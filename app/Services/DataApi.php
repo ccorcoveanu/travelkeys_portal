@@ -93,7 +93,6 @@ class DataApi
         $query_string = $method_type === 'GET' ?
             array_merge($params, ['method' => $method]) : ['method' => $method];
 
-
         return $this->web_client->requestAsync($method_type, '', [
             'auth' => [
                 $this->auth_username,
@@ -102,7 +101,9 @@ class DataApi
             'query' => $query_string
         ])->then(
             function (GuzzleHttp\Psr7\Response $res){
-                return $res->getBody()->getContents();
+                return GuzzleHttp\json_decode(
+                    $res->getBody()->getContents()
+                );
             },
             function (\Exception $e) {
                 throw new DataApiException('Api exception: ' . $e->getMessage(), DataApiException::REMOTE_CLIENT_EXCEPTION);
