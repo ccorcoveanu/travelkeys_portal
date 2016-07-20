@@ -4,10 +4,12 @@ namespace App\Services\Redis;
 use App\Services\DataApi;
 use App\Services\CacheClient;
 use App\Services\Redis\Helpers\ResourceParser;
+use App\Services\Redis\Helpers\Menu;
 
 class Locations extends CacheClient
 {
     use ResourceParser;
+    use Menu;
 
     protected
         /**
@@ -60,6 +62,10 @@ class Locations extends CacheClient
         }
     }
 
+    /**
+     * Build menu array
+     * @return array|mixed
+     */
     public function menu()
     {
         if ( !$this->client ) {
@@ -83,29 +89,9 @@ class Locations extends CacheClient
             return $_all_items[$element->id];
         }, $_menu_ids->result); // Get items that belong in the menu
 
-        $data = $this->_buildCustomMenu($data); // Create parent based tree
+        $data = $this->buildCustomMenu($data); // Create parent based tree
         parent::set($_cache_key, serialize($data));
 
         return $data;
     }
-
-
-
-    protected function _buildCustomMenu($menu_items)
-    {
-        $_headers = [];
-        $_header_items = [];
-        foreach ( $menu_items as $k => $menu_item ) {
-            if ( !$menu_item->parent_id ) {
-                $_headers[$menu_item->id] = $menu_item;
-            } else {
-                $_header_items[$menu_item->parent_id][] = $menu_item;
-            }
-        }
-        foreach ( $_headers as $k => $header ) {
-            $_headers[$k]->children = isset($_header_items[$k]) ? $_header_items[$k] : [];
-        }
-        return $_headers;
-    }
-
 }
