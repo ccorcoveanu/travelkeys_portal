@@ -11,17 +11,7 @@ $container['view'] = function ($c) {
         'compileDir' => $settings['template_compile'],
     ]);
 
-    // Add Slim specific plugins
-    $smartyPlugins = new \Slim\Views\SmartyPlugins($c['router'], $c['request']->getUri());
-
-    function isEmpty($param) {
-        var_dump($param);die;
-        if ( !$param ) return "";
-        return $param;
-
-    }
-
-    $view->registerPlugin('modifier', 'is_empty', 'isEmpty');
+    $view->registerPlugin('modifier', 'count', 'count');
     //$view->registerPlugin('function', 'base_url', [$smartyPlugins, 'baseUrl']);
 
     return $view;
