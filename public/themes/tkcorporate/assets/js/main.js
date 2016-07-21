@@ -27382,8 +27382,8 @@ var $mapBounds              = $('.js-map-bounds');
 var $mapMarkers             = $('.js-map-markers');
 var map                     = null;
 var currentMarker           = null;
-var markerIcon              = 'assets/images/svg/icon-pin-black.svg';
-var markerIconHover         = 'assets/images/svg/icon-pin-yellow.svg';
+var markerIcon              = 'themes/tkcorporate/assets/images/svg/icon-pin-black.svg';
+var markerIconHover         = 'themes/tkcorporate/assets/images/svg/icon-pin-yellow.svg';
 
 // Search Page
 var $filterAside            = $('.js-filter-aside');
@@ -28934,18 +28934,18 @@ var travelkeys = {
             };
 
             var mcStyles = [
-				{
-                    url                : 'assets/images/svg/icon-cluster-pin-mega.svg',
+            {
+                    url                : 'themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
-					lineHeight		   : 50,
+                    lineHeight         : 50,
                     textSize           : 16,
                     textColor          : '#333333',
                     backgroundSize     : 'cover',
                     backgroundPosition : '0 3px'
                 },
 				{
-                    url                : 'assets/images/svg/icon-cluster-pin-mega.svg',
+                    url                : 'themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
 					lineHeight		   : 50,
@@ -28955,7 +28955,7 @@ var travelkeys = {
                     backgroundPosition : '0 3px'
                 },
                 {
-                    url                : 'assets/images/svg/icon-cluster-pin-mega.svg',
+                    url                : 'themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
 					lineHeight		   : 50,
@@ -29123,25 +29123,26 @@ var travelkeys = {
                 });
 
                 $searchbarLocation.autocompleter({
-                    source: '/villas.json',
+                    asLocal: false,
+                    source: '/suggest',
                     minLength: 2,
-                    focusOpen: false
+                    focusOpen: false,
                 });
 
                 $searchbar.on('click', function() {
-					$searchbar.addClass('-is-active');
-				});
+                  $searchbar.addClass('-is-active');
+                });
 
                 $(document).on('click', function(event) {
-					if (!$(event.target).closest($searchbar).length) {
-						if ($(event.target).hasClass('ui-corner-all')) {
-							event.stopPropagation();
-						} else {
-							$searchbar.removeClass('-is-active');
-							$datesContainer.removeClass('-is-open');
-						}
-					}
-				});
+                  if (!$(event.target).closest($searchbar).length) {
+                    if ($(event.target).hasClass('ui-corner-all')) {
+                      event.stopPropagation();
+                    } else {
+                      $searchbar.removeClass('-is-active');
+                      $datesContainer.removeClass('-is-open');
+                    }
+                  }
+                });
             }
         }
 

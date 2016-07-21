@@ -42,6 +42,13 @@ class Locations extends DataApi
         return $this->call("{$this->resource}_getById", ['id' => $id]);
     }
 
+    /**
+     * Call for menu items. If $only_ids is true, will return only a list of ids.
+     * Cool when cache is enabled and we already have a list of all locations.
+     *
+     * @param bool $only_ids
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
     public function menu($only_ids = false)
     {
         return $this->call(
@@ -57,6 +64,34 @@ class Locations extends DataApi
                         'field' => 'menu_item',
                         'operator' => '=',
                         'value' => 1
+                    ],
+                ]
+            ]
+        );
+    }
+
+    /**
+     * Get a list of suggestions from the api provided a search query
+     *
+     * @param $search
+     * @param bool $only_ids
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function suggest($search, $only_ids = false)
+    {
+        return $this->call(
+            "{$this->resource}_getAllOptions", [
+                'field' => $only_ids ? ['id'] : ['id', 'name'],
+                'conditions' => [
+                    [
+                        'field' => 'active',
+                        'operator' => '=',
+                        'value' => 1
+                    ],
+                    [
+                        'field' => 'name',
+                        'operator' => 'like',
+                        'value' => "%$search%"
                     ],
                 ]
             ]

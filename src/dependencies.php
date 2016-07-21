@@ -4,22 +4,21 @@
 $container = $app->getContainer();
 
 // view renderer
-$container['view'] = function ($c) {
-    $settings = $c->get('settings')['renderer'];
+$container['view'] = function ($container) {
+    $settings = $container->get('settings')['renderer'];
     $view = new \Slim\Views\Smarty($settings['template_path'], [
         'cacheDir' => $settings['template_cache'],
         'compileDir' => $settings['template_compile'],
     ]);
 
     $view->registerPlugin('modifier', 'count', 'count');
-    //$view->registerPlugin('function', 'base_url', [$smartyPlugins, 'baseUrl']);
 
     return $view;
 };
 
 // monolog
-$container['logger'] = function ($c) {
-    $settings = $c->get('settings')['logger'];
+$container['logger'] = function ($container) {
+    $settings = $container->get('settings')['logger'];
     $logger = new Monolog\Logger($settings['name']);
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], Monolog\Logger::DEBUG));
@@ -36,18 +35,22 @@ $container['locations'] = function ($container) {
 
 
 // Route dependencies - all bellow will handle route classes
-$container['Dummy'] = function($container) {
+$container['Dummy'] = function ($container) {
     return new \App\Modules\Portal\Dummy($container->get('locations'));
 };
 
-$container['Home'] = function($container) {
+$container['Home'] = function ($container) {
     return new \App\Modules\Portal\Home($container->get('sites'), $container->get('view'));
 };
 
-$container['VillaListing'] = function($container) {
+$container['Suggestions'] = function ($container) {
+    return new \App\Modules\Portal\Suggestions($container->get('locations'));
+};
+
+$container['VillaListing'] = function ($container) {
     return new \App\Modules\Portal\VillaListing($container->get('view'));
 };
 
-$container['StaticPages'] = function($container) {
+$container['StaticPages'] = function ($container) {
     return new \App\Modules\Portal\StaticPages($container->get('view'));
 };

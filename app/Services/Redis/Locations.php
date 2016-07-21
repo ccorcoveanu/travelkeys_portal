@@ -5,11 +5,13 @@ use App\Services\DataApi;
 use App\Services\CacheClient;
 use App\Services\Redis\Helpers\ResourceParser;
 use App\Services\Redis\Helpers\Menu;
+use App\Services\Redis\Helpers\Suggestions;
 
 class Locations extends CacheClient
 {
     use ResourceParser;
     use Menu;
+    use Suggestions;
 
     protected
         /**
@@ -93,5 +95,34 @@ class Locations extends CacheClient
         parent::set($_cache_key, serialize($data));
 
         return $data;
+    }
+
+    /**
+     * Suggest locations based on a search criteria
+     *
+     * @param $search
+     * @return array
+     */
+    public function suggest($search)
+    {
+        if ( !$this->client ) {
+            $data = $this->resource->data(
+                $this->resource->suggest($search)
+            ); // wait and return if cache not available
+            return $this->formatSuggestion($data->result);
+        }
+
+        $allItems = $this->get();
+        $searchIds = $this->resource->data(
+            $this->resource->suggest($search, true)
+        ); // wait and return if cache not available
+
+        echopre($searchIds);die;
+
+        $data = array_map(function ($element) use ($allItems) {
+            return $allItems[$element->id];
+        }, $searchIds->result); // Get items that belong in the menu
+
+        return $this->formatSuggestion($data);
     }
 }

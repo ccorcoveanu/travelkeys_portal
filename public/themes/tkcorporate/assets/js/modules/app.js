@@ -1801,7 +1801,7 @@ var travelkeys = {
 
                 $searchbarLocation.autocompleter({
                     asLocal: false,
-                    source: '/villas.json?local=no',
+                    source: '/suggest',
                     minLength: 2,
                     focusOpen: false,
                 });

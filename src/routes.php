@@ -2,6 +2,8 @@
 // Set application routes
 
 $app->get('/', 'Home:index');
+$app->get('/suggest', 'Suggestions:suggest');
+
 $app->get('/debug', 'Dummy:route');
 
 // Villas
