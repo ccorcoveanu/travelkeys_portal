@@ -5,4 +5,6 @@ $_protocol = isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] === 443 ?
 $_server_name = $_SERVER['SERVER_NAME'] === 'localhost' ? $_SERVER['SERVER_ADDR'] : $_SERVER['SERVER_NAME'];
 
 define('BASE_URL', $_protocol . $_server_name);
+define('SERVER_NAME', $_server_name);
+define('PROTOCOL', $_protocol);
 define('TEMPLATE_PATH', BASE_URL . '/themes/' . getenv('APP_TEMPLATE'));

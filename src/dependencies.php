@@ -40,7 +40,7 @@ $container['Dummy'] = function ($container) {
 };
 
 $container['Home'] = function ($container) {
-    return new \App\Modules\Portal\Home($container->get('sites'), $container->get('view'));
+    return new \App\Modules\Portal\Home($container->get('locations'), $container->get('view'));
 };
 
 $container['Suggestions'] = function ($container) {

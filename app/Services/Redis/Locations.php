@@ -3,6 +3,7 @@ namespace App\Services\Redis;
 
 use App\Services\DataApi;
 use App\Services\CacheClient;
+use App\Services\Redis\Helpers\Featured;
 use App\Services\Redis\Helpers\ResourceParser;
 use App\Services\Redis\Helpers\Menu;
 use App\Services\Redis\Helpers\Suggestions;
@@ -12,6 +13,7 @@ class Locations extends CacheClient
     use ResourceParser;
     use Menu;
     use Suggestions;
+    use Featured;
 
     protected
         /**
@@ -40,9 +42,9 @@ class Locations extends CacheClient
      */
     public function get($id = null)
     {
-        $_cache_key = md5(__METHOD__);
+        $cacheKey = md5(__METHOD__);
 
-        if ( $data = parent::get($_cache_key) ) {
+        if ( $data = parent::get($cacheKey) ) {
             $data = unserialize($data);
 
             return $id ? $data[$id] : $data;
@@ -58,7 +60,7 @@ class Locations extends CacheClient
         } else {
             $data = $this->resource->get()->wait();
             $data = $this->buildUniqueKeys($data->result);
-            parent::set($_cache_key, serialize($data));
+            parent::set($cacheKey, serialize($data));
 
             return $id ? $data[$id] : $data;
         }
@@ -77,22 +79,22 @@ class Locations extends CacheClient
             return $this->buildUniqueKeys($data->result);
         }
 
-        $_cache_key = md5(__METHOD__);
-        if ( $data = parent::get($_cache_key) ) {
+        $cacheKey = md5(__METHOD__);
+        if ( $data = parent::get($cacheKey) ) {
             return unserialize($data);
         }
 
-        $_all_items = $this->get(); // get all from cache
-        $_menu_ids = $this->resource->data(
+        $allItems = $this->get(); // get all from cache
+        $menuIds = $this->resource->data(
             $this->resource->menu(true)
         ); // Get menu ids - then get the actual items from cached list
 
-        $data = array_map(function ($element) use ($_all_items) {
-            return $_all_items[$element->id];
-        }, $_menu_ids->result); // Get items that belong in the menu
+        $data = array_map(function ($element) use ($allItems) {
+            return $allItems[$element->id];
+        }, $menuIds->result); // Get items that belong in the menu
 
         $data = $this->buildCustomMenu($data); // Create parent based tree
-        parent::set($_cache_key, serialize($data));
+        parent::set($cacheKey, serialize($data));
 
         return $data;
     }
@@ -117,12 +119,44 @@ class Locations extends CacheClient
             $this->resource->suggest($search, true)
         ); // wait and return if cache not available
 
-        echopre($searchIds);die;
-
         $data = array_map(function ($element) use ($allItems) {
             return $allItems[$element->id];
         }, $searchIds->result); // Get items that belong in the menu
 
         return $this->formatSuggestion($data);
+    }
+
+    /**
+     * Get featured locations
+     *
+     * @return array|mixed
+     */
+    public function featured()
+    {
+        if ( !$this->client ) {
+            $data = $this->resource->data(
+                $this->resource->featured()
+            ); // wait and return if cache not available
+            return $this->formatFeatured($data->result);
+        }
+
+        $cacheKey = md5(__METHOD__);
+        if ( $data = parent::get($cacheKey) ) {
+            return unserialize($data);
+        }
+
+        $allItems = $this->get(); // get all from cache
+        $menuIds = $this->resource->data(
+            $this->resource->featured(true)
+        ); // Get menu ids - then get the actual items from cached list
+
+        $data = array_map(function ($element) use ($allItems) {
+            return $allItems[$element->id];
+        }, $menuIds->result); // Get items that belong in the featured list
+
+        $data = $this->formatFeatured($data); // Create parent based tree
+        parent::set($cacheKey, serialize($data));
+
+        return $data;
     }
 }

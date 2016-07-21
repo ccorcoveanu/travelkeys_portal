@@ -75,9 +75,10 @@ class Locations extends DataApi
      *
      * @param $search
      * @param bool $only_ids
+     * @param int $limit
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function suggest($search, $only_ids = false)
+    public function suggest($search, $only_ids = false, $limit = 10)
     {
         return $this->call(
             "{$this->resource}_getAllOptions", [
@@ -93,7 +94,36 @@ class Locations extends DataApi
                         'operator' => 'like',
                         'value' => "%$search%"
                     ],
-                ]
+                ],
+                //'length' => $limit
+            ]
+        );
+    }
+
+    /**
+     * Get featured locations
+     *
+     * @param bool|false $only_ids
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function featured($only_ids = false)
+    {
+        return $this->call(
+            "{$this->resource}_getAllOptions", [
+                'field' => $only_ids ? ['id'] : ['*'],
+                'conditions' => [
+                    [
+                        'field' => 'active',
+                        'operator' => '=',
+                        'value' => 1
+                    ],
+                    [
+                        'field' => 'featured',
+                        'operator' => '=',
+                        'value' => 1
+                    ],
+                ],
+                //'length' => $limit
             ]
         );
     }

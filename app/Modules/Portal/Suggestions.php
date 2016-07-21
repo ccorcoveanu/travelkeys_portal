@@ -21,10 +21,22 @@ class Suggestions
         $this->location = $location;
     }
 
+    /**
+     * Suggest route
+     *
+     * @param $request
+     * @param $response
+     * @param $args
+     * @return mixed
+     */
     public function suggest($request, $response, $args)
     {
-        return $this->location->suggest(
-            $request->getParam('query')
-        );
+        return $response
+            ->withHeader('Content-type', 'application/json')
+            ->withJson(
+                $this->location->suggest(
+                    $request->getParam('query')
+                )
+            );
     }
 }

@@ -10,7 +10,7 @@ trait Suggestions
      * @return array
      */
     function formatSuggestion($list) {
-        return array_map(function($item) {
+        return array_map(function ($item) {
             return [
                 'label' => $item->name,
                 'value' => $item->name,

@@ -59,7 +59,7 @@
                         <span class="js-searchbar-period searchbar__period js-dates-button"></span>
                     </div>
                 </div>
-                <h4 class="hero__undertitle -hides-for-medium-down">Top Destinations: <a href="#" title="St. Martin">St. Martin</a>, <a href="#" title="Barbados">Barbados</a>, <a href="#" title="Maui">Maui</a>, <a href="#" title="California">California</a></h4>
+                <h4 class="hero__undertitle -hides-for-medium-down">Top Destinations: <a href="http://stmartin.travelkeys.com" title="St. Martin">St. Martin</a>, <a href="http://barbados.travelkeys.com" title="Barbados">Barbados</a>, <a href="http://maui.travelkeys.com" title="Maui">Maui</a>, <a href="http://california.travelkeys.com" title="California">California</a></h4>
             </div>
         </div>
         <div class="filter__wrapper">
@@ -144,48 +144,9 @@
             <h5 class="section__subtitle featured__subtitle -color-white">In the spotlight</h5>
             <h2 class="section__title featured__title -color-white"><span class="-hidden-md">Our Featured</span> Destinations</h2>
             <div class="destinations-grid">
-                <div class="destination">
-                    <img class="destination__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/destination6.jpg" alt="Italy"/>
-                    <div class="destination__wrapper">
-                        <h3 class="section__subtitle destination__name">Italy</h3>
-                        <a class="destination__button button -color-black" href="#" title="See all properties">56 Properties</a>
-                    </div>
-                </div>
-                <div class="destination">
-                    <img class="destination__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/destination1.jpg" alt="Cabo San Lucas"/>
-                    <div class="destination__wrapper">
-                        <h3 class="section__subtitle destination__name">Cabo San Lucas</h3>
-                        <a class="destination__button button -color-black" href="#" title="See all properties">56 Properties</a>
-                    </div>
-                </div>
-                <div class="destination">
-                    <img class="destination__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/destination2.jpg" alt="Barbados"/>
-                    <div class="destination__wrapper">
-                        <h3 class="section__subtitle destination__name">Barbados</h3>
-                        <a class="destination__button button -color-black" href="#" title="See all properties">56 Properties</a>
-                    </div>
-                </div>
-                <div class="destination">
-                    <img class="destination__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/destination3.jpg" alt="Koh Samui"/>
-                    <div class="destination__wrapper">
-                        <h3 class="section__subtitle destination__name">Koh Samui</h3>
-                        <a class="destination__button button -color-black" href="#" title="See all properties">56 Properties</a>
-                    </div>
-                </div>
-                <div class="destination">
-                    <img class="destination__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/destination4.jpg" alt="Mali"/>
-                    <div class="destination__wrapper">
-                        <h3 class="section__subtitle destination__name">Mali</h3>
-                        <a class="destination__button button -color-black" href="#" title="See all properties">56 Properties</a>
-                    </div>
-                </div>
-                <div class="destination">
-                    <img class="destination__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/destination5.jpg" alt="Riviera Maya"/>
-                    <div class="destination__wrapper">
-                        <h3 class="section__subtitle destination__name">Riviera Maya</h3>
-                        <a class="destination__button button -color-black" href="#" title="See all properties">56 Properties</a>
-                    </div>
-                </div>
+                {foreach name='featured_items' item=featured_item from=$featured}
+                    {include file='_partials/list_items/featured_item.tpl'}
+                {/foreach}
             </div>
         </div>
     </article>
@@ -395,11 +356,7 @@
                     </div>
                 </div>
             </div>
-            <div class="-position-bottom">
-                <div class="container">
-                    <a class="button -color-black -hover-alt" href="#" title="Search our villas by map">Search our villas by map</a>
-                </div>
-            </div>
+
         </div>
     </article>
     <!-- End Map -->
@@ -415,14 +372,14 @@
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise1.jpg" alt="Car Rentals"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__auto"></i>
-                                    <a class="promise__button button -color-black" href="#" title="Car Rentals">Car Rentals</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#car_rental" title="Car Rentals">Car Rentals</a>
                                 </div>
                             </div>
                             <div class="promise -small">
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise3.jpg" alt="Spa Services"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__lotus"></i>
-                                    <a class="promise__button button -color-black" href="#" title="Spa Services">Spa Services</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#spa" title="Spa Services">Spa Services</a>
                                 </div>
                             </div>
                         </div>
@@ -430,7 +387,7 @@
                             <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise2.jpg" alt="Tours and Activities"/>
                             <div class="promise__wrapper">
                                 <i class="promise__icon icon icon__rackets"></i>
-                                <a class="promise__button button -color-black" href="#" title="Tours and Activities">Tours and Activities</a>
+                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#activities" title="Tours and Activities">Tours and Activities</a>
                             </div>
                         </div>
                     </div>
@@ -439,7 +396,7 @@
                             <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise4.jpg" alt="Chef/Cooking Services"/>
                             <div class="promise__wrapper">
                                 <i class="promise__icon icon icon__rackets"></i>
-                                <a class="promise__button button -color-black" href="#" title="Chef/Cooking Services">Chef/Cooking Services</a>
+                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#cooking" title="Chef/Cooking Services">Chef/Cooking Services</a>
                             </div>
                         </div>
                         <div class="promise__group">
@@ -447,14 +404,14 @@
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise5.jpg" alt="Vill Pre-Stocking"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__bucket"></i>
-                                    <a class="promise__button button -color-black" href="#" title="Vill Pre-Stocking">Vill Pre-Stocking</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#stocking" title="Vill Pre-Stocking">Vill Pre-Stocking</a>
                                 </div>
                             </div>
                             <div class="promise -small">
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise6.jpg" alt="Special Events"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__tickets"></i>
-                                    <a class="promise__button button -color-black" href="#" title="Special Events">Special Events</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#events" title="Special Events">Special Events</a>
                                 </div>
                             </div>
                         </div>
@@ -464,14 +421,14 @@
                             <div class="promise__wrapper">
                                 <h3 class="promise__title">Anything we missed?</h3>
                                 <p class="promise__text">We’d love to know how we can make your next vacation even more fun!</p>
-                                <a class="promise__button button -color-black -hover-aqua" href="#" title="Get in touch">Get in Touch</a>
+                                <a class="promise__button button -color-black -hover-aqua" href="{$smarty.const.BASE_URL}/contact-us" title="Get in touch">Get in Touch</a>
                             </div>
                         </div>
                         <div class="promise -small">
                             <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise7.jpg" alt="Meet and Greet"/>
                             <div class="promise__wrapper">
                                 <i class="promise__icon icon icon__hands"></i>
-                                <a class="promise__button button -color-black" href="#" title="Meet and Greet">Meet and Greet</a>
+                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#meet_greet" title="Meet and Greet">Meet and Greet</a>
                             </div>
                         </div>
                     </div>
@@ -479,7 +436,7 @@
                 <div class="promises__additional">
                     <h2 class="section__title promises__title -color-white">Every guest is assigned a complimentary concierge to ensure a memorable vacation experience.</h2>
                     <p>From gourmet chef services to unforgettable fishing charters, our concierge team can help organize just about anything you require. Your dedicated concierge is ready to assist your party with all of the details of your stay, large or small, to ensure you enjoy a flawless travel experience.</p>
-                    <a class="button -hover-alt -shadow-black" href="#" title="View Concierge Services">View Concierge Services</a>
+                    <a class="button -hover-alt -shadow-black" href="{$smarty.const.BASE_URL}/concierge-service" title="View Concierge Services">View Concierge Services</a>
                 </div>
             </div>
         </div>
