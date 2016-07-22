@@ -27430,6 +27430,9 @@ var $searchbarLocation      = $('.js-searchbar-location');
 var $searchbar              = $('.js-searchbar');
 var $searchbarPeriod        = $('.js-searchbar-period');
 
+// Forms
+var $formItem               = $('.js-validate-form');
+
 // Expand Buttons
 var $expandableButton       = $('.js-button-expand');
 // Const
@@ -27536,6 +27539,12 @@ var travelkeys = {
 
         // Sticky Tabs
         travelkeys.stickyTabs();
+
+        // Validate forms
+        travelkeys.validateForms();
+
+        // Add favorites event
+        travelkeys.addFavorite();
     },
 
     // Links handler
@@ -29447,6 +29456,104 @@ var travelkeys = {
         }
 
         // Initialize Module
+        return __init();
+    },
+
+    // Validate forms
+    validateForms: function () {
+
+        // Initialize module
+        function __init() {
+
+            // Check if we have the element
+            if (!$formItem.length) return;
+
+            $formItem.h5Validate({
+                errorClass: 'error'
+            })
+        }
+
+        return __init();
+    },
+
+    // Add favorite event
+    addFavorite: function() {
+
+        function __init() {
+
+            if (!$('.map').length) return;
+
+            $('.map').on('click', '.marker__favorite', function(evt) {
+                var id = $(this).data('id');
+                var cookie;
+                var $favorite_icon = $(this).find('i.icon');
+
+                if (!(cookie = readCookie('favorites'))) {
+                    console.log('nocookie');
+                    $favorite_icon.removeClass('icon__heart');
+                    $favorite_icon.addClass('icon__heart-full');
+                    return createCookie('favorites', '[' + id + ']', 30);
+                }
+
+                var decoded = JSON.parse(cookie);
+
+                if (decoded.constructor !== Array) {
+                    if (!$favorite_icon.hasClass('icon__heart-full')) {
+                        $favorite_icon.removeClass('icon__heart');
+                        $favorite_icon.addClass('icon__heart-full');
+                    }
+
+                    return createCookie('favorites', '[' + id + ']', 30)
+                }
+
+                var index = decoded.indexOf(id);
+
+                // Not in favorites, add item
+                if (index === -1) {
+                    if (!$favorite_icon.hasClass('icon__heart-full')) {
+                        $favorite_icon.removeClass('icon__heart');
+                        $favorite_icon.addClass('icon__heart-full');
+                    }
+                    decoded.push(id);
+                    return createCookie('favorites', JSON.stringify(decoded), 30);
+                }
+
+                // In favorites, remove
+                if ($favorite_icon.hasClass('icon__heart-full')) {
+                    $favorite_icon.removeClass('icon__heart-full');
+                    $favorite_icon.addClass('icon__heart');
+                } // Remove class only if element has class
+                decoded.splice(index, 1);
+
+                return createCookie('favorites', JSON.stringify(decoded), 30);
+            });
+        }
+
+        function createCookie(name,value,days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+        }
+
+        function readCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+            }
+            return null;
+        }
+
+        function eraseCookie(name) {
+            createCookie(name, "", -1);
+        }
+
         return __init();
     }
 };

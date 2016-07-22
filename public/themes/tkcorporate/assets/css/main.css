@@ -16097,6 +16097,9 @@ body.is-collapsed .map-aside.-fixed-top .map__input {
   height: 9.375rem;
   resize: none;
 }
+.form--letter__input.error {
+  border-color: #f00;
+}
 textarea.form--letter__input {
   font-size: 1.3125rem;
   line-height: 1.5;
@@ -16114,6 +16117,7 @@ textarea.form--letter__input {
   margin-top: 5rem;
   margin-right: auto;
   margin-left: auto;
+  outline: none;
 }
 @media only screen and (max-width: 960px) {
   .form--letter__button {

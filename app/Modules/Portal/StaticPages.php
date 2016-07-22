@@ -25,4 +25,18 @@ class StaticPages
             ]
         ]);
     }
+
+    public function contact($request, $response, $args)
+    {
+        return $this->view->render($response, 'contact.tpl', [
+            'page' => [
+                'title' => 'Contact Us',
+                'body_classes' => 'contact',
+                'hero_sec_title' => 'We would<i class="icon icon__heart-big"></i><br/>to hear from you',
+                'hero_sec_description' => 'We are always interested in meeting new people, listening to new ideas and suggestions, so go ahead and:',
+                'hero_sec_link' => '<a class="button button--ghost -anchor-hero -has-arrow-down" href="#contact-form" title="Drop us a line">Drop us a line</a>',
+
+            ]
+        ]);
+    }
 }

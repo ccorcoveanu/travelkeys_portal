@@ -11,6 +11,9 @@
     {/block}
     <main class="main">
         {block name='content'}<h1>Hello there! You reached the default content</h1>{/block}
+        {block name='newsletter_mobile'}
+            {include file='_partials/mobile/newsletter.tpl'}
+        {/block}
     </main>
     {block name='footer'}
         {include file='_partials/footer.tpl'}

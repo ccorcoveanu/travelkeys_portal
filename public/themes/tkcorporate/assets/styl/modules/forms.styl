@@ -955,6 +955,10 @@ form.site-search {
 			height: rem(150)
 			resize: none
 		}
+
+		&.error {
+			border-color: #f00
+		}
 	}
 
 	textarea&__input {
@@ -974,6 +978,7 @@ form.site-search {
 		margin-top: rem(80)
 		margin-right: auto
 		margin-left: auto
+		outline: none
 		
 		+below(960px) {
 			margin-top: rem(70)

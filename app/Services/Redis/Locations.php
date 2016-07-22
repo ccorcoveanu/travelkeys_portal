@@ -159,4 +159,25 @@ class Locations extends CacheClient
 
         return $data;
     }
+
+    /**
+     * Get locations to be shown on the map
+     *
+     * @return array
+     */
+    public function mapItems()
+    {
+        $cacheKey = md5(__METHOD__);
+        if ( $data = parent::get($cacheKey) ) {
+            return unserialize($data);
+        }
+
+        $data = $this->resource->data(
+            $this->resource->mapItems()
+        ); // wait and return if cache not available
+
+        parent::set($cacheKey, serialize($data->result));
+
+        return $data->result;
+    }
 }

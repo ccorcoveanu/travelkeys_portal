@@ -127,4 +127,11 @@ class Locations extends DataApi
             ]
         );
     }
+
+    public function mapItems()
+    {
+        return $this->call(
+            "{$this->resource}_getMapLocations", []
+        );
+    }
 }
