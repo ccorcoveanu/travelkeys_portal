@@ -22,19 +22,16 @@ class Home
 
     public function index(Request $request, $response, $args)
     {
-        $featured = $this->location->featured();
-        $mapItems = $this->location->mapItems();
-        $cookies = $request->getCookieParams();
-        //echopre($cookies);die;
-        if (!isset($cookies['favorites'])) $cookies['favorites'] = [];
+        $featured               = $this->location->featured();
+        $mapItems               = $this->location->mapItems();
+        $cookies                = $request->getCookieParams();
+        $cookies['favorites']   = isset($cookies['favorites']) ? $cookies['favorites'] : [];
 
         try {
             $favorites = @\GuzzleHttp\json_decode($cookies['favorites']); // Don't show warning, let the exception do it's job
         } catch (\Exception $e) {
             $favorites = [];
         } // If someone messes with the cookie :)
-
-        //echopre($cookies['favorites']);die;
 
         return $this->view->render($response, 'home.tpl', [
             'menu' => $request->getAttribute('menu'),

@@ -75,4 +75,9 @@ class CacheClient
         if ( !$this->client ) return false;
         return $this->client->del($key);
     }
+
+    public function execute(array $args, &$error = null)
+    {
+        return $this->client->executeRaw($args, $error);
+    }
 }

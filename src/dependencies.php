@@ -25,6 +25,10 @@ $container['logger'] = function ($container) {
     return $logger;
 };
 
+$container['cache_client'] = function($container) {
+    return new \App\Services\CacheClient($container->get('settings')['cache']);
+};
+
 $container['sites'] = function ($container) {
     return new App\Services\Redis\Sites($container->get('settings')['api_endpoint']);
 }; // Register Sites service
@@ -53,4 +57,10 @@ $container['VillaListing'] = function ($container) {
 
 $container['StaticPages'] = function ($container) {
     return new \App\Modules\Portal\StaticPages($container->get('view'));
+};
+
+// Local api routes
+
+$container['Cache'] = function ($container) {
+    return new \App\Modules\Api\Cache($container->get('cache_client'));
 };
