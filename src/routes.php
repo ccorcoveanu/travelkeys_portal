@@ -13,6 +13,7 @@ $app->get('/villa-listing/favorites', 'VillaListing:favorites');
 // Static pages
 $app->get('/about-us', 'StaticPages:about');
 $app->get('/contact-us', 'StaticPages:contact');
+$app->get('/concierge-service', 'StaticPages:concierge');
 
 // Ajax calls
 $app->get('/ajax', 'SearchAjax:search');

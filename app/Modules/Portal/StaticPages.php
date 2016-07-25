@@ -43,4 +43,20 @@ class StaticPages
             'favorites' => $request->getAttribute('favorites'),
         ]);
     }
+
+    public function concierge($request, $response, $args)
+    {
+        return $this->view->render($response, 'concierge.tpl', [
+            'page' => [
+                'title' => 'Concierge Service',
+                'body_classes' => 'concierge',
+                'hero_sec_title' => 'Our concierge services',
+                'hero_sec_image' => 'assets/images/svg/no-sprite/quality-badge-white.svg',
+                'hero_sec_description' => 'Every guest is provided a dedicated, complimentary concierge to<br/>ensure a memorable vacation experience.',
+
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'favorites' => $request->getAttribute('favorites'),
+        ]);
+    }
 }

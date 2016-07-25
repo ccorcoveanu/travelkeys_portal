@@ -64,6 +64,19 @@ class CacheClient
     }
 
     /**
+     * Get multiple values from cache. Returns false
+     * if the client is not instatiated successfully
+     *
+     * @param array $keys
+     * @return array|bool
+     */
+    public function mget(array $keys)
+    {
+        if ( !$this->client ) return false;
+        return $this->client->mget($keys);
+    }
+
+    /**
      * Delete a value from cache. Returns false if the client
      * is not instantiated successfully
      *

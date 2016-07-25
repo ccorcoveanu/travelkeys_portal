@@ -1,18 +1,27 @@
 <?php
 namespace App\Modules\Portal;
 
+use App\Services\Redis\Locations;
+use App\Services\Redis\Properties;
+
 class Dummy
 {
-    public function __construct($locations)
+    protected
+        /**
+         * @var Locations
+         */
+        $locations
+    ;
+    public function __construct(Locations $locations, Properties $properties)
     {
         $this->locations = $locations;
+        $this->properties = $properties;
     }
 
     public function route($request, $response, $args)
     {
-        echopre($request->getAttribute('menu'));die;
-        $locations = $this->locations->menu();
-
-        echopre($locations);die;
+        echopre(
+            $this->properties->search('hawaii', '', '', [])
+        );die;
     }
 }

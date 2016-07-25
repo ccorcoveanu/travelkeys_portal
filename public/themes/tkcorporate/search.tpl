@@ -38,4 +38,18 @@
     <article class="section message -style-pattern js-scroll-stop-point">
         {include file='_partials/forms/advice_form.tpl'}
     </article>
+    <div class="modal-container">
+        <div id="availability-modal" class="modal availability__modal">
+            <div class="availability__calendars">
+                <h2 class="section__title availability__title">Availability</h2>
+                <div class="js-calendars-carousel calendars__carousel">
+                    <div class="js-calendar calendar"></div>
+                    <div class="js-calendar calendar"></div>
+                    <div class="js-calendar calendar"></div>
+                    <div class="js-calendar calendar"></div>
+                    <div class="js-calendar calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 {/block}

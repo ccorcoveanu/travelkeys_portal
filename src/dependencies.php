@@ -3,6 +3,41 @@
 
 $container = $app->getContainer();
 
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
+
+        return $container->get('view')
+            ->render($response, '404.tpl', [
+                'page' => [
+                    'title' => 'Error 404',
+                    'body_classes' => 'not-found'
+                ],
+                'hero_message' => 'It looks like you might have taken a wrong turn. Don’t worry , it happens to the best of us too.',
+                'code' => '404',
+                'error_message' => 'It looks like the page you were looking for has been moved or no longer exists. Here’s what we recommend:',
+                'back_link' => isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : BASE_URL,
+            ]);
+    };
+};
+
+$container['errorHandler'] = function ($container) {
+    return function ($request, $response, $e) use ($container) {
+
+        return $container->get('view')
+            ->render($response, '404.tpl', [
+                'page' => [
+                    'title' => 'Error 503',
+                    'body_classes' => 'not-found'
+                ],
+                'hero_message' => 'It looks like something went wrong. It happens to the best of us too. Please try again later.',
+                'code' => '503',
+                //'error_message' => 'It looks like the page you are looking has some problems. Come back later, but until then:',
+                'error_message' => $e->getMessage(),
+                'back_link' => isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : BASE_URL,
+            ]);
+    };
+};
+
 // view renderer
 $container['view'] = function ($container) {
     $settings = $container->get('settings')['renderer'];
@@ -25,7 +60,7 @@ $container['logger'] = function ($container) {
     return $logger;
 };
 
-$container['cache_client'] = function($container) {
+$container['cache_client'] = function ($container) {
     return new \App\Services\CacheClient($container->get('settings')['cache']);
 };
 
@@ -43,7 +78,7 @@ $container['properties'] = function ($container) {
 
 // Route dependencies - all bellow will handle route classes
 $container['Dummy'] = function ($container) {
-    return new \App\Modules\Portal\Dummy($container->get('locations'));
+    return new \App\Modules\Portal\Dummy($container->get('locations'), $container->get('properties'));
 };
 
 $container['Home'] = function ($container) {

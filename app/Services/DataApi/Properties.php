@@ -41,4 +41,50 @@ class Properties extends DataApi
             'conditions' => $conditions
         ]);
     }
+
+    public function specials($start = '', $limit = '', $filters = [], $only_ids = false)
+    {
+        return $this->call("{$this->resource}_getPropertiesFilters}", [
+            'conditions' => [
+                [
+                    'field' => 'bedrooms',
+                    'operator' => '=',
+                    'value' => 5
+                ]
+            ],
+            'reservations' => '',
+            'start' => $start,
+            'length' => $limit,
+            'order' => '',
+            'only_ids' => $only_ids,
+        ]);
+    }
+
+    public function search($term = '', $start = '', $limit = '', $filters, $only_ids = false)
+    {
+        $conditions = [
+            [
+                'field' => 'name',
+                'operator' => 'like',
+                'value' => "'%$term%'"
+            ]
+        ];
+        if ( isset($filters['amenities']) && is_array($filters['amenities']) ) {
+            $conditions[] = [
+                'field' => 'amenity_id',
+                'operator' => 'in',
+                'value' => '(' . implode(',', $filters['amenities']) . ')'
+            ];
+        }
+        return $this->call("{$this->resource}_getPropertiesFilters", [
+            'conditions' => $conditions,
+            'reservations' => isset($filters['reservations']) ? $filters['reservations'] : '',
+            //'bedrooms' => isset($filters['bedrooms']) ? $filters['bedrooms'] : '',
+            //'guests' => isset($filters['guests']) ? $filters['guests'] : '',
+            'start' => $start,
+            'length' => $limit,
+            'order' => '',
+            'only_ids' => $only_ids
+        ]);
+    }
 }

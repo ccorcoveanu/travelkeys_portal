@@ -179,14 +179,14 @@
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise1.jpg" alt="Car Rentals"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__auto"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#car_rental" title="Car Rentals">Car Rentals</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-rentals" title="Car Rentals">Car Rentals</a>
                                 </div>
                             </div>
                             <div class="promise -small">
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise3.jpg" alt="Spa Services"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__lotus"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#spa" title="Spa Services">Spa Services</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-spa" title="Spa Services">Spa Services</a>
                                 </div>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                             <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise2.jpg" alt="Tours and Activities"/>
                             <div class="promise__wrapper">
                                 <i class="promise__icon icon icon__rackets"></i>
-                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#activities" title="Tours and Activities">Tours and Activities</a>
+                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-tours" title="Tours and Activities">Tours and Activities</a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                             <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise4.jpg" alt="Chef/Cooking Services"/>
                             <div class="promise__wrapper">
                                 <i class="promise__icon icon icon__rackets"></i>
-                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#cooking" title="Chef/Cooking Services">Chef/Cooking Services</a>
+                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-chef" title="Chef/Cooking Services">Chef/Cooking Services</a>
                             </div>
                         </div>
                         <div class="promise__group">
@@ -211,14 +211,14 @@
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise5.jpg" alt="Vill Pre-Stocking"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__bucket"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#stocking" title="Vill Pre-Stocking">Vill Pre-Stocking</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-stocking" title="Vill Pre-Stocking">Vill Pre-Stocking</a>
                                 </div>
                             </div>
                             <div class="promise -small">
                                 <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise6.jpg" alt="Special Events"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__tickets"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#events" title="Special Events">Special Events</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-events" title="Special Events">Special Events</a>
                                 </div>
                             </div>
                         </div>
@@ -235,7 +235,7 @@
                             <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise7.jpg" alt="Meet and Greet"/>
                             <div class="promise__wrapper">
                                 <i class="promise__icon icon icon__hands"></i>
-                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#meet_greet" title="Meet and Greet">Meet and Greet</a>
+                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-greet" title="Meet and Greet">Meet and Greet</a>
                             </div>
                         </div>
                     </div>

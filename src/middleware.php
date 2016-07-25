@@ -9,7 +9,7 @@ $app->add(function ($request, $response, $next) use ($app) {
 
     $container              = $app->getContainer();
     $cookies                = $request->getCookieParams();
-    $cookies['favorites']   = isset($cookies['favorites']) ? $cookies['favorites'] : [];
+    $cookies['favorites']   = isset($cookies['favorites']) ? $cookies['favorites'] : '[]';
     $loc                    = new App\Services\Redis\Locations($container->get('settings')['api_endpoint']);
 
     try {

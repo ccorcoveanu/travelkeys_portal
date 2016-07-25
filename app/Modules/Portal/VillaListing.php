@@ -64,7 +64,7 @@ class VillaListing
     public function favorites(Request $request, Response $response, array $args)
     {
         $favorite_ids = $request->getAttribute('favorites');
-        $favorite_items = $favorite_ids ? $this->properties->get($favorite_ids) : [];
+        $favorite_items = $favorite_ids ? $this->properties->batch($favorite_ids) : [];
 
         // TODO: Should be fixed in API
         $favorite_items = array_map(function ($item) {
@@ -72,6 +72,7 @@ class VillaListing
             $ext = $parts[count($parts) - 1];
             unset($parts[count($parts) - 1]);
             $item->image = implode('.', $parts) . '_l.' . $ext;
+            $item->image_m = implode('.', $parts) . '_m.' . $ext;
             return $item;
         }, $favorite_items);
 
