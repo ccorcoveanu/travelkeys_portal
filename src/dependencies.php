@@ -37,6 +37,9 @@ $container['locations'] = function ($container) {
     return new App\Services\Redis\Locations($container->get('settings')['api_endpoint']);
 }; // Register Locations service
 
+$container['properties'] = function ($container) {
+    return new App\Services\Redis\Properties($container->get('settings')['api_endpoint']);
+}; // Register Properties service
 
 // Route dependencies - all bellow will handle route classes
 $container['Dummy'] = function ($container) {
@@ -52,11 +55,21 @@ $container['Suggestions'] = function ($container) {
 };
 
 $container['VillaListing'] = function ($container) {
-    return new \App\Modules\Portal\VillaListing($container->get('view'));
+    return new \App\Modules\Portal\VillaListing(
+        $container->get('locations'),
+        $container->get('properties'),
+        $container->get('view')
+    );
 };
 
 $container['StaticPages'] = function ($container) {
     return new \App\Modules\Portal\StaticPages($container->get('view'));
+};
+
+// Ajax calls
+
+$container['SearchAjax'] = function ($container) {
+    return new \App\Modules\Portal\Ajax\Search($container->get('view'));
 };
 
 // Local api routes

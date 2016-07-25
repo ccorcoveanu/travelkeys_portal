@@ -32,7 +32,7 @@
             <div class="footer__message">
                 <h6 class="footer__section__title">We love your feedback and are constantly looking to improve your experience:</h6>
                 <a class="footer__message__link" href="tel:4048153490" title="Call 404.815.3490">404.815.3490</a>
-                <a class="button -hover-alt button--ghost" href="#" title="Or leave a message">Or leave a message<i class="icon icon__arrow-right"></i></a>
+                <a class="button -hover-alt button--ghost" href="{$smarty.const.BASE_URL}/contact-us" title="Or leave a message">Or leave a message<i class="icon icon__arrow-right"></i></a>
             </div>
         </div>
         <div class="newsletter">

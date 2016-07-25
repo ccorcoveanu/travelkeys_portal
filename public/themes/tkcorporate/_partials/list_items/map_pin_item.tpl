@@ -1,6 +1,6 @@
 <div class="js-marker" data-hidden="false" data-lat="{$map_item->latitude}" data-lng="{$map_item->longitude}">
     <div class="marker__content js-marker-content">
-        {if $featured_item->image|strlen}
+        {if $map_item->image|strlen}
             <img class="marker__image" src="{$map_item->image}" alt="{$map_item->name}"/>
         {else}
             <img class="marker__image" src="http://cdn.villascaribe.com/6396_hawaii-lahainadream-1_m.jpg" alt="{$map_item->name}"/>

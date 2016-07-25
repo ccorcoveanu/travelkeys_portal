@@ -29,10 +29,7 @@ class Sites extends Services\CacheClient
             return $this->parse($data, $id);
         }
 
-        $data = \GuzzleHttp\json_decode(
-            $this->resource->get()->wait()
-        );
-
+        $this->resource->get()->wait();
         parent::set($_cache_key, serialize($data->result));
 
         if ( $id ) {

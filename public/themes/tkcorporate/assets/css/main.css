@@ -12877,6 +12877,10 @@ p.concierge__reminder {
   display: block;
   width: 100%;
 }
+.property .featured__picture,
+.search .featured__picture {
+  height: 222px;
+}
 .featured__wrapper {
   margin: 0.3125rem;
 }

@@ -16,9 +16,9 @@
                         <div class="form__input__container filter__input__container filter--side__input__container -anchor-counter">
                             <div class="filter__input__name"><span>Guests:</span>
                             </div>
-                                            <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
-												<i class="icon icon__minus"></i>-
-											</span>
+                            <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
+                                <i class="icon icon__minus"></i>-
+                            </span>
                             <select class="js-select2 -has-select2 form__input filter__input">
                                 <option value="Guests" selected>Guests</option>
                                 <option value="1">1</option>
@@ -34,9 +34,9 @@
                         <div class="form__input__container filter__input__container filter--side__input__container -anchor-counter">
                             <div class="filter__input__name"><span>Bedrooms:</span>
                             </div>
-                                            <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
-												<i class="icon icon__minus"></i>-
-											</span>
+                            <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
+                                <i class="icon icon__minus"></i>-
+                            </span>
                             <select class="js-select2 -has-select2 form__input filter__input">
                                 <option value="Bedrooms" selected>Bedrooms</option>
                                 <option value="1">1</option>
@@ -56,14 +56,14 @@
                     <div class="no-slider__container">
                         <div class="js-no-slider no-slider"></div>
                         <div class="no-slider__limit__container">
-                                            <span class="no-slider__limit -value-min">Min price
-                                                <em class="js-slider-min no-slider__limit__value">$<span>200</span>
-                                                </em>
-                                            </span>
-                                            <span class="no-slider__limit -value-max">Max price
-                                                <em class="js-slider-max no-slider__limit__value">$<span>5000</span>
-                                                </em>
-                                            </span>
+                            <span class="no-slider__limit -value-min">Min price
+                                <em class="js-slider-min no-slider__limit__value">$<span>200</span>
+                                </em>
+                            </span>
+                            <span class="no-slider__limit -value-max">Max price
+                                <em class="js-slider-max no-slider__limit__value">$<span>5000</span>
+                                </em>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,6 @@
                                 <label class="filter__option__label" for="ck-fav"><span></span>Favourites</label>
                             </li>
                         </ul>
-                        <a class="js-button-expand button__expand" data-text-swap="Show less">Show more</a>
                     </div>
                 </div>
                 <div class="filter--side__wrapper">

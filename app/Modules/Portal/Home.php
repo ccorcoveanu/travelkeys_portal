@@ -22,16 +22,9 @@ class Home
 
     public function index(Request $request, $response, $args)
     {
-        $featured               = $this->location->featured();
-        $mapItems               = $this->location->mapItems();
-        $cookies                = $request->getCookieParams();
-        $cookies['favorites']   = isset($cookies['favorites']) ? $cookies['favorites'] : [];
-
-        try {
-            $favorites = @\GuzzleHttp\json_decode($cookies['favorites']); // Don't show warning, let the exception do it's job
-        } catch (\Exception $e) {
-            $favorites = [];
-        } // If someone messes with the cookie :)
+        $featured   = $this->location->featured();
+        $mapItems   = $this->location->mapItems();
+        $favorites  = $request->getAttribute('favorites');
 
         return $this->view->render($response, 'home.tpl', [
             'menu' => $request->getAttribute('menu'),
@@ -43,7 +36,8 @@ class Home
                 'title' => 'Luxury Villa Rentals & Vacation Rentals',
                 'body_classes' => 'home'
             ],
-            'featured' => array_slice($featured, 0, 6)
+            'featured' => array_slice($featured, 0, 6),
+            'favorites' => $favorites,
         ]);
     }
 }

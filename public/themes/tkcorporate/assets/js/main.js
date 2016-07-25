@@ -27382,8 +27382,8 @@ var $mapBounds              = $('.js-map-bounds');
 var $mapMarkers             = $('.js-map-markers');
 var map                     = null;
 var currentMarker           = null;
-var markerIcon              = 'themes/tkcorporate/assets/images/svg/icon-pin-black.svg';
-var markerIconHover         = 'themes/tkcorporate/assets/images/svg/icon-pin-yellow.svg';
+var markerIcon              = '/themes/tkcorporate/assets/images/svg/icon-pin-black.svg';
+var markerIconHover         = '/themes/tkcorporate/assets/images/svg/icon-pin-yellow.svg';
 
 // Search Page
 var $filterAside            = $('.js-filter-aside');
@@ -28944,7 +28944,7 @@ var travelkeys = {
 
             var mcStyles = [
             {
-                    url                : 'themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
+                    url                : '/themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
                     lineHeight         : 50,
@@ -28954,7 +28954,7 @@ var travelkeys = {
                     backgroundPosition : '0 3px'
                 },
 				{
-                    url                : 'themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
+                    url                : '/themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
 					lineHeight		   : 50,
@@ -28964,7 +28964,7 @@ var travelkeys = {
                     backgroundPosition : '0 3px'
                 },
                 {
-                    url                : 'themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
+                    url                : '/themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
 					lineHeight		   : 50,
@@ -29466,11 +29466,13 @@ var travelkeys = {
         function __init() {
 
             // Check if we have the element
-            if (!$formItem.length) return;
+            if (!$formItem.length) {
+                return;
+            }
 
             $formItem.h5Validate({
                 errorClass: 'error'
-            })
+            });
         }
 
         return __init();
@@ -29481,7 +29483,9 @@ var travelkeys = {
 
         function __init() {
 
-            if (!$('.map').length) return;
+            if (!$('.map').length) {
+                return;
+            }
 
             $('.map').on('click', '.marker__favorite', function(evt) {
                 var id = $(this).data('id');
@@ -29489,7 +29493,6 @@ var travelkeys = {
                 var $favorite_icon = $(this).find('i.icon');
 
                 if (!(cookie = readCookie('favorites'))) {
-                    console.log('nocookie');
                     $favorite_icon.removeClass('icon__heart');
                     $favorite_icon.addClass('icon__heart-full');
                     return createCookie('favorites', '[' + id + ']', 30);
@@ -29503,7 +29506,7 @@ var travelkeys = {
                         $favorite_icon.addClass('icon__heart-full');
                     }
 
-                    return createCookie('favorites', '[' + id + ']', 30)
+                    return createCookie('favorites', '[' + id + ']', 30);
                 }
 
                 var index = decoded.indexOf(id);
@@ -29530,22 +29533,31 @@ var travelkeys = {
         }
 
         function createCookie(name,value,days) {
+
+            var expires;
+
             if (days) {
                 var date = new Date();
                 date.setTime(date.getTime()+(days*24*60*60*1000));
-                var expires = "; expires=" + date.toGMTString();
+                expires = "; expires=" + date.toGMTString();
+            } else {
+                expires = "";
             }
-            else var expires = "";
+
             document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
         }
 
         function readCookie(name) {
             var nameEQ = name + "=";
             var ca = document.cookie.split(';');
-            for(var i=0; i < ca.length; i++) {
+            for(var i = 0; i < ca.length; i++) {
                 var c = ca[i];
-                while (c.charAt(0) == ' ') c = c.substring(1,c.length);
-                if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+                while (c.charAt(0) === ' ') {
+                    c = c.substring(1,c.length);
+                }
+                if (c.indexOf(nameEQ) === 0) {
+                    return decodeURIComponent(c.substring(nameEQ.length, c.length));
+                }
             }
             return null;
         }

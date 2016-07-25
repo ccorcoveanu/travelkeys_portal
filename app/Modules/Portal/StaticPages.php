@@ -22,7 +22,9 @@ class StaticPages
                 'destinations_text' => 'Fabulous<br/>Destinations',
                 'years_number' => '25',
                 'years_text' => 'Years of Creating<br/>Experiences',
-            ]
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'favorites' => $request->getAttribute('favorites'),
         ]);
     }
 
@@ -36,7 +38,9 @@ class StaticPages
                 'hero_sec_description' => 'We are always interested in meeting new people, listening to new ideas and suggestions, so go ahead and:',
                 'hero_sec_link' => '<a class="button button--ghost -anchor-hero -has-arrow-down" href="#contact-form" title="Drop us a line">Drop us a line</a>',
 
-            ]
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'favorites' => $request->getAttribute('favorites'),
         ]);
     }
 }

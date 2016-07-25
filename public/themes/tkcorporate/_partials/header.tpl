@@ -32,7 +32,8 @@
                 <div class="secondary-nav__container">
                     <span class="header__nav__description">Personalize:</span>
                     <ul class="secondary-nav">
-                        <li class="secondary-nav__item"><a class="secondary-nav__item__link" href="#" title="Favourites"><i class="icon icon__heart"></i>My Favourites</a>
+                        <li class="secondary-nav__item"><a class="secondary-nav__item__link" href="{$smarty.const.BASE_URL}/villa-listing/favorites" title="Favourites"
+                            ><i class="icon icon__heart"></i>My Favourites{if isset($favorites) && $favorites|@count}&nbsp;<span class="favourites-counter" id="favoritesNumber">({$favorites|@count})</span>{/if}</a>
                         </li>
                         <li class="secondary-nav__item">
                             <form class="site-search">

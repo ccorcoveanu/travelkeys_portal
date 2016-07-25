@@ -8,3 +8,4 @@ define('BASE_URL', $_protocol . $_server_name);
 define('SERVER_NAME', $_server_name);
 define('PROTOCOL', $_protocol);
 define('TEMPLATE_PATH', BASE_URL . '/themes/' . getenv('APP_TEMPLATE'));
+define('CDN', 'http://cdn.villascaribe.com');
