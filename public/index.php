@@ -15,21 +15,21 @@ session_start();
 // set env variables
 $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
 $dotenv->load();
-
-// Instantiate the app
 $env = getenv('APP_ENV');
-$settings = require __DIR__ . '/../src/settings.php';
-$env_settings = require __DIR__ . '/../src/settings.' . $env . '.php';
-$configuration = Zend\Stdlib\ArrayUtils::merge($settings, $env_settings);
-
-$app = new \Slim\App($configuration);
-
 if ( $env === 'local' ) {
     require __DIR__ . '/../src/debug.php';
 }
 
 // Register constants needed in the application
 require __DIR__ . '/../src/defines.php';
+
+// Instantiate the app
+
+$settings = require __DIR__ . '/../src/settings.php';
+$env_settings = require __DIR__ . '/../src/settings.' . $env . '.php';
+$configuration = Zend\Stdlib\ArrayUtils::merge($settings, $env_settings);
+
+$app = new \Slim\App($configuration);
 
 // Set up dependencies
 require __DIR__ . '/../src/dependencies.php';

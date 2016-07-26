@@ -5,9 +5,9 @@ return [
 
         // Renderer settings
         'renderer' => [
-            'template_path' => __DIR__ . '/../public/themes/' . getenv('APP_TEMPLATE'),
-            'template_cache' => __DIR__ . '/../public/themes/' . getenv('APP_TEMPLATE') . '/t_cache',
-            'template_compile' => __DIR__ . '/../public/themes/' . getenv('APP_TEMPLATE') . '/t_compile',
+            'template_path' => __DIR__ . '/../public/themes/' . APP_TEMPLATE,
+            'template_cache' => __DIR__ . '/../public/themes/' . APP_TEMPLATE . '/t_cache',
+            'template_compile' => __DIR__ . '/../public/themes/' . APP_TEMPLATE . '/t_compile',
         ],
 
         'api_endpoint' => [

@@ -16,6 +16,7 @@ $parts = explode('.', $_server_name);
 
 if ( count($parts) === 3 ) {
     define('SUBDOMAIN', $parts[0]);
+    define('MAIN_SITE', $_protocol . $parts[1] . '.' . $parts[2]);
     define('APP_TEMPLATE', 'tksite');
 } else {
     define('SUBDOMAIN', '');
@@ -23,8 +24,6 @@ if ( count($parts) === 3 ) {
 }
 
 define('TEMPLATE_PATH', BASE_URL . '/themes/' . APP_TEMPLATE);
-
-
 
 // Don't let useless variables float inside global scope
 unset($_protocol);

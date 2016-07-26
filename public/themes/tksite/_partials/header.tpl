@@ -1,7 +1,7 @@
 <header class="js-header header">
     <section class="header__top">
         <div class="header__top__wrapper">
-            <a class="header__logo" href="{$smarty.const.BASE_URL}" title="TravelKeys">
+            <a class="header__logo" href="{$smarty.const.MAIN_SITE}" title="TravelKeys">
                 <h1 class="header__logo__title">
                     <img class="logo" src="{$smarty.const.TEMPLATE_PATH}/assets/images/logo.svg" alt="TravelKeys">
                     <span class="header__logo__text">Luxury Vacation Villas</span>
@@ -21,11 +21,11 @@
                         </li>
                         <li class="js-mega-nav-button main-nav__item main-nav__item--cta"><a class="main-nav__item__link" href="#" title="Destination">Destinations</a>
                         </li>
-                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.BASE_URL}/villa-listing/specials" title="Specials">Specials</a>
+                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.MAIN_SITE}/villa-listing/specials" title="Specials">Specials</a>
                         </li>
-                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.BASE_URL}/about-us" title="About us">About us</a>
+                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.MAIN_SITE}/about-us" title="About us">About us</a>
                         </li>
-                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.BASE_URL}/contact-us" title="Contact us">Contact us</a>
+                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.MAIN_SITE}/contact-us" title="Contact us">Contact us</a>
                         </li>
                     </ul>
                 </div>

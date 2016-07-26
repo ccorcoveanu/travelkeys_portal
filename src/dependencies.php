@@ -82,7 +82,11 @@ $container['Dummy'] = function ($container) {
 };
 
 $container['Home'] = function ($container) {
-    return new \App\Modules\Portal\Home($container->get('locations'), $container->get('view'));
+    return new \App\Modules\Portal\Home(
+        $container->get('locations'),
+        $container->get('properties'),
+        $container->get('view')
+    );
 };
 
 $container['Suggestions'] = function ($container) {
@@ -110,5 +114,9 @@ $container['SearchAjax'] = function ($container) {
 // Local api routes
 
 $container['Cache'] = function ($container) {
-    return new \App\Modules\Api\Cache($container->get('cache_client'));
+    return new \App\Modules\Api\Cache(
+        $container->get('cache_client'),
+        $container->get('locations'),
+        $container->get('properties')
+    );
 };

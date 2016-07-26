@@ -11,6 +11,8 @@ $app->get('/villa-listing/specials', 'VillaListing:specials');
 $app->get('/villa-listing/favorites', 'VillaListing:favorites');
 $app->get('/villa-listing/search', 'VillaListing:search');
 
+$app->get('/villa-listing/{slug}', 'VillaListing:location');
+
 // Static pages
 $app->get('/about-us', 'StaticPages:about');
 $app->get('/contact-us', 'StaticPages:contact');

@@ -6,6 +6,7 @@ use Slim\Views\Smarty;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Services\Redis\Locations;
+use Slim\Exception\NotFoundException;
 
 
 class VillaListing
@@ -121,5 +122,18 @@ class VillaListing
             'checkout' => $request->getParam('checkout', ''),
             'guests' => $request->getParam('guests', ''),
         ]);
+    }
+
+    public function location(Request $request, Response $response, array $args)
+    {
+        if ( !isset($args['slug']) ) {
+            throw new NotFoundException($request, $response);
+        }
+
+        $property = $this->properties->search('', 0, 1, [
+            'slug' => $args['slug']
+        ]);
+
+        echopre($property);die;
     }
 }

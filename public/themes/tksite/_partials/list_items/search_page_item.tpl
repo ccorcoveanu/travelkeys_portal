@@ -9,7 +9,7 @@
     <div class="featured__wrapper">
         <div class="featured__item__wrapper">
             <h3 class="featured__item__title">
-                <a href="{$smarty.const.PROTOCOL}{$search_item->subdomain}.{$smarty.const.SERVER_NAME}/villa-listing/{$search_item->slug|default:''}" title="{$search_item->name}"><i class="icon icon__heart-featured{if $search_item->id|in_array:$favorites}-full{/if}"></i><span>{$search_item->name}</span></a>
+                <a href="{$smarty.const.PROTOCOL}{$smarty.const.SERVER_NAME}/villa-listing/{$search_item->slug|default:''}" title="{$search_item->name}"><i class="icon icon__heart-featured{if $search_item->id|in_array:$favorites}-full{/if}"></i><span>{$search_item->name}</span></a>
             </h3>
             <span class="featured__item__description">{$search_item->state}{if $search_item->state|strlen}, {/if}{$search_item->city|default:$search_item->name}</span>
         </div>
@@ -25,7 +25,7 @@
         </div>
         <div class="featured__item__buttons">
             <div class="featured__item__button">
-                <a class="button -color-black" href="{$smarty.const.PROTOCOL}{$search_item->subdomain}.{$smarty.const.SERVER_NAME}/villa-listing/{$search_item->slug|default:''}" title="View villa">View villa</a>
+                <a class="button -color-black" href="{$smarty.const.PROTOCOL}{$smarty.const.SERVER_NAME}/villa-listing/{$search_item->slug|default:''}" title="View villa">View villa</a>
             </div>
             <div class="featured__item__button">
                 <a data-calendarlink="http://manage.myvacationrentalmanager.com/villa/calendar/the-lahaina-dream/2016/07?width=760&height=650&iframe=1&showTitle=1&showKey=1" class="js-modal button -color-gray -has-calendar" href="#availability-modal" title="Calendar">Calendar<i class="icon icon__date-square"></i></a>

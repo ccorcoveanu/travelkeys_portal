@@ -77,6 +77,15 @@ class Properties extends DataApi
                 'value' => '(' . implode(',', $filters['amenities']) . ')'
             ];
         }
+
+        if ( isset($filters['slug']) && is_array($filters['slug']) ) {
+            $conditions[] = [
+                'field' => 'slug',
+                'operator' => '=',
+                'value' => $filters['slug']
+            ];
+        }
+
         return $this->call("{$this->resource}_getPropertiesFilters", [
             'conditions' => $conditions,
             'reservations' => isset($filters['reservations']) ? $filters['reservations'] : '',

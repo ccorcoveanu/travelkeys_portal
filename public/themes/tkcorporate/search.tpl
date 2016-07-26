@@ -3,7 +3,7 @@
     {if isset($page.final_destination_page)}
         {include file='_partials/destination.tpl'}
     {/if}
-    <div id="filters" class="js-search search -has-filters" style="margin-top:37px;">
+    <div id="filters" class="js-search search -has-filters" {if !isset($page.final_destination_page)}style="margin-top:37px;"{/if}>
         {if isset($page.final_destination_page)}
             <a class="button button--next-section -shape-trapezoid" href="#filters"><i class="icon icon__arrow-down-black"></i></a>
         {/if}
