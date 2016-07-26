@@ -134,6 +134,19 @@ class VillaListing
             'slug' => $args['slug']
         ]);
 
-        echopre($property);die;
+        if ( count($property) ) $property = $property[0];
+
+        return $this->view->render($response, 'details.tpl', [
+            'page' => [
+                'title' => $property->location_name,
+                'body_classes' => 'property',
+            ],
+
+            'menu' => $request->getAttribute('menu'),
+            'favorites' => $request->getAttribute('favorites'),
+            'property' => $property
+        ]);
+
+
     }
 }
