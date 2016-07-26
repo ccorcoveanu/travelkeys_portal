@@ -104,7 +104,7 @@ $container['StaticPages'] = function ($container) {
 // Ajax calls
 
 $container['SearchAjax'] = function ($container) {
-    return new \App\Modules\Portal\Ajax\Search($container->get('view'));
+    return new \App\Modules\Portal\Ajax\Search($container->get('properties'), $container->get('view'));
 };
 
 // Local api routes

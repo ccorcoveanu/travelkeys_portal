@@ -86,4 +86,40 @@ class VillaListing
             'favorites' => $favorite_ids,
         ]);
     }
+
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @param array $args
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function search(Request $request, Response $response, array $args)
+    {
+        $search_items = $this->properties->search($request->getParam('q', ''), 0, 20);
+
+        // TODO: Should be fixed in API
+        $search_items = array_map(function ($item) {
+            $parts = explode('.', $item->image);
+            $ext = $parts[count($parts) - 1];
+            unset($parts[count($parts) - 1]);
+            $item->image = implode('.', $parts) . '_l.' . $ext;
+            $item->image_m = implode('.', $parts) . '_m.' . $ext;
+            return $item;
+        }, $search_items);
+
+        return $this->view->render($response, 'search.tpl', [
+            'page' => [
+                'title' => 'Search',
+                'body_classes' => 'search',
+            ],
+            'query' => $request->getParam('q', ''),
+            'search_items' => $search_items,
+            'menu' => $request->getAttribute('menu'),
+            'favorites' => $request->getAttribute('favorites'),
+            'load_more' => (bool) $search_items,
+            'checkin' => $request->getParam('checkin', ''),
+            'checkout' => $request->getParam('checkout', ''),
+            'guests' => $request->getParam('guests', ''),
+        ]);
+    }
 }

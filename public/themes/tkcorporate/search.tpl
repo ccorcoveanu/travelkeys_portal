@@ -13,24 +13,22 @@
 
         <!-- Featured Properties -->
         <div class="js-search-results section search-results">
-            {include file='_partials/listing_filters_top.tpl'}
+            {if $search_items|count > 0}
+                {include file='_partials/listing_filters_top.tpl'}
+            {/if}
+
             <div class="container">
-                <div class="featured__row__container -has-separator">
+                <div class="featured__row__container">
                     <div class="featured__row -two-columns">
-                        {block name='search_results'}
-                            {foreach name='search_results_loop' item=$search_item from=$search_items}
-                                {include file='_partials/list_items/search_page_item.tpl'}
-                            {/foreach}
-                        {/block}
+                        {include file='_partials/components/property_list.tpl'}
                     </div>
+                    {if $search_items|count == 0}
+                        <p>No results. Try another search</p>
+                    {/if}
                 </div>
-                <div class="load-more">
-                    <a class="button button--load-more" href="#" title="Load more results">
-                        <span class="animate load-dot load-dot--one"></span>
-                        <span class="animate load-dot load-dot--two"></span>
-                        <span class="animate load-dot load-dot--three"></span> Load more villas
-                    </a>
-                </div>
+                {if isset($load_more) && $load_more}
+                    {include file='_partials/components/load_more_button.tpl'}
+                {/if}
             </div>
         </div>
         <!-- End Featured Properties -->

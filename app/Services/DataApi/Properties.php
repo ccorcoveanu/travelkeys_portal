@@ -60,7 +60,7 @@ class Properties extends DataApi
         ]);
     }
 
-    public function search($term = '', $start = '', $limit = '', $filters, $only_ids = false)
+    public function search($term = '', $start = '', $limit = '', $filters = [], $only_ids = false)
     {
         $conditions = [
             [
@@ -69,6 +69,7 @@ class Properties extends DataApi
                 'value' => "'%$term%'"
             ]
         ];
+
         if ( isset($filters['amenities']) && is_array($filters['amenities']) ) {
             $conditions[] = [
                 'field' => 'amenity_id',

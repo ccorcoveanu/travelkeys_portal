@@ -6,11 +6,11 @@
                     <h3 class="filter__subtitle filter--side__subtitle">Trip<span>details</span></h3>
                     <div class="filter--side__wrapper__inner -first">
                         <div class="form__input__container filter__input__container filter--side__input__container -anchor-start-date">
-                            <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
+                            <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly value="{if isset($checkin) && $checkin}{$checkin}{/if}">
                             <i class="icon icon__calendar"></i>
                         </div>
                         <div class="form__input__container filter__input__container filter--side__input__container -anchor-end-date">
-                            <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
+                            <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly value="{if isset($checkout) && $checkout}{$checkout}{/if}">
                             <i class="icon icon__calendar"></i>
                         </div>
                         <div class="form__input__container filter__input__container filter--side__input__container -anchor-counter">
@@ -21,11 +21,11 @@
                             </span>
                             <select class="js-select2 -has-select2 form__input filter__input">
                                 <option value="Guests" selected>Guests</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option value="1" {if isset($guests) && $guests == 1}selected{/if}>1</option>
+                                <option value="2" {if isset($guests) && $guests == 2}selected{/if}>2</option>
+                                <option value="3" {if isset($guests) && $guests == 3}selected{/if}>3</option>
+                                <option value="4" {if isset($guests) && $guests == 4}selected{/if}>4</option>
+                                <option value="5" {if isset($guests) && $guests == 5}selected{/if}>5</option>
                             </select>
                             <input type="text" name="guests" class="js-counter filter__input__counter" value="1" readonly>
                             <i class="icon icon__option"></i>
@@ -91,7 +91,7 @@
                     <div class="filter--side__wrapper__inner">
                         <ul class="js-expandable filter__options -is-expandable">
                             <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-beach" name="ck-beach" checked>
+                                <input class="checkbox" type="checkbox" id="ck-beach" name="ck-beach">
                                 <label class="filter__option__label" for="ck-beach"><span></span>Beachfront</label>
                             </li>
                             <li class="filter__option">
@@ -99,10 +99,10 @@
                                 <label class="filter__option__label" for="ck-city"><span></span>City Breaks</label>
                             </li>
                         </ul>
-                        <a class="js-button-expand button__expand" data-text-swap="Show less">Show more</a>
+
                     </div>
                 </div>
-                <div class="filter--side__wrapper">
+                <!--<div class="filter--side__wrapper">
                     <h3 class="filter__subtitle filter--side__subtitle">Areas</h3>
                     <div class="filter--side__wrapper__inner -last">
                         <ul class="js-expandable filter__options -is-expandable -rows-2">
@@ -209,14 +209,14 @@
                         </ul>
                         <a class="js-button-expand button__expand" data-text-swap="Show less">Show more</a>
                     </div>
-                </div>
+                </div>-->
             </form>
-            <div class="filter--side__wrapper -last">
+            <!--<div class="filter--side__wrapper -last">
                 <div class="filter__button__wrapper">
                     <a class="button -ui-confirm js-close-filters" href="#">Show villas</a>
                     <a class="button -ui-cancel -hover-alt js-close-filters" href="#">Cancel</a>
                 </div>
-            </div>
+            </div>-->
         </div>
         <div class="aside__button__wrapper">
             <div class="aside__button__content">
@@ -228,7 +228,7 @@
     <div class="js-section-header section__header">
         <div class="section__header__container">
             <div class="section__header__wrapper -position-left">
-                <h2 class="section__header__title"><span>View</span> 407 villas in St. Barts</h2>
+                <h2 class="section__header__title"><span>View</span> 407 villas</h2>
                 <h3 class="section__header__subtitle">(11 villas unmapped)</h3>
                 <h3 class="section__header__title--alt">407 villas<span class="title--alt__number"><span class="title--alt__separator">/</span>11 unmapped</span></h3>
                 <div class="form__input__container filter__input__container filter__input__container--alt">

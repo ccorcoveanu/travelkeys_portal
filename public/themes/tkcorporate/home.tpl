@@ -25,13 +25,13 @@
                 </div>
                 <div class="js-searchbar searchbar -hides-for-medium-down">
                     <div class="searchbar__wrapper">
-                        <form class="searchbar__form">
-                            <input class="js-searchbar-location searchbar__input" type="text" name="location" value="" placeholder="Where to next?">
-                            <button class="js-searchbar-button button -no-border searchbar__button" type="submit" name="seaerchbarSubmit">Search</button>
+                        <form class="searchbar__form" action="/villa-listing/search" method="get">
+                            <input class="js-searchbar-location searchbar__input" type="text" name="q" value="" placeholder="Where to next?">
+                            <button class="js-searchbar-button button -no-border searchbar__button" type="submit">Search</button>
                             <div class="searchbar__controls">
                                 <a class="js-dates-button searchbar__dates-button" href="#"></a>
                                 <div class="searchbar__people js-searchbar-guests">
-                                    <select class="js-select2" data-placeholder="Number of guests">
+                                    <select class="js-select2" data-placeholder="Number of guests" name="guests">
                                         <option label="Number of guests"></option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>

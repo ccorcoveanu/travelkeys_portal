@@ -5,6 +5,7 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Services\CacheClient;
 use App\Services\Redis\Locations;
+use App\Services\Redis\Properties;
 
 class Cache
 {
@@ -16,13 +17,18 @@ class Cache
         /**
          * @var Locations
          */
-        $locations
+        $locations,
+        /**
+         * @var Properties
+         */
+        $properties
     ;
 
-    public function __construct(CacheClient $client, Locations $locations)
+    public function __construct(CacheClient $client, Locations $locations, Properties $properties)
     {
         $this->client = $client;
         $this->locations = $locations;
+        $this->properties = $properties;
     }
 
     /**
@@ -104,9 +110,13 @@ class Cache
      */
     protected function cache()
     {
-        $this->locations->get();
-        $this->locations->menu();
-        $this->locations->mapItems();
-        $this->locations->featured();
+        // Cache location items
+        $this->locations->get(); // All
+        $this->locations->menu(); // Menu
+        $this->locations->mapItems(); // Map
+        $this->locations->featured(); // Featured
+
+        // Cache properties
+        $this->properties->cacheAll(); // All
     }
 }

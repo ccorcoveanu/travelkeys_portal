@@ -36,8 +36,8 @@
                             ><i class="icon icon__heart"></i>My Favourites{if isset($favorites) && $favorites|@count}&nbsp;<span class="favourites-counter" id="favoritesNumber">({$favorites|@count})</span>{/if}</a>
                         </li>
                         <li class="secondary-nav__item">
-                            <form class="site-search">
-                                <input class="js-site-search site-search__input" type="text" name="sitesearch" placeholder="Search by villa name">
+                            <form class="site-search" method="get" action="/villa-listing/search">
+                                <input class="js-site-search site-search__input" type="text" name="q" placeholder="Search by villa name" value="{$query|default:''}">
                                 <label class="header__nav__description">Search by:</label>
                                 <button class="button button--search" type="submit"><i class="icon icon__search"></i>
                                 </button>
@@ -54,11 +54,15 @@
                     </div>
                     <ul class="mega-nav">
                         {foreach name='menu_items' from=$menu item=header }
-                            {assign 'length' $header|count}
+                            {assign 'length' $header->children|count}
                             {assign 'counter' 0}
-                            <ul class="js-mega-sub mega-sub">
-                                {include file='_partials/list_items/menu_items.tpl'}
-                            </ul>
+                            {if $length}
+                                <li class="mega-nav__item">
+                                    <ul class="js-mega-sub mega-sub {if $length > 14}-double{/if}">
+                                        {include file='_partials/list_items/menu_items.tpl'}
+                                    </ul>
+                                </li>
+                            {/if}
                         {/foreach}
                     </ul>
                 </div>

@@ -27396,6 +27396,7 @@ var $filtersButton          = $('.js-show-filters');
 var $mapAside               = $('.js-map-aside');
 var $sectionHeader          = $('.js-section-header');
 var $resultsContainer       = $('.js-search-results');
+var $loadMoreButton         = $('#load-more__button');
 
 // Property Page
 var $bookingPanel           = $('.js-booking');
@@ -27545,6 +27546,9 @@ var travelkeys = {
 
         // Add favorites event
         travelkeys.addFavorite();
+
+        // Add search populate and filtering
+        travelkeys.searchVillas();
     },
 
     // Links handler
@@ -29564,6 +29568,80 @@ var travelkeys = {
 
         function eraseCookie(name) {
             createCookie(name, "", -1);
+        }
+
+        return __init();
+    },
+
+    searchVillas: function () {
+
+        function __init() {
+            // Activate only on search related pages
+            if ( !$body.hasClass('search') ) return false;
+
+            $('.search-results').on('click', '#load-more__button', function (evt) {
+
+                var start = $('.featured__item').length;
+                var limit = 20;
+                var amenities = [];
+                if ( document.getElementById('ck-beach').checked ) {
+                    amenities.push('ck-beach');
+                }
+
+                if ( document.getElementById('ck-city').checked ) {
+                    amenities.push('ck-city');
+                }
+                var filters = {
+                    'amenities': amenities,
+                    'reservations': {
+                        'start': $('input[name="startdate"]').val(),
+                        'end': $('input[name="enddate"]').val()
+                    },
+                    'group': {
+                        'all': document.getElementById('ck-all').checked,
+                        'specials': document.getElementById('ck-sp').checked,
+                        'favorites': document.getElementById('ck-fav').checked,
+                    }
+                };
+
+                // load items
+                load(
+                  $('input[name="q"]').val(),
+                  start,
+                  20,
+                  filters
+                );
+            });
+
+            function load(query, start, limit, filters) {
+
+                $.getJSON('/ajax/filter', {
+
+                    'q': query,
+                    'start': start,
+                    'limit': limit,
+                    'filters': filters
+
+                }).done(function (data) {
+                    return querySuccess(data);
+                }).fail(function (jqxhr, textStatus, error) {
+                    // do something with error
+                }).always(function () {
+
+                });
+
+                function querySuccess(data) {
+                    if ( data.status === 'ok' ) {
+                        $('.featured__row__container .featured__row').append(data.html);
+                    }
+
+                    if (data.length < 20) {
+                        $('.button_container_loadmore').hide();
+                    }
+
+                    return;
+                }
+            }
         }
 
         return __init();
