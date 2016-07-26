@@ -37,7 +37,7 @@ class Properties extends CacheClient
 
         // Get ids to fetch from cache
         $search_items = $this->resource->search($term, $start, $limit, $filters, true)->wait();
-        if (!$search_items->result) return false;
+        if (!$search_items->result) return [];
 
         return $this->batch(array_map(function($item) {
             return $item->id;

@@ -66,7 +66,7 @@ class Properties extends DataApi
             [
                 'field' => 'name',
                 'operator' => 'like',
-                'value' => "'%$term%'"
+                'value' => "%$term%"
             ]
         ];
 
