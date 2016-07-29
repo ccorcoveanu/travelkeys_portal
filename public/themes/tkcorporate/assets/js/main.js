@@ -29645,7 +29645,7 @@ var travelkeys = {
         }
 
         return __init();
-    }
+    },
 };
 
 // !Document ready (loaded)

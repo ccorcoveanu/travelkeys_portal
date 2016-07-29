@@ -15853,6 +15853,12 @@ body.is-collapsed .map-aside.-fixed-top .map__input {
   color: #fff;
   text-transform: uppercase;
 }
+.newsletter__input.error {
+  border-color: #f00;
+}
+.newsletter__input.error:focus {
+  border: 1px solid #f00;
+}
 .newsletter .button {
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
