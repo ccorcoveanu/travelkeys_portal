@@ -100,7 +100,7 @@ class Cache
         } catch (\Exception $e) {
             return $response
                 ->withHeader('Content-type', 'application/json')
-                ->withJson('{response: "OK"}');
+                ->withJson('{response: "NO"}');
         }
     }
 
