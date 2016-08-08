@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontPrep 20130207 at Mon Mar 23 22:16:02 2015
+ By Nick Ciolpan
+2008 Mitja Miklavcic published by FSI FontShop International GmbH
+</metadata>
+<defs>
+<font id="7de7635f38cb88af4ea660902ad0b169" horiz-adv-x='1024' >
+  <font-face 
+    font-family="TisaOT"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="2048"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="1518"
+    descent="-530"
+    bbox="104 948 774 1454"
+    underline-thickness="120"
+    underline-position="-293"
+    unicode-range="U+0020-201D"
+  />
+<missing-glyph horiz-adv-x="1024" 
+ />
+    <glyph glyph-name=".notdef" horiz-adv-x="1024" 
+ />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="681" 
+ />
+    <glyph glyph-name="space" unicode=" " 
+ />
+    <glyph glyph-name="quotedblleft" unicode="&#x201c;" horiz-adv-x="860" 
+d="M774 1440q-72 -168 -108 -334l82 -21q-6 -27 -30 -69t-48 -68q-113 12 -201 66q63 223 178 411q55 15 127 15zM410 1440q-72 -168 -109 -334l82 -21q-6 -27 -30 -69t-48 -68q-113 12 -201 66q63 223 179 411q55 15 127 15z" />
+    <glyph glyph-name="quotedblright" unicode="&#x201d;" horiz-adv-x="864" 
+d="M625 1454q57 0 131 -22q-20 -98 -78 -246t-113 -238q-53 14 -92 53q66 176 80 291l-82 21q25 86 66 133q31 8 88 8zM260 1454q58 0 131 -22q-21 -98 -79 -246t-111 -238q-53 14 -92 53q65 176 79 291l-82 21q25 86 66 133q30 8 88 8z" />
+    <glyph glyph-name="CR" 
+ />
+  </font>
+</defs></svg>

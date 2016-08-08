@@ -180,4 +180,26 @@ class Locations extends CacheClient
 
         return $data->result;
     }
+
+    /**
+     * Get location by subdomain name
+     *
+     * @param $slug
+     * @return mixed|null
+     */
+    public function bySlug($slug)
+    {
+        if ( !$this->client ) {
+            $location = $this->resource->bySlug($slug)->wait();
+            if ( is_array($location->result) &&  $location->result ) return $location->result[0];
+            return null; // Empty response
+        } // If we don't have the cache available return from api
+
+        $all = $this->get();
+        foreach ( $all as $k => $location ) {
+            if ( $location->subdomain === $slug ) return $location;
+        }
+
+        return null;
+    }
 }

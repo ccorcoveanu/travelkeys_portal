@@ -43,6 +43,29 @@ class Locations extends DataApi
     }
 
     /**
+     * Get location by subdomain name
+     *
+     * @param $slug
+     * @param $only_id
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bySlug($slug, $only_id)
+    {
+        return $this->call(
+            "{$this->resource}_getAllOptions", [
+                'field' => $only_id ? ['id'] : ['*'],
+                'conditions' => [
+                    [
+                        'field' => 'subdomain',
+                        'operator' => '=',
+                        'value' => $slug
+                    ]
+                ]
+            ]
+        );
+    }
+
+    /**
      * Call for menu items. If $only_ids is true, will return only a list of ids.
      * Cool when cache is enabled and we already have a list of all locations.
      *

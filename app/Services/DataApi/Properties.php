@@ -27,6 +27,12 @@ class Properties extends DataApi
         parent::__construct($settings);
     }
 
+    /**
+     * General get method (all or by id)
+     *
+     * @param int|null $ids
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
     public function get($ids = null)
     {
         if ( is_int($ids) ) $ids = [$ids];
@@ -42,6 +48,15 @@ class Properties extends DataApi
         ]);
     }
 
+    /**
+     * Get special properties
+     *
+     * @param string $start
+     * @param string $limit
+     * @param array $filters
+     * @param bool $only_ids
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
     public function specials($start = '', $limit = '', $filters = [], $only_ids = false)
     {
         return $this->call("{$this->resource}_getPropertiesFilters}", [
@@ -60,6 +75,16 @@ class Properties extends DataApi
         ]);
     }
 
+    /**
+     * Search for properties
+     *
+     * @param string $term
+     * @param string $start
+     * @param string $limit
+     * @param array $filters
+     * @param bool $only_ids
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
     public function search($term = '', $start = '', $limit = '', $filters = [], $only_ids = false)
     {
         $conditions = [
@@ -86,6 +111,14 @@ class Properties extends DataApi
             ];
         }
 
+        if ( isset($filters['location_id']) ) {
+            $conditions[] = [
+                'field' => 'location_id',
+                'operator' => '=',
+                'value' => $filters['location_id']
+            ];
+        }
+
         return $this->call("{$this->resource}_getPropertiesFilters", [
             'conditions' => $conditions,
             'reservations' => isset($filters['reservations']) ? $filters['reservations'] : '',
@@ -96,5 +129,33 @@ class Properties extends DataApi
             'order' => '',
             'only_ids' => $only_ids
         ]);
+    }
+
+    /**
+     * Get property by slug. To be noted that it uses api's
+     * _getPropertiesFilters which returns an array. So
+     * the property will be return[0]
+     *
+     * @param $slug
+     * @param bool $only_id
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function bySlug($slug, $only_id = false)
+    {
+        return $this->call(
+            "{$this->resource}_getPropertiesFilters", [
+                'conditions' => [
+                    [
+                        'field' => 'slug',
+                        'operator' => '=',
+                        'value' => $slug
+                    ],
+                    'start' => 0,
+                    'limit' => 1,
+                    'order' => '',
+                    'only_ids' => $only_id,
+                ]
+            ]
+        );
     }
 }

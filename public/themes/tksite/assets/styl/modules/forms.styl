@@ -1,0 +1,1066 @@
+// Name: Froms
+// Author: Graffino (http://www.graffino.com)
+// !Forms
+// ==|=========================================================================
+.form__container {
+	position: relative
+	margin-right: auto
+	margin-left: auto
+	border: 1px solid #cccdce
+	padding: rem(60) rem(60) rem(50)
+	max-width: rem(990)
+	text-align: center
+	background-color: #f9f9f9
+	box-shadow: 0px 0px 0px 5px #f9f9f9
+	
+	&::after {
+		content: ''
+		position: absolute
+		top: rem(25)
+		right: rem(25)
+		display: block
+		width: rem(175)
+		height: rem(175)
+		background-image: url('../images/svg/no-sprite/stamp-blue.svg')
+		background-repeat: no-repeat
+		
+		+below(960px) {
+			width: 20%
+		}
+	}
+	
+	+below(960px) {
+		padding: rem(30) rem(10)
+	}
+	
+	.section__title {
+		margin-top: rem(10)
+		margin-bottom: rem(35)
+		max-width: rem(480)
+		font-size: rem(52)
+		line-height: 1
+		
+		+below(960px) {
+			margin-top: rem(10)
+			margin-bottom: rem(20)
+			font-size: rem(30)
+		}
+		
+		+below(670px) {
+			margin-bottom: rem(10)
+		}
+	}
+	
+	.section__subtitle {
+		margin-top: rem(10)
+		font-family: $bebas-font-family
+		font-size: rem(42)
+		font-weight: 300
+		color: #707070
+		
+		+below(960px) {
+			font-size: rem(21)
+			color: #b9b9b9
+		}
+		
+		&::after,
+		&::before {
+			content: none
+		}
+	}
+}
+ 
+.form {
+	cf()
+	
+	&__input__container {
+		position:relative
+		display: inline-block
+		vertical-align: middle
+		margin: rem(5)
+		border: 1px solid #dfdfdf
+		text-align: left
+		font-family: $montserrat-font-family
+		font-size: rem(12)
+		line-height: rem(35)
+		font-weight: 400
+		color: #808080
+		text-transform: uppercase
+		background-color: #fff
+		white-space: nowrap
+		cursor: pointer
+		appearance: none
+		
+		&--short {
+			max-width: rem(105)
+			width: 100%
+
+			+below(960px) {
+				padding: rem(5) 0
+				max-width: rem(145)
+				height: rem(45)
+			}
+
+			.form__input {
+				+below(960px) {
+					line-height: 20px
+				}
+			}
+
+			&::after {
+				content: none
+			}
+
+			.icon__option-simple {
+				position: absolute
+				top: rem(14)
+				right: rem(10)
+
+				+below(1150px) {
+					top: 11px
+				}
+
+				+below(1100px) {
+					top: 10px
+				}
+
+				+below(960px) {
+					@extends .icon__option-simple-small
+					top: rem(18)
+				}
+			}
+		}
+	}
+	
+	&__intro {
+		&__container {
+			cf()
+			padding: rem(40) 0 rem(120)
+			text-align: left
+			background-image: url("../images/bg/bg-sent-simple.png")
+			background-repeat: no-repeat
+			background-size 53%
+			background-position: right center
+			background-size: rem(420)
+			
+			+below(960px) {
+				center(rem(620))
+				padding-bottom: rem(40)
+				background-size 40%
+				background-position: right 65%
+			}
+			
+			.quality__list {
+				width: 70%
+				
+				+below(670px) {
+					width: 100%
+				}
+				
+				&__item {
+					+below(670px) {
+						width: 100%
+					}
+				}
+			}
+			
+			+below(670px) {
+				center(rem(320))
+				margin-bottom: rem(40)
+				padding: rem(10) rem(40) rem(260)
+				background-position: left bottom
+				background-size: 100%
+			}
+		}
+		
+		&__subtitle {
+			color: #707070
+			font-family: $caslon-font-family
+			font-size: rem(21)
+			font-weight: 600
+			font-style: italic
+			
+			+below(960px) {
+				max-width: rem(380)
+			}
+			
+			span {
+				+below(670px) {
+					display: block
+				}
+			}
+			
+			+below(670px) {
+				margin-right: auto
+				margin-left: auto
+				max-width: 100%
+				font-size: rem(17)
+				text-align: center
+			}
+		}
+	}
+
+	&__input {
+		outline: 0
+		position: relative
+		cursor: pointer
+		padding-left: rem(10)
+		padding-bottom: rem(10)
+		padding-top: rem(10)
+		width: 100%
+
+		&::placeholder {
+			opacity: 1
+			font-size: rem(11)
+			color: #808080
+			text-transform: uppercase
+    	}
+
+	    +below(480px) {
+			line-height: rem(25)
+	    }
+	}
+}
+
+.site-search {
+	+below(480px) {
+		position: absolute
+		left: 0
+		width: 100%
+	}
+	
+	&__input {
+		display: inline-block
+		vertical-align: middle
+		outline: 0
+		border: 1px solid #2f3133
+		border-radius: 3px 0px 0px 3px
+		padding-left: rem(10)
+		width: rem(180)
+		height: rem(30)
+		font-size: rem(13)
+		background-color: #000
+		
+		+below(960px) {
+			padding-left: rem(10)
+			border-radius: 0
+			width: rem(150)
+			height: rem(45)
+			font-size: rem(14)
+		}
+		
+		+below(480px) {
+			width: 100%
+			padding-left: rem(95)
+		}
+
+		&:focus {
+			border: 1px solid $aqua
+			+below(480px) {
+				padding-left: rem(10)
+			}
+		}
+		
+		&:focus + label {
+			+below(480px) {
+				opacity: 0
+				visibility: hidden
+			}
+		}
+
+	    &::placeholder {
+			display: inline-block
+			opacity: 1
+			padding-top: rem(2)
+			font-size: rem(11)
+			color: #6c747b
+			text-transform: uppercase
+			
+			+below(480px) {
+				font-size: rem(14)
+			}
+	    }
+	}
+}
+
+form.site-search {
+	+below(960px) {
+		margin-top: rem(30)
+	}
+	
+	+below(480px) {
+		margin-top: rem(10)
+	}
+}
+
+.newsletter {
+	&__input {
+		display: inline-block
+		vertical-align: middle
+		outline: 0
+		padding-left: rem(10)
+		width: rem(410)
+		height: rem(50)
+		border: 1px solid $light-gray
+		color: #fff
+		font-family: $montserrat-font-family
+		font-size: rem(14)
+		line-height: rem(20)
+		font-weight: 700
+		background: transparent
+
+		&:focus {
+			border: 1px solid $aqua
+		}
+
+        &::placeholder {
+			font-size: rem(12)
+	        color: #fff
+	        text-transform: uppercase
+        }
+	}
+
+	.button {
+		padding-top: rem(15)
+		padding-bottom: rem(15)
+		line-height: rem(14)
+	}
+}
+
+.newsletter--mobile {
+	+below(960px) {
+		text-align: center
+	}
+
+	&__form {
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		margin-left: rem(5)
+		max-width: rem(260)
+
+		&::after {
+			content: ''
+			position: absolute
+			right: rem(45)
+			top: rem(5)
+			width: 1px
+			height: rem(35)
+			background-color: #dfdfdf
+		}
+		.icon {
+			position: absolute
+			top: rem(-11)
+			right: rem(14)
+		}
+
+		+below(960px) {
+			margin-bottom: rem(5)
+		}
+	}
+
+
+	&__input {
+		outline: 0
+		appearance: none
+		border: 1px solid #dfdfdf
+		border-radius: 0
+		padding-left: rem(10)
+		width: rem(255)
+		height: rem(45)
+		text-align: left
+		font-family: $montserrat-font-family
+		font-size: rem(12)
+		line-height: rem(45)
+		font-weight: 400
+		color: #808080
+		background-color: #fff
+		white-space: nowrap
+
+		&:focus {
+			border: 1px solid $aqua
+		}
+
+		&::placeholder {
+	        opacity: 1
+	        font-size: rem(12)
+	        color: #dfdfdf
+	        text-transform: uppercase
+		}
+	}
+}
+
+.form--letter {
+	cf()
+	margin: rem(80) auto 0
+	max-width: rem(960)
+	width: 100%
+
+	+below(960px) {
+		margin: rem(25) auto
+		max-width: rem(620)
+		width: 100%
+	}
+
+	+below(670px) {
+		max-width: rem(280)
+		width: 100%
+	}
+	
+	&__group {
+		&.-margin-bottom {
+			+below(670px) {
+				margin-bottom: rem(15)
+			}
+		}
+		
+		&.-half-width {
+			col(1/2, cycle: 2, gutter: 2)
+		}
+		
+		.-quarter-width {
+			col(1/2, cycle:2 , gutter: 2)
+			text-align: right
+			
+			+below(960px) {
+				text-align: left
+			}
+			
+			&.-anchor-datepicker {
+				+below(960px) {
+					margin-top: 0
+					col(1/2, cycle: 2, gutter: 10)
+				}
+				
+				.form--letter__input {
+					width: rem(100)
+					
+					+below(960px) {
+						width: 100%
+					}
+				}
+			}
+			
+			&.-anchor-counter {
+				+below(960px) {
+					margin-top: rem(20)
+				}
+				
+				&:first-child {
+					+below(670px) {
+						margin-right: 0
+					}
+				}
+			}
+		}
+	}
+	
+	&.filter {
+		+below(670px) {
+			padding-bottom: 0
+		}
+	}
+
+	&__wrapper {
+		cf()
+		
+		float: right
+		width: 100%
+		max-width: rem(740)
+		text-align: right
+		
+		+below(960px) {
+			text-align: left
+		}
+		
+		+below(670px) {
+			margin-top: rem(15)
+		}
+		
+		& .-half-width {
+			col(1/2, cycle: 2, gutter: 20)
+			
+			+below(960px) {
+				col(1/2, cycle: 2, gutter: 5)
+			}
+			
+			+below(670px) {
+				stack()
+			}
+			
+			&.-anchor-datepicker {
+				+below(670px) {
+					col(1/2, cycle: 2, gutter: 5)
+				}
+			}
+		}
+		
+		& .-full-width {
+			col(2/2, uncycle: 2, cycle: 1)
+			margin-top: rem(28)
+			
+			.select2-container {
+				padding: rem(5) 0 0 rem(20)
+			}
+		}
+
+		&.-size-small {
+			+below(960px) {
+				margin: 0 auto
+				width: rem(285)
+			}
+
+			+below(670px) {
+				margin: 0
+				width: rem(280)
+			}
+		}
+
+		&.-appearance-alt {
+			.form--letter__input__container {
+				float: left
+
+				&.-anchor-counter {
+					+between(670px, 960px) {
+						float: right
+					}
+				}
+			}
+
+			.filter__input__name {
+				+below(960px) {
+					position: absolute
+					top: -40px
+				}
+
+				&-initial {
+					+below(960px) {
+						display: none
+					}
+				}
+
+				&-alt {
+					+above(960px) {
+						display: none
+					}
+				}
+			}
+
+			+below(960px) {
+				width: 100%
+
+				.form--letter__input__container.-size-small.-appearance-alt {
+					margin-top: rem(2)
+
+					&:nth-child(2n) {
+						margin-right: 0
+					}
+				}
+				.form--letter__input.-size-small.-appearance-alt {
+					padding-bottom: rem(5)
+					width: 100%
+				}
+			}
+
+			+between(670px, 960px) {
+				margin-top: rem(160)
+			}
+		}
+	}
+
+	&__label {
+		display: inline-block
+		vertical-align: middle
+		margin-right: rem(10)
+		margin-left: -100%
+		font-family: $caslon-font-family
+		font-size: rem(21)
+		font-weight: 600
+		font-style: italic
+		color: #707070
+
+		+below(960px) {
+			margin: 0
+			font-size: rem(17)
+		}
+
+		+below(670px) {
+			min-width: rem(80)
+		}
+	}
+
+	&__input__container {
+		position: relative
+		margin-bottom: rem(25)
+		width: 47%
+		text-align: right
+		
+		.icon__calendar {
+			position: absolute
+			top: rem(12)
+			right: rem(8)
+			
+			+below(960px) {
+				top: rem(31)
+			}
+			
+			&::before {
+				content: ''
+				display: block
+				margin-top: rem(-2)
+				margin-left: rem(-6)
+				width: 1px
+				height: rem(25)
+				background-color: #dfdfdf
+			}
+		}
+
+		+below(670px) {
+			width: 100%
+			margin-bottom: rem(20)
+		}
+
+		&.-anchor-label-lg {
+			.form--letter__label {
+				min-width: rem(130)
+
+				+below(670px) {
+					min-width: rem(110)
+				}
+			}
+
+			.form--letter__input {
+				+below(960px) {
+ 					padding-left: rem(110)
+ 				}
+
+ 				+below(670px) {
+	 				padding-left: rem(10)
+ 				}
+			}
+		}
+
+		&.-anchor-counter {
+			margin-top: 0
+			border: 0
+			text-align: center
+			background-color: transparent
+
+			&::after {
+				content: none
+			}
+
+			&:last-child {
+				margin-right: 0
+			}
+
+			.filter__input__name {
+				display: block
+				left: 0
+				text-align: left
+				font-family: $caslon-font-family
+				font-size: rem(21)
+				font-weight: 600
+				font-style: italic
+				color: #707070
+				text-transform: none
+
+				+below(960px) {
+					font-size: rem(17)
+				}
+			}
+
+			.form--letter__input {
+				float: right
+				max-width: rem(120)
+				height: rem(46) !important
+				border 1px solid #dfdfdf !important
+			}
+
+			.icon.icon__option {
+				top: rem(10)
+				right: rem(8)
+				pointer-events: none
+				
+				&::before {
+					content: ''
+					display: block
+					margin-top: rem(-10)
+					margin-left: rem(-7)
+					width: 1px
+					height: rem(45)
+					background-color: #dfdfdf
+				}
+			}
+
+			+below(960px) {
+				margin: 0
+				width: rem(125)
+
+				.filter__input__container__handler.-anchor-minus {
+					float: left
+				}
+
+				.filter__input__counter {
+					left: rem(40)
+					width: rem(45)
+				}
+			}
+		}
+
+		&.-appearance-alt {
+			margin-right: rem(30)
+			width: initial
+
+			+below(960px) {
+				text-align: right
+			}
+		}
+
+		&.-has-textarea {
+			float: none
+			clear: both
+			margin-top: rem(20)
+			width: 100%
+			text-align: left
+			
+			+below(960px) {
+				.form--letter__input {
+					padding: rem(10) rem(20)
+				}
+			}
+
+			+below(670px) {
+				margin-top: rem(50)
+				
+				.form--letter__input {
+					padding: rem(10)
+				}
+			}
+
+			.form--letter__input {
+				max-width: 100%
+				
+				+below(670px) {
+					min-height: rem(220)
+				}
+			}
+
+			.form--letter__label {
+				margin-left: 0
+				text-align: left
+				line-height: rem(40)
+
+				+below(960px) {
+					width: 100%
+					text-align: left
+					line-height: 1.5
+				}
+
+				&.-anchor-main-text {
+					+between(670px, 960px) {
+						display: none
+					}
+
+					+below(670px) {
+						top: rem(-15)
+						background: none
+						white-space: nowrap
+					}
+				}
+
+				&.-anchor-alt-text {
+					display: none
+					width: rem(300)
+
+					+between(670px, 960px) {
+						top: rem(20)
+						display: inline-block
+						line-height: rem(17)
+					}
+				}
+			}
+		}
+
+		&.-size-small {
+			+below(960px) {
+
+				.form--letter__label {
+					display: none
+				}
+			}
+
+			+below(670px) {
+				display: inline-block
+				width: rem(125)
+
+				.form--letter__input {
+					width: 100%
+				}
+
+				&:first-child {
+					float: left
+				}
+
+				&:last-child {
+					float: right
+				}
+			}
+
+			.icon {
+				position: absolute
+				top: 0
+				right: rem(-47)
+				opacity: .3
+
+				+above(960px) {
+					display: none
+				}
+
+				+below(670px) {
+					right: 0
+				}
+			}
+		}
+
+		&.-appearance-alt {
+			.icon {
+				display: inline-block
+				right: 0
+			}
+
+			+below(960px) {
+				width: rem(125)
+			}
+		}
+
+		&.-width-zero {
+			+between(670px, 960px) {
+				width: 0
+
+				.form--letter__input.-size-small.-appearance-alt {
+					width: rem(125)
+				}
+			}
+		}
+	}
+
+	.filter__input__container.-anchor-counter {
+		+below(960px) {
+			margin-left: rem(30)
+		}
+
+		+below(670px) {
+			margin: rem(20) rem(30) 0 0
+		}
+
+		&:last-child {
+			margin-right: 0
+		}
+
+		.filter__input__counter {
+			+below(670px) {
+				left: rem(35)
+			}
+		}
+
+		.filter__input__name {
+			&-alt {
+				+below(960px) {
+					display: inline-block
+				}
+			}
+
+			&::after {
+				+below(670px) {
+					content: none
+				}
+			}
+		}
+	}
+
+	&__input {
+		outline: 0
+		appearance: none
+		position: relative
+		border: 1px solid #dfdfdf
+		border-radius: 0
+		padding: rem(10) rem(20)
+		width: 100%
+		font-family: $caslon-font-family
+		font-size: rem(21)
+		font-weight: 600
+		font-style: italic
+		color: #959494
+		background-color: #fff
+
+		+below(960px) {
+			font-size: rem(17)
+		}
+		
+		+below(670px) {
+			padding: rem(10)
+		}
+
+		&.-size-small {
+			width: rem(235)
+
+			&::placeholder {
+				// Cancel the transparency
+				// Mozilla applies on placeholders
+				opacity: 1
+				font-family: $caslon-font-family
+				font-size: rem(17)
+				font-weight: 600
+				font-style: italic
+				text-align: left
+				color: transparent
+			}
+
+			+below(960px) {
+				padding: 0
+				width: rem(125)
+
+				&::placeholder {
+					color: #707070
+				}
+			}
+
+			+below(670px) {
+				margin-left: 0
+			}
+
+			&.-appearance-alt {
+				width: rem(150)
+
+				+below(960px) {
+					width: 100%
+				}
+			}
+		}
+
+		&.-has-datepicker {
+			padding-left: rem(10)
+			padding-right: rem(30)
+			text-align: center
+			cursor: pointer
+			width: rem(160)
+			
+			+below(960px) {
+				text-align: left
+				width: rem(295)
+			}
+			
+			+below(670px) {
+				width: 100%
+			}
+		}
+
+		&.-anchor-textarea {
+			display: inline-block
+			width: 100%
+			height: rem(150)
+			resize: none
+		}
+	}
+
+	textarea&__input {
+		font-size: rem(21)
+		line-height: 1.5
+
+		+below(960px) {
+			margin: 0
+			padding-left: 0
+			font-size: rem(17)
+		}
+	}
+
+	&__button {
+		position: relative
+		display: block
+		margin-top: rem(80)
+		margin-right: auto
+		margin-left: auto
+		
+		+below(960px) {
+			margin-top: rem(70)
+		}
+
+		+below(670px) {
+			width: 100%
+		}
+		
+		&::before {
+			content: url(../images/svg/no-sprite/no-fees.svg)
+			display: block
+			position: absolute
+			top: rem(-60)
+			left: 0
+			right: 0
+			margin: rem(10) auto
+			max-width: rem(240)
+			width: 100%
+			max-height: rem(35)
+			height: 100%
+		}
+	}
+
+	// Specific style for letter contained labels
+	.filter__option__label {
+		font-size: rem(14)
+
+		+below(960px) {
+			font-size: rem(12)
+		}
+
+		+below(960px) {
+			font-size: rem(11)
+		}
+	}
+}
+
+.villas-search__input__container {
+	position: relative
+
+	&::before {
+		content: ''
+		position: absolute
+		top: rem(4)
+		left: rem(14)
+		width: rem(18)
+		height: rem(18)
+		background-image: url('../images/svg/icon-magnifier-gray.svg')
+		background-repeat: no-repeat
+		background-position center center
+		background-size cover
+	}
+}
+
+.villas-search__input {
+	appearance: none
+	border: 1px solid #f1f1f1
+	padding-left: rem(25)
+	width: 100%
+	max-width: rem(260)
+	height: rem(30)
+	background-color: #f1f1f1
+	border-radius: rem(5)
+	font-family: $helvetica-font-family
+	font-size: rem(14)
+	font-weight: 400
+	color: #b3b3b3
+	transition: border 100ms ease-in-out
+	
+	
+	&::placeholder {
+		font-family: $helvetica-font-family
+		font-size: rem(14)
+		font-weight: 400
+		color: #b3b3b3
+	}
+	
+	&:focus {
+		outline: 0
+		border: 1px solid $aqua
+	}
+}

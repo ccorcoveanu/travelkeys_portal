@@ -56,32 +56,47 @@ class Home
 
     public function indexSite(Request $request, $response, $args)
     {
-        $search_items = $this->properties->search($request->getParam('q', ''), 0, 20);
+        $location   = $this->location->bySlug(SUBDOMAIN);
+        $featured   =  array_slice(
+            $this->properties->featured($location->id), 0, 6
+        );
+        $specials   = array_slice(
+            $this->properties->featured($location->id), 0, 6
+        );
 
         // TODO: Should be fixed in API
-        $search_items = array_map(function ($item) {
+        $featured = array_map(function ($item) {
             $parts = explode('.', $item->image);
             $ext = $parts[count($parts) - 1];
             unset($parts[count($parts) - 1]);
             $item->image = implode('.', $parts) . '_l.' . $ext;
             $item->image_m = implode('.', $parts) . '_m.' . $ext;
+            $item->image_s = implode('.', $parts) . '_s' . $ext;
             return $item;
-        }, $search_items);
+        }, $featured);
 
-        return $this->view->render($response, 'search.tpl', [
-            'page' => [
-                'title' => 'Search',
-                'body_classes' => 'search',
-                'final_destination_page' => true,
-            ],
-            'query' => $request->getParam('q', ''),
-            'search_items' => $search_items,
+        // TODO: Should be fixed in API
+        $specials = array_map(function ($item) {
+            $parts = explode('.', $item->image);
+            $ext = $parts[count($parts) - 1];
+            unset($parts[count($parts) - 1]);
+            $item->image = implode('.', $parts) . '_l.' . $ext;
+            $item->image_m = implode('.', $parts) . '_m.' . $ext;
+            $item->image_m2 = implode('.', $parts) . '_m2.' . $ext;
+            $item->image_s = implode('.', $parts) . '_s.' . $ext;
+            return $item;
+        }, $specials);
+
+        return $this->view->render($response, 'home.tpl', [
             'menu' => $request->getAttribute('menu'),
+            'page' => [
+                'title' => 'Luxury Villa Rentals & Vacation Rentals',
+                'body_classes' => 'home'
+            ],
+            'location' => $location,
             'favorites' => $request->getAttribute('favorites'),
-            'load_more' => (bool) $search_items,
-            'checkin' => $request->getParam('checkin', ''),
-            'checkout' => $request->getParam('checkout', ''),
-            'guests' => $request->getParam('guests', ''),
+            'featured'  => $featured,
+            'specials'  => $specials
         ]);
     }
 }

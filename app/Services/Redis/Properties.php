@@ -65,6 +65,17 @@ class Properties extends CacheClient
         return $result->result;
     }
 
+    public function bySlug($slug)
+    {
+        if ( !$this->client ) {
+            $result = $this->resource->bySlug($slug)->wait();
+            if ( is_array($result->result) &&  $result->result ) return $result->result[0];
+            return null; // Empty response
+        } // If we don't have the cache available return from api
+
+        // TODO: Finish this - as I don't need it yet
+    }
+
     /**
      * Get batch of properties based on id
      *
@@ -96,6 +107,35 @@ class Properties extends CacheClient
         }); // Cache batch if nothing was found
 
         return $result->result;
+    }
+
+    /**
+     * Get first 6 properties for a location. This should maybe
+     * change but there is no featured flag on properties.
+     * TODO: Change this after feedback is received
+     *
+     * @param $location_id
+     * @return array
+     */
+    public function featured($location_id)
+    {
+        return $this->search('', 0, 6, ['location_id' => $location_id]);
+    }
+
+    /**
+     * Get special properties for a location. This should
+     * change but there is no special flag on properties.
+     * TODO: Change this after api implementation
+     *
+     * @param $location_id
+     * @param  $offset
+     * @param $limit
+     *
+     * @return array
+     */
+    public function specials($location_id, $offset = '', $limit = '')
+    {
+        return $this->search('', $offset, $limit, ['location_id' => $location_id]);
     }
 
     // We add different strategy to cache properties since they are a lot

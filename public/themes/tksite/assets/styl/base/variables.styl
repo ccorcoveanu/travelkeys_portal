@@ -1,0 +1,53 @@
+// Name: Stylus Variables
+// Author: Graffino (http=//www.graffino.com)
+
+// !Typography
+// ==|=========================================================================
+
+$default-font-family= 	Arial, sans-serif
+$bebas-font-family = 	"BebasNeueBook", Arial, sans-serif
+$helvetica-font-family =  "Helvetica", Arial, sans-serif
+$montserrat-font-family = "Montserrat", Arial, sans-serif
+$caslon-font-family = "Caslon", Arial, sans-serif
+
+// !Colors
+// ==|=========================================================================
+
+$aqua = #00a2a7
+$dark-aqua = #02868a
+$black = #101316
+$dark-gray = #191d21
+$gray = #f1f1f1
+$light-gray = #f6f6f6
+
+// ! Remify & Emify values
+// ==|=========================================================================
+
+$base-font-size = 100%
+$base-font-size-px = 16px
+
+rem(value) {
+    u = unit(value)
+    return unit(value/$base-font-size-px, 'rem')
+}
+
+em(value) {
+    u = unit(value)
+    return unit(value/$base-font-size-px, 'em')
+}
+
+// ! Mixins
+// ==|=========================================================================
+calc-50-minus($value) {
+    return "calc(50% - %s)" % rem($value)
+}
+
+// !Directories
+// ==|=========================================================================
+$url-images	=	"../images"
+$url-fonts	=	"../fonts"
+
+// !Breakpoints
+// ==|=========================================================================
+
+scale = 0 320px 375px 399px 400px 414px 500px 510px 520px 530px 600px 650px 667px 670px 690px 700px 729px 730px 735px 750px 760px 768px 770px 780px 786px 800px 850px 860px 900px 960px 990px 1015px 1020px 1100px 1120px 1150px 1165px 1224px 1240px 1250px 1440px 1850px 1920px

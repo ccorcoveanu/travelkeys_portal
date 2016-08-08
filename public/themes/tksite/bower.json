@@ -1,0 +1,43 @@
+{
+  "name": "Travel Keys",
+  "version": "2.0.1",
+  "authors": [
+    "Graffino"
+  ],
+  "description": "Luxury vacations villas",
+  "main": "assets/css/main.styl",
+  "keywords": [],
+  "license": "No",
+  "homepage": "http://travelkeys.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "modernizr": "~2.8.3",
+    "h5Validate": "~0.9.0",
+    "normalize.styl": "~3.0.3",
+    "jeet": "6.1.2",
+    "timepicker-jqueryui": "*",
+    "slick.js": "~1.5.5",
+    "select2": "~3.5.2",
+    "nouislider": "~7.0.10",
+    "rupture-by-jenius": "~0.6.1",
+    "srcset-poly": "*",
+    "fancybox": "~2.1.5",
+    "browser-update": "~1.3.0",
+    "video.js": "~4.12.7",
+    "matchHeight": "~0.6.0",
+    "js-marker-clusterer": "*",
+    "jquery-autocompleter": "Autocompleter#^0.1.9",
+    "jquery.browser": "^0.1.0"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4"
+  }
+}
