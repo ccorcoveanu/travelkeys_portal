@@ -10,6 +10,7 @@ define('BASE_URL', $_protocol . $_server_name);
 define('SERVER_NAME', $_server_name);
 define('PROTOCOL', $_protocol);
 define('CDN', 'http://cdn.villascaribe.com');
+define('GOOGLE_API_KEY', getenv('GOOGLE_API_KEY'));
 
 // Check for subdomain
 $parts = explode('.', $_server_name);

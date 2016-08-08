@@ -2164,41 +2164,64 @@ var travelkeys = {
 
         function __init() {
 
-            if (!$('.map').length) {
-                return;
-            }
+            $('main').on('click', '.toggle__favorite', function(evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
 
-            $('.map').on('click', '.marker__favorite', function(evt) {
                 var id = $(this).data('id');
                 var cookie;
-                var $favorite_icon = $(this).find('i.icon');
-
-                if (!(cookie = readCookie('favorites'))) {
-                    $favorite_icon.removeClass('icon__heart');
-                    $favorite_icon.addClass('icon__heart-full');
-                    return createCookie('favorites', '[' + id + ']', 30);
+                var $favorite_icon = $(this);
+                if ( !$favorite_icon.hasClass('icon') ) {
+                    $favorite_icon = $(this).find('i.icon');
                 }
 
-                var decoded = JSON.parse(cookie);
-
-                if (decoded.constructor !== Array) {
-                    if (!$favorite_icon.hasClass('icon__heart-full')) {
+                if (!(cookie = readCookie('favorites'))) {
+                    // We have 2 types of icons
+                    if ( $favorite_icon.hasClass('icon__heart-featured') ) {
+                        $favorite_icon.removeClass('icon__heart-featured');
+                        $favorite_icon.addClass('icon__heart-featured-full');
+                    } else {
                         $favorite_icon.removeClass('icon__heart');
                         $favorite_icon.addClass('icon__heart-full');
                     }
 
+                    $('#favoritesNumber').text('(1)');
+
                     return createCookie('favorites', '[' + id + ']', 30);
-                }
+                } // If no cookie set - add to favorites
+
+                var decoded = JSON.parse(cookie);
+
+                if (decoded.constructor !== Array) {
+                    // We have 2 types of icons
+                    if ( $favorite_icon.hasClass('icon__heart-featured') ) {
+                        $favorite_icon.removeClass('icon__heart-featured');
+                        $favorite_icon.addClass('icon__heart-featured-full');
+                    } else {
+                        $favorite_icon.removeClass('icon__heart');
+                        $favorite_icon.addClass('icon__heart-full');
+                    }
+
+                    $('#favoritesNumber').text('(1)');
+
+                    return createCookie('favorites', '[' + id + ']', 30);
+                } // If the cookie content is not an array.. reset cookie and add favorite as above
 
                 var index = decoded.indexOf(id);
 
                 // Not in favorites, add item
                 if (index === -1) {
-                    if (!$favorite_icon.hasClass('icon__heart-full')) {
+                    // We have 2 types of icons
+                    if ( $favorite_icon.hasClass('icon__heart-featured') ) {
+                        $favorite_icon.removeClass('icon__heart-featured');
+                        $favorite_icon.addClass('icon__heart-featured-full');
+                    } else {
                         $favorite_icon.removeClass('icon__heart');
                         $favorite_icon.addClass('icon__heart-full');
                     }
+
                     decoded.push(id);
+                    $('#favoritesNumber').text('(' + decoded.length + ')');
                     return createCookie('favorites', JSON.stringify(decoded), 30);
                 }
 
@@ -2207,7 +2230,15 @@ var travelkeys = {
                     $favorite_icon.removeClass('icon__heart-full');
                     $favorite_icon.addClass('icon__heart');
                 } // Remove class only if element has class
+                // In favorites, remove
+                if ($favorite_icon.hasClass('icon__heart-featured-full')) {
+                    $favorite_icon.removeClass('icon__heart-featured-full');
+                    $favorite_icon.addClass('icon__heart-featured');
+                } // Remove class only if element has class
+
+
                 decoded.splice(index, 1);
+                $('#favoritesNumber').text('(' + decoded.length + ')');
 
                 return createCookie('favorites', JSON.stringify(decoded), 30);
             });

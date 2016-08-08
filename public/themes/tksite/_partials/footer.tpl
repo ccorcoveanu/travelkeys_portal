@@ -35,6 +35,28 @@
                 <a class="button -hover-alt button--ghost" href="{$smarty.const.BASE_URL}/contact-us" title="Or leave a message">Or leave a message<i class="icon icon__arrow-right"></i></a>
             </div>
         </div>
+        <div class="section blog">
+            <h5 class="section__subtitle -color-white">Dont' miss our</h5>
+            <h2 class="section__title -color-white">Travel Inspiration</h2>
+            <div class="blog__wrapper">
+                <div class="blog__item">
+                    <a class="blog__link" href="#" title="The basics: Why choose a villa?">
+                        <h3 class="blog__title">The basics: Why choose a villa?</h3>
+                        <div class="blog__image">
+                            <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article1.jpg" alt="The basics: Why choose a villa">
+                        </div>
+                    </a>
+                </div>
+                <div class="blog__item">
+                    <a class="blog__link" href="#" title="The basics: Why choose a villa?">
+                        <h3 class="blog__title">The ultimate in privacy & luxury</h3>
+                        <div class="blog__image">
+                            <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article2.jpg" alt="The ultimate in privacy & luxury">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
         <div class="newsletter">
             <h3 class="newsletter__title">Subscribe to our newsletter</h3>
             <form class="newsletter__form js-validate-form">

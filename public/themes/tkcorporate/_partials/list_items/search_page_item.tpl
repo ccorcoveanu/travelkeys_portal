@@ -9,7 +9,9 @@
     <div class="featured__wrapper">
         <div class="featured__item__wrapper">
             <h3 class="featured__item__title">
-                <a href="{$smarty.const.PROTOCOL}{$search_item->subdomain}.{$smarty.const.SERVER_NAME}/villa-listing/{$search_item->slug|default:''}" title="{$search_item->name}"><i class="icon icon__heart-featured{if $search_item->id|in_array:$favorites}-full{/if}"></i><span>{$search_item->name}</span></a>
+                <a href="{$smarty.const.PROTOCOL}{$search_item->subdomain}.{$smarty.const.SERVER_NAME}/villa-listing/{$search_item->slug|default:''}" title="{$search_item->name}"><i
+                            data-id="{$search_item->id}"
+                            class="icon toggle__favorite icon__heart-featured{if $search_item->id|in_array:$favorites}-full{/if}"></i><span>{$search_item->name}</span></a>
             </h3>
             <span class="featured__item__description">{$search_item->state}{if $search_item->state|strlen}, {/if}{$search_item->city|default:$search_item->name}</span>
         </div>

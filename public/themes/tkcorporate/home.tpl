@@ -155,7 +155,7 @@
     <article class="section villa-search__section -style-pattern">
         <h2 class="section__title villa-search__section__title -color-white -has-arrow">Where to next?</h2>
 
-        <script async src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp&key={$smarty.const.GOOGLE_API_KEY}"></script>
         <div class="map">
             <div class="map__container js-map-search"></div>
             <div class="map__markers js-map-markers">

@@ -37,11 +37,11 @@ class Properties extends CacheClient
 
         // Get ids to fetch from cache
         $search_items = $this->resource->search($term, $start, $limit, $filters, true)->wait();
-        if (!$search_items->result) return [];
+        if ( !$search_items->result || !$search_items->result->result ) return [];
 
         return $this->batch(array_map(function($item) {
             return $item->id;
-        }, $search_items->result));
+        }, $search_items->result->result));
     }
 
     /**
@@ -86,7 +86,7 @@ class Properties extends CacheClient
     {
         if ( !$this->client ) {
             $result = $this->resource->get($ids)->wait();
-            return $result->result;
+            return $result->result->result;
         } // If we don't have the cache available return from api
 
         $result = $this->mget(array_map(function($item) {
@@ -101,12 +101,12 @@ class Properties extends CacheClient
         $result = $this->resource->get($ids)->wait();
 
         $this->client->pipeline(function ($pipe) use ($result) {
-            foreach ( $result->result as $k => $v ) {
+            foreach ( $result->result->result as $k => $v ) {
                 $pipe->set($this->keyPrefix . $v->id, serialize($v));
             }
         }); // Cache batch if nothing was found
 
-        return $result->result;
+        return $result->result->result;
     }
 
     /**
@@ -145,7 +145,7 @@ class Properties extends CacheClient
         $data = $this->resource->get()->wait();
 
         $this->client->pipeline(function ($pipe) use ($data) {
-            foreach ( $data->result as $k => $v ) {
+            foreach ( $data->result->result as $k => $v ) {
                 $pipe->set($this->keyPrefix . $v->id, serialize($v));
             }
         });

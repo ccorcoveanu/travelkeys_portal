@@ -25,5 +25,10 @@ class Salesforce
         $auth_password
     ;
 
-
+    public function __construct($settings)
+    {
+        $this->web_client = new GuzzleHttp\Client([
+            'base_uri' => $settings['url']
+        ]);
+    }
 }

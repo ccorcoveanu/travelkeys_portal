@@ -4,12 +4,15 @@ namespace App\Modules\Portal;
 use App\Services;
 use App\Services\Redis\Locations;
 use App\Services\Redis\Properties;
+use App\Services\Redis\Helpers\Location;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use Slim\Views\Smarty;
 
 class Home
 {
+    use Location;
+
     protected
         /**
          * @var Locations
@@ -57,12 +60,14 @@ class Home
     public function indexSite(Request $request, $response, $args)
     {
         $location   = $this->location->bySlug(SUBDOMAIN);
+        $favorites  = $request->getAttribute('favorites');
         $featured   =  array_slice(
             $this->properties->featured($location->id), 0, 6
         );
         $specials   = array_slice(
             $this->properties->featured($location->id), 0, 6
         );
+        $mapItems   = $this->location->mapItems();
 
         // TODO: Should be fixed in API
         $featured = array_map(function ($item) {
@@ -71,7 +76,8 @@ class Home
             unset($parts[count($parts) - 1]);
             $item->image = implode('.', $parts) . '_l.' . $ext;
             $item->image_m = implode('.', $parts) . '_m.' . $ext;
-            $item->image_s = implode('.', $parts) . '_s' . $ext;
+            $item->image_m2 = implode('.', $parts) . '_m2.' . $ext;
+            $item->image_s = implode('.', $parts) . '_s.' . $ext;
             return $item;
         }, $featured);
 
@@ -93,10 +99,14 @@ class Home
                 'title' => 'Luxury Villa Rentals & Vacation Rentals',
                 'body_classes' => 'home'
             ],
-            'location' => $location,
-            'favorites' => $request->getAttribute('favorites'),
+            'location' => $this->locationForView($location),
+            'favorites' => $favorites,
             'featured'  => $featured,
-            'specials'  => $specials
+            'specials'  => $specials,
+            'map_items' => array_map(function ($element) use ($favorites) {
+                $element->is_favorite = in_array($element->landing_property_id, $favorites);
+                return $element;
+            }, $mapItems), // Loop over array and add favorites flag
         ]);
     }
 }

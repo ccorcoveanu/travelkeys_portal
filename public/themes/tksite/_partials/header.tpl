@@ -30,7 +30,7 @@
                 <div class="secondary-nav__container">
                     <span class="header__nav__description">Personalize:</span>
                     <ul class="secondary-nav">
-                        <li class="secondary-nav__item"><a class="secondary-nav__item__link" href="#" title="Favourites"><i class="icon icon__heart"></i>Favourites</a>
+                        <li class="secondary-nav__item"><a class="secondary-nav__item__link" href="#" title="Favourites"><i class="icon icon__heart"></i>My Favourites&nbsp;<span class="favourites-counter" id="favoritesNumber">({if isset($favorites) && $favorites|@count}{$favorites|@count}{else}0{/if})</span></a>
                         </li>
                         <li class="secondary-nav__item">
                             <form class="site-search">

@@ -116,14 +116,30 @@
         <div class="container">
             <h5 class="section__subtitle featured__subtitle -color-white">In the spotlight</h5>
             <h2 class="section__title featured__title -color-white">Luxury villas in {$location->name}</h2>
+        </div>
+        <div class="featured__row__container -has-separator">
+            <div class="js-villas-carousel villas__carousel featured__row">
+                {foreach name='special_items' item=featured_item from=$specials}
+                    {include file='_partials/list_items/featured_item.tpl'}
+                {/foreach}
+            </div>
+            <a class="button -size-wide featured__row__button" href="{$smarty.const.BASE_URL}/villa-listing/specials" title="View all specials">View all specials</a>
+        </div>
+        <div class="container">
             <div class="featured__row__container -has-separator">
-                <div class="js-villas-carousel villas__carousel featured__row">
-                    {foreach name='special_items' item=featured_item from=$specials}
+                <div class="featured__row -three-columns">
+                    {foreach name='featured_items' item=featured_item from=$featured}
                         {include file='_partials/list_items/featured_item.tpl'}
                     {/foreach}
                 </div>
-                <a class="button -size-wide featured__row__button" href="{$smarty.const.BASE_URL}/villa-listing/specials" title="View all specials">View all specials</a>
+                <a class="button -size-wide featured__row__button" href="{$smarty.const.BASE_URL}/villa-listing" title="View all our villas">View all our villas</a>
             </div>
+            <!-- Testimonial -->
+            <section class="section testimonial">
+                <p class="testimonial__review">Our holiday with Travel Keys was first class. The service from start to finish exceeded expectation, the attention to detail was outstanding. Nothing could be improved!</p>
+                <h3 class="testimonial__title">Marius Ciuchete Paun</h3>
+                <h6 class="testimonial__place">Montreal, Canada</h6>
+            </section>
         </div>
     </article>
     <!-- End Featured Properties -->
@@ -131,7 +147,7 @@
     <article class="section villa-search__section -style-pattern">
         <h2 class="section__title villa-search__section__title -color-white -has-arrow">Where to next?</h2>
 
-        <script async src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp&key={$smarty.const.GOOGLE_API_KEY}"></script>
         <div class="map">
             <div class="map__container js-map-search"></div>
             <div class="map__markers js-map-markers">
@@ -139,203 +155,69 @@
                     {include file='_partials/list_items/map_pin_item.tpl'}
                 {/foreach}
             </div>
+            <div class="concierge section__container">
+                <h5 class="section__subtitle concierge__subtitle">Concierge</h5>
+                <h2 class="section__title concierge__title -color-white">Over 25 Years of Delighted Guests</h2>
+                <p>Your dedicated concierge is ready to assist your party with all of the details of your stay, large or small, to ensure you enjoy a flawless travel experience.</p>
+                <ul class="concierge__list">
+                    <li class="concierge__list__item">Car rentals</li>
+                    <li class="concierge__list__item">Villa pre-stocking</li>
+                    <li class="concierge__list__item">Tours & activities</li>
+                    <li class="concierge__list__item">Spa services</li>
+                    <li class="concierge__list__item">Meet and greet</li>
+                    <li class="concierge__list__item">Chef / Cooking</li>
+                    <li class="concierge__list__item">Special events</li>
+                    <li class="concierge__list__item">Miscellaneous</li>
+                </ul>
+                <p class="concierge__reminder">Every guest is assigned a complimentary concierge to ensure a memorable vacation experience.</p>
+                <a class="button -hover-alt concierge__button" href="{$smarty.const.BASE_URL}/concierge-service" title="View concierge services">View concierge services</a>
+            </div>
+        </div>
+    </article>
+    <!-- Experience -->
+    <article class="section experience search__experience -background-gray">
+        <div class="container">
+            <div class="section__container">
+                <h5 class="section__subtitle experience__subtitle">Learn more about our</h5>
+                <h2 class="section__title experience__title">{$location->name} Unique Experience</h2>
+                <p>Luxury Villa Rentals & Vacation Rentals For over 25 years, Travel Keys has been recognized by travel experts and critics around the world including Travel + Leisure Magazine, Conde Nast Traveler and many others for helping our clients plan the perfect luxury villa vacation. Travel Keys represents more than 5000 villa rentals throughout more than 75 vacation destinations world-wide including the following breathtaking villa regions: Caribbean, United States, Hawaii, Mexico, Europe and Asia.</p>
+                <p><strong class="experience__strong">Our luxurious villas represent a relaxing and luxurious paradise.</strong>{$location->description|default:''}</p>
 
-        </div>
-    </article>
-    <!-- End Map -->
-    <article class="section promises -style-pattern">
-        <div class="container">
-            <h5 class="section__subtitle promises__subtitle">We stand for</h5>
-            <h2 class="section__title promises__title -color-white">Handmade hospitality in the finest villas</h2>
-            <div class="section__container">
-                <div class="promises-grid">
-                    <div class="promise__row">
-                        <div class="promise__group">
-                            <div class="promise -small">
-                                <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise1.jpg" alt="Car Rentals"/>
-                                <div class="promise__wrapper">
-                                    <i class="promise__icon icon icon__auto"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-rentals" title="Car Rentals">Car Rentals</a>
-                                </div>
-                            </div>
-                            <div class="promise -small">
-                                <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise3.jpg" alt="Spa Services"/>
-                                <div class="promise__wrapper">
-                                    <i class="promise__icon icon icon__lotus"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-spa" title="Spa Services">Spa Services</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="promise -large">
-                            <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise2.jpg" alt="Tours and Activities"/>
-                            <div class="promise__wrapper">
-                                <i class="promise__icon icon icon__rackets"></i>
-                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-tours" title="Tours and Activities">Tours and Activities</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="promise__row">
-                        <div class="promise -large">
-                            <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise4.jpg" alt="Chef/Cooking Services"/>
-                            <div class="promise__wrapper">
-                                <i class="promise__icon icon icon__rackets"></i>
-                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-chef" title="Chef/Cooking Services">Chef/Cooking Services</a>
-                            </div>
-                        </div>
-                        <div class="promise__group">
-                            <div class="promise -small">
-                                <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise5.jpg" alt="Vill Pre-Stocking"/>
-                                <div class="promise__wrapper">
-                                    <i class="promise__icon icon icon__bucket"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-stocking" title="Vill Pre-Stocking">Vill Pre-Stocking</a>
-                                </div>
-                            </div>
-                            <div class="promise -small">
-                                <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise6.jpg" alt="Special Events"/>
-                                <div class="promise__wrapper">
-                                    <i class="promise__icon icon icon__tickets"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-events" title="Special Events">Special Events</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="promise__row">
-                        <div class="promise -small promise--description">
-                            <div class="promise__wrapper">
-                                <h3 class="promise__title">Anything we missed?</h3>
-                                <p class="promise__text">We’d love to know how we can make your next vacation even more fun!</p>
-                                <a class="promise__button button -color-black -hover-aqua" href="{$smarty.const.BASE_URL}/contact-us" title="Get in touch">Get in Touch</a>
-                            </div>
-                        </div>
-                        <div class="promise -small">
-                            <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise7.jpg" alt="Meet and Greet"/>
-                            <div class="promise__wrapper">
-                                <i class="promise__icon icon icon__hands"></i>
-                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-greet" title="Meet and Greet">Meet and Greet</a>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="location">
+                <div class="location__item">
+                    <i class="icon icon__airplane-black"></i>
+                    <span class="location__item__text">{$location->suggested_airport}</span>
                 </div>
-                <div class="promises__additional">
-                    <h2 class="section__title promises__title -color-white">Every guest is assigned a complimentary concierge to ensure a memorable vacation experience.</h2>
-                    <p>From gourmet chef services to unforgettable fishing charters, our concierge team can help organize just about anything you require. Your dedicated concierge is ready to assist your party with all of the details of your stay, large or small, to ensure you enjoy a flawless travel experience.</p>
-                    <a class="button -hover-alt -shadow-black" href="{$smarty.const.BASE_URL}/concierge-service" title="View Concierge Services">View Concierge Services</a>
+                <div class="location__item">
+                    <i class="icon icon__temperature-black"></i>
+                    <span class="location__item__text">{$location->temperature}</span>
+                </div>
+                <div class="location__item">
+                    <i class="icon icon__rain-black"></i>
+                    <span class="location__item__text">{$location->rainfall}</span>
+                </div>
+                <div class="location__item">
+                    <i class="icon icon__attractions-black"></i>
+                    <span class="location__item__text">{$location->attractions}</span>
                 </div>
             </div>
-        </div>
-    </article>
-    <article class="section articles">
-        <div class="container">
-            <div class="section__container">
-                <h2 class="section__title articles__title">We recently wrote about...</h2>
-                <div class="articles__container">
-                    <div class="articles__item">
-                        <a class="articles__link" href="#" title="The Basics: Why Choose a Villa?">
-                            <img class="articles__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article1.jpg" alt="The Basics: Why Choose a Villa?"/>
-                            <h4 class="articles__name">The Basics: Why Choose a Villa?</h4>
-                        </a>
-                    </div>
-                    <div class="articles__item">
-                        <a class="articles__link" href="#" title="The Ultimate in Privacy &amp; Luxury">
-                            <img class="articles__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article2.jpg" alt="The Ultimate in Privacy &amp; Luxury"/>
-                            <h4 class="articles__name">The Ultimate in Privacy &amp; Luxury</h4>
-                        </a>
-                    </div>
-                </div>
-                <p class="articles__text">Want to read more about planning your vacation, luxury resorts or travel guides on our locations?</p>
-                <a class="button -color-black -size-wide" href="#" title="Read our blog">Read our blog</a>
-            </div>
-        </div>
-    </article>
-    <article class="section world">
-        <div class="container">
-            <h2 class="section__title world__title -color-white"><i>5000+</i> villas <br> <i>75</i> vacation destinations</h2>
-            <h5 class="world__subtitle">Tap on your next detstination:</h5>
-            <ul class="world__items">
-                <li class="world__item -caribbean">
-                    <a class="world__link" href="#" title="Caribbean">
-                        <h6 class="world__item__title">Caribbean</h6>
-                        <span class="world__item__span">46 new</span>
-                    </a>
+            <ul class="experience__list">
+                <li class="experience__list__item">
+                    <img alt="Airport information" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-airplane.jpg"><a class="button button--ghost" href="#" title="Airport information">Airport information</a>
                 </li>
-                <li class="world__item -hawaii">
-                    <a class="world__link" href="#" title="Hawaii">
-                        <h6 class="world__item__title">Hawaii</h6>
-                        <span class="world__item__span">38 new</span>
-                    </a>
+                <li class="experience__list__item">
+                    <img alt="Enjoy the nightlife" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-nightlife.jpg"><a class="button button--ghost" href="#" title="Enjoy the nightlife">Enjoy the nightlife</a>
                 </li>
-                <li class="world__item -mexico">
-                    <a class="world__link" href="#" title="Mexico">
-                        <h6 class="world__item__title">Mexico</h6>
-                        <span class="world__item__span">27 new</span>
-                    </a>
+                <li class="experience__list__item">
+                    <img alt="Rent a car" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-car.jpg"><a class="button button--ghost" href="#" title="Rent a car">Rent a car</a>
                 </li>
-                <li class="world__item -central-america">
-                    <a class="world__link" href="#" title="Central America">
-                        <h6 class="world__item__title">Central America</h6>
-                        <span class="world__item__span">4 new</span>
-                    </a>
-                </li>
-                <li class="world__item -united-states">
-                    <a class="world__link" href="#" title="United States">
-                        <h6 class="world__item__title">United States</h6>
-                        <span class="world__item__span">52 new</span>
-                    </a>
-                </li>
-                <li class="world__item -europe">
-                    <a class="world__link" href="#" title="Europe">
-                        <h6 class="world__item__title">Europe</h6>
-                        <span class="world__item__span">40 new</span>
-                    </a>
-                </li>
-                <li class="world__item -asia">
-                    <a class="world__link" href="#" title="Asia">
-                        <h6 class="world__item__title">Asia</h6>
-                        <span class="world__item__span">33 new</span>
-                    </a>
-                </li>
-                <li class="world__item -canada">
-                    <a class="world__link" href="#" title="Canada">
-                        <h6 class="world__item__title">Canada</h6>
-                        <span class="world__item__span"></span>
-                    </a>
-                </li>
-                <li class="world__item -oceania">
-                    <a class="world__link" href="#" title="Oceania">
-                        <h6 class="world__item__title">Oceania</h6>
-                        <span class="world__item__span"></span>
-                    </a>
-                </li>
-                <li class="world__item -africa">
-                    <a class="world__link" href="#" title="Africa">
-                        <h6 class="world__item__title">Africa</h6>
-                        <span class="world__item__span"></span>
-                    </a>
+                <li class="experience__list__item">
+                    <img alt="Sail in a yacht" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-yacht.jpg"><a class="button button--ghost" href="#" title="Sail in a yacht">Sail in a yacht</a>
                 </li>
             </ul>
+            <a class="js-modal-info button -color-black -has-fancybox" href="{$smarty.const.BASE_URL}/location" title="Learn more about {$location->name}">Learn more about {$location->name}</a>
         </div>
     </article>
-    <div class="newsletter--mobile">
-        <div class="newsletter--mobile__wrapper">
-            <h3 class="newsletter--mobile__title">Subscribe to our newsletter</h3>
-            <form class="newsletter--mobile__form">
-                <input class="newsletter--mobile__input" type="email" name="newslettermobile" placeholder="Enter your email address:">
-                <button class="button" type="submit"><i class="icon icon__envelope"></i>
-                </button>
-            </form>
-            <div class="footer__social--mobile">
-                <h6 class="footer__social--mobile__subtitle">Stay in touch:</h6>
-                <ul class="social--mobile__list">
-                    <li class="social--mobile__list__item"><a href="#" title="Check us on Facebook!"><i class="icon icon__facebook-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="Connect with us on Twitter"><i class="icon icon__twitter-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="See what is new on Instagram!"><i class="icon icon__instagram-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="Connect with us via Google+"><i class="icon icon__google-mobile"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <!-- End Experience -->
 {/block}
