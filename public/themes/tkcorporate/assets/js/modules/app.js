@@ -226,6 +226,9 @@ var travelkeys = {
 
         // Add search populate and filtering
         travelkeys.searchVillas();
+
+        // Trigger search filtering
+        travelkeys.filterSearch();
     },
 
     // Links handler
@@ -2350,6 +2353,67 @@ var travelkeys = {
                     return;
                 }
             }
+        }
+
+        return __init();
+    },
+
+    filterSearch: function() {
+        function __init() {
+            if ( !$('.search-results').length ) return false;
+
+            $('.filter__input, .filter__option input').on('change', function(evt) {
+
+                window.scrollTo(0, 0);
+                $('#load-more__display').slideDown();
+
+                var amenities = [];
+                if ( document.getElementById('ck-beach').checked ) {
+                    amenities.push('ck-beach');
+                }
+
+                if ( document.getElementById('ck-city').checked ) {
+                    amenities.push('ck-city');
+                }
+                var filters = {
+                    'amenities': amenities,
+                    'reservations': {
+                        'start': $('input[name="startdate"]').val(),
+                        'end': $('input[name="enddate"]').val()
+                    },
+                    'group': {
+                        'all': document.getElementById('ck-all').checked,
+                        'specials': document.getElementById('ck-sp').checked,
+                        'favorites': document.getElementById('ck-fav').checked,
+                    },
+                    guests: $('#guests__filter--item').val()
+                };
+
+                $.getJSON('/ajax/filter', {
+
+                    'q': $('input[name="q"]').val(),
+                    'start': 0,
+                    'limit': 20,
+                    'filters': filters
+
+                }).done(function (data) {
+
+                    if ( data.status === 'ok' ) {
+                        $('.featured__row__container .featured__row').html(data.html);
+                    }
+
+                    if (data.length < 20) {
+                        $('.button_container_loadmore').hide();
+                    }
+
+                    $('#load-more__display').slideUp();
+                    return;
+                }).fail(function (jqxhr, textStatus, error) {
+                    // do something with error
+                }).always(function () {
+
+                });
+            });
         }
 
         return __init();

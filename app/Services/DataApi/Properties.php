@@ -126,6 +126,14 @@ class Properties extends DataApi
             ];
         }
 
+        if ( isset($filters['guests']) ) {
+            $conditions[] = [
+                'field' => 'guests',
+                'operator' => '=',
+                'value' => $filters['guests']
+            ];
+        }
+
         return $this->call("{$this->resource}_getPropertiesFilters", [
             'conditions' => $conditions,
             'reservations' => isset($filters['reservations']) ? $filters['reservations'] : '',

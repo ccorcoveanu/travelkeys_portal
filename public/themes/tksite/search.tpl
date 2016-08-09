@@ -18,6 +18,13 @@
             {/if}
 
             <div class="container">
+                <div class="load-more" id="load-more__display" style="display: none">
+                    <a class="button button--load-more" href="#" title="Load more results">
+                        <span class="animate load-dot load-dot--one"></span>
+                        <span class="animate load-dot load-dot--two"></span>
+                        <span class="animate load-dot load-dot--three"></span> Load more villas
+                    </a>
+                </div>
                 <div class="featured__row__container">
                     <div class="featured__row -two-columns">
                         {include file='_partials/components/property_list.tpl'}

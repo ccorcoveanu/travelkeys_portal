@@ -41,11 +41,22 @@ class Search
      */
     public function filter(Request $request, Response $response, array $args)
     {
+        $hardcoded_amenities = [
+            'ck-beach' => 10,
+            'ck-city' => 100
+        ];
+        $filters = $request->getParam('filters');
+
+        $extra_filters = [];
+        if ( isset($filters['guests']) && (int)$filters['guests'] ) {
+            $extra_filters['guests'] = (int)$filters['guests'];
+        }
+
         $search_items = $this->properties->search(
             $request->getParam('q', ''),
             $request->getParam('start', ''),
             $request->getParam('limit', ''),
-            []
+            $extra_filters
         );
 
         // TODO: Should be fixed in API

@@ -19,7 +19,7 @@
                             <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
                                 <i class="icon icon__minus"></i>-
                             </span>
-                            <select class="js-select2 -has-select2 form__input filter__input">
+                            <select class="js-select2 -has-select2 form__input filter__input" id="guests__filter--item">
                                 <option value="Guests" selected>Guests</option>
                                 <option value="1" {if isset($guests) && $guests == 1}selected{/if}>1</option>
                                 <option value="2" {if isset($guests) && $guests == 2}selected{/if}>2</option>
