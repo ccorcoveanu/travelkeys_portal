@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <h6 class="hero__spacer -hides-for-medium-down">or simply</h6>
-                <a class="button button--ghost -anchor-hero" href="{$smarty.const.BASE_URL}/villa-listing" title="See all {$location->property_count|default:0} villas in St. Barts">See all {$location->property_count|default:0} villas in {$location->name}</a>
+                <a class="button button--ghost -anchor-hero" href="{$smarty.const.BASE_URL}/villa-listing/search" title="See all {$location->property_count|default:0} villas in St. Barts">See all {$location->property_count|default:0} villas in {$location->name}</a>
             </div>
         </div>
         <div class="filter -orientation-vertical -hidden-md-up">
@@ -132,7 +132,7 @@
                         {include file='_partials/list_items/featured_item.tpl'}
                     {/foreach}
                 </div>
-                <a class="button -size-wide featured__row__button" href="{$smarty.const.BASE_URL}/villa-listing" title="View all our villas">View all our villas</a>
+                <a class="button -size-wide featured__row__button" href="{$smarty.const.BASE_URL}/villa-listing/search" title="View all our villas">View all our villas</a>
             </div>
             <!-- Testimonial -->
             <section class="section testimonial">

@@ -42,6 +42,9 @@ class VillaListing
      */
     public function specials(Request $request, Response $response, array $args)
     {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
+
         return $this->view->render($response, 'search.tpl', [
             'page' => [
                 'title' => 'Specials',
@@ -50,6 +53,7 @@ class VillaListing
             'search_items' => [],
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
+            'location' => $location
         ]);
     }
 
@@ -64,6 +68,9 @@ class VillaListing
      */
     public function favorites(Request $request, Response $response, array $args)
     {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
+
         $favorite_ids = $request->getAttribute('favorites');
         $favorite_items = $favorite_ids ? $this->properties->batch($favorite_ids) : [];
 
@@ -83,8 +90,10 @@ class VillaListing
                 'body_classes' => 'search',
             ],
             'search_items' => $favorite_items,
+            'total_items' => count($favorite_items),
             'menu' => $request->getAttribute('menu'),
             'favorites' => $favorite_ids,
+            'location' => $location
         ]);
     }
 
@@ -96,7 +105,11 @@ class VillaListing
      */
     public function search(Request $request, Response $response, array $args)
     {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
+
         $search_items = $this->properties->search($request->getParam('q', ''), 0, 20);
+        $total_items  = $search_items['total'];
 
         // TODO: Should be fixed in API
         $search_items = array_map(function ($item) {
@@ -106,7 +119,7 @@ class VillaListing
             $item->image = implode('.', $parts) . '_l.' . $ext;
             $item->image_m = implode('.', $parts) . '_m.' . $ext;
             return $item;
-        }, $search_items);
+        }, $search_items['items']);
 
         return $this->view->render($response, 'search.tpl', [
             'page' => [
@@ -115,12 +128,14 @@ class VillaListing
             ],
             'query' => $request->getParam('q', ''),
             'search_items' => $search_items,
+            'total_items' => $total_items,
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
             'load_more' => (bool) $search_items,
             'checkin' => $request->getParam('checkin', ''),
             'checkout' => $request->getParam('checkout', ''),
             'guests' => $request->getParam('guests', ''),
+            'location' => $location
         ]);
     }
 
@@ -129,6 +144,9 @@ class VillaListing
         if ( !isset($args['slug']) ) {
             throw new NotFoundException($request, $response);
         }
+
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
 
         $property = $this->properties->search('', 0, 1, [
             'slug' => $args['slug']
@@ -144,7 +162,8 @@ class VillaListing
 
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
-            'property' => $property
+            'property' => $property,
+            'location' => $location
         ]);
 
 

@@ -1,15 +1,34 @@
 <?php
 namespace App\Modules\Portal;
 
+use App\Services\Redis\Locations;
 class StaticPages
 {
-    public function __construct($view)
+    protected
+        /**
+         * @var Locations
+         */
+        $location,
+        /**
+         * @var Properties
+         */
+        $properties,
+        /**
+         * @var Smarty
+         */
+        $view
+    ;
+
+    public function __construct($view, Locations $location)
     {
         $this->view = $view;
+        $this->location = $location;
     }
 
     public function about($request, $response, $args)
     {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'about.tpl', [
             'page' => [
                 'title' => 'About Us',
@@ -24,12 +43,15 @@ class StaticPages
                 'years_text' => 'Years of Creating<br/>Experiences',
             ],
             'menu' => $request->getAttribute('menu'),
+            'location' => $location,
             'favorites' => $request->getAttribute('favorites'),
         ]);
     }
 
     public function contact($request, $response, $args)
     {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'contact.tpl', [
             'page' => [
                 'title' => 'Contact Us',
@@ -41,11 +63,14 @@ class StaticPages
             ],
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
+            'location' => $location
         ]);
     }
 
     public function concierge($request, $response, $args)
     {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'concierge.tpl', [
             'page' => [
                 'title' => 'Concierge Service',
@@ -57,6 +82,7 @@ class StaticPages
             ],
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
+            'location' => $location
         ]);
     }
 }

@@ -17,25 +17,25 @@
                 <div class="main-nav__container">
                     <span class="header__nav__description">Explore:</span>
                     <ul class="main-nav">
-                        <li class="main-nav__item main-nav__item--cta"><a class="main-nav__item__link" href="#" title="See all villas">See all villas</a>
+                        <li class="main-nav__item main-nav__item--cta"><a class="main-nav__item__link" href="{$smarty.const.BASE_URL}/villa-listing/search" title="See all villas">See all villas</a>
                         </li>
-                        <li class="main-nav__item"><a class="main-nav__item__link" href="#" title="About us">About us</a>
+                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.BASE_URL}/about-us" title="About us">About us</a>
                         </li>
-                        <li class="main-nav__item"><a class="main-nav__item__link" href="#" title="Specials">Specials</a>
+                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.BASE_URL}/villa-listing/specials" title="Specials">Specials</a>
                         </li>
-                        <li class="main-nav__item"><a class="main-nav__item__link" href="#" title="Contact us">Contact us</a>
+                        <li class="main-nav__item"><a class="main-nav__item__link" href="{$smarty.const.BASE_URL}/contact-us" title="Contact us">Contact us</a>
                         </li>
                     </ul>
                 </div>
                 <div class="secondary-nav__container">
                     <span class="header__nav__description">Personalize:</span>
                     <ul class="secondary-nav">
-                        <li class="secondary-nav__item"><a class="secondary-nav__item__link" href="#" title="Favourites"><i class="icon icon__heart"></i>My Favourites&nbsp;<span class="favourites-counter" id="favoritesNumber">({if isset($favorites) && $favorites|@count}{$favorites|@count}{else}0{/if})</span></a>
+                        <li class="secondary-nav__item"><a class="secondary-nav__item__link" href="{$smarty.const.BASE_URL}/villa-listing/favorites" title="Favourites"><i class="icon icon__heart"></i>My Favourites&nbsp;<span class="favourites-counter" id="favoritesNumber">({if isset($favorites) && $favorites|@count}{$favorites|@count}{else}0{/if})</span></a>
                         </li>
                         <li class="secondary-nav__item">
-                            <form class="site-search">
+                            <form class="site-search" method="get" action="/villa-listing/search">
                                 <label class="header__nav__description">Search by:</label>
-                                <input class="js-site-search site-search__input" type="text" name="sitesearch" placeholder="Search by villa name">
+                                <input class="js-site-search site-search__input" type="text" name="q" placeholder="Search by villa name" value="{$query|default:''}" />
                                 <button class="button button--search" type="submit"><i class="icon icon__search"></i>
                                 </button>
                             </form>

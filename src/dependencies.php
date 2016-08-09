@@ -6,6 +6,9 @@ $container = $app->getContainer();
 $container['notFoundHandler'] = function ($container) {
     return function ($request, $response) use ($container) {
 
+        $location = null;
+        if ( SUBDOMAIN ) $location = $container->get('locations')->bySlug(SUBDOMAIN);
+
         return $container->get('view')
             ->render($response, '404.tpl', [
                 'page' => [
@@ -16,12 +19,17 @@ $container['notFoundHandler'] = function ($container) {
                 'code' => '404',
                 'error_message' => 'It looks like the page you were looking for has been moved or no longer exists. Here’s what we recommend:',
                 'back_link' => isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : BASE_URL,
+                'location' => $location
             ]);
     };
 };
 
 $container['errorHandler'] = function ($container) {
-    return function ($request, $response, $e) use ($container) {
+
+    $location = null;
+    if ( SUBDOMAIN ) $location = $container->get('locations')->bySlug(SUBDOMAIN);
+
+    return function ($request, $response, $e) use ($container, $location) {
 
         return $container->get('view')
             ->render($response, '404.tpl', [
@@ -34,6 +42,7 @@ $container['errorHandler'] = function ($container) {
                 //'error_message' => 'It looks like the page you are looking has some problems. Come back later, but until then:',
                 'error_message' => $e->getMessage(),
                 'back_link' => isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : BASE_URL,
+                'location' => $location
             ]);
     };
 };
@@ -102,7 +111,7 @@ $container['VillaListing'] = function ($container) {
 };
 
 $container['StaticPages'] = function ($container) {
-    return new \App\Modules\Portal\StaticPages($container->get('view'));
+    return new \App\Modules\Portal\StaticPages($container->get('view'), $container->get('locations'));
 };
 
 // Ajax calls

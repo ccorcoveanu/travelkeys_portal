@@ -8,113 +8,165 @@
             {include file='_partials/featured/featured_grey.tpl'}
         </div>
     </article>
-    <article class="js-tabs-section js-tabs-start section information -background-gray">
-        {include file='_partials/navigation/quicknav.tpl'}
-        <div class="container -position-right">
-            <div class="information__header -margin-bottom">
-                <h5 class="section__subtitle information__subtitle">A Rich Tradition</h5>
-                <h2 class="section__title information__title">Over 25 years of experience</h2>
-                <img class="information__badge" src="{$smarty.const.TEMPLATE_PATH}/assets/images/svg/no-sprite/quality-badge-black.svg" alt="Over 25 yeats of tradition"/>
-                <p>Travel Keys is an elite travel broker representing an enticing collection o 5000 personally inspected luxury villas throughout more than 75 destinations throughout the Caribbean, Mexico, Hawaii, Europe, Asia, Africa and the United States.</p>
-                <p><strong>Our expertise has been noted in the following publications: Conde Nast, Travel and Leisure, Islands, Caribbean Travel & Life and Robb Report.</strong></p>
-            </div>
-            <div class="information__items -margin-bottom">
-                <div class="information__item">
-                    <i class="icon icon__badge-house"></i>
-                    <h6 class="information__item__subtitle">More than 5000</h6>
-                    <h3 class="information__item__title">Hand-Picked Luxury Villas</h3>
-                    <p>Our personally inspected luxury villa rentals represent the best selection of luxury vacation homes in any of our featured markets.</p>
-                    <p>We are dedicated to providing personalized service and professional vacation planning.</p>
+
+    <article class="section dedicated">
+        <div class="container">
+            <h5 class="section__subtitle deidcated__subtitle">Dedicated</h5>
+            <h2 class="section__title dedicated__title">Concierge Team</h2>
+            <div class="dedicated__columns">
+                <div class="dedicated__column">
+                    <p>Our concierge team will help arrange food and beverage prestocking, secure restaurant reservations and even arrange a private car/driver for your vacation.</p>
+                    <p><strong>TravelKeys is an experienced source of information for luxury vacation services around the globe.</strong> Our greatest advantage is the unrivaled service and expertise provided by our experienced villa agents and concierges.</p>
                 </div>
-                <div class="information__item">
-                    <i class="icon icon__badge-bell"></i>
-                    <h6 class="information__item__subtitle">Your Personal</h6>
-                    <h3 class="information__item__title">Dedicated Concierge Service</h3>
-                    <p>We feature personally inspected and professionally curated luxury house rentals.</p>
-                    <p>Our agents have first hand experience with our inventory and are ready to assist you in planning your luxury villa vacation.</p>
-                </div>
-                <div class="information__item">
-                    <i class="icon icon__badge-money"></i>
-                    <h6 class="information__item__subtitle">The Best Rates</h6>
-                    <h3 class="information__item__title">Low rate guarantee</h3>
-                    <p>Our contracts with property owners ensure you always receive the lowest possible rate available for your luxury vacation rental.</p>
-                </div>
-                <div class="information__item">
-                    <i class="icon icon__badge-video"></i>
-                    <h6 class="information__item__subtitle">Even More</h6>
-                    <h3 class="information__item__title">Virtual tours and HD movies</h3>
-                    <p>Many of our listings online include high definition virtual tours of our listings so that you can better acquaint yourself with your private vacation home.</p>
+                <div class="dedicated__column">
+                    <p>Our staff provides the best service in the industry; not only matching people to properties, but taking care of all the planning relating to a trip as well.</p>
+                    <p>St. John Villas offer numerous advantages over staying at a resort: increased privacy, superior value, and unique property locations.</p>
+                    <a class="button button--ghost -color-aqua" href="{$smarty.const.BASE_URL}/concierge-service" title="See more details">More on concierge</a>
                 </div>
             </div>
-            <div class="information__next">
-                <span class="information__next__span">What's next:</span>
-                <a class="button -color-black" href="#" title="Featured Specialists">Featured Specialists</a>
+            <div class="boxes">
+                <div class="js-match-height box">
+                    <div class="box__image__container">
+                        <img class="box__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/box1.jpg" alt="Our clients trust Travel Keys with their most special moments">
+                    </div>
+                    <div class="box__wrapper">
+                        <h2 class="box__title">Our clients trust Travel Keys with their most special moments</h2>
+                        <p class="box__text">Our quality control team ensures site inspections and strict quality controls for all our villas to ensure flawless villa experiences.</p>
+                    </div>
+                </div>
+                <div class="js-match-height box">
+                    <div class="box__image__container">
+                        <img class="box__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/box2.jpg" alt="No membership fees or blackout dates">
+                    </div>
+                    <div class="box__wrapper">
+                        <h2 class="box__title">No membership fees or<br/>blackout dates</h2>
+                        <p class="box__text">Think you have to pay an initiation fee to enjoy top level service? Think again. At Travel Keys, we offer over 5000 luxury villas all with personalized concierge service and local support without any fees.</p>
+                    </div>
+                </div>
+                <div class="js-match-height box">
+                    <div class="box__image__container">
+                        <img class="box__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/box10.jpg" alt="No membership fees or blackout dates">
+                    </div>
+                    <div class="box__wrapper">
+                        <h2 class="box__title">No booking fees<br/>Ever.</h2>
+                        <p class="box__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dedicated__action">
+                <h2 class="section__title dedicated__title">Do You Need Anything Else?</h2>
+                <p>From babysitting services to professional photo shoots for your vacation, <strong>our concierge team can help organize just about anything you require.</strong>
+                </p>
+                <a class="button button--action" href="{$smarty.const.BASE_URL}/contact-us" title="Tell us about your custom vacation needs">
+                    <span class="button__text-initial">Tell us about your custom vacation needs</span>
+                    <span class="button__text-alt">Customize your vacation</span>
+                </a>
+            </div>
+        </div>
+        <!-- Search Form -->
+        <div class="filter -orientation-vertical -border-top">
+            <h4 class="filter__title">Find the perfect destination</h4>
+            <form class="form filter__form">
+                <div class="form__input__container filter__input__container -anchor-start-date">
+                    <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
+                    <i class="icon icon__calendar"></i>
+                </div>
+                <div class="form__input__container filter__input__container -anchor-end-date">
+                    <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
+                    <i class="icon icon__calendar"></i>
+                </div>
+                <div class="form__input__container filter__input__container -anchor-counter">
+                    <div class="filter__input__name"><span>Guests:</span>
+                    </div>
+                        <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
+                            <i class="icon icon__minus"></i>-
+                        </span>
+                    <select class="js-select2 -has-select2 form__input filter__input">
+                        <option value="No. of guests" selected>No. of guests</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="text" name="guests" class="js-counter filter__input__counter" value="1" readonly>
+                    <i class="icon icon__option"></i>
+                    <span class="js-counter-button js-counter-plus filter__input__container__handler -anchor-plus"><i class="icon icon__plus"></i>+</span>
+                </div>
+                <div class="filter__button__wrapper">
+                    <button class="button" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <!-- End Search Form -->
+    </article>
+    <article class="section villa-search__section -style-pattern">
+        <h5 class="section__subtitle">Considering another location?</h5>
+        <h2 class="section__title villa-search__section__title -color-white -has-arrow">We probably have villas there too.</h2>
+        <script async src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp&key={$smarty.const.GOOGLE_API_KEY}"></script>
+        <div class="map">
+            <div class="map__container js-map-search"></div>
+            <div class="map__markers js-map-markers">
+                <div class="marker js-marker" data-lat="17.902614" data-lng="-62.846945" data-hidden="false">
+                    <div class="marker__content js-marker-content">
+                        <img src="http://cdn.villascaribe.com/6396_hawaii-lahainadream-1_m.jpg" class="marker__image" alt="Coral House">
+                        <h3 class="marker__title">
+                            <a href="#" title="Coral House" class="marker__favorite">
+                                <i class="icon icon__heart"></i><span>Coral House 1</span>
+                            </a>
+                        </h3>
+                        <p class="marker__body">3 Bdr, 3 Bth | Colombier, St. Barts $857 - $10,000</p>
+                        <div class="marker__buttons">
+                            <a class="button -color-black -size-popup" href="#" title="Find out more">More details</a>
+                            <a class="button button--popup-cancel" href="javascript:infowindow.close();" title="Cancel">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="marker js-marker" data-lat="17.904739" data-lng="-62.810325" data-hidden="false">
+                    <div class="marker__content js-marker-content">
+                        <img src="http://cdn.villascaribe.com/6396_hawaii-lahainadream-1_m.jpg" class="marker__image" alt="Coral House">
+                        <h3 class="marker__title">
+                            <a href="#" title="Coral House" class="marker__favorite">
+                                <i class="icon icon__heart"></i><span>Coral House 1</span>
+                            </a>
+                        </h3>
+                        <p class="marker__body">3 Bdr, 3 Bth | Colombier, St. Barts $857 - $10,000</p>
+                        <div class="marker__buttons">
+                            <a class="button -color-black -size-popup" href="#" title="Find out more">More details</a>
+                            <a class="button button--popup-cancel" href="javascript:infowindow.close();" title="Cancel">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="marker js-marker" data-lat="17.907000" data-lng="-62.819000" data-hidden="false">
+                    <div class="marker__content js-marker-content">
+                        <img src="http://cdn.villascaribe.com/6396_hawaii-lahainadream-1_m.jpg" class="marker__image" alt="Coral House">
+                        <h3 class="marker__title">
+                            <a href="#" title="Coral House" class="marker__favorite">
+                                <i class="icon icon__heart"></i><span>Coral House 1</span>
+                            </a>
+                        </h3>
+                        <p class="marker__body">3 Bdr, 3 Bth | Colombier, St. Barts $857 - $10,000</p>
+                        <div class="marker__buttons">
+                            <a class="button -color-black -size-popup" href="#" title="Find out more">More details</a>
+                            <a class="button button--popup-cancel" href="javascript:infowindow.close();" title="Cancel">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="-position-bottom">
+                <div class="container">
+                    <a class="button -color-black -hover-alt" href="{$smarty.const.BASE_URL}/villa-listing/search" title="Search our villas by map">Search our villas by map</a>
+                </div>
             </div>
         </div>
     </article>
-
-    <!-- Donno if they should be here -->
-    <!-- Search Form -->
-    <div class="filter -orientation-vertical -border-top">
-        <h4 class="filter__title">Find the perfect destination</h4>
-        <form class="form filter__form">
-            <div class="form__input__container filter__input__container -anchor-destination">
-                <input class="form__input filter__input" name="destination" type="text" placeholder="Destination">
-                <i class="icon icon__globe"></i>
-            </div>
-            <div class="form__input__container filter__input__container -anchor-start-date">
-                <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
-                <i class="icon icon__calendar"></i>
-            </div>
-            <div class="form__input__container filter__input__container -anchor-end-date">
-                <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
-                <i class="icon icon__calendar"></i>
-            </div>
-            <div class="form__input__container filter__input__container -anchor-counter">
-                <div class="filter__input__name"><span>Guests:</span>
-                </div>
-                    <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
-                        <i class="icon icon__minus"></i>-
-                    </span>
-                <select class="js-select2 -has-select2 form__input filter__input">
-                    <option value="No. of guests" selected>No. of guests</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <input type="text" name="guests" class="js-counter filter__input__counter" value="1" readonly>
-                <i class="icon icon__option"></i>
-                <span class="js-counter-button js-counter-plus filter__input__container__handler -anchor-plus"><i class="icon icon__plus"></i>+</span>
-            </div>
-            <div class="filter__button__wrapper">
-                <button class="button" type="submit">Search</button>
-            </div>
-        </form>
-    </div>
-    <!-- End Search Form -->
-    <div class="newsletter--mobile">
-        <div class="newsletter--mobile__wrapper">
-            <h3 class="newsletter--mobile__title">Subscribe to our newsletter</h3>
-            <form class="newsletter--mobile__form">
-                <input class="newsletter--mobile__input" type="email" name="newslettermobile" placeholder="Enter your email address:">
-                <button class="button" type="submit"><i class="icon icon__envelope"></i>
-                </button>
-            </form>
-            <div class="footer__social--mobile">
-                <h6 class="footer__social--mobile__subtitle">Stay in touch:</h6>
-                <ul class="social--mobile__list">
-                    <li class="social--mobile__list__item"><a href="#" title="Check us on Facebook!"><i class="icon icon__facebook-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="Connect with us on Twitter"><i class="icon icon__twitter-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="See what is new on Instagram!"><i class="icon icon__instagram-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="Connect with us via Google+"><i class="icon icon__google-mobile"></i></a>
-                    </li>
-                </ul>
-            </div>
+    <article class="section message -style-pattern -border-bottom">
+        <div class="form__container">
+            <h5 class="section__subtitle message__subtitle">Tell us how</h5>
+            <h2 class="section__title message__title">Can we assist you?</h2>
+            <p>Wether you have a comment or suggestion about our company or website, please let us know.</p>
+            <p>If you are seeking a property rental, please feel free to <a href="#" class="link -color-aqua">browse our collection of villas</a> or simply complete the form below to begin the process.</p>
+            {include file="_partials/forms/contact.tpl"}
         </div>
-    </div>
+    </article>
 {/block}

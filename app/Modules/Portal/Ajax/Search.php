@@ -56,7 +56,7 @@ class Search
             $item->image = implode('.', $parts) . '_l.' . $ext;
             $item->image_m = implode('.', $parts) . '_m.' . $ext;
             return $item;
-        }, $search_items);
+        }, $search_items['items']);
 
         $html = $this->view->fetch('_partials/components/property_list.tpl', [
             'search_items' => $search_items

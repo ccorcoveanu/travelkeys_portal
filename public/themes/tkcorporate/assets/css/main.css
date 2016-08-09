@@ -18060,6 +18060,9 @@ textarea.form--letter__input {
   display: inline-block;
   float: right;
 }
+.searchbar__controls select.js-select2 {
+  visibility: hidden;
+}
 .searchbar__dates {
   position: absolute;
   z-index: 10;

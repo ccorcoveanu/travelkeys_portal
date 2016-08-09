@@ -254,20 +254,20 @@
                 <h2 class="section__title articles__title">We recently wrote about...</h2>
                 <div class="articles__container">
                     <div class="articles__item">
-                        <a class="articles__link" href="#" title="The Basics: Why Choose a Villa?">
-                            <img class="articles__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article1.jpg" alt="The Basics: Why Choose a Villa?"/>
-                            <h4 class="articles__name">The Basics: Why Choose a Villa?</h4>
+                        <a class="articles__link" href="http://experience.travelkeys.com/coolest-places-to-beat-the-summer-heat/" title="Coolest Places to Beat the Summer Heat" target="_blank">
+                            <img class="articles__image" src="http://cdn.travelkeys.com/sites/all/themes/travelkeysv5/images/article_2.jpg?obbgnm" alt="Coolest Places to Beat the Summer Heat"/>
+                            <h4 class="articles__name">Coolest Places to Beat the Summer Heat</h4>
                         </a>
                     </div>
                     <div class="articles__item">
-                        <a class="articles__link" href="#" title="The Ultimate in Privacy &amp; Luxury">
-                            <img class="articles__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article2.jpg" alt="The Ultimate in Privacy &amp; Luxury"/>
-                            <h4 class="articles__name">The Ultimate in Privacy &amp; Luxury</h4>
+                        <a class="articles__link" href="http://experience.travelkeys.com/most-scenic-getaways-in-the-continental-us/" title="Most Scenic Getaways in the Continental US">
+                            <img class="articles__image" src="http://cdn.travelkeys.com/sites/all/themes/travelkeysv5/images/article_2.jpg?obbgnm" alt="Most Scenic Getaways in the Continental US"/>
+                            <h4 class="articles__name">Most Scenic Getaways in the Continental US</h4>
                         </a>
                     </div>
                 </div>
                 <p class="articles__text">Want to read more about planning your vacation, luxury resorts or travel guides on our locations?</p>
-                <a class="button -color-black -size-wide" href="#" title="Read our blog">Read our blog</a>
+                <a class="button -color-black -size-wide" href="http://experience.travelkeys.com" title="Read our blog" target="_blank">Read our blog</a>
             </div>
         </div>
     </article>

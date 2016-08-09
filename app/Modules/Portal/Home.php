@@ -61,11 +61,14 @@ class Home
     {
         $location   = $this->location->bySlug(SUBDOMAIN);
         $favorites  = $request->getAttribute('favorites');
+        $featured_items = $this->properties->featured($location->id);
+        $special_items = $this->properties->featured($location->id);
         $featured   =  array_slice(
-            $this->properties->featured($location->id), 0, 6
+            $featured_items['items'], 0, 6
         );
+
         $specials   = array_slice(
-            $this->properties->featured($location->id), 0, 6
+            $special_items['items'], 0, 6
         );
         $mapItems   = $this->location->mapItems();
 

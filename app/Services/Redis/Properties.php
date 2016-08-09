@@ -32,16 +32,25 @@ class Properties extends CacheClient
         if (!$this->client) {
             // Get full service answer
             $search_items = $this->resource->search($term, $start, $limit, $filters, false)->wait();
-            return $search_items->result;
+            return [
+                'items' => $search_items->result->result,
+                'total' => $search_items->result->total_rows
+            ];
         }
 
         // Get ids to fetch from cache
         $search_items = $this->resource->search($term, $start, $limit, $filters, true)->wait();
-        if ( !$search_items->result || !$search_items->result->result ) return [];
+        if ( !$search_items->result || !$search_items->result->result ) return [
+            'items' => [],
+            'total' => 0
+        ];
 
-        return $this->batch(array_map(function($item) {
-            return $item->id;
-        }, $search_items->result->result));
+        return [
+            'items' => $this->batch(array_map(function($item) {
+                return $item->id;
+            }, $search_items->result->result)),
+            'total' => $search_items->result->total_rows
+        ];
     }
 
     /**
