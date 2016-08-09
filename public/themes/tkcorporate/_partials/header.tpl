@@ -33,7 +33,7 @@
                     <span class="header__nav__description">Personalize:</span>
                     <ul class="secondary-nav">
                         <li class="secondary-nav__item"><a class="secondary-nav__item__link" href="{$smarty.const.BASE_URL}/villa-listing/favorites" title="Favourites"
-                            ><i class="icon icon__heart"></i>My Favourites&nbsp;<span class="favourites-counter" id="favoritesNumber">({if isset($favorites) && $favorites|@count}{$favorites|@count}{else}(0){/if})</span></a>
+                            ><i class="icon icon__heart"></i>My Favourites&nbsp;<span class="favourites-counter" id="favoritesNumber">({if isset($favorites) && $favorites|@count}{$favorites|@count}{else}0{/if})</span></a>
                         </li>
                         <li class="secondary-nav__item">
                             <form class="site-search" method="get" action="/villa-listing/search">

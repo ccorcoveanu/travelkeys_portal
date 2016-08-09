@@ -137,7 +137,7 @@ class Locations extends CacheClient
             $data = $this->resource->data(
                 $this->resource->featured()
             ); // wait and return if cache not available
-            return $this->formatFeatured($data->result);
+            return $data->result;
         }
 
         $cacheKey = md5(__METHOD__);
@@ -154,7 +154,6 @@ class Locations extends CacheClient
             return $allItems[$element->id];
         }, $menuIds->result); // Get items that belong in the featured list
 
-        $data = $this->formatFeatured($data); // Create parent based tree
         parent::set($cacheKey, serialize($data));
 
         return $data;
