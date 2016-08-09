@@ -85,4 +85,50 @@ class StaticPages
             'location' => $location
         ]);
     }
+
+    public function members($request, $response, $args)
+    {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'members.tpl', [
+            'page' => [
+                'title' => 'About Members',
+                'body_classes' => 'about about-members',
+                'hero_sec_title' => 'We are devoted to vacations',
+                'hero_sec_description' => 'And we have been doing so for the last 25 years.',
+                'villas_number' => '5,000+',
+                'villas_text' => 'Luxury<br/>Villas',
+                'destinations_number' => '75+',
+                'destinations_text' => 'Fabulous<br/>Destinations',
+                'years_number' => '25',
+                'years_text' => 'Years of Creating<br/>Experiences',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+        ]);
+    }
+
+    public function careers($request, $response, $args)
+    {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'careers.tpl', [
+            'page' => [
+                'title' => 'About Careers',
+                'body_classes' => 'about about-careers',
+                'hero_sec_title' => 'We are devoted to vacations',
+                'hero_sec_description' => 'And we have been doing so for the last 25 years.',
+                'villas_number' => '5,000+',
+                'villas_text' => 'Luxury<br/>Villas',
+                'destinations_number' => '75+',
+                'destinations_text' => 'Fabulous<br/>Destinations',
+                'years_number' => '25',
+                'years_text' => 'Years of Creating<br/>Experiences',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+        ]);
+    }
 }

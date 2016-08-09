@@ -15,6 +15,8 @@ $app->get('/villa-listing/{slug}', 'VillaListing:location');
 
 // Static pages
 $app->get('/about-us', 'StaticPages:about');
+$app->get('/about-members', 'StaticPages:members');
+$app->get('/about-careers', 'StaticPages:careers');
 $app->get('/contact-us', 'StaticPages:contact');
 $app->get('/concierge-service', 'StaticPages:concierge');
 

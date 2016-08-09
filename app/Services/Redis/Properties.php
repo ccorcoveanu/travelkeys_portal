@@ -74,6 +74,12 @@ class Properties extends CacheClient
         return $result->result;
     }
 
+    public function byIdFresh($id)
+    {
+        $result = $this->resource->byId($id)->wait();
+        return $result->result;
+    }
+
     public function bySlug($slug)
     {
         if ( !$this->client ) {

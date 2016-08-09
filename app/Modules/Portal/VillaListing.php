@@ -152,7 +152,28 @@ class VillaListing
             'slug' => $args['slug']
         ]);
 
-        if ( count($property) ) $property = $property[0];
+        if ( count($property['items']) ) {
+            $property = $property['items'][0];
+            $property_details = $this->properties->byIdFresh($property->id);
+        } else {
+            throw new \Exception('Villa not fount', 404);
+        }
+
+        foreach ( $property_details->images as $k => $image ) {
+            $parts = explode('.', $image->filename);
+            $ext = $parts[count($parts) - 1];
+            unset($parts[count($parts) - 1]);
+            $property_details->images[$k]->filename_l = implode('.', $parts) . '_l.' . $ext;
+            $property_details->images[$k]->filename_s = implode('.', $parts) . '_s.' . $ext;
+        }
+
+        $property_details->rates = json_decode(json_encode($property_details->rates), true);
+
+        foreach ( $property_details->rates as $k => $rate ) {
+            $stime = strtotime($rate['start_date']);
+            $etime = strtotime($rate['end_date']);
+            $property_details->rates[$k]['formatted_date'] = date('F d', $stime) . ' - ' . date('F d, Y', $etime);
+        }
 
         return $this->view->render($response, 'details.tpl', [
             'page' => [
@@ -163,6 +184,7 @@ class VillaListing
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
             'property' => $property,
+            'property_details' => $property_details,
             'location' => $location
         ]);
 

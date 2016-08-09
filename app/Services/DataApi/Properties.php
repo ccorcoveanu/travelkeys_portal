@@ -48,6 +48,13 @@ class Properties extends DataApi
         ]);
     }
 
+    public function byId($id)
+    {
+        return $this->call("{$this->resource}_getById", [
+            'id' => $id
+        ]);
+    }
+
     /**
      * Get special properties
      *
@@ -103,7 +110,7 @@ class Properties extends DataApi
             ];
         }
 
-        if ( isset($filters['slug']) && is_array($filters['slug']) ) {
+        if ( isset($filters['slug'] ) ) {
             $conditions[] = [
                 'field' => 'slug',
                 'operator' => '=',
