@@ -218,232 +218,56 @@
                         {/foreach}
                     </table>
                 </div>
+                {foreach name='rate_profile' item=$rate_profile from=$property_details->rates}
+                    {foreach name='rate_item' item=$rate from=$rate_profile.rates}
+                        <div class="availability__table-mobile">
+                            <div class="table-mobile__container">
+                                <div class="table-mobile__row">
+                                    <div class="table-mobile__row">
+                                        <div class="table-mobile__cell">
+                                            <span class="table-mobile__key -margin-right">Dates</span>
+                                            <span class="table-mobile__value">{$rate_profile.formatted_date}</span>
+                                        </div>
+                                    </div>
+                                    <div class="table-mobile__row">
+                                        <div class="table-mobile__cell -anchor-rates">
+                                            <span class="table-mobile__key">Beedrooms</span>
+                                            <span class="table-mobile__value">{$rate.bedrooms}</span>
+                                        </div>
+                                        <div class="table-mobile__cell -anchor-rates">
+                                            <span class="table-mobile__key">Max guests</span>
+                                            <span class="table-mobile__value">{$rate.max_guests}</span>
+                                        </div>
+                                        <div class="table-mobile__cell -anchor-rates">
+                                            <span class="table-mobile__key">Min nights</span>
+                                            <span class="table-mobile__value">{$rate.min_stay}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-mobile__row">
+                                    <div class="table-mobile__cell -padding-right">
+                                        <div class="table-mobile__row">
+                                            <div class="table-mobile__cell -padding-bottom">
+                                                <span class="table-mobile__key">Nightly</span>
+                                                <strong class="table-mobile__value -weight-bold">$ {$rate.nightly}</strong>
+                                            </div>
+                                        </div>
+                                        <div class="table-mobile__row">
+                                            <div class="table-mobile__cell">
+                                                <span class="table-mobile__key">Weekly</span>
+                                                <strong class="table-mobile__value -weight-bold">$ {$rate.weekly}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-mobile__cell">
+                                        <a class="button button--ghost -color-aqua -hover-alt" href="#reserve_property_form" title="Inquire">Inquire</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {/foreach}
+                {/foreach}
 
-                <div class="availability__table-mobile">
-                    <div class="table-mobile__container">
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell">
-                                    <span class="table-mobile__key -margin-right">Dates</span>
-                                    <span class="table-mobile__value">Apr 11 - Jun 14, 2015</span>
-                                </div>
-                            </div>
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Beedrooms</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Max guests</span>
-                                    <span class="table-mobile__value">3</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Min nights</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__cell -padding-right">
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell -padding-bottom">
-                                        <span class="table-mobile__key">Nightly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 17,143</strong>
-                                    </div>
-                                </div>
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell">
-                                        <span class="table-mobile__key">Weekly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 120,001</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-mobile__cell">
-                                <a class="button button--ghost -color-aqua -hover-alt" href="#" title="Inquire">Inquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="availability__table-mobile">
-                    <div class="table-mobile__container">
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell">
-                                    <span class="table-mobile__key -margin-right">Dates</span>
-                                    <span class="table-mobile__value">Apr 11 - Jun 14, 2015</span>
-                                </div>
-                            </div>
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Beedrooms</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Max guests</span>
-                                    <span class="table-mobile__value">3</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Min nights</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__cell -padding-right">
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell -padding-bottom">
-                                        <span class="table-mobile__key">Nightly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 17,143</strong>
-                                    </div>
-                                </div>
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell">
-                                        <span class="table-mobile__key">Weekly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 120,001</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-mobile__cell">
-                                <a class="button button--ghost -color-aqua -hover-alt" href="#" title="Inquire">Inquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="availability__table-mobile">
-                    <div class="table-mobile__container">
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell">
-                                    <span class="table-mobile__key -margin-right">Dates</span>
-                                    <span class="table-mobile__value">Apr 11 - Jun 14, 2015</span>
-                                </div>
-                            </div>
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Beedrooms</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Max guests</span>
-                                    <span class="table-mobile__value">3</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Min nights</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__cell -padding-right">
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell -padding-bottom">
-                                        <span class="table-mobile__key">Nightly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 17,143</strong>
-                                    </div>
-                                </div>
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell">
-                                        <span class="table-mobile__key">Weekly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 120,001</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-mobile__cell">
-                                <a class="button button--ghost -color-aqua -hover-alt" href="#" title="Inquire">Inquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="availability__table-mobile">
-                    <div class="table-mobile__container">
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell">
-                                    <span class="table-mobile__key -margin-right">Dates</span>
-                                    <span class="table-mobile__value">Apr 11 - Jun 14, 2015</span>
-                                </div>
-                            </div>
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Beedrooms</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Max guests</span>
-                                    <span class="table-mobile__value">3</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Min nights</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__cell -padding-right">
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell -padding-bottom">
-                                        <span class="table-mobile__key">Nightly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 17,143</strong>
-                                    </div>
-                                </div>
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell">
-                                        <span class="table-mobile__key">Weekly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 120,001</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-mobile__cell">
-                                <a class="button button--ghost -color-aqua -hover-alt" href="#" title="Inquire">Inquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="availability__table-mobile">
-                    <div class="table-mobile__container">
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell">
-                                    <span class="table-mobile__key -margin-right">Dates</span>
-                                    <span class="table-mobile__value">Apr 11 - Jun 14, 2015</span>
-                                </div>
-                            </div>
-                            <div class="table-mobile__row">
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Beedrooms</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Max guests</span>
-                                    <span class="table-mobile__value">3</span>
-                                </div>
-                                <div class="table-mobile__cell -anchor-rates">
-                                    <span class="table-mobile__key">Min nights</span>
-                                    <span class="table-mobile__value">6</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-mobile__row">
-                            <div class="table-mobile__cell -padding-right">
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell -padding-bottom">
-                                        <span class="table-mobile__key">Nightly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 17,143</strong>
-                                    </div>
-                                </div>
-                                <div class="table-mobile__row">
-                                    <div class="table-mobile__cell">
-                                        <span class="table-mobile__key">Weekly</span>
-                                        <strong class="table-mobile__value -weight-bold">$ 120,001</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="table-mobile__cell">
-                                <a class="button button--ghost -color-aqua -hover-alt" href="#" title="Inquire">Inquire</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="availability__disclaimer -anchor-bottom">
                     <span class="availability__disclaimer__item">* 13.96% Tax (not included in rates)</span>
                     <span class="availability__disclaimer__item">* US $10,000.00 Security Deposit</span>
@@ -536,11 +360,11 @@
                 <div class="description__wrapper -padding-top -last">
                     <h2 class="section__title description__title">Policies</h2>
                     <ul class="list description__list -rows-two">
-                        <li class="list__item description__list__item"><strong class="list__item__em">Check in Time:</strong> 3:00 PM</li>
-                        <li class="list__item description__list__item"><strong class="list__item__em">Handicap Access:</strong> No</li>
-                        <li class="list__item description__list__item"><strong class="list__item__em">Check Out Time:</strong> 10:00 AM</li>
-                        <li class="list__item description__list__item"><strong class="list__item__em">Children Allowed:</strong> Yes</li>
-                        <li class="list__item description__list__item"><strong class="list__item__em">Smoking:</strong> Not allowed</li>
+                        <li class="list__item description__list__item"><strong class="list__item__em">Check in Time:</strong> {$property_details->policies->check_in}</li>
+                        <li class="list__item description__list__item"><strong class="list__item__em">Handicap Access:</strong> {if $property_details->policies->handicap_access == 1}Yes{else}No{/if}</li>
+                        <li class="list__item description__list__item"><strong class="list__item__em">Check Out Time:</strong> {$property_details->policies->check_out}</li>
+                        <li class="list__item description__list__item"><strong class="list__item__em">Children Allowed:</strong> {if $property_details->policies->children_welcome == 1}Yes{else}No{/if}</li>
+                        <li class="list__item description__list__item"><strong class="list__item__em">Smoking:</strong> {if $property_details->policies->smoking_allowed == 1}Allowed{else}Not allowed{/if}</li>
                     </ul>
                 </div>
             </div>
