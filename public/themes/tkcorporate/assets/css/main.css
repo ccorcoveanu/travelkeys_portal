@@ -4079,6 +4079,7 @@ th {
   top: calc(100% - 1px);
   width: 38.25rem;
   background-color: #fdfdfd;
+  max-width: 100%;
 }
 .autocompleter-list {
   text-align: left;

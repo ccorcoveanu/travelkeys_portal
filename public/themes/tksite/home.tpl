@@ -47,7 +47,7 @@
         <div class="filter -orientation-vertical -hidden-md-up">
             <div class="container">
                 <h4 class="filter__title">Find the perfect destination</h4>
-                <form class="form filter__form">
+                <form class="form filter__form" action="/villa-listing/search" method="get">
                     <div class="form__input__container filter__input__container -anchor-start-date">
                         <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
                         <i class="icon icon__calendar"></i>

@@ -85,6 +85,10 @@ $container['properties'] = function ($container) {
     return new App\Services\Redis\Properties($container->get('settings')['api_endpoint']);
 }; // Register Properties service
 
+$container['salesforce_newsletter'] = function ($container) {
+    return new App\Services\Salesforce\Newsletter();
+};
+
 // Route dependencies - all bellow will handle route classes
 $container['Dummy'] = function ($container) {
     return new \App\Modules\Portal\Dummy($container->get('locations'), $container->get('properties'));

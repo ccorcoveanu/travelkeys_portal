@@ -65,9 +65,9 @@
         <div class="filter__wrapper">
             <div class="filter -orientation-vertical">
                 <h4 class="filter__title">Find the perfect destination</h4>
-                <form class="form filter__form">
+                <form class="form filter__form"  action="/villa-listing/search" method="get">
                     <div class="form__input__container filter__input__container -anchor-destination">
-                        <input class="form__input filter__input" name="destination" type="text" placeholder="Destination">
+                        <input class="form__input filter__input js-searchbar-location" name="destination" type="text" placeholder="Destination">
                         <i class="icon icon__globe"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-start-date">
@@ -276,90 +276,17 @@
             <h2 class="section__title world__title -color-white"><i>5000+</i> villas <br> <i>75</i> vacation destinations</h2>
             <h5 class="world__subtitle">Tap on your next detstination:</h5>
             <ul class="world__items">
-                <li class="world__item -caribbean">
-                    <a class="world__link" href="#" title="Caribbean">
-                        <h6 class="world__item__title">Caribbean</h6>
-                        <span class="world__item__span">46 new</span>
-                    </a>
-                </li>
-                <li class="world__item -hawaii">
-                    <a class="world__link" href="#" title="Hawaii">
-                        <h6 class="world__item__title">Hawaii</h6>
-                        <span class="world__item__span">38 new</span>
-                    </a>
-                </li>
-                <li class="world__item -mexico">
-                    <a class="world__link" href="#" title="Mexico">
-                        <h6 class="world__item__title">Mexico</h6>
-                        <span class="world__item__span">27 new</span>
-                    </a>
-                </li>
-                <li class="world__item -central-america">
-                    <a class="world__link" href="#" title="Central America">
-                        <h6 class="world__item__title">Central America</h6>
-                        <span class="world__item__span">4 new</span>
-                    </a>
-                </li>
-                <li class="world__item -united-states">
-                    <a class="world__link" href="#" title="United States">
-                        <h6 class="world__item__title">United States</h6>
-                        <span class="world__item__span">52 new</span>
-                    </a>
-                </li>
-                <li class="world__item -europe">
-                    <a class="world__link" href="#" title="Europe">
-                        <h6 class="world__item__title">Europe</h6>
-                        <span class="world__item__span">40 new</span>
-                    </a>
-                </li>
-                <li class="world__item -asia">
-                    <a class="world__link" href="#" title="Asia">
-                        <h6 class="world__item__title">Asia</h6>
-                        <span class="world__item__span">33 new</span>
-                    </a>
-                </li>
-                <li class="world__item -canada">
-                    <a class="world__link" href="#" title="Canada">
-                        <h6 class="world__item__title">Canada</h6>
-                        <span class="world__item__span"></span>
-                    </a>
-                </li>
-                <li class="world__item -oceania">
-                    <a class="world__link" href="#" title="Oceania">
-                        <h6 class="world__item__title">Oceania</h6>
-                        <span class="world__item__span"></span>
-                    </a>
-                </li>
-                <li class="world__item -africa">
-                    <a class="world__link" href="#" title="Africa">
-                        <h6 class="world__item__title">Africa</h6>
-                        <span class="world__item__span"></span>
-                    </a>
-                </li>
+                {foreach name='menu_items' from=$menu item=header }
+                    {if $header->children|count}
+                        <li class="world__item -{$header->subdomain}">
+                            <a class="world__link" href="{$smarty.const.PROTOCOL}{$header->subdomain}.{$smarty.const.BASE_URL}" title="{$header->name}">
+                                <h6 class="world__item__title">{$header->name}</h6>
+                            </a>
+                        </li>
+                    {/if}
+                {/foreach}
+
             </ul>
         </div>
     </article>
-    <div class="newsletter--mobile">
-        <div class="newsletter--mobile__wrapper">
-            <h3 class="newsletter--mobile__title">Subscribe to our newsletter</h3>
-            <form class="newsletter--mobile__form">
-                <input class="newsletter--mobile__input" type="email" name="newslettermobile" placeholder="Enter your email address:">
-                <button class="button" type="submit"><i class="icon icon__envelope"></i>
-                </button>
-            </form>
-            <div class="footer__social--mobile">
-                <h6 class="footer__social--mobile__subtitle">Stay in touch:</h6>
-                <ul class="social--mobile__list">
-                    <li class="social--mobile__list__item"><a href="#" title="Check us on Facebook!"><i class="icon icon__facebook-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="Connect with us on Twitter"><i class="icon icon__twitter-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="See what is new on Instagram!"><i class="icon icon__instagram-mobile"></i></a>
-                    </li>
-                    <li class="social--mobile__list__item"><a href="#" title="Connect with us via Google+"><i class="icon icon__google-mobile"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
 {/block}
