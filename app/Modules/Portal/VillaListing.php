@@ -45,6 +45,7 @@ class VillaListing
         $location = null;
         if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
 
+
         return $this->view->render($response, 'search.tpl', [
             'page' => [
                 'title' => 'Specials',

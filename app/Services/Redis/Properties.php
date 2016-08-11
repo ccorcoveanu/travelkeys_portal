@@ -138,8 +138,8 @@ class Properties extends CacheClient
     }
 
     /**
-     * Get special properties for a location. This should
-     * change but there is no special flag on properties.
+     * Get special properties for a location. The api method should be moved to the search one
+     * so we could filter by special properties
      * TODO: Change this after api implementation
      *
      * @param $location_id
@@ -148,9 +148,20 @@ class Properties extends CacheClient
      *
      * @return array
      */
-    public function specials($location_id, $offset = '', $limit = '')
+    public function specials($location_id = null, $offset = '', $limit = '')
     {
-        return $this->search('', $offset, $limit, ['location_id' => $location_id]);
+        $cacheKey = md5(__METHOD__);
+        if ( $data = parent::get($cacheKey) ) {
+            return unserialize($data);
+        }
+
+        $data = $this->resource->data(
+            $this->resource->specials($location_id)
+        ); // wait and return if cache not available
+
+        parent::set($cacheKey, serialize($data->result));
+
+        return $data->result;
     }
 
     // We add different strategy to cache properties since they are a lot

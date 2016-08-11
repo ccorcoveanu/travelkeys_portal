@@ -14,7 +14,7 @@
         </div>
         <div class="form--letter__input__container -half-width">
             <label class="form--letter__label">Email:</label>
-            <input class="form--letter__input" type="email" name="email">
+            <input class="form--letter__input h5-email" type="email" name="email">
         </div>
     </div>
     <div class="form--letter__input__container -has-textarea">

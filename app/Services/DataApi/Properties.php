@@ -58,28 +58,20 @@ class Properties extends DataApi
     /**
      * Get special properties
      *
-     * @param string $start
-     * @param string $limit
-     * @param array $filters
-     * @param bool $only_ids
+     * @param int|null $location_id
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function specials($start = '', $limit = '', $filters = [], $only_ids = false)
+    public function specials($location_id = null)
     {
-        return $this->call("{$this->resource}_getPropertiesFilters}", [
-            'conditions' => [
-                [
-                    'field' => 'bedrooms',
-                    'operator' => '=',
-                    'value' => 5
-                ]
-            ],
-            'reservations' => '',
-            'start' => $start,
-            'length' => $limit,
-            'order' => '',
-            'only_ids' => $only_ids,
-        ]);
+        $conditions = [];
+        if ( $location_id ) {
+            $conditions[] = [
+                'field' => 'properties.location_id',
+                'operator' => '=',
+                'value' => $location_id
+            ];
+        }
+        return $this->call("{$this->resource}_getSpecials", $conditions);
     }
 
     /**

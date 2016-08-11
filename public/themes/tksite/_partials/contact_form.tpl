@@ -20,7 +20,7 @@
                 </div>
                 <div class="form--letter__input__container -half-width">
                     <label class="form--letter__label">Email:</label>
-                    <input class="form--letter__input" type="email" name="email" required />
+                    <input class="form--letter__input h5-email" type="email" name="email" required />
                 </div>
                 <div class="form__input__container filter__input__container form--letter__input__container -full-width -has-select2">
                     <label class="form--letter__label filter__input__label">I am:</label>

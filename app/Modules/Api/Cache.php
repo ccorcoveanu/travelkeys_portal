@@ -118,5 +118,6 @@ class Cache
 
         // Cache properties
         $this->properties->cacheAll(); // All
+        $this->properties->specials();
     }
 }
