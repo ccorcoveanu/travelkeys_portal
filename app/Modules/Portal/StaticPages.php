@@ -131,4 +131,27 @@ class StaticPages
             'favorites' => $request->getAttribute('favorites'),
         ]);
     }
+
+    public function thanks($request, $response, $args)
+    {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'thankyou.tpl', [
+            'page' => [
+                'title' => 'Thank you',
+                'body_classes' => 'thank-you',
+                'hero_sec_title' => 'We are devoted to vacations',
+                'hero_sec_description' => 'And we have been doing so for the last 25 years.',
+                'villas_number' => '5,000+',
+                'villas_text' => 'Luxury<br/>Villas',
+                'destinations_number' => '75+',
+                'destinations_text' => 'Fabulous<br/>Destinations',
+                'years_number' => '25',
+                'years_text' => 'Years of Creating<br/>Experiences',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+        ]);
+    }
 }

@@ -91,7 +91,7 @@ $container['salesforce_newsletter'] = function ($container) {
 
 // Route dependencies - all bellow will handle route classes
 $container['Dummy'] = function ($container) {
-    return new \App\Modules\Portal\Dummy($container->get('locations'), $container->get('properties'));
+    return new \App\Modules\Portal\Dummy($container->get('locations'), $container->get('properties'), $container->get('salesforce_newsletter'));
 };
 
 $container['Home'] = function ($container) {
@@ -131,5 +131,11 @@ $container['Cache'] = function ($container) {
         $container->get('cache_client'),
         $container->get('locations'),
         $container->get('properties')
+    );
+};
+
+$container['Forms'] = function ($container) {
+    return new \App\Modules\Portal\Forms(
+        $container->get('salesforce_newsletter')
     );
 };

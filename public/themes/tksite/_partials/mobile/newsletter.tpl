@@ -1,8 +1,8 @@
 <div class="newsletter--mobile">
     <div class="newsletter--mobile__wrapper">
         <h3 class="newsletter--mobile__title">Subscribe to our newsletter</h3>
-        <form class="newsletter--mobile__form">
-            <input class="newsletter--mobile__input" type="email" name="newslettermobile" placeholder="Enter your email address:">
+        <form class="newsletter--mobile__form"  method="post" action="/form/newsletter">
+            <input class="newsletter--mobile__input" type="email" name="newsletter" placeholder="Enter your email address:">
             <button class="button" type="submit"><i class="icon icon__envelope"></i>
             </button>
         </form>

@@ -5843,6 +5843,97 @@ strong.-color-white {
 .concierge .location__item .icon {
   margin-bottom: 0;
 }
+.thank-you .main {
+  background-color: #191d21;
+}
+.thank-you .hero--secondary {
+  background-image: url("../images/bg/bg-concierge.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40%;
+}
+@media only screen and (max-width: 960px) {
+  .thank-you .hero--secondary {
+    height: initial;
+  }
+}
+.thank-you .hero--secondary__title {
+  margin-top: 6.875rem;
+}
+@media only screen and (max-width: 960px) {
+  .thank-you .hero--secondary__title {
+    margin: 3.75rem auto;
+  }
+}
+.thank-you .confirmation {
+  position: relative;
+  z-index: 2;
+  margin: -11.875rem auto 0;
+  padding: 5rem 6.25rem 6.25rem;
+  max-width: 61.875rem;
+  background-color: #f1f1f1;
+}
+@media only screen and (max-width: 960px) {
+  .thank-you .confirmation {
+    margin-top: 0;
+    padding: 3.125rem;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .thank-you .confirmation {
+    padding: 3.125rem 1.25rem;
+  }
+}
+.thank-you .reach {
+  padding-top: 1.25rem;
+  background-image: none;
+}
+.thank-you .reach__group {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+}
+.thank-you .reach__group:before,
+.thank-you .reach__group:after {
+  content: '';
+  display: table;
+}
+.thank-you .reach__group:after {
+  clear: both;
+}
+.thank-you .reach__group:last-child {
+  margin-right: 0%;
+}
+.thank-you .reach__group::after {
+  right: -1.25rem;
+}
+@media only screen and (max-width: 670px) {
+  .thank-you .reach__group::after {
+    right: 4.25rem;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .thank-you .reach__group {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .thank-you .reach__group:first-child {
+    margin-left: auto;
+  }
+  .thank-you .reach__group:last-child {
+    margin-right: auto;
+  }
+}
 @media only screen and (min-width: 960px) {
   .about .container.-position-right {
     margin-left: 30%;

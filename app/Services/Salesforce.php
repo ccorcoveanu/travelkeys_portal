@@ -32,9 +32,7 @@ class Salesforce
 
     public function __construct()
     {
-        $this->web_client = new GuzzleHttp\Client([
-            'base_uri' => 'https://www.salesforce.com/servlet/servlet.WebToLead'
-        ]);
+        $this->web_client = 'https://www.salesforce.com/servlet/servlet.WebToLead';
     }
 
     /**
@@ -50,22 +48,61 @@ class Salesforce
         return $this;
     }
 
-    public function call(array $params, $method_type = 'GET')
+    protected function call(array $params)
     {
         $toPost = [];
+        $defaults = [
+            'encoding' => 'UTF-8',
+            'sfga' => '00D700000009Dgt',
+            'oid' => '00D700000009Dgt'
+        ];
+
         foreach ( $this->salesForceMapping as $readable => $salesforce_key ) {
             if ( isset($params[$readable]) && $params[$readable] ) {
                 $toPost[$salesforce_key] = $params[$readable];
+                unset($params[$readable]);
                 continue;
             } // If we send a parameter in the readable form add it, else add blank
-            $toPost[$readable] = '';
+            $toPost[$salesforce_key] = '';
         }
 
-        $toPost = array_merge($this->params, $toPost);
+        $toPost = array_merge($defaults, $params, $this->params, $toPost);
 
-        echopre($toPost);die;
+
+        $defaults = array(
+            CURLOPT_POST => 1,
+            CURLOPT_URL => $this->web_client,
+            CURLOPT_FRESH_CONNECT => 1,
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_FORBID_REUSE => 1,
+            CURLOPT_TIMEOUT => 4,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_POSTFIELDS => $this->buildQuery($toPost),
+        );
+
+        $ch = curl_init();
+        curl_setopt_array($ch, $defaults);
+        $result = curl_exec($ch);
+        curl_close($ch);
+
+        return $result;
     }
 
+    protected function buildQuery($arguments)
+    {
+        $query = "";
+
+        foreach($arguments as $arg => $val){
+            if(is_array($val)) {
+                $val = implode(",", $val);
+            }
+            $val = urldecode($val); //may already have been encoded earlier so decode first
+            $val = str_replace(" ", "+", $val);
+            $query .= "&$arg=$val";
+        }
+
+        return $query;
+    }
 
     /**
      * Constant-like mappings taken from old website
@@ -87,6 +124,7 @@ class Salesforce
             "num_adults"            => "00N70000001o5Bn",
             "num_children"          => "00N70000001o5E5",
             "property_location"     => "00N700000028ZCL",
-            "property_website"      => "00N700000028ZCM"
+            "property_website"      => "00N700000028ZCM",
+            //"location"              => "00N700000025mKb"
         ];
 }

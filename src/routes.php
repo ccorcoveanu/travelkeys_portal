@@ -19,9 +19,14 @@ $app->get('/about-members', 'StaticPages:members');
 $app->get('/about-careers', 'StaticPages:careers');
 $app->get('/contact-us', 'StaticPages:contact');
 $app->get('/concierge-service', 'StaticPages:concierge');
+$app->get('/thank-you', 'StaticPages:thanks');
 
 // Ajax calls
 $app->get('/ajax/filter', 'SearchAjax:filter');
+
+// Form submissions
+$app->post('/form/newsletter', 'Forms:newsletter');
+$app->post('/form/contact', 'Forms:contact');
 
 // Api
 $app->get('/api/v1/cache/clear', 'Cache:clear');

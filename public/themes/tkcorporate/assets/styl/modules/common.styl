@@ -1666,6 +1666,74 @@ strong {
 
 }
 
+// !Thank You
+// ==|=========================================================================
+.thank-you {
+	.main {
+		background-color: #191d21
+	}
+
+	.hero--secondary {
+		background-image: url('../images/bg/bg-concierge.jpg')
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: 40%
+
+		+below(960px) {
+			height: initial
+		}
+
+		&__title {
+			margin-top: rem(110)
+
+			+below(960px) {
+				margin: rem(60) auto
+			}
+		}
+	}
+
+	.confirmation {
+		position: relative
+		z-index: 2
+		margin: rem(-190) auto 0
+		padding: rem(80) rem(100) rem(100)
+		max-width: rem(990)
+		background-color: #f1f1f1
+
+		+below(960px) {
+			margin-top: 0
+			padding: rem(50)
+		}
+
+		+below(670px) {
+			padding: rem(50) rem(20)
+		}
+	}
+
+	.reach {
+		padding-top: rem(20)
+		background-image: none
+	}
+
+	.reach__group {
+		col(1/2)
+		padding-right: rem(20)
+		padding-left: rem(20)
+
+		&::after {
+			right: rem(-20)
+
+			+below(670px) {
+				right: rem(68)
+			}
+		}
+
+		+below(670px) {
+			stack()
+		}
+	}
+}
+
 // !About
 // ==|=========================================================================
 .about {

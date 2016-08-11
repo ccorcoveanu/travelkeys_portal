@@ -37,7 +37,7 @@
         </div>
         <div class="newsletter">
             <h3 class="newsletter__title">Subscribe to our newsletter</h3>
-            <form class="newsletter__form js-validate-form">
+            <form class="newsletter__form js-validate-form" method="post" action="/form/newsletter">
                 <input class="newsletter__input h5-email" type="email" name="newsletter" placeholder="Your email address:" />
                 <button class="button -hover-alt -color-white" type="submit">Subscribe</button>
             </form>
