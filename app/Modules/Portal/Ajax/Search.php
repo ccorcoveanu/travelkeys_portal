@@ -1,6 +1,7 @@
 <?php
 namespace App\Modules\Portal\Ajax;
 
+use App\Services\Redis\Locations;
 use Slim\Views\Smarty;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -23,11 +24,13 @@ class Search
      * Search constructor.
      * @param Properties $properties
      * @param Smarty $view
+     * @param Locations $locations
      */
-    public function __construct(Properties $properties, Smarty $view)
+    public function __construct(Properties $properties, Smarty $view, Locations $locations)
     {
         $this->view = $view;
         $this->properties = $properties;
+        $this->locations = $locations;
     }
 
     /**
@@ -41,6 +44,7 @@ class Search
      */
     public function filter(Request $request, Response $response, array $args)
     {
+
         $hardcoded_amenities = [
             'ck-beach' => 10,
             'ck-city' => 100
@@ -48,6 +52,14 @@ class Search
         $filters = $request->getParam('filters');
 
         $extra_filters = [];
+
+        $location = null;
+        $location_id = null;
+        if ( SUBDOMAIN ) {
+            $location = $this->locations->bySlug(SUBDOMAIN);
+            $extra_filters['location_id'] = $location->id;
+        }
+
         if ( isset($filters['guests']) && (int)$filters['guests'] ) {
             $extra_filters['guests'] = (int)$filters['guests'];
         }
