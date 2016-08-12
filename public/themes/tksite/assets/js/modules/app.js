@@ -1,7 +1,7 @@
 /*
-Main Javascript file
-Author: Graffino (http://www.graffino.com)
-*/
+ Main Javascript file
+ Author: Graffino (http://www.graffino.com)
+ */
 // Linting exceptions
 /* global google, wNumb, MarkerClusterer, clearMarkers, ClusterIcon */
 
@@ -112,6 +112,7 @@ var $searchbarPeriod        = $('.js-searchbar-period');
 var $formItem               = $('.js-validate-form');
 
 // Expand Buttons
+// Expand Buttons
 var $expandableButton       = $('.js-button-expand');
 // Const
 var FILTERS_HEIGHT          = $filterAside.outerHeight();
@@ -123,19 +124,19 @@ var infowindow              = null;
 
 // Custom elements
 var $arrowLeft              = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left-lighter">Prev</button>',
-    $arrowRight             = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-lighter">Next</button>',
+  $arrowRight             = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-lighter">Next</button>',
 
-    $arrowLeftAlt           = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left">Prev</button>',
-    $arrowRightAlt          = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right">Next</button>',
+  $arrowLeftAlt           = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left">Prev</button>',
+  $arrowRightAlt          = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right">Next</button>',
 
-    $arrowLeftMedium        = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left-medium">Prev</button>',
-    $arrowRightMedium       = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-medium">Next</button>',
+  $arrowLeftMedium        = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left-medium">Prev</button>',
+  $arrowRightMedium       = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-medium">Next</button>',
 
-    $arrowLeftSmall         = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left-small">Prev</button>',
-    $arrowRightSmall        = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-small">Next</button>',
+  $arrowLeftSmall         = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left-small">Prev</button>',
+  $arrowRightSmall        = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-small">Next</button>',
 
-    $arrowLeftWhite         = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left-white js-slick-prev">Prev</button>',
-    $arrowRightWhite        = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-white js-slick-next">Next</button>';
+  $arrowLeftWhite         = '<button type = "button" data-role = "none" class = "slick-prev icon icon__nav-left-white js-slick-prev">Prev</button>',
+  $arrowRightWhite        = '<button type = "button" data-role = "none" class = "slick-next icon icon__nav-right-white js-slick-next">Next</button>';
 
 // TravelKeys JS
 var travelkeys = {
@@ -311,9 +312,9 @@ var travelkeys = {
 
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                       if (target.length) {
-                         $('html,body').animate({
-                             scrollTop: target.offset().top
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
                         }, 1000);
                         return false;
                     }
@@ -343,44 +344,44 @@ var travelkeys = {
                         {
                             breakpoint : 3000,
                             settings   : {
-                                    slidesToShow  : 1,
-                                    centerMode    : true,
-                                    centerPadding : '400px'
+                                slidesToShow  : 1,
+                                centerMode    : true,
+                                centerPadding : '400px'
                             }
                         },
                         {
                             breakpoint : 2400,
                             settings   : {
-                                    slidesToShow  : 1,
-                                    centerMode    : true,
-                                    centerPadding : '250px'
+                                slidesToShow  : 1,
+                                centerMode    : true,
+                                centerPadding : '250px'
                             }
                         },
                         {
                             breakpoint : 1680,
                             settings   : {
-                                    centerMode    : true,
-                                    centerPadding : '100px'
+                                centerMode    : true,
+                                centerPadding : '100px'
                             }
                         },
                         {
                             breakpoint : 1440,
                             settings   : {
-                                    centerMode : false
+                                centerMode : false
                             }
                         },
                         {
                             breakpoint : 960,
                             settings   : {
-                                    slidesToShow  : 1,
-                                    centerMode    : true,
-                                    centerPadding : '80px'
+                                slidesToShow  : 1,
+                                centerMode    : true,
+                                centerPadding : '80px'
                             }
                         },
                         {
                             breakpoint : 670,
                             settings   : {
-                                    centerMode : false
+                                centerMode : false
                             }
                         }
                     ]
@@ -395,8 +396,8 @@ var travelkeys = {
                     autoplay      : true,
                     autoplaySpeed : 5000,
                     speed		  : 500,
-				    fade		  : true,
-				    cssEase		  : 'linear',
+                    fade		  : true,
+                    cssEase		  : 'linear',
                     prevArrow     : $arrowLeft,
                     nextArrow     : $arrowRight,
                     responsive    : [
@@ -532,16 +533,16 @@ var travelkeys = {
             });
 
             $('.js-hero-carousel .slick-prev').on('click', function() {
-				$heroCarouselNav.slick('slickPrev');
+                $heroCarouselNav.slick('slickPrev');
 
-				$('.js-hero-carousel-nav .slick-slide[data-slick-index="'+ heroNextSlide +'"]').addClass('-is-current').siblings().removeClass('-is-current');
-			});
+                $('.js-hero-carousel-nav .slick-slide[data-slick-index="'+ heroNextSlide +'"]').addClass('-is-current').siblings().removeClass('-is-current');
+            });
 
-			$('.js-hero-carousel .slick-next').on('click', function() {
-				$heroCarouselNav.slick('slickNext');
+            $('.js-hero-carousel .slick-next').on('click', function() {
+                $heroCarouselNav.slick('slickNext');
 
-				$('.js-hero-carousel-nav .slick-slide[data-slick-index="'+ heroNextSlide +'"]').addClass('-is-current').siblings().removeClass('-is-current');
-			});
+                $('.js-hero-carousel-nav .slick-slide[data-slick-index="'+ heroNextSlide +'"]').addClass('-is-current').siblings().removeClass('-is-current');
+            });
 
             // Go to next hero slide on next click
             $('.js-slick-next').on('click', function(){
@@ -637,7 +638,7 @@ var travelkeys = {
                     numberOfMonths         : 2,
                     beforeShowDay: function(date) {
                         var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat,
-                        $datesCheckin.val());
+                          $datesCheckin.val());
                         var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $datesCheckout.val());
                         return [true, date1 && ((date.getTime() === date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? 'ui-selected-range' : ''];
                     },
@@ -705,94 +706,94 @@ var travelkeys = {
             if ($('.-has-fancybox').length > 0 || $('.js-fancybox').length > 0) {
 
                 $('.js-modal').fancybox({
-                        openEffect      : 'elastic',
-                        closeEffect     : 'elastic',
-                        closeClick      : false,
-                        margin          : [60, 10, 20, 10],
-                        padding         : 0,
-                        showCloseButton : true,
-                        autoDimensions  : true,
-                        helpers         : {
-                            title   : null,
-                            overlay : {
-                                closeClick : true,
-                                locked     : true,
-                                css        : {
-                                    'background' : 'rgba(0, 0, 0, 0.9)'
-                                }
+                    openEffect      : 'elastic',
+                    closeEffect     : 'elastic',
+                    closeClick      : false,
+                    margin          : [60, 10, 20, 10],
+                    padding         : 0,
+                    showCloseButton : true,
+                    autoDimensions  : true,
+                    helpers         : {
+                        title   : null,
+                        overlay : {
+                            closeClick : true,
+                            locked     : true,
+                            css        : {
+                                'background' : 'rgba(0, 0, 0, 0.9)'
                             }
                         }
+                    }
                 });
 
                 $('.js-modal-form').fancybox({
-                        closeClick      : false,
-                        margin          : 0,
-                        padding         : 0,
-                        centerOnScroll  : true,
-                        showCloseButton : true,
-                        autoDimensions  : true,
-                        beforeLoad      : function() {
-                            $('body').addClass('fancybox-close--alt');
-                             return thisScrollPosition = $(window).scrollTop();
-                        },
-                        afterLoad       : function() {
-                            $('body').css('position', 'fixed');
-                        },
-                        afterClose      : function() {
-                            $('body').removeClass('fancybox-close--alt');
-                            if ($bookingContainer.length > 0) {
-                                $bookingContainer.css('display', 'block');
-                            }
-                            $('body').css('position', '');
-                            $(window).scrollTop(thisScrollPosition);
-                        },
-                        helpers         : {
-                            title   : null,
-                            overlay : {
-                                closeClick : true,
-                                locked     : true,
-                                css        : {
-                                    'background' : 'rgba(0, 0, 0, 0.95)'
-                                }
+                    closeClick      : false,
+                    margin          : 0,
+                    padding         : 0,
+                    centerOnScroll  : true,
+                    showCloseButton : true,
+                    autoDimensions  : true,
+                    beforeLoad      : function() {
+                        $('body').addClass('fancybox-close--alt');
+                        return thisScrollPosition = $(window).scrollTop();
+                    },
+                    afterLoad       : function() {
+                        $('body').css('position', 'fixed');
+                    },
+                    afterClose      : function() {
+                        $('body').removeClass('fancybox-close--alt');
+                        if ($bookingContainer.length > 0) {
+                            $bookingContainer.css('display', 'block');
+                        }
+                        $('body').css('position', '');
+                        $(window).scrollTop(thisScrollPosition);
+                    },
+                    helpers         : {
+                        title   : null,
+                        overlay : {
+                            closeClick : true,
+                            locked     : true,
+                            css        : {
+                                'background' : 'rgba(0, 0, 0, 0.95)'
                             }
                         }
+                    }
                 });
 
                 $('.js-modal-filters').fancybox({
-                        closeClick      : false,
-                        margin          : 0,
-                        padding         : 0,
-                        centerOnScroll  : true,
-                        autoCenter      : true,
-                        showCloseButton : true,
-                        autoDimensions  : true,
-                        autoScale       : true,
-                        beforeLoad      : function() {
-                            $('body').addClass('fancybox-close--alt');
-                            return thisScrollPosition = $(window).scrollTop();
-                        },
-                        afterLoad       : function() {
-                            $('body').css('position', 'fixed');
-                            $('.fancybox-outer').addClass('search-results');
-                            if (windowInnerWidth > 960) {
-                                $.fancybox.close();
-                            }
-                        },
-                        afterClose      : function() {
-                            $('body').removeClass('fancybox-close--alt');
-                            $('body').css('position', '');
-                            $(window).scrollTop(thisScrollPosition);
-                        },
-                        helpers         : {
-                            title   : null,
-                            overlay : {
-                                closeClick : true,
-                                locked     : true,
-                                css        : {
-                                    'background' : 'rgba(0, 0, 0, 0.95)'
-                                }
+                    closeClick      : false,
+                    margin          : 0,
+                    padding         : 0,
+                    centerOnScroll  : true,
+                    autoCenter      : true,
+                    showCloseButton : true,
+                    autoDimensions  : true,
+                    autoScale       : true,
+                    beforeLoad      : function() {
+                        $('body').addClass('fancybox-close--alt');
+                        return thisScrollPosition = $(window).scrollTop();
+                    },
+                    afterLoad       : function() {
+                        $('body').css('position', 'fixed');
+                        $('.fancybox-outer').addClass('search-results');
+                        if (windowInnerWidth > 960) {
+                            $.fancybox.close();
+                        }
+                    },
+                    afterClose      : function() {
+                        $('body').removeClass('fancybox-close--alt');
+                        $('body').css('position', '');
+                        $(window).scrollTop(thisScrollPosition);
+                    },
+                    helpers         : {
+                        title   : null,
+                        overlay : {
+                            closeClick : true,
+                            locked     : true,
+                            css        : {
+                                'background' : 'rgba(0, 0, 0, 0.95)'
                             }
                         }
+                    }
                 });
 
                 $('.js-close-fancybox').on('click', function() {
@@ -800,62 +801,62 @@ var travelkeys = {
                 });
 
                 $('.js-modal-info').fancybox({
-                        closeClick      : false,
-                        margin          : 0,
-                        padding         : 0,
-                        centerOnScroll  : true,
-                        showCloseButton : false,
-                        autoCenter      : true,
-                        autoDimensions  : false,
-                        beforeLoad      : function() {
-                            return thisScrollPosition = $(window).scrollTop();
-                        },
-                        afterLoad       : function() {
-                            $('body').css('position', 'fixed');
-                        },
-                        afterClose      : function() {
-                            $('body').css('position', '');
-                            $(window).scrollTop(thisScrollPosition);
-                        },
-                        helpers         : {
-                            title   : null,
-                            overlay : {
-                                closeClick : false,
-                                locked     : false,
-                                css        : {
-                                    'background' : 'rgba(0, 0, 0, 0.9)'
-                                }
+                    closeClick      : false,
+                    margin          : 0,
+                    padding         : 0,
+                    centerOnScroll  : true,
+                    showCloseButton : false,
+                    autoCenter      : true,
+                    autoDimensions  : false,
+                    beforeLoad      : function() {
+                        return thisScrollPosition = $(window).scrollTop();
+                    },
+                    afterLoad       : function() {
+                        $('body').css('position', 'fixed');
+                    },
+                    afterClose      : function() {
+                        $('body').css('position', '');
+                        $(window).scrollTop(thisScrollPosition);
+                    },
+                    helpers         : {
+                        title   : null,
+                        overlay : {
+                            closeClick : false,
+                            locked     : false,
+                            css        : {
+                                'background' : 'rgba(0, 0, 0, 0.9)'
                             }
                         }
+                    }
                 });
                 $('.js-property-modal').fancybox({
-					openEffect			:	'elastic',
-					closeEffect			:	'elastic',
-					closeClick			:	true,
-					autoSize				:	true,
-					fitToView				:	true,
-					padding					:	0,
-					showNavArrows			:   true,
-					arrows					:	true,
-					helpers					:	{
-													title	:	null,
-													overlay	:	{
-														closeClick	:	true,
-														locked		:	true,
-														css			:	{
-																			'background' : 'rgba(0, 0, 0, 0.9)'
-														}
-													}
-												},
-					beforeLoad			: function() {
-						$('body').addClass('property-gallery');
-					},
+                    openEffect			:	'elastic',
+                    closeEffect			:	'elastic',
+                    closeClick			:	true,
+                    autoSize				:	true,
+                    fitToView				:	true,
+                    padding					:	0,
+                    showNavArrows			:   true,
+                    arrows					:	true,
+                    helpers					:	{
+                        title	:	null,
+                        overlay	:	{
+                            closeClick	:	true,
+                            locked		:	true,
+                            css			:	{
+                                'background' : 'rgba(0, 0, 0, 0.9)'
+                            }
+                        }
+                    },
+                    beforeLoad			: function() {
+                        $('body').addClass('property-gallery');
+                    },
 
-					afterShow: function(){
+                    afterShow: function(){
                         $("iframe[src*='youtube']").parent().parent().next().addClass('youtube-close');
-						$(".hero__wrapper").clone().appendTo(".fancybox-wrap");
+                        $(".hero__wrapper").clone().appendTo(".fancybox-wrap");
                     }
-				});
+                });
 
                 $('.js-fancybox').fancybox({
                     openEffect  : 'elastic',
@@ -1131,14 +1132,14 @@ var travelkeys = {
             closeTabs();
             if ($tabsSection.length > 0) {
                 var scrollTop     = $(window).scrollTop(),
-                    startPadding  = 60,
-                    stopPadding   = 120,
-                    bottomPadding = 70,
-                    mobileStart   = scrollTop,
-                    start         = $tabsStart.offset().top - startPadding,
-                    stop          = $tabsEnd.position().top - TABS_HEIGHT,
-                    stopPoint     = stop - stopPadding,
-                    bottom        = stop - start - bottomPadding;
+                  startPadding  = 60,
+                  stopPadding   = 120,
+                  bottomPadding = 70,
+                  mobileStart   = scrollTop,
+                  start         = $tabsStart.offset().top - startPadding,
+                  stop          = $tabsEnd.position().top - TABS_HEIGHT,
+                  stopPoint     = stop - stopPadding,
+                  bottom        = stop - start - bottomPadding;
 
                 // If the window is wider than 960px and
                 // window top position is greater than container's top
@@ -1265,10 +1266,10 @@ var travelkeys = {
             switch (action) {
                 case 'centerMap':
                     centerMap(map);
-                break;
+                    break;
                 case 'clear':
                     clearMarkers(map);
-                break;
+                    break;
                 default :
                     // If we have $mapSearch in the DOM
                     if ($mapSearch.length > 0) {
@@ -1293,7 +1294,7 @@ var travelkeys = {
                             }
                         });
                     }
-                break;
+                    break;
             }
         }
 
@@ -1313,21 +1314,21 @@ var travelkeys = {
         function configureMap($element) {
             // Map initial settings
             var mapOptions = {
-                    allowZoom          : true,
-                    scrollwheel        : false,
-                    draggable          : true,
-                    currencySymbol     : '$',
-                    centerOnPin        : false,
-                    zoom               : 9,
-                    disableDefaultUI   : true,
-                    scaleControl       : false,
-                    center             : new google.maps.LatLng(0, 0),
-                    mapTypeId          : google.maps.MapTypeId.ROADMAP,
-                    zoomControl        : true,
-                    zoomControlOptions : {
-                            style          : google.maps.ZoomControlStyle.SMALL,
-                            position       : google.maps.ControlPosition.LEFT_CENTER
-                    }
+                allowZoom          : true,
+                scrollwheel        : false,
+                draggable          : true,
+                currencySymbol     : '$',
+                centerOnPin        : false,
+                zoom               : 9,
+                disableDefaultUI   : true,
+                scaleControl       : false,
+                center             : new google.maps.LatLng(0, 0),
+                mapTypeId          : google.maps.MapTypeId.ROADMAP,
+                zoomControl        : true,
+                zoomControlOptions : {
+                    style          : google.maps.ZoomControlStyle.SMALL,
+                    position       : google.maps.ControlPosition.LEFT_CENTER
+                }
             };
             // Map Styles (colors, disable features)
             var mapStyles = [
@@ -1491,65 +1492,65 @@ var travelkeys = {
 
         // Add map markers function
         function addMarker($marker, map) {
-                // Create new marker
-                var latlng = new google.maps.LatLng($marker.data('lat'), $marker.data('lng'));
-                var marker = new google.maps.Marker({
-                        position : latlng,
-                        map      : map,
-                        icon     : markerIcon
+            // Create new marker
+            var latlng = new google.maps.LatLng($marker.data('lat'), $marker.data('lng'));
+            var marker = new google.maps.Marker({
+                position : latlng,
+                map      : map,
+                icon     : markerIcon
+            });
+
+            // Add to array
+            map.markers.push(marker);
+
+            // If marker contains HTML, add it to an infoWindow
+            if ($marker.html()) {
+                // Create info window
+
+                // Show info window when marker is clicked
+                google.maps.event.addListener(marker, 'click', function() {
+                    // Close open info windows (if they exist)
+                    if (infowindow) { infowindow.close(); }
+
+                    // Reset market icons
+                    resetMarkerIcons();
+
+                    // Set hovered map marker
+                    marker.setIcon(markerIconHover);
+
+                    // Set current marker
+                    currentMarker = marker;
+
+                    // New infowindow with the HTML content from the marker
+                    infowindow = new google.maps.InfoWindow({
+                        content        : $marker.html(),
+                        maxWidth       : 220,
+                        disableAutoPan : true,
+                        // pixelOffset : new google.maps.Size(0, 20)
                     });
-
-                // Add to array
-                map.markers.push(marker);
-
-                // If marker contains HTML, add it to an infoWindow
-                if ($marker.html()) {
-                    // Create info window
-
-                    // Show info window when marker is clicked
-                    google.maps.event.addListener(marker, 'click', function() {
-                        // Close open info windows (if they exist)
-                        if (infowindow) { infowindow.close(); }
-
-                        // Reset market icons
-                        resetMarkerIcons();
-
-                        // Set hovered map marker
-                        marker.setIcon(markerIconHover);
-
-                        // Set current marker
-                        currentMarker = marker;
-
-                        // New infowindow with the HTML content from the marker
-                        infowindow = new google.maps.InfoWindow({
-                            content        : $marker.html(),
-                            maxWidth       : 220,
-                            disableAutoPan : true,
-                            // pixelOffset : new google.maps.Size(0, 20)
-                        });
-                        // Open info window
-                        infowindow.open(map, marker);
-                        // Pan to window
-                         map.panTo(marker.getPosition());
-                         map.panBy(0,-200);
-                    });
-                    // Set correct icon on hover
-                    google.maps.event.addListener(marker, 'mouseover', function() {
-                        marker.setIcon(markerIconHover);
-                    });
-                    // Set correct icon on mouseout
-                    google.maps.event.addListener(marker, 'mouseout', function() {
-                        if (currentMarker !== marker) {
-                            marker.setIcon(markerIcon);
-                        }
-                    });
+                    // Open info window
+                    infowindow.open(map, marker);
+                    // Pan to window
+                    map.panTo(marker.getPosition());
+                    map.panBy(0,-200);
+                });
+                // Set correct icon on hover
+                google.maps.event.addListener(marker, 'mouseover', function() {
+                    marker.setIcon(markerIconHover);
+                });
+                // Set correct icon on mouseout
+                google.maps.event.addListener(marker, 'mouseout', function() {
+                    if (currentMarker !== marker) {
+                        marker.setIcon(markerIcon);
+                    }
+                });
             }
         }
 
         // Delete map markers
         function deleteMarkers(map) {
             for (var i = 0; i < map.markers.length; i++) {
-              map.markers[i].setMap(null);
+                map.markers[i].setMap(null);
             }
             map.markers.length = 0;
         }
@@ -1584,50 +1585,50 @@ var travelkeys = {
 
             ClusterIcon.prototype.createCss = function(pos) {
                 var style = [];
-                    style.push('background-image:url(' + this.url_ + ');');
+                style.push('background-image:url(' + this.url_ + ');');
 
                 var backgroundPosition = this.backgroundPosition_ ? this.backgroundPosition_ : '0 0';
-                    style.push('background-position:' + backgroundPosition + ';');
+                style.push('background-position:' + backgroundPosition + ';');
 
                 // These 2 are the important lines
                 var backgroundSize = this.backgroundSize_ ? this.backgroundSize_ : 'cover';
-                    style.push('background-size:' + backgroundSize + ';');
+                style.push('background-size:' + backgroundSize + ';');
 
-				var lineHeight = this.lineHeight_ ? this.lineHeight_ : '1';
-					style.push('line-height:' + lineHeight + 'px;');
+                var lineHeight = this.lineHeight_ ? this.lineHeight_ : '1';
+                style.push('line-height:' + lineHeight + 'px;');
 
 
                 if (typeof this.anchor_ === 'object') {
                     if (typeof this.anchor_[0] === 'number' && this.anchor_[0] > 0 && this.anchor_[0] < this.height_) {
                         style.push('height:' + (this.height_ - this.anchor_[0]) +
-                            'px; padding-top:' + this.anchor_[0] + 'px;');
+                          'px; padding-top:' + this.anchor_[0] + 'px;');
                     } else {
                         style.push('height:' + this.height_ + 'px; line-height:' + this.height_ +
-                            'px;');
+                          'px;');
                     }
                     if (typeof this.anchor_[1] === 'number' && this.anchor_[1] > 0 && this.anchor_[1] < this.width_) {
                         style.push('width:' + (this.width_ - this.anchor_[1]) +
-                            'px; padding-left:' + this.anchor_[1] + 'px;');
+                          'px; padding-left:' + this.anchor_[1] + 'px;');
                     } else {
                         style.push('width:' + this.width_ + 'px; text-align:center;');
                     }
                 } else {
                     style.push('height:' + this.height_ + 'px; line-height:' +
-                        this.lineHeight_ + 'px; width:' + this.width_ + 'px; text-align:center;');
+                      this.lineHeight_ + 'px; width:' + this.width_ + 'px; text-align:center;');
                 }
 
                 var txtColor = this.textColor_ ? this.textColor_ : 'black';
                 var txtSize  = this.textSize_ ? this.textSize_   : 11;
 
                 style.push('cursor:pointer; top:' + pos.y + 'px; left:' +
-                    pos.x + 'px; color:' + txtColor + '; position:absolute; font-size:' +
-                    txtSize + 'px; font-family:Arial,sans-serif; font-weight:bold');
+                  pos.x + 'px; color:' + txtColor + '; position:absolute; font-size:' +
+                  txtSize + 'px; font-family:Arial,sans-serif; font-weight:bold');
 
                 return style.join('');
             };
 
             var mcStyles = [
-            {
+                {
                     url                : '/themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
@@ -1637,11 +1638,11 @@ var travelkeys = {
                     backgroundSize     : 'cover',
                     backgroundPosition : '0 3px'
                 },
-				{
+                {
                     url                : '/themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
-					lineHeight		   : 50,
+                    lineHeight		   : 50,
                     textSize           : 16,
                     textColor          : '#333333',
                     backgroundSize     : 'cover',
@@ -1651,7 +1652,7 @@ var travelkeys = {
                     url                : '/themes/tkcorporate/assets/images/svg/icon-cluster-pin-mega.svg',
                     width              : 50,
                     height             : 60,
-					lineHeight		   : 50,
+                    lineHeight		   : 50,
                     textSize           : 16,
                     textColor          : '#333333',
                     backgroundSize     : 'cover',
@@ -1705,7 +1706,7 @@ var travelkeys = {
             if ($rangeSlider.length > 0) {
 
                 // Inits a two handle slider
-                $rangeSlider.noUiSlider({
+                var slider = $rangeSlider.noUiSlider({
                     start: [200, 5000],
                     connect: true,
                     range: {
@@ -1714,9 +1715,15 @@ var travelkeys = {
                     }
                 });
 
+                //slider.on.update(function(values){});
                 //  Asigns handle values to etiquets
                 $rangeSlider.Link('lower').to($rangeSliderMin, null, wNumb({decimals: 0}));
                 $rangeSlider.Link('upper').to($rangeSliderMax, null, wNumb({decimals: 0}));
+
+                $rangeSlider.on('change', function(val) {
+                    $('#range-slider__low').val($rangeSliderMin.text()).trigger('change');
+                    $('#range-slider__high').val($rangeSliderMax.text()).trigger('change');
+                });
             }
         }
 
@@ -1823,18 +1830,18 @@ var travelkeys = {
                 });
 
                 $searchbar.on('click', function() {
-                  $searchbar.addClass('-is-active');
+                    $searchbar.addClass('-is-active');
                 });
 
                 $(document).on('click', function(event) {
-                  if (!$(event.target).closest($searchbar).length) {
-                    if ($(event.target).hasClass('ui-corner-all')) {
-                      event.stopPropagation();
-                    } else {
-                      $searchbar.removeClass('-is-active');
-                      $datesContainer.removeClass('-is-open');
+                    if (!$(event.target).closest($searchbar).length) {
+                        if ($(event.target).hasClass('ui-corner-all')) {
+                            event.stopPropagation();
+                        } else {
+                            $searchbar.removeClass('-is-active');
+                            $datesContainer.removeClass('-is-open');
+                        }
                     }
-                  }
                 });
             }
         }
@@ -1947,62 +1954,62 @@ var travelkeys = {
                         scrollPadding       = 150;
                         scrollPaddingMobile = 300;
                         bookingPanelHeight  = 470;
-                    break;
+                        break;
                     case '15px':
                         startPointPadding   = 115;
                         stopPointPadding    = 8;
                         scrollPadding       = 140;
                         scrollPaddingMobile = 300;
                         bookingPanelHeight  = 440;
-                    break;
+                        break;
                     case '14px':
                         startPointPadding   = 95;
                         stopPointPadding    = 5;
                         scrollPadding       = 130;
                         scrollPaddingMobile = 300;
                         bookingPanelHeight  = 410;
-                    break;
+                        break;
                     case '13px':
                         startPointPadding   = 85;
                         stopPointPadding    = 60;
                         scrollPadding       = 120;
                         scrollPaddingMobile = 300;
                         bookingPanelHeight  = 410;
-                    break;
+                        break;
                     case '12px':
                         startPointPadding   = 105;
                         stopPointPadding    = 120;
                         scrollPadding       = 110;
                         scrollPaddingMobile = 300;
                         bookingPanelHeight  = 410;
-                    break;
+                        break;
                 }
 
                 if ( windowInnerWidth < 960 && windowInnerWidth > 730 ) {
-					bookingPanelHeight	= 215;
-					mobileStopValue = 400;
-				} else if ( windowInnerWidth < 730 ) {
-					bookingPanelHeight = 505;
-					mobileStopValue = 900;
-				} else {
-					mobileStopValue = 0;
-				}
+                    bookingPanelHeight	= 215;
+                    mobileStopValue = 400;
+                } else if ( windowInnerWidth < 730 ) {
+                    bookingPanelHeight = 505;
+                    mobileStopValue = 900;
+                } else {
+                    mobileStopValue = 0;
+                }
 
                 // Calculate start point
                 var startPointOffset = $bookingContainer.offset().top;
-                    startPointOffset = truncateDecimals(startPointOffset,0);
+                startPointOffset = truncateDecimals(startPointOffset,0);
 
                 // Calculate stop point via the set stop point
                 var stopPointOffset = $scrollStopPoint.offset().top - bookingPanelHeight;
-                    stopPointOffset = truncateDecimals(stopPointOffset,0);
+                stopPointOffset = truncateDecimals(stopPointOffset,0);
 
                 // Bottom position
                 var bottomPosition = stopPointOffset - bookingPanelHeight;
-                    bottomPosition = truncateDecimals(bottomPosition,0) + stopPointPadding;
+                bottomPosition = truncateDecimals(bottomPosition,0) + stopPointPadding;
 
                 // Scroll position
                 var scrollPosition = $(window).scrollTop();
-                    scrollPosition = truncateDecimals(scrollPosition,0);
+                scrollPosition = truncateDecimals(scrollPosition,0);
 
                 // Final values
                 var startPoint = startPointOffset;
@@ -2038,7 +2045,7 @@ var travelkeys = {
                             $bookingPanel.removeClass('-is-bottom');
                         }
                     }
-                // Mobile resolution
+                    // Mobile resolution
                 } else {
                     $bookingPanel.css('bottom','');
 
@@ -2386,7 +2393,12 @@ var travelkeys = {
                         'specials': document.getElementById('ck-sp').checked,
                         'favorites': document.getElementById('ck-fav').checked,
                     },
-                    guests: $('#guests__filter--item').val()
+                    guests: $('#guests__filter--item').val(),
+                    bedrooms: $('#bedroom__filter--item').val(),
+                    price: {
+                        start: $('#range-slider__low').val(),
+                        end: $('#range-slider__high').val()
+                    }
                 };
 
                 $.getJSON('/ajax/filter', {
@@ -2400,6 +2412,7 @@ var travelkeys = {
 
                     if ( data.status === 'ok' ) {
                         $('.featured__row__container .featured__row').html(data.html);
+                        $('#total_villas_number').text(data.total_items);
                     }
 
                     if (data.length < 20) {

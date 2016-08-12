@@ -43,15 +43,21 @@ class VillaListing
     public function specials(Request $request, Response $response, array $args)
     {
         $location = null;
-        if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
+        $location_id = null;
+        if ( SUBDOMAIN ) {
+            $location = $this->locations->bySlug(SUBDOMAIN);
+            $location_id = $location->id;
+        }
 
+        $specials = $this->properties->specials($location_id, 0, 20);
 
         return $this->view->render($response, 'search.tpl', [
             'page' => [
                 'title' => 'Specials',
                 'body_classes' => 'search',
             ],
-            'search_items' => [],
+            'search_items' => $specials['items'],
+            'total_items' => $specials['total'],
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
             'location' => $location
@@ -107,9 +113,13 @@ class VillaListing
     public function search(Request $request, Response $response, array $args)
     {
         $location = null;
-        if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
+        $location_id = null;
+        if ( SUBDOMAIN ) {
+            $location = $this->locations->bySlug(SUBDOMAIN);
+            $location_id = $location->id;
+        }
 
-        $search_items = $this->properties->search($request->getParam('q', ''), 0, 20);
+        $search_items = $this->properties->search($request->getParam('q', ''), 0, 20, ['location_id' => $location_id]);
         $total_items  = $search_items['total'];
 
         // TODO: Should be fixed in API

@@ -40,6 +40,7 @@ class Properties extends CacheClient
 
         // Get ids to fetch from cache
         $search_items = $this->resource->search($term, $start, $limit, $filters, true)->wait();
+
         if ( !$search_items->result || !$search_items->result->result ) return [
             'items' => [],
             'total' => 0
@@ -150,18 +151,7 @@ class Properties extends CacheClient
      */
     public function specials($location_id = null, $offset = '', $limit = '')
     {
-        $cacheKey = md5(__METHOD__);
-        if ( $data = parent::get($cacheKey) ) {
-            return unserialize($data);
-        }
-
-        $data = $this->resource->data(
-            $this->resource->specials($location_id)
-        ); // wait and return if cache not available
-
-        parent::set($cacheKey, serialize($data->result));
-
-        return $data->result;
+        return $this->search('', $offset, $limit, ['specials' => 1, 'location_id' => $location_id]);
     }
 
     // We add different strategy to cache properties since they are a lot

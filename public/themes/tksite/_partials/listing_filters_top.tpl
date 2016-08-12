@@ -37,7 +37,7 @@
                             <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
                                 <i class="icon icon__minus"></i>-
                             </span>
-                            <select class="js-select2 -has-select2 form__input filter__input">
+                            <select class="js-select2 -has-select2 form__input filter__input" id="bedroom__filter--item">
                                 <option value="Bedrooms" selected>Bedrooms</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -60,26 +60,29 @@
                                 <em class="js-slider-min no-slider__limit__value">$<span>200</span>
                                 </em>
                             </span>
+                            <input type="hidden" class="filter__input" id="range-slider__low" name="price_start"  value="0"/>
                             <span class="no-slider__limit -value-max">Max price
                                 <em class="js-slider-max no-slider__limit__value">$<span>5000</span>
                                 </em>
                             </span>
+                            <input type="hidden" class="filter__input" id="range-slider__high" name="price_end"  value="0"/>
                         </div>
                     </div>
                 </div>
+
                 <div class="filter--side__wrapper">
                     <h3 class="filter__subtitle filter--side__subtitle">Group</h3>
                     <div class="filter--side__wrapper__inner">
                         <ul class="js-expandable filter__options -is-expandable">
                             <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-all" name="ck-all" checked>
+                                <input class="checkbox filter__input" type="checkbox" id="ck-all" name="ck-all" checked>
                                 <label class="filter__option__label" for="ck-all"><span></span>All</label>
                             </li>
                             <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-sp" name="ck-sp">
+                                <input class="checkbox filter__input" type="checkbox" id="ck-sp" name="ck-sp">
                                 <label class="filter__option__label" for="ck-sp"><span></span>Specials</label>
                             </li>
-                            <li class="filter__option">
+                            <li class="filter__option filter__input">
                                 <input class="checkbox" type="checkbox" id="ck-fav" name="ck-fav">
                                 <label class="filter__option__label" for="ck-fav"><span></span>Favourites</label>
                             </li>
@@ -211,12 +214,12 @@
                     </div>
                 </div>-->
             </form>
-            <!--<div class="filter--side__wrapper -last">
+            <div class="filter--side__wrapper -last">
                 <div class="filter__button__wrapper">
                     <a class="button -ui-confirm js-close-filters" href="#">Show villas</a>
                     <a class="button -ui-cancel -hover-alt js-close-filters" href="#">Cancel</a>
                 </div>
-            </div>-->
+            </div>
         </div>
         <div class="aside__button__wrapper">
             <div class="aside__button__content">
@@ -228,16 +231,16 @@
     <div class="js-section-header section__header">
         <div class="section__header__container">
             <div class="section__header__wrapper -position-left">
-                <h2 class="section__header__title"><span>View</span> {$total_items|default:0} villas</h2>
+                <h2 class="section__header__title"><span>View</span> <span id="total_villas_number">{$total_items|default:0}</span> villas</h2>
                 <h3 class="section__header__title--alt">407 villas<span class="title--alt__number"><span class="title--alt__separator">/</span>11 unmapped</span></h3>
                 <div class="form__input__container filter__input__container filter__input__container--alt">
                     <select class="js-select2-alt form__input filter__input">
-                        <option value="Guests" selected>Bedrooms: Low to High</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option value="name_asc" selected>Villa Name A-Z</option>
+                        <option value="name_desc">Villa Name Z-A</option>
+                        <option value="price_asc">Price: Low to High</option>
+                        <option value="price_desc">Price: High to Low</option>
+                        <option value="bedrooms_asc">Bedrooms: Low to High</option>
+                        <option value="bedrooms_desc">Bedrooms: High to Low</option>
                     </select>
                     <i class="icon icon__option"></i>
                 </div>
@@ -245,12 +248,12 @@
             <div class="section__header__wrapper -position-right">
                 <div class="form__input__container filter__input__container filter__input__container--alt -anchor-counter">
                     <select class="js-select2 js-select2-alt -has-select2 form__input filter__input">
-                        <option value="Guests" selected>Bedrooms: Low to High</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option value="name_asc" selected>Villa Name A-Z</option>
+                        <option value="name_desc">Villa Name Z-A</option>
+                        <option value="price_asc">Price: Low to High</option>
+                        <option value="price_desc">Price: High to Low</option>
+                        <option value="bedrooms_asc">Bedrooms: Low to High</option>
+                        <option value="bedrooms_desc">Bedrooms: High to Low</option>
                     </select>
                     <i class="icon icon__option"></i>
                 </div>

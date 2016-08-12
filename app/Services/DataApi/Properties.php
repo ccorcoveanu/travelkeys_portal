@@ -126,15 +126,30 @@ class Properties extends DataApi
             ];
         }
 
+        if ( isset($filters['bedrooms']) ) {
+            $conditions[] = [
+                'field' => 'bedrooms',
+                'operator' => '=',
+                'value' => $filters['bedrooms']
+            ];
+        }
+
+        if ( isset($filters['ids']) ) {
+            $conditions[] = [
+                'field' => 'id',
+                'operator' => 'in',
+                'value' => '(' . implode(',', $filters['ids']) . ')'
+            ];
+        }
+
         return $this->call("{$this->resource}_getPropertiesFilters", [
             'conditions' => $conditions,
             'reservations' => isset($filters['reservations']) ? $filters['reservations'] : '',
-            //'bedrooms' => isset($filters['bedrooms']) ? $filters['bedrooms'] : '',
-            //'guests' => isset($filters['guests']) ? $filters['guests'] : '',
             'start' => $start,
             'length' => $limit,
             'order' => '',
-            'only_ids' => $only_ids
+            'only_ids' => $only_ids,
+            'special' => isset($filters['specials']) ? $filters['specials'] : null
         ]);
     }
 

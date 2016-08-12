@@ -1,9 +1,7 @@
 <?php
 $app->add(function ($request, $response, $next) use ($app) {
 
-    if ( (strpos($request->getRequestTarget(), '/api/v') !== false) ||
-        (strpos($request->getRequestTarget(), '/ajax/') !== false )
-    ) {
+    if ( strpos($request->getRequestTarget(), '/api/v') !== false ) {
         return $next($request, $response);
     } // For the api and ajax calls we don't need the menu
 

@@ -112,6 +112,7 @@ var $searchbarPeriod        = $('.js-searchbar-period');
 var $formItem               = $('.js-validate-form');
 
 // Expand Buttons
+// Expand Buttons
 var $expandableButton       = $('.js-button-expand');
 // Const
 var FILTERS_HEIGHT          = $filterAside.outerHeight();
@@ -1705,7 +1706,7 @@ var travelkeys = {
             if ($rangeSlider.length > 0) {
 
                 // Inits a two handle slider
-                $rangeSlider.noUiSlider({
+                var slider = $rangeSlider.noUiSlider({
                     start: [200, 5000],
                     connect: true,
                     range: {
@@ -1714,9 +1715,15 @@ var travelkeys = {
                     }
                 });
 
+                //slider.on.update(function(values){});
                 //  Asigns handle values to etiquets
                 $rangeSlider.Link('lower').to($rangeSliderMin, null, wNumb({decimals: 0}));
                 $rangeSlider.Link('upper').to($rangeSliderMax, null, wNumb({decimals: 0}));
+
+                $rangeSlider.on('change', function(val) {
+                    $('#range-slider__low').val($rangeSliderMin.text()).trigger('change');
+                    $('#range-slider__high').val($rangeSliderMax.text()).trigger('change');
+                });
             }
         }
 
@@ -2386,7 +2393,12 @@ var travelkeys = {
                         'specials': document.getElementById('ck-sp').checked,
                         'favorites': document.getElementById('ck-fav').checked,
                     },
-                    guests: $('#guests__filter--item').val()
+                    guests: $('#guests__filter--item').val(),
+                    bedrooms: $('#bedroom__filter--item').val(),
+                    price: {
+                        start: $('#range-slider__low').val(),
+                        end: $('#range-slider__high').val()
+                    },
                 };
 
                 $.getJSON('/ajax/filter', {
@@ -2400,6 +2412,7 @@ var travelkeys = {
 
                     if ( data.status === 'ok' ) {
                         $('.featured__row__container .featured__row').html(data.html);
+                        $('#total_villas_number').text(data.total_items);
                     }
 
                     if (data.length < 20) {

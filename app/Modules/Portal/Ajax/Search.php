@@ -52,12 +52,31 @@ class Search
             $extra_filters['guests'] = (int)$filters['guests'];
         }
 
+        if ( isset($filters['bedrooms']) && (int)$filters['bedrooms'] ) {
+            $extra_filters['bedrooms'] = (int)$filters['bedrooms'];
+        }
+
+        if ( isset($filters['reservations']) && ( $filters['reservations']['start'] || $filters['reservations']['end'] ) ) {
+            $extra_filters['reservations'] = $filters['reservations'];
+        }
+
+        if ( !$filters['group']['all'] || $filters['group']['all'] === 'false' ) {
+            if ( $filters['group']['specials'] !== 'false' ) {
+                $extra_filters['specials'] = true;
+            }
+            if ( $filters['group']['favorites'] !== 'false' ) {
+                $extra_filters['ids'] = $request->getAttribute('favorites');
+            }
+        }
+
+
         $search_items = $this->properties->search(
             $request->getParam('q', ''),
             $request->getParam('start', ''),
             $request->getParam('limit', ''),
             $extra_filters
         );
+        $total_tiems = $search_items['total'];
 
         // TODO: Should be fixed in API
         $search_items = array_map(function ($item) {
@@ -70,9 +89,10 @@ class Search
         }, $search_items['items']);
 
         $html = $this->view->fetch('_partials/components/property_list.tpl', [
-            'search_items' => $search_items
+            'search_items' => $search_items,
+            'favorites' => $request->getAttribute('favorites'),
         ]);
 
-        return \GuzzleHttp\json_encode(['length' => count($search_items), 'status' => 'ok', 'html' => $html]);
+        return \GuzzleHttp\json_encode(['length' => count($search_items), 'status' => 'ok', 'html' => $html, 'total_items' => $total_tiems]);
     }
 }
