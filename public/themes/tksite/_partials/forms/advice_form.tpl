@@ -30,8 +30,8 @@
             <div class="form--letter__input__container -half-width -anchor-datepicker">
                 <label class="form--letter__label">
                     <span class="-hides-for-small-down">Aproximate check in date:</span>
-                    <span class="-show-for-small-down">Check in</span>
-                </label>
+                        <span class="-show-for-small-down">Check in</span>
+                    </label>
                 <input class="js-datepicker -has-datepicker form--letter__input -appearance-alt" type="text" placeholder="" name="check_in" readonly>
                 <i class="icon icon__calendar"></i>
             </div>

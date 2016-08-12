@@ -13,7 +13,7 @@
         <div class="map__markers js-map-markers">
             {block name='search_results'}
                 {foreach name='search_results_loop' item=$map_item from=$search_items}
-                    {include file='_partials/list_items/map_pin_item.tpl'}
+                    {include file='_partials/list_items/map_pin_item_property.tpl'}
                 {/foreach}
             {/block}
         </div>
