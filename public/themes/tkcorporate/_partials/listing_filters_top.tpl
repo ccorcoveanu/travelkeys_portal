@@ -65,7 +65,7 @@
                                 <em class="js-slider-max no-slider__limit__value">$<span>5000</span>
                                 </em>
                             </span>
-                            <input type="hidden" class="filter__input" id="range-slider__high" name="price_end"  value="0"/>
+                            <input type="hidden" class="filter__input" id="range-slider__high" name="price_end"  value="5000"/>
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
             <div class="section__header__wrapper -position-left">
                 <h2 class="section__header__title"><span>View</span> <span id="total_villas_number">{$total_items|default:0}</span> villas</h2>
                 <h3 class="section__header__title--alt">407 villas<span class="title--alt__number"><span class="title--alt__separator">/</span>11 unmapped</span></h3>
-                <div class="form__input__container filter__input__container filter__input__container--alt">
+                <div class="form__input__container filter__input__container filter__input__container--alt order-villas__select">
                     <select class="js-select2-alt form__input filter__input" name="oreder_by">
                         <option value="name_asc" selected>Villa Name A-Z</option>
                         <option value="name_desc">Villa Name Z-A</option>
@@ -246,7 +246,7 @@
                 </div>
             </div>
             <div class="section__header__wrapper -position-right">
-                <div class="form__input__container filter__input__container filter__input__container--alt -anchor-counter">
+                <div class="form__input__container filter__input__container filter__input__container--alt -anchor-counter order-villas__select">
                     <select class="js-select2 js-select2-alt -has-select2 form__input filter__input">
                         <option value="name_asc" selected>Villa Name A-Z</option>
                         <option value="name_desc">Villa Name Z-A</option>

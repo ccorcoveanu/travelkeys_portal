@@ -81,6 +81,29 @@ class Search
             }
         }
 
+        if ( isset($filters['price']) ) {
+            $extra_filters['price'] = [];
+            // Check both values - assure that if any of them is 0, we will send null
+            // to handle the case when the user only sets the start price (in
+            // that case the front handler sends 0 as the end price)
+            // If we send 0 as end price, of course that the api
+            // will return no results.
+            if ( !$filters['price']['start'] ) {
+                $extra_filters['price']['min'] = 0;
+            } else {
+                $extra_filters['price']['min'] = $filters['price']['start'];
+            }
+            if ( !$filters['price']['end'] ) {
+                $extra_filters['price']['max'] = null;
+            } else {
+                $extra_filters['price']['max'] = $filters['price']['end'];
+            }
+        }
+
+        $order = null;
+        if ( isset($filters['order']) && $filters['order'] ) {
+            $extra_filters['order'] = $filters['order'];
+        }
 
         $search_items = $this->properties->search(
             $request->getParam('q', ''),
@@ -88,6 +111,7 @@ class Search
             $request->getParam('limit', ''),
             $extra_filters
         );
+
         $total_tiems = $search_items['total'];
 
         // TODO: Should be fixed in API

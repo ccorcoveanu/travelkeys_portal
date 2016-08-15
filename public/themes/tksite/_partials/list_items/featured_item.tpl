@@ -22,7 +22,7 @@
             </div>
             <div class="featured__item__price">
                 <span class="price__text">From</span>
-                <strong class="price__number"><sup class="price__super">$</sup>{$featured_item->min_price|default:'TBA'}/nt</strong>
+                <strong class="price__number"><sup class="price__super">$</sup>{$featured_item->min_rate|default:'TBA'}/nt</strong>
             </div>
         </div>
         <div class="featured__item__buttons">

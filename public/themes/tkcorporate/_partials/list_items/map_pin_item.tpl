@@ -10,7 +10,7 @@
                 <i data-id="{$map_item->landing_property_id}" class="toggle__favorite icon icon__heart{if $map_item->is_favorite}-full{/if}"></i><span>{$map_item->name}</span>
             </a>
         </h3>
-        <p class="marker__body">{$map_item->bedrooms} Bdr, {$map_item->bathrooms} Bth | {$map_item->state}{if $map_item->state|strlen}, {/if}{$map_item->city|default:$map_item->name} ${$map_item->min_price} - ${$map_item->max_price}</p>
+        <p class="marker__body">{$map_item->bedrooms} Bdr, {$map_item->bathrooms} Bth | {$map_item->state}{if $map_item->state|strlen}, {/if}{$map_item->city|default:$map_item->name} ${$map_item->min_rate} - ${$map_item->max_price}</p>
         <div class="marker__buttons">
             <a class="button -color-black -size-popup" href="{$smarty.const.PROTOCOL}{$map_item->subdomain}.{$smarty.const.SERVER_NAME}" title="Find out more">More details</a>
             <a class="button button--popup-cancel" href="javascript:infowindow.close();" title="Cancel">Cancel</a>

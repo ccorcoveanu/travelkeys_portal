@@ -2,6 +2,7 @@
 namespace App\Services\DataApi;
 
 use App\Services\DataApi;
+use App\Services\DataApi\Helpers\Filters;
 
 /**
  * Class Sites
@@ -9,6 +10,8 @@ use App\Services\DataApi;
  */
 class Properties extends DataApi
 {
+    use Filters;
+
     protected
         /**
          * Mapped resource name
@@ -142,14 +145,20 @@ class Properties extends DataApi
             ];
         }
 
+        $order = '';
+        if ( isset($filters['order']) ) {
+            $order = $this->order($filters['order']);
+        }
+
         return $this->call("{$this->resource}_getPropertiesFilters", [
             'conditions' => $conditions,
             'reservations' => isset($filters['reservations']) ? $filters['reservations'] : '',
             'start' => $start,
             'length' => $limit,
-            'order' => '',
+            'order' => $order,
             'only_ids' => $only_ids,
-            'special' => isset($filters['specials']) ? $filters['specials'] : null
+            'special' => isset($filters['specials']) ? $filters['specials'] : '',
+            'price' => isset($filters['price']) ? $filters['price'] : null,
         ]);
     }
 

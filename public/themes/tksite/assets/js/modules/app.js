@@ -1721,8 +1721,10 @@ var travelkeys = {
                 $rangeSlider.Link('upper').to($rangeSliderMax, null, wNumb({decimals: 0}));
 
                 $rangeSlider.on('change', function(val) {
-                    $('#range-slider__low').val($rangeSliderMin.text()).trigger('change');
-                    $('#range-slider__high').val($rangeSliderMax.text()).trigger('change');
+                    $('#range-slider__low').val($rangeSliderMin.text());
+                    $('#range-slider__high').val($rangeSliderMax.text());
+
+                    $('#range-slider__low').trigger('change');
                 });
             }
         }
@@ -2369,6 +2371,9 @@ var travelkeys = {
         function __init() {
             if ( !$('.search-results').length ) return false;
 
+            var loading = false;
+            var xhr_req = false;
+
             $('.filter__input, .filter__option input').on('change', function(evt) {
 
                 window.scrollTo(0, 0);
@@ -2398,10 +2403,15 @@ var travelkeys = {
                     price: {
                         start: $('#range-slider__low').val(),
                         end: $('#range-slider__high').val()
-                    }
+                    },
+                    order: $('.order-villas__select:visible select option:selected').val()
                 };
 
-                $.getJSON('/ajax/filter', {
+                if ( loading && xhr_req) {
+                    xhr_req.abort();
+                }
+
+                xhr_req = $.getJSON('/ajax/filter', {
 
                     'q': $('input[name="q"]').val(),
                     'start': 0,
@@ -2424,8 +2434,9 @@ var travelkeys = {
                 }).fail(function (jqxhr, textStatus, error) {
                     // do something with error
                 }).always(function () {
-
+                    loading = false;
                 });
+                loading = true;
             });
         }
 

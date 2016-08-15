@@ -73,7 +73,7 @@
                                 <div class="disclaimer">
                                     <span class="disclaimer__title">Best rate guarantee, from:</span>
                                     <strong class="disclaimer__number">
-                                        <sup class="disclaimer__number__super">$</sup>{$search_item->min_price|default:'TBA'}
+                                        <sup class="disclaimer__number__super">$</sup>{$search_item->min_rate|default:'TBA'}
                                         <span class="disclaimer__number__text">/night</span>
                                     </strong>
                                 </div>
