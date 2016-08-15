@@ -232,7 +232,7 @@
         <div class="section__header__container">
             <div class="section__header__wrapper -position-left">
                 <h2 class="section__header__title"><span>View</span> <span id="total_villas_number">{$total_items|default:0}</span> villas</h2>
-                <h3 class="section__header__title--alt">407 villas<span class="title--alt__number"><span class="title--alt__separator">/</span>11 unmapped</span></h3>
+                <h3 class="section__header__title--alt">{$total_items|default:0} villas</h3>
                 <div class="form__input__container filter__input__container filter__input__container--alt order-villas__select">
                     <select class="js-select2-alt form__input filter__input" name="oreder_by">
                         <option value="name_asc" selected>Villa Name A-Z</option>

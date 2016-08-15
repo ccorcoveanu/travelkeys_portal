@@ -176,15 +176,25 @@ class VillaListing
             unset($parts[count($parts) - 1]);
             $property_details->images[$k]->filename_l = implode('.', $parts) . '_l.' . $ext;
             $property_details->images[$k]->filename_s = implode('.', $parts) . '_s.' . $ext;
+            $property_details->images[$k]->filename_m = implode('.', $parts) . '_m.' . $ext;
         }
 
         $property_details->rates = json_decode(json_encode($property_details->rates), true);
 
+        $min_rate = $max_rate = 0;
         foreach ( $property_details->rates as $k => $rate ) {
+
+            // Format dates
             $stime = strtotime($rate['start_date']);
             $etime = strtotime($rate['end_date']);
             $property_details->rates[$k]['formatted_date'] = date('F d', $stime) . ' - ' . date('F d, Y', $etime);
+
+            // Find min and max rates
+            if ( $rate['weekday_rate'] < $min_rate || $min_rate === 0 ) $min_rate = $rate['weekday_rate'];
+            if ( $rate['weekday_rate'] > $max_rate ) $max_rate = $rate['weekday_rate'];
         }
+        $property_details->details->min_rate = $min_rate;
+        $property_details->details->max_rate = $max_rate;
 
         return $this->view->render($response, 'details.tpl', [
             'page' => [

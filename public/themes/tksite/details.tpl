@@ -73,7 +73,7 @@
                                 <div class="disclaimer">
                                     <span class="disclaimer__title">Best rate guarantee, from:</span>
                                     <strong class="disclaimer__number">
-                                        <sup class="disclaimer__number__super">$</sup>{$search_item->min_rate|default:'TBA'}
+                                        <sup class="disclaimer__number__super">$</sup>{$property_details->details->min_rate|default:'TBA'}
                                         <span class="disclaimer__number__text">/night</span>
                                     </strong>
                                 </div>
@@ -395,33 +395,18 @@
             </div>
             <div class="map__container js-map-search"></div>
             <div class="map__markers js-map-markers">
-                <div class="marker js-marker" data-lat="10.626444584524297" data-lng="-85.68964719772339" data-hidden="false">
+                <div class="marker js-marker" data-lat="{$property_details->address->latitude}" data-lng="{$property_details->address->longitude}" data-hidden="false">
                     <div class="marker__content js-marker-content">
-                        <img src="http://cdn.villascaribe.com/6396_hawaii-lahainadream-1_m.jpg" class="marker__image" alt="Coral House">
+                        <img src="{$smarty.const.CDN}/{$property_details->images[0]->filename_m}" class="marker__image" alt="{$property_details->details->name}">
                         <h3 class="marker__title">
-                            <a href="#" title="Coral House" class="marker__favorite">
-                                <i class="icon icon__heart"></i><span>Coral House 1</span>
+                            <a href="javascript:;" title="{$property_details->details->name}" class="marker__favorite">
+                                <i class="icon icon__heart"></i><span>{$property_details->details->name}</span>
                             </a>
                         </h3>
-                        <p class="marker__body">3 Bdr, 3 Bth | Colombier, St. Barts $857 - $10,000</p>
+                        <p class="marker__body">{$property_details->details->bedrooms} Bdr, {$property_details->details->bathrooms} Bth | {$property_details->address->state}{if $property_details->address->state|strlen}, {/if}{$property_details->address->city|default:$property_details->details->name} ${$property_details->details->min_rate} - ${$property_details->details->max_rate}</p>
                         <div class="marker__buttons">
                             <a class="button -color-black -size-popup" href="#" title="Find out more">More details</a>
                             <a class="button button--popup-cancel" href="javascript:infowindow.close();" title="Cancel">Cancel</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="marker js-marker" data-lat="10.626444584524297" data-lng="-85.38964719772339" data-hidden="true">
-                    <div class="marker__content js-marker-content">
-                        <img src="http://cdn.villascaribe.com/6396_hawaii-lahainadream-1_m.jpg" class="marker__image" alt="Coral House">
-                        <h3 class="marker__title">
-                            <a href="#" title="Coral House" class="marker__favorite">
-                                <i class="icon icon__heart"></i><span>Coral House 2</span>
-                            </a>
-                        </h3>
-                        <p class="marker__body">3 Bdr, 3 Bth | Colombier, St. Barts $857 - $10,000</p>
-                        <div class="marker__buttons">
-                            <a class="button -color-black -size-popup" href="#" title="Find out more">More details</a>
-                            <a class="button button--popup-cancel js-cancel" href="javascript:infowindow.close();" title="Cancel">Cancel</a>
                         </div>
                     </div>
                 </div>
