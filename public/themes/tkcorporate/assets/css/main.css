@@ -5074,6 +5074,9 @@ strong.-color-white {
   padding-top: 1.875rem;
   padding-bottom: 5rem;
 }
+.search-results__container {
+  min-height: 17.1875rem;
+}
 .property .header__contact.-hidden {
   opacity: 1;
   visibility: visible;

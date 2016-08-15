@@ -25,12 +25,16 @@
                         <span class="animate load-dot load-dot--three"></span> Load more villas
                     </a>
                 </div>
-                <div class="featured__row__container">
+                <div class="featured__row__container search-results__container">
                     <div class="featured__row -two-columns">
                         {include file='_partials/components/property_list.tpl'}
                     </div>
                     {if $search_items|count == 0}
-                        <p>No results. Try another search</p>
+                        <div class="no-results">
+                            Sorry, no results<br/><br/>
+                            Please try a
+                            <a class="button__secondary" href="/villa-listing/search?q=">new search</a>
+                        </div>
                     {/if}
                 </div>
                 {if isset($load_more) && $load_more}
