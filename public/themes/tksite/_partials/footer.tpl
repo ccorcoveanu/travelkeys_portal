@@ -40,18 +40,18 @@
             <h2 class="section__title -color-white">Travel Inspiration</h2>
             <div class="blog__wrapper">
                 <div class="blog__item">
-                    <a class="blog__link" href="#" title="The basics: Why choose a villa?">
-                        <h3 class="blog__title">The basics: Why choose a villa?</h3>
+                    <a class="blog__link" href="{$feeds[0]->link}" title="{$feeds[0]->title}" target="_blank">
+                        <h3 class="blog__title">{$feeds[0]->title}</h3>
                         <div class="blog__image">
-                            <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article1.jpg" alt="The basics: Why choose a villa">
+                            <img src="{$feeds[0]->image}" alt="{$feeds[0]->title}">
                         </div>
                     </a>
                 </div>
                 <div class="blog__item">
-                    <a class="blog__link" href="#" title="The basics: Why choose a villa?">
-                        <h3 class="blog__title">The ultimate in privacy & luxury</h3>
+                    <a class="blog__link" href="{$feeds[1]->link}" title="{$feeds[1]->title}" target="_blank">
+                        <h3 class="blog__title">{$feeds[1]->title}</h3>
                         <div class="blog__image">
-                            <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/article2.jpg" alt="The ultimate in privacy & luxury">
+                            <img src="{$feeds[1]->image}" alt="{$feeds[1]->title}">
                         </div>
                     </a>
                 </div>

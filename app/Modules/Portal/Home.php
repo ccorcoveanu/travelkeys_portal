@@ -54,6 +54,7 @@ class Home
             ],
             'featured' => array_slice($featured, 0, 6),
             'favorites' => $favorites,
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -110,6 +111,7 @@ class Home
                 $element->is_favorite = in_array($element->landing_property_id, $favorites);
                 return $element;
             }, $mapItems), // Loop over array and add favorites flag
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 }

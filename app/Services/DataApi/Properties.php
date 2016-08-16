@@ -145,6 +145,14 @@ class Properties extends DataApi
             ];
         }
 
+        if ( isset($filters['not_ids']) ) {
+            $conditions[] = [
+                'field' => 'id',
+                'operator' => 'not in',
+                'value' => '(' . implode(',', $filters['not_ids']) . ')'
+            ];
+        }
+
         $order = '';
         if ( isset($filters['order']) ) {
             $order = $this->order($filters['order']);

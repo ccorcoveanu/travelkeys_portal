@@ -254,15 +254,15 @@
                 <h2 class="section__title articles__title">We recently wrote about...</h2>
                 <div class="articles__container">
                     <div class="articles__item">
-                        <a class="articles__link" href="http://experience.travelkeys.com/coolest-places-to-beat-the-summer-heat/" title="Coolest Places to Beat the Summer Heat" target="_blank">
-                            <img class="articles__image" src="http://cdn.travelkeys.com/sites/all/themes/travelkeysv5/images/article_2.jpg?obbgnm" alt="Coolest Places to Beat the Summer Heat"/>
-                            <h4 class="articles__name">Coolest Places to Beat the Summer Heat</h4>
+                        <a class="articles__link" href="{$feeds[0]->link}" title="{$feeds[0]->title}" target="_blank">
+                            <img class="articles__image" src="{$feeds[0]->image}" alt="{$feeds[0]->title}"/>
+                            <h4 class="articles__name">{$feeds[0]->title}</h4>
                         </a>
                     </div>
                     <div class="articles__item">
-                        <a class="articles__link" href="http://experience.travelkeys.com/most-scenic-getaways-in-the-continental-us/" title="Most Scenic Getaways in the Continental US">
-                            <img class="articles__image" src="http://cdn.travelkeys.com/sites/all/themes/travelkeysv5/images/article_2.jpg?obbgnm" alt="Most Scenic Getaways in the Continental US"/>
-                            <h4 class="articles__name">Most Scenic Getaways in the Continental US</h4>
+                        <a class="articles__link" href="{$feeds[1]->link}" title="{$feeds[1]->title}" target="_blank">
+                            <img class="articles__image" src="{$feeds[1]->image}" alt="{$feeds[1]->title}"/>
+                            <h4 class="articles__name">{$feeds[1]->title}</h4>
                         </a>
                     </div>
                 </div>

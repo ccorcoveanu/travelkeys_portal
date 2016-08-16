@@ -42,6 +42,12 @@ trait Filters {
                     'direction' => 'DESC'
                 ];
 
+            case 'randomize':
+                return [
+                    'field' => 'randomize',
+                    'direction' => ''
+                ];
+
             default: return [
                 'field' => 'name',
                 'direction' => 'ASC'

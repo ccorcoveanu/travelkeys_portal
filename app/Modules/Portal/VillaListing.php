@@ -60,7 +60,8 @@ class VillaListing
             'total_items' => $specials['total'],
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
-            'location' => $location
+            'location' => $location,
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -100,7 +101,8 @@ class VillaListing
             'total_items' => count($favorite_items),
             'menu' => $request->getAttribute('menu'),
             'favorites' => $favorite_ids,
-            'location' => $location
+            'location' => $location,
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -146,7 +148,8 @@ class VillaListing
             'checkin' => $request->getParam('checkin', ''),
             'checkout' => $request->getParam('checkout', ''),
             'guests' => $request->getParam('guests', ''),
-            'location' => $location
+            'location' => $location,
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -196,6 +199,13 @@ class VillaListing
         $property_details->details->min_rate = $min_rate;
         $property_details->details->max_rate = $max_rate;
 
+        /*$related = $this->properties->search('', 0, 3, [
+            'not_ids' => [$property->id],
+            'location_id' => $location->id,
+            'order' => 'randomize'
+        ]);*/
+
+
         return $this->view->render($response, 'details.tpl', [
             'page' => [
                 'title' => $property->location_name,
@@ -206,7 +216,8 @@ class VillaListing
             'favorites' => $request->getAttribute('favorites'),
             'property' => $property,
             'property_details' => $property_details,
-            'location' => $location
+            'location' => $location,
+            'feeds' => $request->getAttribute('feeds'),
         ]);
 
 

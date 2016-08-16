@@ -46,6 +46,7 @@ class StaticPages
             'menu' => $request->getAttribute('menu'),
             'location' => $location,
             'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -65,7 +66,8 @@ class StaticPages
             ],
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
-            'location' => $location
+            'location' => $location,
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -84,7 +86,8 @@ class StaticPages
             ],
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),
-            'location' => $location
+            'location' => $location,
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -109,6 +112,7 @@ class StaticPages
             'menu' => $request->getAttribute('menu'),
             'location' => $location,
             'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -133,6 +137,7 @@ class StaticPages
             'menu' => $request->getAttribute('menu'),
             'location' => $location,
             'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 
@@ -156,6 +161,7 @@ class StaticPages
             'menu' => $request->getAttribute('menu'),
             'location' => $location,
             'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
         ]);
     }
 }
