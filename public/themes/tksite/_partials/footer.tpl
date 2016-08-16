@@ -8,13 +8,13 @@
             <div class="footer__social">
                 <h6 class="footer__section__title">Link with us via your social networks:</h6>
                 <ul class="footer__social__list">
-                    <li class="footer__social__list__item"><a href="#" title="Check us on Facebook!"><i class="icon icon__facebook"></i></a>
+                    <li class="footer__social__list__item"><a target="_blank" href="https://www.facebook.com/Travelkeys" title="Check us on Facebook!"><i class="icon icon__facebook"></i></a>
                     </li>
-                    <li class="footer__social__list__item"><a href="#" title="Connect with us on Twitter"><i class="icon icon__twitter"></i></a>
+                    <li class="footer__social__list__item"><a target="_blank" href="https://twitter.com/travelkeys" title="Connect with us on Twitter"><i class="icon icon__twitter"></i></a>
                     </li>
-                    <li class="footer__social__list__item"><a href="#" title="See what is new on Instagram!"><i class="icon icon__instagram"></i></a>
+                    <li class="footer__social__list__item"><a target="_blank" href="https://www.instagram.com/travelkeys" title="See what is new on Instagram!"><i class="icon icon__instagram"></i></a>
                     </li>
-                    <li class="footer__social__list__item"><a href="#" title="Connect with us via Google+"><i class="icon icon__google"></i></a>
+                    <li class="footer__social__list__item"><a target="_blank" href="https://plus.google.com/+Travelkeys" title="Connect with us via Google+"><i class="icon icon__google"></i></a>
                     </li>
                 </ul>
             </div>
