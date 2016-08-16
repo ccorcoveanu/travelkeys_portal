@@ -20,13 +20,13 @@ trait Filters {
 
             case 'price_asc':
                 return [
-                    'field' => 'price',
+                    'field' => 'min_rate',
                     'direction' => 'ASC'
                 ];
 
             case 'price_desc':
                 return [
-                    'field' => 'price',
+                    'field' => 'min_rate',
                     'direction' => 'DESC'
                 ];
 

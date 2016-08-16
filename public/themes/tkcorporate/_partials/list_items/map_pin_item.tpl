@@ -5,12 +5,12 @@
         {else}
             <img class="marker__image" src="http://cdn.villascaribe.com/6396_hawaii-lahainadream-1_m.jpg" alt="{$map_item->name}"/>
         {/if}
-        <h3 class="marker__title">
+        <h3 class="marker__title" style="margin-bottom: 1.5rem">
             <a href="javascript:;" title="{$map_item->name}" class="marker__favorite" data-id="{$map_item->landing_property_id}">
                 <i data-id="{$map_item->landing_property_id}" class="toggle__favorite icon icon__heart{if $map_item->is_favorite}-full{/if}"></i><span>{$map_item->name}</span>
             </a>
         </h3>
-        <p class="marker__body">{$map_item->bedrooms} Bdr, {$map_item->bathrooms} Bth | {$map_item->state}{if $map_item->state|strlen}, {/if}{$map_item->city|default:$map_item->name} ${$map_item->min_rate} - ${$map_item->max_price}</p>
+
         <div class="marker__buttons">
             <a class="button -color-black -size-popup" href="{$smarty.const.PROTOCOL}{$map_item->subdomain}.{$smarty.const.SERVER_NAME}" title="Find out more">More details</a>
             <a class="button button--popup-cancel" href="javascript:infowindow.close();" title="Cancel">Cancel</a>
