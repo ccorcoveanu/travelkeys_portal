@@ -114,7 +114,7 @@
                     <a href="#" class="hero__carousel__action js-fancybox-action">
                         <i class="icon icon__open"></i>
                     </a>
-                    <div class="js-hero-carousel hero__carousel">
+                    <div class="js-hero-carousel hero__carousel -has-fancybox">
                         {foreach name='property_videos' item=$video from=$property_details->videos}
                             <div class="-has-video">
                                 <a href="https://www.youtube.com/embed/zgviI8Cm28E?autoplay=true" class="js-fancybox" data-fancybox-type="iframe" title="Click to play: Villa Slide">
