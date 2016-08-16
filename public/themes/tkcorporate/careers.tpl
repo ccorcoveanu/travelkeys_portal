@@ -95,7 +95,7 @@
             </div>
             <div class="information__next">
                 <span class="information__next__span">What's next:</span>
-                <a class="button -color-black" href="/about-members" title="Featured Specialists">Featured Specialists</a>
+                <a class="button -color-black" href="/contact-us" title="Contact Us">Contact us</a>
             </div>
         </div>
     </article>

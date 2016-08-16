@@ -48,7 +48,7 @@
             </div>
             <div class="information__next">
                 <span class="information__next__span">What's next:</span>
-                <a class="button -color-black" href="#" title="Featured Specialists">Featured Specialists</a>
+                <a class="button -color-black" href="/about-members" title="Featured Specialists">Featured Specialists</a>
             </div>
         </div>
     </article>
