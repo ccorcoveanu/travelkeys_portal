@@ -25,7 +25,7 @@
                     <div class="location">
                         <div class="location__item">
                             <i class="icon icon__location"></i>
-                            <span class="location__item__text"><span>{$property->city},</span><br/> {$property->location_name}</span>
+                            <span class="location__item__text"><span>{$property->city}{if $property->city|strlen},{/if}</span>{if $property->city|strlen}<br/> {/if}{$property->location_name}</span>
                         </div>
                         <div class="location__item">
                             <i class="icon icon__bedrooms"></i>
