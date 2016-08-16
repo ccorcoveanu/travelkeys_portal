@@ -11846,6 +11846,9 @@ p.promises__item__text {
   font-size: 2.375rem;
   font-weight: 300;
   transition: color 100ms ease-in-out;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .articles__name::after {
   content: '';
