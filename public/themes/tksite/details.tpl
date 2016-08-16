@@ -659,5 +659,49 @@
             </div>
         </div>
     </article>
+    <!-- Modals -->
+    <div class="modal-container">
+        <div id="email-modal" class="modal">
+            <article class="section">
+                <h3 class="section__title modal__title">Email your best frietnds about<br> Las Palmas Elrod Oasis</h3>
+                <form class="form--letter form--letter-alt filter js-validate-form" method="post">
+                    <div class="modal__wrapper">
+                        <div class="modal__item">
+                            <div class="form--letter__input__container">
+                                <label class="form--letter__label">Your Friend's Email:</label>
+                                <input class="form--letter__input h5-email" type="email" name="friendemail" required>
+                            </div>
+                            <div class="form--letter__input__container">
+                                <label class="form--letter__label">Your Personal Email:</label>
+                                <input class="form--letter__input h5-email" type="email" name="personalemail" required>
+                            </div>
+                            <div class="form--letter__input__container">
+                                <label class="form--letter__label">Subject:</label>
+                                <input class="form--letter__input" type="text" name="subject" required>
+                            </div>
+                        </div>
+                        <div class="modal__item">
+                            <img class="modal__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/bg/bg-sent.png" alt="Email your best friends">
+                        </div>
+                    </div>
+                    <div class="form--letter__input__container -has-textarea">
+                        <label class="form--letter__label">Write an additional message:</label>
+                        <textarea class="js-textarea form--letter__input -anchor-textarea -anchor-textarea-alt" name="additionalmessage" rows="3" required></textarea>
+                    </div>
+                    <ul class="filter__options filter__options--letter">
+                        <li class="filter__option filter__option--letter">
+                            <input class="checkbox checkbox--alt" type="checkbox" id="ck-human" name="ck-human">
+                            <label class="filter__option__label" for="ck-human"><span></span>I'm a human being, not a robot</label>
+                        </li>
+                        <li class="filter__option filter__option--letter">
+                            <input class="checkbox checkbox--alt" type="checkbox" id="ck-email" name="ck-email" checked>
+                            <label class="filter__option__label" for="ck-email"><span></span>Email me a copy of this email</label>
+                        </li>
+                    </ul>
+                    <button class="button form--letter__button">Send your message</button>
+                </form>
+            </article>
+        </div>
+    </div>
 
 {/block}
