@@ -138,5 +138,6 @@
             </div>
         </form>
     </div>
+    <div class="js-tabs-end"></div>
     <!-- End Search Form -->
 {/block}
