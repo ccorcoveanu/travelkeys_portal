@@ -22,7 +22,7 @@
             <div class="hero__container">
                 <div class="hero__wrapper">
                     <h2 class="hero__title">{$property->name} Villa</h2>
-                    <div class="location">
+                    <div class="location property__location__details">
                         <div class="location__item">
                             <i class="icon icon__location"></i>
                             <span class="location__item__text"><span>{$property->city}{if $property->city|strlen},{/if}</span>{if $property->city|strlen}<br/> {/if}{$property->location_name}</span>

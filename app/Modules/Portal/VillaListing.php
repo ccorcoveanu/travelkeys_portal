@@ -202,14 +202,11 @@ class VillaListing
         $property_details->details->min_rate = $min_rate;
         $property_details->details->max_rate = $max_rate;
 
-        /*$related = $this->properties->search('', 0, 3, [
+        $related = $this->properties->search('', 0, 3, [
             'not_ids' => [$property->id],
             'location_id' => $location->id,
             'order' => 'randomize'
-        ]);*/
-
-
-
+        ]);
 
         return $this->view->render($response, 'details.tpl', [
             'page' => [
@@ -223,8 +220,28 @@ class VillaListing
             'property_details' => $property_details,
             'location' => $location,
             'feeds' => $request->getAttribute('feeds'),
+            'related' => $related['items'],
         ]);
+    }
 
+    function locationGeneralDetails(Request $request, Response $response, array $args)
+    {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->locations->bySlug(SUBDOMAIN);
+        if ( !$location ) {
+            throw new NotFoundException($request, $response);
+        }
 
+        return $this->view->render($response, 'location.tpl', [
+            'page' => [
+                'title' => $location->name,
+                'body_classes' => 'destination',
+            ],
+
+            'menu' => $request->getAttribute('menu'),
+            'favorites' => $request->getAttribute('favorites'),
+            'location' => $location,
+            'feeds' => $request->getAttribute('feeds'),
+        ]);
     }
 }

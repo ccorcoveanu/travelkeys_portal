@@ -204,16 +204,16 @@
             </div>
             <ul class="experience__list">
                 <li class="experience__list__item">
-                    <img alt="Airport information" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-airplane.jpg"><a class="button button--ghost" href="#" title="Airport information">Airport information</a>
+                    <img alt="Airport information" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-airplane.jpg"><a class="button button--ghost" href="{$smarty.const.BASE_URL}/location" title="Airport information">Airport information</a>
                 </li>
                 <li class="experience__list__item">
-                    <img alt="Enjoy the nightlife" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-nightlife.jpg"><a class="button button--ghost" href="#" title="Enjoy the nightlife">Enjoy the nightlife</a>
+                    <img alt="Enjoy the nightlife" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-nightlife.jpg"><a class="button button--ghost" href="{$smarty.const.BASE_URL}/location" title="Enjoy the nightlife">Enjoy the nightlife</a>
                 </li>
                 <li class="experience__list__item">
-                    <img alt="Rent a car" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-car.jpg"><a class="button button--ghost" href="#" title="Rent a car">Rent a car</a>
+                    <img alt="Rent a car" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-car.jpg"><a class="button button--ghost" href="{$smarty.const.BASE_URL}/location" title="Rent a car">Rent a car</a>
                 </li>
                 <li class="experience__list__item">
-                    <img alt="Sail in a yacht" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-yacht.jpg"><a class="button button--ghost" href="#" title="Sail in a yacht">Sail in a yacht</a>
+                    <img alt="Sail in a yacht" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/exp-yacht.jpg"><a class="button button--ghost" href="{$smarty.const.BASE_URL}/location" title="Sail in a yacht">Sail in a yacht</a>
                 </li>
             </ul>
             <a class="js-modal-info button -color-black -has-fancybox" href="{$smarty.const.BASE_URL}/location" title="Learn more about {$location->name}">Learn more about {$location->name}</a>

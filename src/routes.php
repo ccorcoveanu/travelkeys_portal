@@ -11,7 +11,9 @@ $app->get('/villa-listing/specials', 'VillaListing:specials');
 $app->get('/villa-listing/favorites', 'VillaListing:favorites');
 $app->get('/villa-listing/search', 'VillaListing:search');
 
+// TODO: Rename location route to property, and locationGeneralDetails to location
 $app->get('/villa-listing/{slug}', 'VillaListing:location');
+$app->get('/location', 'VillaListing:locationGeneralDetails');
 
 // Static pages
 $app->get('/about-us', 'StaticPages:about');
