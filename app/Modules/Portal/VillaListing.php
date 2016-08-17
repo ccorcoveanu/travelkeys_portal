@@ -192,9 +192,12 @@ class VillaListing
             $etime = strtotime($rate['end_date']);
             $property_details->rates[$k]['formatted_date'] = date('F d', $stime) . ' - ' . date('F d, Y', $etime);
 
-            // Find min and max rates
-            if ( $rate['weekday_rate'] < $min_rate || $min_rate === 0 ) $min_rate = $rate['weekday_rate'];
-            if ( $rate['weekday_rate'] > $max_rate ) $max_rate = $rate['weekday_rate'];
+            foreach ( $rate['rates'] as $kr => $rate_single ) {
+                // Find min and max rates
+                if ( $rate_single['nightly'] < $min_rate || $min_rate === 0 ) $min_rate = $rate_single['nightly'];
+                if ( $rate_single['nightly'] > $max_rate ) $max_rate = $rate_single['nightly'];
+            }
+
         }
         $property_details->details->min_rate = $min_rate;
         $property_details->details->max_rate = $max_rate;
@@ -204,6 +207,8 @@ class VillaListing
             'location_id' => $location->id,
             'order' => 'randomize'
         ]);*/
+
+
 
 
         return $this->view->render($response, 'details.tpl', [

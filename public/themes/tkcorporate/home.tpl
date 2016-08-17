@@ -279,7 +279,7 @@
                 {foreach name='menu_items' from=$menu item=header }
                     {if $header->children|count}
                         <li class="world__item -{$header->subdomain}">
-                            <a class="world__link" href="{$smarty.const.PROTOCOL}{$header->subdomain}.{$smarty.const.BASE_URL}" title="{$header->name}">
+                            <a class="world__link" href="{$smarty.const.PROTOCOL}{$header->subdomain}.{$smarty.const.SERVER_NAME}" title="{$header->name}">
                                 <h6 class="world__item__title">{$header->name}</h6>
                             </a>
                         </li>
