@@ -231,8 +231,7 @@
     <div class="js-section-header section__header">
         <div class="section__header__container">
             <div class="section__header__wrapper -position-left">
-                <h2 class="section__header__title"><span>View</span> <span id="total_villas_number">{$total_items|default:0}</span> villas</h2>
-                <h3 class="section__header__title--alt">{$total_items|default:0} villas</h3>
+                <h2 class="section__header__title"><span>View</span> <span id="total_villas_number" class="visible-mobile">{$total_items|default:0}</span> villas in {$location->name}</h2>
                 <div class="form__input__container filter__input__container filter__input__container--alt order-villas__select">
                     <select class="js-select2-alt form__input filter__input" name="oreder_by">
                         <option value="name_asc" selected>Villa Name A-Z</option>
@@ -257,7 +256,7 @@
                     </select>
                     <i class="icon icon__option"></i>
                 </div>
-                <div class="js-search-toggle-container search-toggle__container">
+                <div class="js-search-toggle-container search-toggle__container -fixed-top">
                     <h3 class="search-toggle__title">Adjust your search results</h3>
                     <a class="js-search-toggle search-toggle -anchor-map">Map</a>
                     <a class="js-search-toggle search-toggle -anchor-filters -active">Filters</a>

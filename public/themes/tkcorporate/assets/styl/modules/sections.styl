@@ -116,7 +116,7 @@
 			}
 
 			+below(960px) {
-				span {
+				span:not(.visible-mobile) {
 					display: none
 				}
 			}
@@ -275,6 +275,7 @@
 					position: absolute
 					margin-top: 0
 					width: 60%
+					top: 0
 
 					.form__input__container {
 						display: none
@@ -767,7 +768,7 @@
 	position: static
 	float: right
 	border-left: 1px solid #dfdfdf
-	padding-top: rem(10)
+	padding-top: rem(35)
 	width: 65%
 	background-color: #ebebeb
 
@@ -817,7 +818,7 @@
 	}
 
 	+below(960px) {
-		padding-top: 0
+		padding-top: rem(40)
 		width: 60%
 		background-color: $light-gray
 	}
@@ -1160,6 +1161,7 @@
 	float: none
 	width: 100%
 	background-color: transparent
+	padding-top: 0
 
 	.filter-aside {
 		float: none

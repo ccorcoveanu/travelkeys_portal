@@ -7676,7 +7676,7 @@ strong.-color-white {
   margin: 0 0.3125rem;
 }
 @media only screen and (max-width: 960px) {
-  .section__header__title span {
+  .section__header__title span:not(.visible-mobile) {
     display: none;
   }
 }
@@ -7845,6 +7845,7 @@ strong.-color-white {
     position: absolute;
     margin-top: 0;
     width: 60%;
+    top: 0;
   }
   .section__header__wrapper.-position-right .form__input__container {
     display: none;
@@ -8364,7 +8365,7 @@ strong.-color-white {
   position: static;
   float: right;
   border-left: 1px solid #dfdfdf;
-  padding-top: 0.625rem;
+  padding-top: 2.1875rem;
   width: 65%;
   background-color: #ebebeb;
 }
@@ -8407,7 +8408,7 @@ strong.-color-white {
 }
 @media only screen and (max-width: 960px) {
   .search-results {
-    padding-top: 0;
+    padding-top: 2.5rem;
     width: 60%;
     background-color: #f6f6f6;
   }
@@ -8723,6 +8724,7 @@ strong.-color-white {
   float: none;
   width: 100%;
   background-color: transparent;
+  padding-top: 0;
 }
 .fancybox-outer.search-results .filter-aside {
   float: none;
