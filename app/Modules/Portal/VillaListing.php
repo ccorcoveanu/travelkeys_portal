@@ -208,6 +208,18 @@ class VillaListing
             'order' => 'randomize'
         ]);
 
+        // TODO: Should be fixed in API
+        $related = array_map(function ($item) {
+            $parts = explode('.', $item->image);
+            $ext = $parts[count($parts) - 1];
+            unset($parts[count($parts) - 1]);
+            $item->image = implode('.', $parts) . '_l.' . $ext;
+            $item->image_m = implode('.', $parts) . '_m.' . $ext;
+            $item->image_m2 = implode('.', $parts) . '_m2.' . $ext;
+            $item->image_s = implode('.', $parts) . '_s.' . $ext;
+            return $item;
+        }, $related);
+
         return $this->view->render($response, 'details.tpl', [
             'page' => [
                 'title' => $property->location_name,

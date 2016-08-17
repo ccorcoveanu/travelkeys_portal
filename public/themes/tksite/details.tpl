@@ -555,108 +555,12 @@
         <h5 class="section__subtitle villas__subtitle">Other villas</h5>
         <h2 class="section__title villas__title">You May Also Like</h2>
         <div class="js-villas-carousel villas__carousel villas__carousel">
-            <div class="villas__carousel__item">
-                <!-- Item -->
-                <section class="featured__item">
-                    <div class="featured__picture__container"><img alt="Redondo Beach Luxury" class="featured__picture" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/villa6.jpg">
-                    </div>
-                    <div class="featured__wrapper">
-                        <div class="featured__item__wrapper">
-                            <h3 class="featured__item__title">
-                                <a href="#" title="Redondo Beach Luxury"><i class="icon icon__heart-featured"></i><span>Redondo Beach Luxury</span></a>
-                            </h3>
-                            <span class="featured__item__description">Colombier, St. Barts</span>
-                        </div>
-                        <div class="featured__item__section">
-                            <div class="featured__item__facilities">
-                                <span>2 Bedrooms</span>
-                                <span>2 Baths</span>
-                            </div>
-                            <div class="featured__item__price">
-                                <span class="price__text">From</span>
-                                <strong class="price__number"><sup class="price__super">$</sup>4,817/nt</strong>
-                            </div>
-                        </div>
-                        <div class="featured__item__buttons">
-                            <div class="featured__item__button">
-                                <a class="button -color-black" href="#" title="View villa">View villa</a>
-                            </div>
-                            <div class="featured__item__button">
-                                <a class="js-modal button -color-gray -has-calendar" href="#availability-modal" title="Calendar">Calendar<i class="icon icon__date-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End Item -->
-            </div>
-            <div class="villas__carousel__item">
-                <!-- Item -->
-                <section class="featured__item">
-                    <div class="featured__picture__container"><img alt="Villa Vitti" class="featured__picture" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/villa1.jpg">
-                    </div>
-                    <div class="featured__wrapper">
-                        <div class="featured__item__wrapper">
-                            <h3 class="featured__item__title">
-                                <a href="#" title="Villa Vitti"><i class="icon icon__heart-featured"></i><span>Villa Vitti</span></a>
-                            </h3>
-                            <span class="featured__item__description">Colombier, St. Barts</span>
-                        </div>
-                        <div class="featured__item__section">
-                            <div class="featured__item__facilities">
-                                <span>2 Bedrooms</span>
-                                <span>2 Baths</span>
-                            </div>
-                            <div class="featured__item__price">
-                                <span class="price__text">From</span>
-                                <strong class="price__number"><sup class="price__super">$</sup>4,817/nt</strong>
-                            </div>
-                        </div>
-                        <div class="featured__item__buttons">
-                            <div class="featured__item__button">
-                                <a class="button -color-black" href="#" title="View villa">View villa</a>
-                            </div>
-                            <div class="featured__item__button">
-                                <a class="js-modal button -color-gray -has-calendar" href="#availability-modal" title="Calendar">Calendar<i class="icon icon__date-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End Item -->
-            </div>
-            <div class="villas__carousel__item">
-                <!-- Item -->
-                <section class="featured__item">
-                    <div class="featured__picture__container"><img alt="La Fleur Sur La Mer" class="featured__picture" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/villa3.jpg">
-                    </div>
-                    <div class="featured__wrapper">
-                        <div class="featured__item__wrapper">
-                            <h3 class="featured__item__title">
-                                <a href="#" title="La Fleur Sur La Mer"><i class="icon icon__heart-featured"></i><span>La Fleur Sur La Mer</span></a>
-                            </h3>
-                            <span class="featured__item__description">Colombier, St. Barts</span>
-                        </div>
-                        <div class="featured__item__section">
-                            <div class="featured__item__facilities">
-                                <span>2 Bedrooms</span>
-                                <span>2 Baths</span>
-                            </div>
-                            <div class="featured__item__price">
-                                <span class="price__text">From</span>
-                                <strong class="price__number"><sup class="price__super">$</sup>4,817/nt</strong>
-                            </div>
-                        </div>
-                        <div class="featured__item__buttons">
-                            <div class="featured__item__button">
-                                <a class="button -color-black" href="#" title="View villa">View villa</a>
-                            </div>
-                            <div class="featured__item__button">
-                                <a class="js-modal button -color-gray -has-calendar" href="#availability-modal" title="Calendar">Calendar<i class="icon icon__date-square"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- End Item -->
-            </div>
+            <!-- Item -->
+            {foreach name='related_items' item=$featured_item from=$related}
+                <div class="villas__carousel__item">
+                    {include file='_partials/list_items/featured_item.tpl'}
+                </div>
+            {/foreach}
         </div>
     </article>
     <!-- Modals -->
