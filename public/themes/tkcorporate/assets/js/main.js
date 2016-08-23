@@ -28787,6 +28787,23 @@ var travelkeys = {
             google.maps.event.addListener(map, 'click', function() {
                 map.set('disableDoubleClickZoom', false);
             });
+
+            google.maps.event.addListener(map, 'idle', function() {
+
+                var visibleMarkers = [];
+                var bounds = map.getBounds();
+
+                for(var i = 0; i < map.markers.length; i++){ // looping through my Markers Collection
+                    if(bounds.contains(map.markers[i].position)){
+                        visibleMarkers.push({
+                            latitude: map.markers[i].position.lat,
+                            longitude: map.markers[i].position.lng
+                        })
+                    }
+                }
+
+
+            });
         }
 
         // Configure map markers

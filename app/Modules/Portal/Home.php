@@ -126,6 +126,8 @@ class Home
         $search_items   = $this->properties->search('', 0, 20, ['location_id' => $location->id]);
         $total_items    = $search_items['total'];
         $location->descriptionShort = $location->description;
+        $location->image = 'http://www.travelkeys.com/sites/default/files/images/panos/pano-' . SUBDOMAIN . '-' . 'travelkeys.com.png';
+
         if ( strlen($location->descriptionShort) > 150 ) {
             $location->descriptionShort = substr($location->descriptionShort, 0, 147) . '...';
         }

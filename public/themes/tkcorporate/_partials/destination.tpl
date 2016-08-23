@@ -1,4 +1,4 @@
-<article class="hero hero--secondary" {if isset($location->image)}style="background-image: {$location->image};"{/if}>
+<article class="hero hero--secondary" {if isset($location->image)}style="background-image: url({$location->image});"{/if}>
     <div class="container">
         <div class="hero__container hero--secondary__container">
             <h1 class="hero__title hero--secondary__title">{$location->name}</h1>
