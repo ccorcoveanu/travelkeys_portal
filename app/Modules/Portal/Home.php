@@ -36,7 +36,8 @@ class Home
 
     public function index(Request $request, $response, $args)
     {
-        if ( SUBDOMAIN ) return $this->indexSite($request, $response, $args);
+        if ( SUBDOMAIN && !EXTERNAL_SITE ) return $this->indexSite($request, $response, $args);
+        if ( EXTERNAL_SITE ) return $this->indexExternalLocation($request, $response, $args);
 
         $featured   = $this->location->featured();
         $mapItems   = $this->location->mapItems();
@@ -58,7 +59,7 @@ class Home
         ]);
     }
 
-    public function indexSite(Request $request, $response, $args)
+    public function indexExternalLocation(Request $request, $response, $args)
     {
         $location   = $this->location->bySlug(SUBDOMAIN);
         $favorites  = $request->getAttribute('favorites');
@@ -112,6 +113,49 @@ class Home
                 return $element;
             }, $mapItems), // Loop over array and add favorites flag
             'feeds' => $request->getAttribute('feeds'),
+        ]);
+    }
+
+    public function indexSite(Request $request, Response $response, $args)
+    {
+        $location       = $this->location->bySlug(SUBDOMAIN);
+        if ( !$location ) {
+            return $response->withRedirect(MAIN_SITE, 301);
+        }
+        $favorites      = $request->getAttribute('favorites');
+        $search_items   = $this->properties->search('', 0, 20, ['location_id' => $location->id]);
+        $total_items    = $search_items['total'];
+        $location->descriptionShort = $location->description;
+        if ( strlen($location->descriptionShort) > 150 ) {
+            $location->descriptionShort = substr($location->descriptionShort, 0, 147) . '...';
+        }
+
+        // TODO: Should be fixed in API
+        $search_items = array_map(function ($item) {
+            $parts = explode('.', $item->image);
+            $ext = $parts[count($parts) - 1];
+            unset($parts[count($parts) - 1]);
+            $item->image = implode('.', $parts) . '_l.' . $ext;
+            $item->image_m = implode('.', $parts) . '_m.' . $ext;
+            return $item;
+        }, $search_items['items']);
+
+        return $this->view->render($response, 'search.tpl', [
+            'menu' => $request->getAttribute('menu'),
+            'page' => [
+                'title' => 'Luxury Villa Rentals & Vacation Rentals',
+                'body_classes' => 'search',
+                'final_destination_page' => [
+                    'tralala'
+                ],
+            ],
+            'location' => $this->locationForView($location),
+            'query' => $request->getParam('q', ''),
+            'search_items' => $search_items,
+            'total_items' => $total_items,
+            'favorites' => $favorites,
+            'feeds' => $request->getAttribute('feeds'),
+
         ]);
     }
 }

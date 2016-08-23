@@ -1213,12 +1213,16 @@ strong {
 			display: inline-block
 			width: rem(560)
 			font-family: $bebas-font-family
-			font-size: rem(72)
-			line-height: 1
+			font-size: rem(40)
+			line-height: rem(72)
 			font-weight: 400
 			font-style: normal
 			color: #fff
 			text-shadow: none
+			overflow: hidden
+			text-overflow: ellipsis
+			vertical-align: bottom
+			white-space: nowrap
 
 			+below(960px) {
 				display: block
@@ -1226,6 +1230,7 @@ strong {
 				margin-bottom: rem(90)
 				width: 100%
 				font-size: rem(39)
+				line-height: rem(39)
 			}
 		}
 	}
@@ -2182,7 +2187,13 @@ strong {
 .location {
 	display: inline-block
 	position: relative
+	padding-left: rem(40)
 	text-align: center
+
+	&.property__location__details {
+		margin-bottom: rem(30)
+		margin-top: rem(40)
+	}
 
 	&__item {
 		display: inline-block
@@ -2242,6 +2253,12 @@ strong {
 
 			+below(960px) {
 				font-size: rem(16)
+			}
+		}
+
+		.property & {
+			&:first-child {
+				vertical-align: top
 			}
 		}
 	}

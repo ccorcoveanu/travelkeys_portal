@@ -29195,12 +29195,23 @@ var travelkeys = {
                 var stopPointRightOffset = $scrollStopPoint.offset().top - $sectionHeader.outerHeight() - FILTERS_HEIGHT - stopPointPadding;
 
                 // Fixing left side filters on scroll
-                if ($(window).scrollTop() > stopPointLeftOffset) {
-                    $filterAside.addClass('-bottom');
-                } else {
-                    $filterAside.addClass('-fixed');
-                    $filterAside.removeClass('-bottom');
+                if ($(window).scrollTop() > $filterAsideContainer.offset().top) {
+                    $filterAside.removeClass('-fixed-top');
+                    $filterAsideWrapper.removeClass('-fixed-top');
+                    $searchToggleContainer.addClass('-fixed-top');
 
+                    if ($(window).scrollTop() > stopPointLeftOffset) {
+                        $filterAside.addClass('-bottom');
+                        $searchToggleContainer.addClass('-hidden');
+                    } else {
+                        $filterAside.addClass('-fixed');
+                        $filterAside.removeClass('-bottom');
+                        $searchToggleContainer.removeClass('-hidden');
+                    }
+                } else {
+                    $filterAside.addClass('-fixed-top');
+                    $filterAsideWrapper.addClass('-fixed-top');
+                    $searchToggleContainer.removeClass('-fixed-top');
                 }
                 // Hiding right  side filters on scroll
                 if ($(window).scrollTop() > stopPointRightOffset) {
