@@ -5578,6 +5578,7 @@ strong.-color-white {
 .property .fancybox-wrap .location {
   margin-left: 0.625rem;
   padding-left: 0.625rem;
+  margin-bottom: 0;
 }
 .property .fancybox-wrap .location::after {
   top: 0;
@@ -16426,6 +16427,9 @@ body.is-collapsed .map-aside.-fixed-top .map__input {
   height: 1.5625rem;
   background-color: #dfdfdf;
 }
+.booking-form .form--letter__input__container .icon__calendar {
+  top: 2.3125rem;
+}
 @media only screen and (max-width: 670px) {
   .form--letter__input__container {
     width: 100%;
@@ -16741,6 +16745,9 @@ body.is-collapsed .map-aside.-fixed-top .map__input {
     width: 100%;
   }
 }
+.booking-form .form--letter__input.-has-datepicker {
+  width: auto;
+}
 .form--letter__input.-anchor-textarea {
   display: inline-block;
   width: 100%;
@@ -16804,6 +16811,9 @@ textarea.form--letter__input {
   .form--letter .filter__option__label {
     font-size: 0.6875rem;
   }
+}
+.js-validate-form .form__input.error {
+  border: 1px solid #f00;
 }
 .filter {
   position: relative;

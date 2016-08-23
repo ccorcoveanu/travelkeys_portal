@@ -22,6 +22,27 @@ trait Menu
         foreach ( $_headers as $k => $header ) {
             $_headers[$k]->children = isset($_header_items[$k]) ? $_header_items[$k] : [];
         }
-        return $_headers;
+
+        return $this->customOrder($_headers);
+    }
+
+    function customOrder($menu, $order = [])
+    {
+        if ( !$order ) $order = [
+            'Caribbean', 'Hawaii', 'Mexico', 'Central America', 'United States', 'Europe', 'Asia', 'Canada', 'Oceana',
+            'Africa'
+        ];
+
+        $return_array = [];
+        foreach ($order as $k => $menu_head) {
+            foreach ( $menu as $ki => $menu_item ) {
+                if ( strtolower($menu_head) === strtolower($menu_item->name) ) {
+                    $return_array[] = $menu_item;
+                    unset($menu[$ki]);
+                    continue;
+                }
+            }
+        }
+        return $return_array;
     }
 }

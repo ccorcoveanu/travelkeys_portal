@@ -88,7 +88,8 @@ class Locations extends DataApi
                         'operator' => '=',
                         'value' => 1
                     ],
-                ]
+                ],
+                'order_by' => 'name'
             ]
         );
     }

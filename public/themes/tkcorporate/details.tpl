@@ -21,7 +21,7 @@
         <div class="container">
             <div class="hero__container">
                 <div class="hero__wrapper">
-                    <h2 class="hero__title">{$property->name} Villa</h2>
+                    <h2 class="hero__title" id="villa-name" data-name="{$property->name}">{$property->name} Villa</h2>
                     <div class="location property__location__details">
                         <div class="location__item">
                             <i class="icon icon__location"></i>
@@ -41,14 +41,14 @@
                     <div class="js-booking filter filter--booking -orientation-vertical">
                         <div class="js-booking-wrapper filter--booking__wrapper">
                             <h4 class="filter__title filter--booking__title">Plan your next vacation</h4>
-                            <form class="form filter__form">
+                            <form class="form filter__form js-validate-form">
                                 <div class="filter--booking__section -anchor-filters">
                                     <div class="form__input__container filter__input__container -anchor-start-date">
-                                        <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
+                                        <input class="js-datepicker form__input filter__input js-start-date" name="startdate" type="text" placeholder="Check in" readonly>
                                         <i class="icon icon__calendar"></i>
                                     </div>
                                     <div class="form__input__container filter__input__container -anchor-end-date">
-                                        <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
+                                        <input class="js-datepicker form__input filter__input js-end-date" name="enddate" type="text" placeholder="Check out" readonly>
                                         <i class="icon icon__calendar"></i>
                                     </div>
                                     <div class="form__input__container filter__input__container -anchor-counter">
@@ -81,7 +81,7 @@
                                     <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/svg/no-sprite/no-fees.svg" alt="No booking fees. Ever!">
                                 </div>
                                 <div class="filter__button__wrapper">
-                                    <button class="button" type="submit">Book villa</button>
+                                    <a class="button" id="book-villa-modal">Book villa</a>
                                     <a class="button -color-black" href="#reserve_property_form" title="Request info">Request info</a>
                                 </div>
                                 <div class="disclaimer">
@@ -115,13 +115,6 @@
                         <i class="icon icon__open"></i>
                     </a>
                     <div class="js-hero-carousel hero__carousel -has-fancybox">
-                        {foreach name='property_videos' item=$video from=$property_details->videos}
-                            <div class="-has-video">
-                                <a href="https://www.youtube.com/embed/zgviI8Cm28E?autoplay=true" class="js-fancybox" data-fancybox-type="iframe" title="Click to play: Villa Slide">
-                                    <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/carousel-villa1.jpg" alt="Villa Slide">
-                                </a>
-                            </div>
-                        {/foreach}
                         {foreach name='property_images' item=$image from=$property_details->images}
                             <div>
                                 <a href="{$smarty.const.CDN}/{$image->filename_l}" class="js-property-modal" rel="gallery-property01" title="Click to enlarge: Villa Slide">
@@ -129,15 +122,15 @@
                                 </a>
                             </div>
                         {/foreach}
-                    </div>
-                    <div class="js-hero-carousel-nav hero__carousel__nav">
                         {foreach name='property_videos' item=$video from=$property_details->videos}
                             <div class="-has-video">
-                                <a href="#" title="Navigate to: Villa Slide">
+                                <a href="https://www.youtube.com/embed/zgviI8Cm28E?autoplay=true" class="js-fancybox" data-fancybox-type="iframe" title="Click to play: Villa Slide">
                                     <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/carousel-villa1.jpg" alt="Villa Slide">
                                 </a>
                             </div>
                         {/foreach}
+                    </div>
+                    <div class="js-hero-carousel-nav hero__carousel__nav">
                         {foreach name='property_images' item=$image from=$property_details->images}
                             <div>
                                 <a href="#" title="Navigate to: Villa Slide">
@@ -145,7 +138,13 @@
                                 </a>
                             </div>
                         {/foreach}
-
+                        {foreach name='property_videos' item=$video from=$property_details->videos}
+                            <div class="-has-video">
+                                <a href="#" title="Navigate to: Villa Slide">
+                                    <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/carousel-villa1.jpg" alt="Villa Slide">
+                                </a>
+                            </div>
+                        {/foreach}
                     </div>
                 </div>
             </div>
@@ -463,7 +462,7 @@
                 </ul>
             </div>
 
-            <form class="form--letter form--letter-alt filter">
+            <form class="form--letter form--letter-alt filter js-validate-form">
                 <ul class="filter__options filter__options--letter">
                     <li class="filter__option filter__option--letter -has-label">
                         <label class="form--letter__label">You would like to:</label>
@@ -480,11 +479,11 @@
                 <div class="form--letter__wrapper">
                     <div class="form--letter__input__container -half-width">
                         <label class="form--letter__label">First name:</label>
-                        <input class="form--letter__input" type="text" name="firstname">
+                        <input class="form--letter__input" type="text" name="firstname" required>
                     </div>
                     <div class="form--letter__input__container -half-width">
                         <label class="form--letter__label">Last name:</label>
-                        <input class="form--letter__input" type="text" name="lastname">
+                        <input class="form--letter__input" type="text" name="lastname" required>
                     </div>
                     <div class="form--letter__input__container -half-width">
                         <label class="form--letter__label">Phone:</label>
@@ -492,7 +491,7 @@
                     </div>
                     <div class="form--letter__input__container -half-width">
                         <label class="form--letter__label">Email:</label>
-                        <input class="form--letter__input" type="email" name="youremail">
+                        <input class="form--letter__input h5-email" type="email" name="youremail" required>
                     </div>
                     <div class="form--letter__group -half-width">
                         <div class="form--letter__input__container -quarter-width -anchor-datepicker">
@@ -558,7 +557,7 @@
             <!-- Item -->
             {foreach name='related_items' item=$featured_item from=$related}
                 <div class="villas__carousel__item">
-                    {include file='_partials/list_items/featured_item.tpl'}
+                    {include file='_partials/list_items/featured_item_prop.tpl'}
                 </div>
             {/foreach}
         </div>
@@ -607,5 +606,8 @@
             </article>
         </div>
     </div>
-
+    <div class="modal-container">
+        <div id="booking_information" class="modal"></div>
+    </div>
+    <div id="dialog-message"></div>
 {/block}

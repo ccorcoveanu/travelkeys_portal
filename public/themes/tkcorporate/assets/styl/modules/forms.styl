@@ -614,6 +614,10 @@ form.site-search {
 				height: rem(25)
 				background-color: #dfdfdf
 			}
+
+			.booking-form & {
+				top: rem(37)
+			}
 		}
 
 		+below(670px) {
@@ -955,6 +959,10 @@ form.site-search {
 			+below(670px) {
 				width: 100%
 			}
+
+			.booking-form & {
+				width: auto
+			}
 		}
 
 		&.-anchor-textarea {
@@ -1023,4 +1031,8 @@ form.site-search {
 			font-size: rem(11)
 		}
 	}
+}
+
+.js-validate-form .form__input.error {
+	border: 1px solid red;
 }

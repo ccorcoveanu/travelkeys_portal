@@ -27553,6 +27553,8 @@ var travelkeys = {
 
         // Trigger search filtering
         travelkeys.filterSearch();
+
+        travelkeys.bookVilla();
     },
 
     // Links handler
@@ -28157,6 +28159,7 @@ var travelkeys = {
                     closeEffect			:	'elastic',
                     closeClick			:	true,
                     autoSize				:	true,
+                    minWidth        : 800,
                     fitToView				:	true,
                     padding					:	0,
                     showNavArrows			:   true,
@@ -29765,6 +29768,100 @@ var travelkeys = {
 
         return __init();
     },
+
+    submitFormToFormStack: function(e, id){
+        e.preventDefault();
+        var url = "https://www.formstack.com/forms/?";
+        var formId = "1808294";
+        var viewKey = "KTI4gtSPzY";
+        var start_date = $(".js-start-date").val() == "MM/DD/YY" ? "" : $(".js-start-date").val();
+        var end_date = $(".js-end-date").val() == "MM/DD/YY" ? "" : $(".js-end-date").val();
+        var min_bedrooms = $("#min_bedrooms").val();
+        var cost = $(".costCalcSuccess .currency-symbol").text() + $(".costCalcSuccess .currency-value").text();
+
+        var params              = new Object();
+        params.form             = formId;
+        params.viewkey          = viewKey;
+        params.start_date       = start_date;
+        params.end_date         = end_date;
+        params.cost             = cost;
+        params.min_bedrooms     = min_bedrooms;
+        params.villa_name       = $('#villa-name').data('name');
+        params.tax              = "0";
+        params.security         = "0";
+        params.service_charge   = "0";
+        params.service_charge_percent   = parseFloat(0);
+        params.discount         = "0";
+
+        //var sf = <?=json_encode(mvrm_properties_salesforce_mapping_convert()); ?>;
+        //params = $.extend(params, sf);
+
+        //add updated tktrack info
+        if(typeof(window.tktrack) != "undefined"){
+            params = $.extend(params, { '00N70000002lHkX' : window.tktrack });
+        }
+
+        if(start_date && end_date){
+            if((typeof(window.error) != "undefined") && (window.error != null) && (window.error.length > 0)){
+                $('.js-start-date, .js-end-date').addClass('error');
+            }else{
+
+                //$(id).attr('data-toggle', 'modal');
+                //$( "#booking_information" ).html('<iframe id="iframe" src="' + url + $.param(params) + '"></iframe>');
+                jQuery.fancybox({
+                    closeClick      : false,
+                    margin          : 0,
+                    padding         : 0,
+                    centerOnScroll  : true,
+                    showCloseButton : true,
+                    autoDimensions  : false,
+                    width           : '90%',
+                    height          : '90%',
+                    beforeLoad      : function() {
+                        $('body').addClass('fancybox-close--alt');
+                        return thisScrollPosition = $(window).scrollTop();
+                    },
+                    afterLoad       : function() {
+                        $('body').css('position', 'fixed');
+                    },
+                    afterClose      : function() {
+                        $('body').removeClass('fancybox-close--alt');
+                        if ($bookingContainer.length > 0) {
+                            $bookingContainer.css('display', 'block');
+                        }
+                        $('body').css('position', '');
+                        $(window).scrollTop(thisScrollPosition);
+                    },
+                    helpers         : {
+                        title   : null,
+                        overlay : {
+                            closeClick : true,
+                            locked     : true,
+                            css        : {
+                                'background' : 'rgba(0, 0, 0, 0.95)'
+                            }
+                        }
+
+                    },
+                    type: 'iframe',
+                    href: url + $.param(params)
+                })
+            }
+        }else{
+            $('.js-start-date, .js-end-date').addClass('error');
+        }
+    },
+
+    bookVilla: function() {
+        $('.js-start-date, .js-end-date').on('change', function(evt) {
+            //s$('.js-start-date, .js-end-date').removeClass('error');
+        });
+        $('#book-villa-modal').on('click', function(evt) {
+            travelkeys.submitFormToFormStack(evt, '#book-villa-modal');
+        });
+    },
+
+
 };
 
 // !Document ready (loaded)

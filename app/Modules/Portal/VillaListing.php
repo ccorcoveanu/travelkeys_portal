@@ -218,7 +218,7 @@ class VillaListing
             $item->image_m2 = implode('.', $parts) . '_m2.' . $ext;
             $item->image_s = implode('.', $parts) . '_s.' . $ext;
             return $item;
-        }, $related);
+        }, $related['items']);
 
         return $this->view->render($response, 'details.tpl', [
             'page' => [
@@ -232,7 +232,7 @@ class VillaListing
             'property_details' => $property_details,
             'location' => $location,
             'feeds' => $request->getAttribute('feeds'),
-            'related' => $related['items'],
+            'related' => $related,
         ]);
     }
 
