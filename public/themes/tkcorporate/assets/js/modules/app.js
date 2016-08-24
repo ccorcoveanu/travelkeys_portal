@@ -2464,6 +2464,7 @@ var travelkeys = {
     },
 
     submitFormToFormStack: function(e, id){
+        console.log('enter');
         e.preventDefault();
         var url = "https://www.formstack.com/forms/?";
         var formId = "1808294";
@@ -2496,9 +2497,13 @@ var travelkeys = {
         }
 
         if(start_date && end_date){
+            console.log('good data');
             if((typeof(window.error) != "undefined") && (window.error != null) && (window.error.length > 0)){
+                console.log('add error');
                 $('.js-start-date, .js-end-date').addClass('error');
             }else{
+
+                console.log('enter fs block');
 
                 //$(id).attr('data-toggle', 'modal');
                 //$( "#booking_information" ).html('<iframe id="iframe" src="' + url + $.param(params) + '"></iframe>');
@@ -2512,15 +2517,19 @@ var travelkeys = {
                     width           : '90%',
                     height          : '90%',
                     beforeLoad      : function() {
-                        $('body').addClass('fancybox-close--alt');
-                        return thisScrollPosition = $(window).scrollTop();
+                        console.log('before load');
+                        //$('body').addClass('fancybox-close--alt');
+                        //return thisScrollPosition = $(window).scrollTop();
                     },
                     afterLoad       : function() {
-                        $('body').css('position', 'fixed');
+                        console.log('after load');
+                        //$('body').css('position', 'fixed');
                     },
                     afterClose      : function() {
+                        console.log('after close');
                         $('body').removeClass('fancybox-close--alt');
                         if ($bookingContainer.length > 0) {
+                            console.log('add displey block');
                             $bookingContainer.css('display', 'block');
                         }
                         $('body').css('position', '');
@@ -2554,6 +2563,14 @@ var travelkeys = {
             travelkeys.submitFormToFormStack(evt, '#book-villa-modal');
         });
     },
+
+    youtube: function() {
+        if ( !$('js-youtube-video').length ) return false;
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
 
 
 };

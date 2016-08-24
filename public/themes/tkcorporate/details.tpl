@@ -124,8 +124,8 @@
                         {/foreach}
                         {foreach name='property_videos' item=$video from=$property_details->videos}
                             <div class="-has-video">
-                                <a href="https://www.youtube.com/embed/zgviI8Cm28E?autoplay=true" class="js-fancybox" data-fancybox-type="iframe" title="Click to play: Villa Slide">
-                                    <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/carousel-villa1.jpg" alt="Villa Slide">
+                                <a href="https://www.youtube.com/embed/{$video->video_code}?autoplay=true" class="js-fancybox" data-fancybox-type="iframe" title="Click to play: Villa Slide">
+                                    <img src="http://img.youtube.com/vi/{$video->video_code}/hqdefault.jpg" alt="Villa Slide">
                                 </a>
                             </div>
                         {/foreach}
@@ -141,7 +141,7 @@
                         {foreach name='property_videos' item=$video from=$property_details->videos}
                             <div class="-has-video">
                                 <a href="#" title="Navigate to: Villa Slide">
-                                    <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/carousel-villa1.jpg" alt="Villa Slide">
+                                    <img src="http://img.youtube.com/vi/{$video->video_code}/default.jpg" alt="Villa Slide">
                                 </a>
                             </div>
                         {/foreach}
