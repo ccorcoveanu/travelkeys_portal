@@ -8,11 +8,11 @@
                 <i class="icon icon__phone"></i>
                 <div class="reach__item">
                     <strong class="reach__label">Toll Free:</strong>
-                    <span class="reach__value"><a class="reach__link" href="tel:8778759877" title="Call 877.875.9877">877.875.9877</a></span>
+                    <span class="reach__value"><a class="reach__link" href="tel:8778151242" title="Call 877.815.1242">877.815.1242</a></span>
                 </div>
                 <div class="reach__item">
                     <strong class="reach__label">International:</strong>
-                    <span class="reach__value"><a class="reach__link" href="tel:4048153490" title="Call 404.815.3490">404.815.3490</a></span>
+                    <span class="reach__value"><a class="reach__link" href="tel:4048151242" title="Call 404.815.1242">404.815.1242</a></span>
                 </div>
             </div>
             <div class="reach__group">
@@ -34,9 +34,9 @@
                 <i class="icon icon__location-gray"></i>
                 <div class="reach__item -anchor-no-labels">
                     <strong class="reach__label">U.S Address</strong>
-                    <span class="reach__value">1320 Ellsworth Industrial Blvd</span>
-                    <span class="reach__value">Suite A1400 / A1500</span>
-                    <span class="reach__value">Atlanta GA 30318	</span>
+                    <span class="reach__value">925B Peachtree Street</span>
+                    <span class="reach__value">Suite 315</span>
+                    <span class="reach__value">Atlanta GA 30309</span>
                 </div>
             </div>
         </div>

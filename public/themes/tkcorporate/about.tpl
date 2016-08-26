@@ -15,7 +15,7 @@
                 <h5 class="section__subtitle information__subtitle">A Rich Tradition</h5>
                 <h2 class="section__title information__title">Over 25 years of experience</h2>
                 <img class="information__badge" src="{$smarty.const.TEMPLATE_PATH}/assets/images/svg/no-sprite/quality-badge-black.svg" alt="Over 25 yeats of tradition"/>
-                <p>Travel Keys is an elite travel broker representing an enticing collection o 5000 personally inspected luxury villas throughout more than 75 destinations throughout the Caribbean, Mexico, Hawaii, Europe, Asia, Africa and the United States.</p>
+                <p>Travel Keys is an elite travel broker representing an enticing collection of 5000 personally inspected luxury villas throughout more than 75 destinations throughout the Caribbean, Mexico, Hawaii, Europe, Asia, Africa and the United States.</p>
                 <p><strong>Our expertise has been noted in the following publications: Conde Nast, Travel and Leisure, Islands, Caribbean Travel & Life and Robb Report.</strong></p>
             </div>
             <div class="information__items -margin-bottom">

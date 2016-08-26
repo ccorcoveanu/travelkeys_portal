@@ -2,6 +2,9 @@
 namespace App\Modules\Portal;
 
 use App\Services\Redis\Locations;
+use Slim\Http\Request;
+use Slim\Http\Response;
+
 class StaticPages
 {
     protected
@@ -37,10 +40,10 @@ class StaticPages
                 'hero_sec_description' => 'And we have been doing so for the last 25 years.',
                 'villas_number' => '5,000+',
                 'villas_text' => 'Luxury<br/>Villas',
-                'destinations_number' => '75+',
+                'destinations_number' => '90+',
                 'destinations_text' => 'Fabulous<br/>Destinations',
                 'years_number' => '25',
-                'years_text' => 'Years of Creating<br/>Experiences',
+                'years_text' => 'Years of Creating<br/>Memories',
                 'quicknav_page' => 'about',
             ],
             'menu' => $request->getAttribute('menu'),
@@ -163,5 +166,28 @@ class StaticPages
             'favorites' => $request->getAttribute('favorites'),
             'feeds' => $request->getAttribute('feeds'),
         ]);
+    }
+
+    public function terms(Request $request, Response $response)
+    {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'terms.tpl', [
+            'page' => [
+                'title' => 'Terms of Use',
+                'body_classes' => '',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
+        ]);
+    }
+
+    public function sitemap(Request $request, Response $response)
+    {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'sitemap.tpl', []);
     }
 }

@@ -153,6 +153,14 @@ class Properties extends DataApi
             ];
         }
 
+        if ( isset($filters['coordinates']) ) {
+            $conditions[] = [
+                'field' => 'coordinates',
+                'operator' => '=',
+                'value' => $filters['coordinates']
+            ];
+        }
+
         $order = '';
         if ( isset($filters['order']) ) {
             $order = $this->order($filters['order']);

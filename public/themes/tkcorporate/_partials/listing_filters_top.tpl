@@ -1,5 +1,5 @@
 <div class="js-filter-aside__container filter-aside__container -fixed">
-    <aside id="search-aside" class="js-filter-aside search-aside filter-aside">
+    <aside id="search-aside" class="js-filter-aside search-aside filter-aside -hidden">
         <div class="filter filter--side">
             <form class="form filter__form">
                 <div class="filter--side__wrapper -helper-inline -first">
@@ -105,6 +105,7 @@
 
                     </div>
                 </div>
+                <input type="hidden" value="" name="pins" id="map-pins__input" class="filter__input"/>
                 <!--<div class="filter--side__wrapper">
                     <h3 class="filter__subtitle filter--side__subtitle">Areas</h3>
                     <div class="filter--side__wrapper__inner -last">
@@ -228,11 +229,11 @@
             </div>
         </div>
     </aside>
-    <div class="js-section-header section__header">
+    <div class="js-section-header section__header -is-accordion">
         <div class="section__header__container">
             <div class="section__header__wrapper -position-left">
-                <h2 class="section__header__title"><span>View</span> <span id="total_villas_number" class="visible-mobile">{$total_items|default:0}</span> villas</h2>
-                <h3 class="section__header__title--alt">{$total_items|default:0}</span> villas<span class="title--alt__number"></h3>
+                <h2 class="section__header__title"><span>View</span> <span id="total_villas_number" class="visible-mobile total_villas_number">{$total_items|default:0}</span> villas</h2>
+                <h3 class="section__header__title--alt"><span class="total_villas_number">{$total_items|default:0}</span></span> villas<span class="title--alt__number"></h3>
                 <div class="form__input__container filter__input__container filter__input__container--alt order-villas__select">
                     <select class="js-select2-alt form__input filter__input" name="oreder_by">
                         <option value="name_asc" selected>Villa Name A-Z</option>
@@ -259,8 +260,8 @@
                 </div>
                 <div class="js-search-toggle-container search-toggle__container -fixed-top">
                     <h3 class="search-toggle__title">Adjust your search results</h3>
-                    <a class="js-search-toggle search-toggle -anchor-map">Map</a>
-                    <a class="js-search-toggle search-toggle -anchor-filters -active">Filters</a>
+                    <a class="js-search-toggle search-toggle -anchor-map -active">Map</a>
+                    <a class="js-search-toggle search-toggle -anchor-filters">Filters</a>
                     <a class="js-search-filters search-filters -anchor-expand"><i class="icon icon__filters"></i><span>Open</span>Filters</a>
                     <a class="js-modal-filters search-filters -has-fancybox -anchor-modal" href="#search-aside"><i class="icon icon__filters"></i><span>Open</span>Filters</a>
                 </div>

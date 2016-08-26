@@ -73,10 +73,10 @@ class Search
         }
 
         if ( !$filters['group']['all'] || $filters['group']['all'] === 'false' ) {
-            if ( $filters['group']['specials'] !== 'false' ) {
+            if ( isset($filters['group']['specials']) && $filters['group']['specials'] !== 'false' ) {
                 $extra_filters['specials'] = true;
             }
-            if ( $filters['group']['favorites'] !== 'false' ) {
+            if ( isset($filters['group']['favorites']) && $filters['group']['favorites'] !== 'false' ) {
                 $extra_filters['ids'] = $request->getAttribute('favorites');
             }
         }
@@ -98,6 +98,13 @@ class Search
             } else {
                 $extra_filters['price']['max'] = $filters['price']['end'];
             }
+            if ( $extra_filters['price']['min'] == 0 && $extra_filters['price']['max'] == 5000 ) {
+                unset($extra_filters['price']);
+            }
+        }
+
+        if ( isset($filters['pins']) && is_array($filters['pins']) ) {
+            $extra_filters['coordinates'] = $filters['pins'];
         }
 
         $order = null;
@@ -129,6 +136,11 @@ class Search
             'favorites' => $request->getAttribute('favorites'),
         ]);
 
-        return \GuzzleHttp\json_encode(['length' => count($search_items), 'status' => 'ok', 'html' => $html, 'total_items' => $total_tiems]);
+        $pins = $this->view->fetch('_partials/components/pin_list.tpl', [
+            'map_items' => $search_items,
+            'favorites' => $request->getAttribute('favorites'),
+        ]);
+
+        return \GuzzleHttp\json_encode(['length' => count($search_items), 'status' => 'ok', 'html' => $html, 'pins' => $pins, 'total_items' => $total_tiems]);
     }
 }

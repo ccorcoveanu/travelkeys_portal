@@ -4,7 +4,7 @@
     <article class="hero">
         <div class="hero__container">
             <div class="container">
-                <h2 class="hero__title">Luxury Vacations Redefined</h2>
+                <h2 class="hero__title">Luxury Villa Experiences</h2>
                 <div class="section facts">
                     <div class="container">
                         <div class="location">
@@ -13,12 +13,12 @@
                                 <span class="location__item__text">Luxury<br/>Villas</span>
                             </div>
                             <div class="location__item">
-                                <span class="location__item__number">75+</span>
+                                <span class="location__item__number">90+</span>
                                 <span class="location__item__text">Fabulous<br/>Destinations</span>
                             </div>
                             <div class="location__item">
                                 <span class="location__item__number">25</span>
-                                <span class="location__item__text">Years of Creating<br/>Experiences</span>
+                                <span class="location__item__text">Years of Creating<br/>Memories</span>
                             </div>
                         </div>
                     </div>
@@ -108,28 +108,28 @@
         <div class="container">
             <div class="promises__container">
                 <div class="promises__item">
-                    <span class="promises__item__subtitle">More than 5000</span>
-                    <h3 class="promises__item__title">Finest Luxury Villa</h3>
+                    <span class="promises__item__subtitle">5000+ PROPERTIES</span>
+                    <h3 class="promises__item__title">Curated Villa Collection</h3>
                     <i class="promises__item__icon icon icon__badge-house"></i>
-                    <p class="promises__item__text">We visit each villa in person looking for character, space and comfort. We've found what we like. <strong>We think you will too.</strong></p>
+                    <p class="promises__item__text">We select only the best homes in top vacation destinations. Our local team inspects ensures a quality experience.</p>
                 </div>
                 <div class="promises__item">
-                    <span class="promises__item__subtitle">Your personal</span>
-                    <h3 class="promises__item__title">Dedicated Concierge</h3>
+                    <span class="promises__item__subtitle">ALWAYS HERE FOR YOU</span>
+                    <h3 class="promises__item__title">24/7 Concierge Service</h3>
                     <i class="promises__item__icon icon icon__badge-bell"></i>
-                    <p class="promises__item__text">We know what it takes to make a home yours. When you come to stay, <strong>our local team prepares the villa with care.</strong></p>
+                    <p class="promises__item__text">Your dedicated concierge knows how to make a vacation special. Hotel services in the privacy of your own villa.</p>
                 </div>
                 <div class="promises__item -hidden-md">
-                    <span class="promises__item__subtitle">A very</span>
-                    <h3 class="promises__item__title">Warm Welcome</h3>
+                    <span class="promises__item__subtitle">COMFORT ABROAD</span>
+                    <h3 class="promises__item__title">A Very Warm Welcome</h3>
                     <i class="promises__item__icon icon icon__badge-keys"></i>
-                    <p class="promises__item__text">When you arrive, we're there to meet you, introduce you to the staff and to show you around the villa. <strong>We're available 24/7.</strong></p>
+                    <p class="promises__item__text">Feel at ease. When you arrive, we’re there to meet you, introduce you to the staff and show you around the villa.</p>
                 </div>
                 <div class="promises__item">
-                    <span class="promises__item__subtitle">Always the best</span>
-                    <h3 class="promises__item__title -no-wrap">No fees / Subscriptions</h3>
+                    <span class="promises__item__subtitle">ALWAYS THE BEST</span>
+                    <h3 class="promises__item__title -no-wrap">No Fees or<br/>Subscriptions</h3>
                     <i class="promises__item__icon icon icon__badge-fees"></i>
-                    <p class="promises__item__text">We designed a service for stays in the finest homes. <strong>And we call it handmade hospitality.</strong></p>
+                    <p class="promises__item__text">We are dedicated to guests. While other sites push booking fees, Travel Keys guarantees a <strong>best-rate guarantee with no fees.</strong></p>
                 </div>
             </div>
 
@@ -170,7 +170,7 @@
     <article class="section promises -style-pattern">
         <div class="container">
             <h5 class="section__subtitle promises__subtitle">We stand for</h5>
-            <h2 class="section__title promises__title -color-white">Handmade hospitality in the finest villas</h2>
+            <h2 class="section__title promises__title -color-white">Hospitality in the finest villas</h2>
             <div class="section__container">
                 <div class="promises-grid">
                     <div class="promise__row">
@@ -200,18 +200,18 @@
                     </div>
                     <div class="promise__row">
                         <div class="promise -large">
-                            <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise4.jpg" alt="Chef/Cooking Services"/>
+                            <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise4.jpg" alt="Chef Services"/>
                             <div class="promise__wrapper">
                                 <i class="promise__icon icon icon__rackets"></i>
-                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-chef" title="Chef/Cooking Services">Chef/Cooking Services</a>
+                                <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-chef" title="Chef Services">Chef Services</a>
                             </div>
                         </div>
                         <div class="promise__group">
                             <div class="promise -small">
-                                <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise5.jpg" alt="Vill Pre-Stocking"/>
+                                <img class="promise__image" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/promise5.jpg" alt="Villa Pre-Stocking"/>
                                 <div class="promise__wrapper">
                                     <i class="promise__icon icon icon__bucket"></i>
-                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-stocking" title="Vill Pre-Stocking">Vill Pre-Stocking</a>
+                                    <a class="promise__button button -color-black" href="{$smarty.const.BASE_URL}/concierge-service#box-stocking" title="Villa Pre-Stocking">Villa Pre-Stocking</a>
                                 </div>
                             </div>
                             <div class="promise -small">

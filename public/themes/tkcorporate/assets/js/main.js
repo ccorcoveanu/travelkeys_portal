@@ -27555,6 +27555,8 @@ var travelkeys = {
         travelkeys.filterSearch();
 
         travelkeys.bookVilla();
+
+        travelkeys.villasNearBy();
     },
 
     // Links handler
@@ -28588,6 +28590,7 @@ var travelkeys = {
         function __init() {
             // Set to false if not defined
             action = action || false;
+            var mc;
 
             switch (action) {
                 case 'centerMap':
@@ -28595,6 +28598,12 @@ var travelkeys = {
                     break;
                 case 'clear':
                     clearMarkers(map);
+                    break;
+                case 'updateMarkers':
+                    deleteMarkers(map);
+                    configureMapMarkers(map, true);
+                    //clusterMap(map);
+                    //centerMap(map);
                     break;
                 default :
                     // If we have $mapSearch in the DOM
@@ -28790,19 +28799,24 @@ var travelkeys = {
 
             google.maps.event.addListener(map, 'idle', function() {
 
+                if ( !$('label[for="ck-map"]').length || !$('#ck-map:checked').length ) {
+
+                    return false;
+                }
+
                 var visibleMarkers = [];
                 var bounds = map.getBounds();
 
                 for(var i = 0; i < map.markers.length; i++){ // looping through my Markers Collection
                     if(bounds.contains(map.markers[i].position)){
                         visibleMarkers.push({
-                            latitude: map.markers[i].position.lat,
-                            longitude: map.markers[i].position.lng
+                            latitude: map.markers[i].position.lat(),
+                            longitude: map.markers[i].position.lng()
                         })
                     }
                 }
 
-
+                $('#map-pins__input').val(JSON.stringify(visibleMarkers)).trigger('change');
             });
         }
 
@@ -28896,6 +28910,8 @@ var travelkeys = {
                 map.markers[i].setMap(null);
             }
             map.markers.length = 0;
+            mc = new MarkerClusterer(map, map.markers);
+            mc.setMap(null);
         }
 
         // Reset markers
@@ -29006,8 +29022,6 @@ var travelkeys = {
             var mcOptions = {
                 styles : mcStyles
             };
-            var mc;
-
             mc = new MarkerClusterer(map, map.markers, mcOptions);
         }
 
@@ -29229,9 +29243,12 @@ var travelkeys = {
                         $searchToggleContainer.removeClass('-hidden');
                     }
                 } else {
-                    $filterAside.addClass('-fixed-top');
-                    $filterAsideWrapper.addClass('-fixed-top');
-                    $searchToggleContainer.removeClass('-fixed-top');
+                    if ( $('.hero--secondary__container').length ) {
+                        $filterAside.addClass('-fixed-top');
+                        $filterAsideWrapper.addClass('-fixed-top');
+                        $searchToggleContainer.removeClass('-fixed-top');
+                    }
+
                 }
                 // Hiding right  side filters on scroll
                 if ($(window).scrollTop() > stopPointRightOffset) {
@@ -29667,6 +29684,10 @@ var travelkeys = {
                     }
                 };
 
+                if ( $('#ck-map:visible').length && $('#ck-map:checked').length ) {
+                    filters.pins = JSON.parse($('#test').val());
+                }
+
                 // load items
                 load(
                   $('input[name="q"]').val(),
@@ -29750,6 +29771,10 @@ var travelkeys = {
                     order: $('.order-villas__select:visible select option:selected').val()
                 };
 
+                if ( $('label[for="ck-map"]').length && $('#ck-map:checked').length ) {
+                    filters.pins = JSON.parse($('#map-pins__input').val());
+                }
+
                 if ( loading && xhr_req) {
                     xhr_req.abort();
                 }
@@ -29765,7 +29790,7 @@ var travelkeys = {
 
                     if ( data.status === 'ok' ) {
                         $('.featured__row__container .featured__row').html(data.html);
-                        $('#total_villas_number').text(data.total_items);
+                        $('.total_villas_number').text(data.total_items);
                     }
 
                     if (data.length < 20) {
@@ -29786,8 +29811,47 @@ var travelkeys = {
         return __init();
     },
 
+    villasNearBy: function() {
+        if ( !$('.property #ck-map').length ) return false;
+        $('.property #ck-map').on('change', function(evt) {
+
+            if ( !$('.property #ck-map:checked').length ) {
+                $('.js-map-markers .js-marker:not(":first-child")').remove();
+                travelkeys.googleMap('updateMarkers');
+                return;
+            }
+
+            var loading = false;
+            var xhr_req = false;
+
+            if ( loading && xhr_req) {
+                xhr_req.abort();
+            }
+
+            xhr_req = $.getJSON('/ajax/filter', {
+
+                'q': '',
+                'start': 0,
+                'limit': 20,
+                'filters': []
+
+            }).done(function (data) {
+
+                if ( data.status === 'ok' ) {
+                    $('.js-map-markers').append(data.pins);
+                    travelkeys.googleMap('updateMarkers');
+                }
+                return;
+            }).fail(function (jqxhr, textStatus, error) {
+                // do something with error
+            }).always(function () {
+                loading = false;
+            });
+            loading = true;
+        });
+    },
+
     submitFormToFormStack: function(e, id){
-        console.log('enter');
         e.preventDefault();
         var url = "https://www.formstack.com/forms/?";
         var formId = "1808294";

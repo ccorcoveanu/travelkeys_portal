@@ -3,7 +3,7 @@
         <h5 class="section__subtitle message__subtitle">Tell us how</h5>
         <h2 class="section__title message__title">Can we help?</h2>
         <p>Wether you have a comment or suggestion about our company or website, please let us know.</p>
-        <p>If you are seeking a property rental, please feel free to <a href="#" class="-color-aqua">browse our collection of villas</a> or simply complete the form below to begin the process.</p>
+        <p>If you are seeking a property rental simply complete the form below to begin the process.</p>
         <form class="form--letter form--letter-alt filter js-validate-form" id="contact-site-form" method="post" action="/form/contact">
             <div class="form--letter__wrapper">
                 <div class="form--letter__input__container -half-width">

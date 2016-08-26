@@ -44,7 +44,6 @@
                 <h2 class="section__title information__title">Get Inspired And Think Big, With Purpose.</h2>
                 <p>We invent. We tinker. We share snippets of our life experiences with each other because it helps influence the way we think and the way we work.</p>
                 <p>We raise the bar and we constantly challenge ourselves to create the best vacation experience for our existing and future customers.</p>
-                <p><strong>At around 95 people, we are small enough to solve big problems. Care to join us?</strong></p>
             </div>
         </div>
     </article>

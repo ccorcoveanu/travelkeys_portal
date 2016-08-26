@@ -7575,6 +7575,20 @@ strong.-color-white {
   background-image: url("../images/svg/icon-checkbox-fill-new.svg");
   background-size: cover;
 }
+.blank_page {
+  text-align: left;
+}
+.blank_page .section {
+  text-align: left;
+}
+.blank_page h2 {
+  text-align: center;
+  margin-bottom: 3.125rem;
+}
+.blank_page .privacy a {
+  color: #00a2a7;
+  text-decoration: none;
+}
 .section {
   *zoom: 1;
   position: relative;

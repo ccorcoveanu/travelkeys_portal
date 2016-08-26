@@ -22,6 +22,8 @@ $app->get('/about-careers', 'StaticPages:careers');
 $app->get('/contact-us', 'StaticPages:contact');
 $app->get('/concierge-service', 'StaticPages:concierge');
 $app->get('/thank-you', 'StaticPages:thanks');
+$app->get('/terms-of-use', 'StaticPages:terms');
+$app->get('/sitemap.xml.php', 'StaticPages:sitemap');
 
 // Ajax calls
 $app->get('/ajax/filter', 'SearchAjax:filter');

@@ -5,7 +5,7 @@
             <div class="hero__container hero--secondary__container">
                 <h1 class="hero__title hero--secondary__title">OUR specialists are on the ground to assist you</h1>
                 <i class="icon icon__hands hero--secondary__icon"></i>
-                <h2 class="hero__subtitle hero--secondary__subtitle">In over 75 destinations worldwide.</h2>
+                <h2 class="hero__subtitle hero--secondary__subtitle">In over 90 destinations worldwide.</h2>
             </div>
         </div>
     </article>
@@ -18,7 +18,7 @@
                 <h2 class="section__title information__title">Featured Specialists</h2>
                 <p>One of the unique strengths of Travel Keys is our international network of villa and concierge specialists. Locally-based agents ensure that our guests are provided with the highest levels of service and expertise across our many global destinations.</p>
                 <p>Our team of specialists travel the world to guarantee you find not only the best villa, but also the best vacation experience in a given destination.</p>
-                <p><strong>Our experts are located in many of our Top Destinations throughout the world and remain ready to assist.</strong></p>
+                <p><strong>Our experts are located in many of our TOP DESTINATIONS throughout the world and remain ready to assist.</strong></p>
             </div>
         </div>
     </article>
