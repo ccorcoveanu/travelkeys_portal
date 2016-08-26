@@ -190,4 +190,20 @@ class StaticPages
         if ( SUBDOMAIN ) $location = $this->rlocation->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'sitemap.tpl', []);
     }
+
+    public function insurance(Request $request, Response $response)
+    {
+        $location = null;
+        if ( SUBDOMAIN ) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'insurance.tpl', [
+            'page' => [
+                'title' => 'Insurance',
+                'body_classes' => 'insurance',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
+        ]);
+    }
 }

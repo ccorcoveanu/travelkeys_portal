@@ -57,9 +57,9 @@
             </li>
             <li class="footer__site-map__item"><a href="#" title="Sitemap">Sitemap</a>
             </li>
-            <li class="footer__site-map__item"><a href="#" title="Concierge service">Concierge service</a>
+            <li class="footer__site-map__item"><a href="{$smarty.const.MAIN_SITE}/concierge-service" title="Concierge service">Concierge service</a>
             </li>
-            <li class="footer__site-map__item"><a href="#" title="Travel agents">Travel agents</a>
+            <li class="footer__site-map__item"><a href="{$smarty.const.MAIN_SITE}/travel-agents" title="Travel agents">Travel agents</a>
             </li>
         </ul>
         <p class="footer__copy">&copy; Copyright 2016 Travel Keys All rights reserved.</p>

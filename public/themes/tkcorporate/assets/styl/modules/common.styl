@@ -3213,6 +3213,205 @@ strong {
 	}
 }
 
+// !Insurance
+// ==|=========================================================================
+.insurance {
+	.hero--secondary {
+		background-image: url('../images/bg/bg-insurance.jpg')
+		background-position: 100%
+
+		+between(670px, 960px) {
+			height: rem(620)
+		}
+
+		+below(670px) {
+			height: rem(520)
+		}
+
+		&__title {
+			margin: rem(165) auto rem(25)
+
+			+between(670px, 960px) {
+				margin: rem(165) 0 rem(10)
+				max-width: 100%
+				font-size: rem(84)
+				line-height: rem(90)
+			}
+
+			+below(670px) {
+				margin: rem(155) auto rem(40)
+				font-size: rem(38)
+			}
+		}
+
+		&__subtitle {
+			margin: 0 auto
+			max-width: rem(600)
+			font-size: rem(50)
+
+			+below(960px) {
+				display: block
+			}
+
+			+below(670px) {
+				max-width: rem(300)
+				font-size: rem(25)
+			}
+		}
+	}
+
+	.form__container {
+		&::after {
+			content: none
+		}
+
+		.message__title {
+			font-family:  $bebas-font-family
+			font-size: rem(62)
+			font-weight: 400
+			font-style: normal
+		}
+
+		.message__subtitle {
+			font-family: $caslon-font-family
+			font-style: italic
+			font-size: rem(32)
+			text-transform: none
+		}
+	}
+}
+
+// !Brief
+// ==|=========================================================================
+.brief {
+	+below(960px) {
+		padding-top: rem(60)
+	}
+
+	&.section p {
+		color: #6b7075
+	}
+
+	&__title {
+		margin-bottom: rem(15)
+		font-family: $bebas-font-family
+		font-size: rem(50)
+		font-weight: 300
+		color: #333
+		text-transform: uppercase
+
+		+below(670px) {
+			margin-top: rem(35)
+			font-size: rem(25)
+			font-weight: 600
+		}
+
+		sup {
+			font-size: 50%
+			font-weight: 100
+			top: -.7em
+
+			+below(670px) {
+				position: static
+				margin-left: rem(2)
+				font-size: 100%
+			}
+		}
+	}
+
+	&__sections {
+		cf()
+		display: table
+	}
+
+	&__section {
+		&.-position-right,
+		&.-position-left {
+			// Sorry but there is no other pure CSS
+			// vertical align alternative for when
+			// one of the containers has growing content
+			text-align: left
+			display: table-cell
+			vertical-align: middle
+
+			+below(800px) {
+				display: block
+			}
+		}
+
+		&.-position-right {
+			width: 60%
+			margin-left: 3%
+
+			+below(800px) {
+				margin-left: 0
+				width: 100%
+			}
+		}
+
+		&.-position-left {
+
+			+below(800px) {
+				text-align: center
+				border-bottom: 1px solid #c4c6c8
+			}
+			.brief__section__wrapper {
+				+below(800px) {
+					padding-bottom: rem(40)
+				}
+			}
+		}
+	}
+
+	&__span,
+	&__number {
+		display: block
+		font-family: $bebas-font-family
+		font-size: rem(36)
+		font-weight: 300
+
+		+below(670px) {
+			font-size: rem(25)
+		}
+	}
+
+	&__span {
+		color: #a3a9af
+	}
+
+	&__number {
+		color: #6d6f71
+
+		a {
+			color: inherit
+			text-decoration: none
+			transition: color 200ms ease-in-out
+
+			&:hover {
+				color: $aqua
+			}
+
+			span {
+				+below(960px) {
+					display: block
+				}
+
+				+below(670px) {
+					display: inline
+				}
+			}
+		}
+	}
+
+	&__logo {
+		margin-bottom: rem(40)
+
+		+below(670px) {
+			margin-bottom: rem(25)
+		}
+	}
+}
+
 // !Checkboxes
 // ==|=========================================================================
 .checkbox {
