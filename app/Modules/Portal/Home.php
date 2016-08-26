@@ -108,10 +108,10 @@ class Home
             'favorites' => $favorites,
             'featured'  => $featured,
             'specials'  => $specials,
-            'map_items' => array_map(function ($element) use ($favorites) {
+            'map_items' => $mapItems ? array_map(function ($element) use ($favorites) {
                 $element->is_favorite = in_array($element->landing_property_id, $favorites);
                 return $element;
-            }, $mapItems), // Loop over array and add favorites flag
+            }, $mapItems) : [], // Loop over array and add favorites flag
             'feeds' => $request->getAttribute('feeds'),
         ]);
     }

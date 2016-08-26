@@ -4,7 +4,7 @@
     <article class="hero">
         <div class="hero__container">
             <div class="container">
-                <h2 class="hero__title">Luxury Vacations Redefined</h2>
+                <h2 class="hero__title">Luxury Villa Experiences</h2>
                 <h4 class="filter__caption -hides-for-medium-down">Find the perfect villa for your vacation in {$location->name}:</h4>
                 <div class="js-searchbar searchbar -hides-for-medium-down">
                     <div class="searchbar__wrapper">
@@ -165,7 +165,7 @@
                     <li class="concierge__list__item">Tours & activities</li>
                     <li class="concierge__list__item">Spa services</li>
                     <li class="concierge__list__item">Meet and greet</li>
-                    <li class="concierge__list__item">Chef / Cooking</li>
+                    <li class="concierge__list__item">Chef Services</li>
                     <li class="concierge__list__item">Special events</li>
                     <li class="concierge__list__item">Miscellaneous</li>
                 </ul>
