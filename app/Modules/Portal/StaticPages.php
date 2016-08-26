@@ -206,4 +206,36 @@ class StaticPages
             'feeds' => $request->getAttribute('feeds'),
         ]);
     }
+
+    public function privacy(Request $request, Response $response)
+    {
+        $location = null;
+        if (SUBDOMAIN) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'privacy.tpl', [
+            'page' => [
+                'title' => 'Privacy Policy',
+                'body_classes' => '',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
+        ]);
+    }
+
+    public function travelAgents(Request $request, Response $response)
+    {
+        $location = null;
+        if (SUBDOMAIN) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'travel_agents.tpl', [
+            'page' => [
+                'title' => 'Travel Insurance',
+                'body_classes' => 'travelagents',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
+        ]);
+    }
 }
