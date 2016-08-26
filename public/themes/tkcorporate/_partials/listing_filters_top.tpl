@@ -1,4 +1,4 @@
-<div class="js-filter-aside__container filter-aside__container -fixed">
+<div class="js-filter-aside__container filter-aside__container -fixed {if isset($page.final_destination_page)}-fixed-top{/if}">
     <aside id="search-aside" class="js-filter-aside search-aside filter-aside -hidden">
         <div class="filter filter--side">
             <form class="form filter__form">
