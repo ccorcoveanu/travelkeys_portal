@@ -98,8 +98,8 @@
                                 <label class="filter__option__label" for="ck-beach"><span></span>Beachfront</label>
                             </li>
                             <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-city" name="ck-city">
-                                <label class="filter__option__label" for="ck-city"><span></span>City Breaks</label>
+                                <input class="checkbox" type="checkbox" id="ck-city" name="ck-ski">
+                                <label class="filter__option__label" for="ck-city"><span></span>SKI IN/OUT</label>
                             </li>
                         </ul>
 
