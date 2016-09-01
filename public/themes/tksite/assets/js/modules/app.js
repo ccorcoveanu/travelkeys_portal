@@ -2369,6 +2369,7 @@ var travelkeys = {
                 $('#load-more__display').slideDown();
 
                 var amenities = [];
+                var areas = [];
                 if ( document.getElementById('ck-beach').checked ) {
                     amenities.push('ck-beach');
                 }
@@ -2376,6 +2377,11 @@ var travelkeys = {
                 if ( document.getElementById('ck-city').checked ) {
                     amenities.push('ck-city');
                 }
+
+                $.each($('.ck-area:checked'), function() {
+                    areas.push($(this).val());
+                })
+
                 var filters = {
                     'amenities': amenities,
                     'reservations': {
@@ -2393,7 +2399,8 @@ var travelkeys = {
                         start: $('#range-slider__low').val(),
                         end: $('#range-slider__high').val()
                     },
-                    order: $('.order-villas__select:visible select option:selected').val()
+                    order: $('.order-villas__select:visible select option:selected').val(),
+                    areas: areas
                 };
 
                 if ( loading && xhr_req) {

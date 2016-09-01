@@ -116,9 +116,11 @@ class VillaListing
     {
         $location = null;
         $location_id = null;
+        $areas = [];
         if ( SUBDOMAIN ) {
             $location = $this->locations->bySlug(SUBDOMAIN);
             $location_id = $location->id;
+            $areas = $this->locations->children($location_id);
         }
 
         $search_items = $this->properties->search($request->getParam('q', ''), 0, 20, ['location_id' => $location_id]);
@@ -150,6 +152,7 @@ class VillaListing
             'guests' => $request->getParam('guests', ''),
             'location' => $location,
             'feeds' => $request->getAttribute('feeds'),
+            'areas' => $areas
         ]);
     }
 

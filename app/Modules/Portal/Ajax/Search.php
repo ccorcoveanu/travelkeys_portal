@@ -107,6 +107,10 @@ class Search
             $extra_filters['coordinates'] = $filters['pins'];
         }
 
+        if ( isset($filters['areas']) && $filters['areas'] ) {
+            $extra_filters['areas'] = $filters['areas'];
+        }
+
         $order = null;
         if ( isset($filters['order']) && $filters['order'] ) {
             $extra_filters['order'] = $filters['order'];

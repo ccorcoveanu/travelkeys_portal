@@ -161,6 +161,14 @@ class Properties extends DataApi
             ];
         }
 
+        if ( isset($filters['areas']) ) {
+            $conditions[] = [
+                'field' => 'parent_id',
+                'operator' => 'in',
+                'value' => '(' . implode(',', $filters['areas']) . ')'
+            ];
+        }
+
         $order = '';
         if ( isset($filters['order']) ) {
             $order = $this->order($filters['order']);

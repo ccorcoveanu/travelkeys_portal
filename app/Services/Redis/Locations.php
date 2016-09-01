@@ -201,4 +201,15 @@ class Locations extends CacheClient
 
         return null;
     }
+
+    public function children($parent)
+    {
+        if ( !$this->client ) {
+            return [];
+        }
+
+        return array_filter($this->get(), function($element) use ($parent) {
+            return $element->parent_id === $parent;
+        });
+    }
 }
