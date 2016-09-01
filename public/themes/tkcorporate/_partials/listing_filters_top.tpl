@@ -119,7 +119,7 @@
                         </ul>
                         <a class="js-button-expand button__expand" data-text-swap="Show less">Show more</a>
                     </div>
-                </div>-->
+                </div>
             </form>
             <div class="filter--side__wrapper -last">
                 <div class="filter__button__wrapper">

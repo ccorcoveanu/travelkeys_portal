@@ -12,7 +12,7 @@
         {/block}
 
         <!-- Featured Properties -->
-        <div class="js-search-results section search-results">
+        <div class="js-search-results section search-results -is-accordion">
             {if $search_items|count > 0}
                 {include file='_partials/listing_filters_top.tpl'}
             {/if}
