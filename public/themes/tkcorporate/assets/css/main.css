@@ -8120,6 +8120,17 @@ strong.-color-white {
 .section__header.-is-accordion .section__header__wrapper.-position-left:after {
   clear: both;
 }
+@media only screen and (max-width: 960px) {
+  .section__header.-is-accordion .section__header__wrapper.-position-left {
+    background-color: #f6f6f6;
+    margin-top: 1.5625rem;
+    width: 100%;
+    text-align: center;
+  }
+  .section__header.-is-accordion .section__header__wrapper.-position-left .form__input__container {
+    display: block;
+  }
+}
 .section__header.-is-accordion .section__header__wrapper.-position-right {
   *zoom: 1;
   float: left;
@@ -8141,6 +8152,12 @@ strong.-color-white {
 @media only screen and (max-width: 960px) {
   .section__header.-is-accordion .section__header__wrapper.-position-right {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .section__header.-is-accordion .section__header__wrapper.-position-right.-small {
+    width: 60%;
+    margin-left: -1px;
   }
 }
 @media only screen and (max-width: 960px) {
@@ -8949,6 +8966,7 @@ strong.-color-white {
   .search-results .section__header.-is-accordion,
   .search-results.-is-accordion .section__header.-is-accordion {
     border-bottom: 0;
+    background-color: #f6f6f6;
   }
   .search-results .section__header__container,
   .search-results.-is-accordion .section__header__container {

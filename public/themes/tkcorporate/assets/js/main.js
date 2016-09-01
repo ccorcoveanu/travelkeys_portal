@@ -29124,15 +29124,17 @@ var travelkeys = {
                     google.maps.event.trigger(map, 'resize');
                     travelkeys.googleMap('centerMap');
 
-                    // Expands filters
-                    $filtersToggle.on('click', function() {
-                        $filterAside.addClass('-is-opened').addClass('-half');
-                        $sectionHeader.addClass('-is-opened');
-                    });
 
-                    $filtersButton.on('click', function() {
-                        $filterAside.removeClass('-half').addClass('-full');
-                    });
+                });
+
+                // Expands filters
+                $filtersToggle.on('click', function() {
+                    $filterAside.addClass('-is-opened').addClass('-half');
+                    $sectionHeader.addClass('-is-opened');
+                });
+
+                $filtersButton.on('click', function() {
+                    $filterAside.removeClass('-half').addClass('-full');
                 });
 
                 // Close Filters on click
@@ -29446,6 +29448,7 @@ var travelkeys = {
                 var stopPointPadding = 100;
                 var stopPointOffset = $scrollStopPoint.offset().top - $mapAside.outerHeight() - stopPointPadding;
 
+                $('#filters').css('min-height', $mapAside.css('height'));
 
                 if ($(window).scrollTop() > $filterAsideContainer.offset().top) {
                     $mapAside.addClass('-fixed-top');

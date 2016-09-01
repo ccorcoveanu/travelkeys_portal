@@ -1,5 +1,5 @@
 <div class="js-filter-aside__container filter-aside__container -fixed {if isset($page.final_destination_page)}-fixed-top{/if}">
-    <aside id="search-aside" class="js-filter-aside search-aside filter-aside -hidden">
+    <aside id="search-aside" class="js-filter-aside search-aside filter-aside -hidden -fixed">
         <div class="filter filter--side">
             <form class="form filter__form">
                 <div class="filter--side__wrapper -helper-inline -first">
@@ -246,7 +246,7 @@
                     <i class="icon icon__option"></i>
                 </div>
             </div>
-            <div class="section__header__wrapper -position-right">
+            <div class="section__header__wrapper -position-right {if isset($page.final_destination_page)}-small{/if}">
                 <div class="form__input__container filter__input__container filter__input__container--alt -anchor-counter order-villas__select">
                     <select class="js-select2 js-select2-alt -has-select2 form__input filter__input">
                         <option value="name_asc" selected>Villa Name A-Z</option>
@@ -258,7 +258,7 @@
                     </select>
                     <i class="icon icon__option"></i>
                 </div>
-                <div class="js-search-toggle-container search-toggle__container -fixed-top">
+                <div class="js-search-toggle-container search-toggle__container {if !isset($page.final_destination_page)}-fixed-top{/if}">
                     <h3 class="search-toggle__title">Adjust your search results</h3>
                     <a class="js-search-toggle search-toggle -anchor-map -active">Map</a>
                     <a class="js-search-toggle search-toggle -anchor-filters">Filters</a>

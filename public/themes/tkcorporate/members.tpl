@@ -32,37 +32,59 @@
                 <div class="container">
                     <article class="team__member">
                         <div class="team__member__avatar__container">
-                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar1.jpg" alt="Bobby Gibson | Chief Executive Officer">
+                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/bobby_gibson.jpg" alt="Bobby Gibson | Chief Executive Officer">
                         </div>
                         <div class="team__member__text">
                             <h2 class="team__member__name">Bobby Gibson</h2>
                             <h3 class="team__member__title">Chief Executive Officer</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                            <p>An experienced entrepreneur, Bobby has helped to drive a business founded by his parents from an established leader in the luxury Caribbean villa rental market to one of the largest luxury villa rental marketplaces in the world.</p>
+                            <p>Bobby served on the Expedia Specialty Lodging Advisory board for several years and has earned numerous awards for entrepreneurship. Bobby graduated from the University of Pennsylvania.</p>
                         </div>
                     </article>
                     <article class="team__member">
                         <div class="team__member__avatar__container">
-                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar2.jpg" alt="Bryan Leblang | Chief Operating Officer">
+                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/bryan_leblang.jpg" alt="Bryan Leblang | Chief Operating Officer">
                         </div>
                         <div class="team__member__text">
                             <h2 class="team__member__name">Bryan Leblang</h2>
                             <h3 class="team__member__title">Chief Operating Officer</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                            <p>Bryan is a seasoned hospitality professional, honing his skillset with experience at premier properties including the Mandarin Oriental Hotel Group and Deer Valley Resort before joining TravelKeys in 2005 to help lead operations. Having extensively toured the world, he is familiar with luxury travel destinations on all continents and has visited over 50 countries during his tenure, expanding the reach of TravelKeys global collection. Bryan is a graduate of the University of Pennsylvania.</p>
                         </div>
                     </article>
                     <article class="team__member">
                         <div class="team__member__avatar__container">
-                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar3.jpg" alt="Nicolas Meakins | Chief Intelligence Officer">
+                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/stewart_caughman.jpg" alt="Nicolas Meakins | Chief Intelligence Officer">
+                        </div>
+                        <div class="team__member__text">
+                            <h2 class="team__member__name">Stewart Caughman</h2>
+                            <h3 class="team__member__title">SENIOR VP SALES DEPARTMENT</h3>
+                            <p>As Senior Vice President of Sales, Stewart oversees our global Villa Specialist team and serves as director of supplier relations. With 10+ years in the villa marketplace, Stewart has an extensive knowledge of the Travel Keys collection, covering over 5000 properties worldwide. He is an experienced world traveler and looks to utilize his knowledge of the vacation rental industry to provide Travel Keys’ guests with the most experienced destination consultants, ensuring that you may have the villa experience of a lifetime.</p>
+                        </div>
+                    </article>
+
+                    <article class="team__member">
+                        <div class="team__member__avatar__container">
+                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/nicolas_meakins.jpg" alt="Nicolas Meakins | Chief Intelligence Officer">
                         </div>
                         <div class="team__member__text">
                             <h2 class="team__member__name">Nicolas Meakins</h2>
-                            <h3 class="team__member__title">Chief  Intelligence Officer</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <h3 class="team__member__title">CHIEF INTELLIGENCE OFFICER</h3>
+                            <p>Nicolas joins TravelKeys bringing a decade of experience in the villa industry with him, in which time he pioneered successful Guest Relations, Business Development, Staff Training and Business Intelligence initiatives. His love for travel is second to none and has brought him around the world, living in exotic countries such as Argentina, Ghana, India, and presently the BVI (Virgin Gorda).</p>
+                            <p>Nic’s focus at TravelKeys revolves around improving internal efficiencies/systems whilst maintaining a focus on delivering the perfect guest experience, along with analysis and interpretation of big data to identify actionable items and make informed business decisions that drive results.</p>
                         </div>
                     </article>
+
+                    <article class="team__member">
+                        <div class="team__member__avatar__container">
+                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/michele_snakovsky.jpg" alt="Nicolas Meakins | Chief Intelligence Officer">
+                        </div>
+                        <div class="team__member__text">
+                            <h2 class="team__member__name">Michele Snakovsky</h2>
+                            <h3 class="team__member__title">DIRECTOR OF CONCIERGE SERVICES</h3>
+                            <p>"Not all who wander are lost". With this mantra in mind and a zeal for adventure, Michele offers over 15 years of industry experience. Initially joining Travel Keys' Sales Department more than 10 years ago, Michele moved to the Concierge Department in 2008 and never looked back. In 2009, she was promoted to Concierge Director. Today, she still believes Villa Vacations are Tourism's "best kept secret" and the greatest way to immerse oneself in any destination. Michele remains impassioned while helping guests create "once in a lifetime" memories and true luxury experiences.</p>
+                        </div>
+                    </article>
+
                     <div class="information__header">
                         <h5 class="section__subtitle information__subtitle">Meet Our</h5>
                         <h2 class="section__title information__title -color-white">Featured Villa Specialists</h2>
@@ -73,213 +95,235 @@
                                 <div class="team__member__avatar__container__outter">
                                     <div class="team__member__avatar__container__hex">
                                         <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar4.jpg" alt="Miriam Dela Cruz | Playa Del Carmen">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/denise_large.png?obbgnm" alt="Denise">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="team__member__text">
-                                    <h2 class="team__member__name">Miriam Dela Cruz</h2>
-                                    <h3 class="team__member__title">Concierge,<br> Playa Del Carmen</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <h2 class="team__member__name">Denise</h2>
+                                    <h3 class="team__member__title">Hawaii Sales Director<br> Maui, Hawaii, USA</h3>
+                                    <p>Working from the Hawaiian Islands, Denise is able to provide exemplary local insight and service. Denise specializes in Hawaii (Maui, Kauai, Oahu, and Big Island) but also closely oversees interest in other USA destinations like Napa Valley, Lake Tahoe and more.</p>
                                 </div>
                             </article>
                             <article class="team__member team__member--alt">
                                 <div class="team__member__avatar__container__outter">
                                     <div class="team__member__avatar__container__hex">
                                         <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar5.jpg" alt="Giorgio Pascuale | Tuscany Italy">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/zach_large.png?obbgnm" alt="Zach">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="team__member__text">
-                                    <h2 class="team__member__name">Giorgio Pascuale</h2>
-                                    <h3 class="team__member__title">Travel,<br> Tuscany Italy</h3>
-                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <h2 class="team__member__name">Zach</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Palm Springs, California, USA</h3>
+                                    <p>Situated in the heart of our California collection, Zach is immersed in the pace and culture of Southern California. Zachâ€™s location enables him to better serve our West-Coast guests and allows easy travel to our West-Coast accessible destinations like Hawaii, Cabo San Lucas, Puerto Vallarta, Colorado, Utah, and more.</p>
                                 </div>
                             </article>
                             <article class="team__member team__member--alt">
                                 <div class="team__member__avatar__container__outter">
                                     <div class="team__member__avatar__container__hex">
                                         <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar6.jpg" alt="John Patrick | Hawaii">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/allegra_large.png?obbgnm" alt="Allegra">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="team__member__text">
-                                    <h2 class="team__member__name">John Patrick</h2>
-                                    <h3 class="team__member__title">Travel,<br> Hawaii</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar4.jpg" alt="Miriam Dela Cruz | Playa Del Carmen">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Miriam Dela Cruz</h2>
-                                    <h3 class="team__member__title">Concierge,<br> Playa Del Carmen</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar5.jpg" alt="Giorgio Pascuale | Tuscany Italy">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Giorgio Pascuale</h2>
-                                    <h3 class="team__member__title">Travel,<br> Tuscany Italy</h3>
-                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar6.jpg" alt="John Patrick | Hawaii">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">John Patrick</h2>
-                                    <h3 class="team__member__title">Travel,<br> Hawaii</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar4.jpg" alt="Miriam Dela Cruz | Playa Del Carmen">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Miriam Dela Cruz</h2>
-                                    <h3 class="team__member__title">Concierge,<br> Playa Del Carmen</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar5.jpg" alt="Giorgio Pascuale | Tuscany Italy">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Giorgio Pascuale</h2>
-                                    <h3 class="team__member__title">Travel,<br> Tuscany Italy</h3>
-                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar6.jpg" alt="John Patrick | Hawaii">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">John Patrick</h2>
-                                    <h3 class="team__member__title">Travel,<br> Hawaii</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar4.jpg" alt="Miriam Dela Cruz | Playa Del Carmen">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Miriam Dela Cruz</h2>
-                                    <h3 class="team__member__title">Concierge,<br> Playa Del Carmen</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar5.jpg" alt="Giorgio Pascuale | Tuscany Italy">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Giorgio Pascuale</h2>
-                                    <h3 class="team__member__title">Travel,<br> Tuscany Italy</h3>
-                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar6.jpg" alt="John Patrick | Hawaii">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">John Patrick</h2>
-                                    <h3 class="team__member__title">Travel,<br> Hawaii</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar4.jpg" alt="Miriam Dela Cruz | Playa Del Carmen">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Miriam Dela Cruz</h2>
-                                    <h3 class="team__member__title">Concierge,<br> Playa Del Carmen</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar5.jpg" alt="Giorgio Pascuale | Tuscany Italy">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">Giorgio Pascuale</h2>
-                                    <h3 class="team__member__title">Travel,<br> Tuscany Italy</h3>
-                                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </article>
-                            <article class="team__member team__member--alt">
-                                <div class="team__member__avatar__container__outter">
-                                    <div class="team__member__avatar__container__hex">
-                                        <div class="team__member__avatar__container">
-                                            <img class="team__member__avatar" src="{$smarty.const.TEMPLATE_PATH}/assets/images/placeholders/avatar6.jpg" alt="John Patrick | Hawaii">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="team__member__text">
-                                    <h2 class="team__member__name">John Patrick</h2>
-                                    <h3 class="team__member__title">Travel,<br> Hawaii</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</p>
-                                </div>
-                            </article>
+                                    <h2 class="team__member__name">Allegra</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Boston, Massachusetts, USA</h3>
+                                    <p>Allegra was bitten by the travel bug after a summerâ€™s long trip through Europe following college. Having majored in art history, she instantly fell in love with Florence, Italy.  After that trip, she just knew she HAD to work in the travel business. While working for a world renowned architect as his personal assistant, she worked part time for a villa rental company in Tuscany and knew this was her calling â€“ combining her two favorite things â€“ travel AND Italy. After more world exploration (one needs to experience other places, right?), she parlayed this experience into a position with a villa rental company in New England, a villa company on the island of St Barth and then later a custom travel planning business of her own with a focus on Italy. After having been in the travel business for over 17 years and traveled all over the northern and eastern hemispheres, Allegra has carved out a niche with specialized knowledge of destinations: Italy, Anguilla, St Barths, Maui, the US and British Virgin Islands, Cabo San Lucas, Aspen and Park City/Deer Valley, Utah. Certified as a Destination Specialist for Italy, St Barths, the US Virgin Islands and Maui, Allegra loves to send people to her most favorite places on the planet but will be happy to help send you anywhere you would like to go.
 
+                                        In her spare time, Allegra likes to hit the beach with a good book, checking out farmerâ€™s markets, cooking and spending time with family and friends. Upcoming trips for Allegra are her annual trips to Italy and St Barths!
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/elizabeth_large.png?obbgnm" alt="Elizabeth">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Elizabeth</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Miami, Florida, USA</h3>
+                                    <p>A Miami native born to Caribbean parents, Elizabeth holds a Bachelorâ€™s Degree in Business Administration and has steadily worked in the fields of Creative Services, Customer Service Management and Sales. She has been a part of the Travel Keys family for six years and has traveled to several islands throughout the Caribbean, Costa Rica and Mexico, several states across the U.S., Italy and Africa. When not in the office, Elizabeth enjoys watching basketball, traveling (of course) and is a professional dancer.</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/kelley_large.png?obbgnm" alt="Kelley">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Kelley</h2>
+                                    <h3 class="team__member__title">Concierge Specialist<br> Charleston, South Carolina, USA</h3>
+                                    <p>I have been working at Travel Keys since I graduated from the University of Georgia in 2011 and have enjoyed being a part of such a wonderful team of travel enthusiasts. I have always enjoyed traveling and seeing what the world has to offer and I enjoy helping others do the same. My two personal favorites have been St. John, USVI and Italy. The places I have been to include St. John, Virgin Gorda, St. Martin, St. Barts, Anguilla, Greece, Turkey, Italy, Hawaii, Mexico (east and west coast), and have traveled a good amount throughout the US. The best part is being able to share my experiences and knowledge with our clients.</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/david_large.png?obbgnm" alt="David">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">David</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Toronto, Ontario, Canada</h3>
+                                    <p>Working from Toronto, David is best able to serve many of our East Coast and Canadian guests. Some of Davidâ€™s specialized destination knowledge includes: Barbados, St. Martin, Riviera Maya, Greece and more.</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/richard_large.png?obbgnm" alt="Richard">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Richard</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> USVI, Caribbean</h3>
+                                    <p>Working from the heart of the U.S. Virgin Islands, Richard provides great local insight and guidance for Caribbean travelers. Richard specializes in the Virgin Islands (St. John, St. Thomas, Virgin Gorda, Tortola) but also closely oversees interest in other Caribbean destinations.</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/alesia_large.png?obbgnm" alt="Alesia">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Alesia</h2>
+                                    <h3 class="team__member__title">Concierge Specialist<br> USVI, Caribbean</h3>
+                                    <p>Alesia is a long time resident of sunny St John in the beautiful US Virgin Islands. In addition to local Caribbean island-hopping, she loves to travel abroad whenever possible to experience the arts, food, and culture of other countries. Some favorite recent visits include Rome, Punta Mita, and Havana.
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/philip_large.png?obbgnm" alt="Philip">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Philip</h2>
+                                    <h3 class="team__member__title">Asia Villa Specialist<br> Tokyo, Japan </h3>
+                                    <p>Japan is the jumping off point to much of Asia. After running our Thailand office, Philip has moved to Tokyo to provide centralized oversight for our growing Asia villa collection. Philip specializes in the Koh Samui, Bali, Cambodia and other Asian destinations.</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/johnny_large.png?obbgnm" alt="Johnny">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Johnny</h2>
+                                    <h3 class="team__member__title">Asia Concierge Specialist<br> Koh Samui, Thailand </h3>
+                                    <p>Traveling isn't a hobby for me anymore, it's a career. I've always had a thirst for adventure and a curiosity of things unfamiliar. That outlook took me all over Europe during college, from studying abroad in Spain to Eastern Europe with the Peace Corps following my graduation. Through the "love of travel" I met my wife and together we have since explored multiple continents enriching our lives. Travel Keys has taken me from the colorful Caribbean all the way to the exotic coasts of East Asia. One thing I've learned is, you donâ€™t have to be rich to travel, and as J.R.R. Tolkien puts it, "not all those who wander are lost."</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/severine_large.png?obbgnm" alt="Severine">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Severine</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Florida, USA</h3>
+                                    <p>Born and raised in France, I started traveling at a very young age, spending several weeks each summer on the Costa Brava in Spain, which gave me a deep appreciation and love for all things Spanish. Later on, as a young adult, I traveled by myself and lived many wonderful places such as Chamonix, St Tropez, Corsica, St Barth, Ireland and more. After a total of 16 months in St Barth, I moved to the US. Through my travels I have experienced a number of cultures, giving me a unique aptitude to prepare my clients for the differences experienced when traveling outside the US.
+                                        In the last 18 years, I have visited 100â€™s of villas, acquiring knowledge in many destinations. In personally visiting the villas and destinations, I can assure my clients that the information provided is accurate and true. I can indeed tell my clients â€œI have been there! I slept in this villa! I have eaten at this restaurant! Let me give you the differences between the 2 villas!â€ My personal knowledge is what separate me from the internet.</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/garrett_large.png?obbgnm" alt="Garrett">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Garrett</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Atlanta, USA</h3>
+                                    <p>I was born and raised in Atlanta, Georgia and spent my summers traveling around the United States on family vacations. My first experiences of traveling abroad were cruises to the Caribbean with my family that sparked my interest into seeing more of the World. This interest continued in college as I was fortunate enough to back pack across Europe on multiple occasions. It was also in college that I met my future wife and upon graduating I returned to live in her home town of Xalapa, Mexico. During this time I was exposed to many new experiences in Latin America. My love of traveling continues today as I am always on the lookout for locations to visit that will expose me to new cultures.</p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/julie_large.png?obbgnm" alt="Julie">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Julie</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Cortona, Tuscany, Italy</h3>
+                                    <p>Julie is located in the Tuscany region of Italy, where she has been living for the past five years.  Her extensive knowledge of the Italian Language and Culture have proven to be very helpful in providing guests with insider tips for their Italian Villa Vacations.   </p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/pascal_large.png?obbgnm" alt="Pascal">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Pascal</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Montreal, Canada</h3>
+                                    <p>Originally from Zurich, lived and worked in London, Rome, California, Barcelona, Southern France. Now living in Montreal since 2000. Travelled to: all over Europe, and UK, Hawaii, Peru, Costa Rica, by car across the USA from west to east.
+                                        Interests: mid century modern design furniture and art, preservation of mid century architecture ("less is more"), all forms of art, languages, cultures, travelling. Passion: Palm Springs and desert living.
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/laurel_large.png?obbgnm" alt="Laurel">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Laurel</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Kauai, USA</h3>
+                                    <p>Born and raised in Ontario, Canada. Have been in Hawaii since 1986, residing on Kauai 20 years and the Island of Hawaii for 10 years. Have also visited Maui and Oahu multiple times. Have traveled through Manitoba, Saskatchewan, Alberta, British Columbia, England, Scotland, Whales, Spain, Belgium, Holland, Germany, Yugoslavia, Greece, Ireland, Ohio, Michigan, Indianapolis, Illinois, Iowa, Minnesota, South Dakota, North Dakota, Montana, Wyoming, Idaho, Washington, California, and Baja California.
+                                        Interests: Love the beach, water sports, and spending time with my grandchildren. I also have a propensity to adopt severely abused dogs that nobody else wants â€“ I love watching them heal and blossom into animals with self-confidence.
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="team__member team__member--alt">
+                                <div class="team__member__avatar__container__outter">
+                                    <div class="team__member__avatar__container__hex">
+                                        <div class="team__member__avatar__container">
+                                            <img class="team__member__avatar" src="http://cdn.travelkeys.com/sites/default/files/images/agents/carmen_large.png?obbgnm" alt="Carmen">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team__member__text">
+                                    <h2 class="team__member__name">Carmen</h2>
+                                    <h3 class="team__member__title">Villa Specialist<br> Maui, USA</h3>
+                                    <p>Originally from North Carolina, I now live in Maui with my husband and two young sons.  I love to surf, dive, paddle, and whale watch.  I also enjoy sports and travelling.  I have been fortunate to spend time in all of the Hawaiian Islands, the USVI, BVI, Fiji, Poland, Thailand, Mexico, Panama, and multiple mainland States.  One of my most unique experiences was delivering a boat from St. Thomas to Maui, via the Panama Canal.</p>
+                                </div>
+                            </article>
                         </div>
                         <div class="js-team-carousel-nav team__carousel__nav"></div>
                     </div>
