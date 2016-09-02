@@ -234,6 +234,8 @@ var travelkeys = {
         travelkeys.bookVilla();
 
         travelkeys.villasNearBy();
+
+        travelkeys.calculatePrice();
     },
 
     // Links handler
@@ -2652,6 +2654,54 @@ var travelkeys = {
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    },
+
+    calculatePrice: function() {
+        if ( !$('.js-calculate-price').length ) return false;
+
+        $('.js-calculate-price').on('change', function(evt) {
+            if ( !$('.js-start-date').val() || !$('.js-end-date').val() ) return false;
+
+            var startDate = new Date($('.js-start-date').val());
+            var endDate = new Date($('.js-end-date').val());
+            var guests = $('.js-guests option:selected').val();
+            var rates = $('#prop_info').data('rates');
+
+            // Extract first rate - this should be removed when rates are imported
+            var first_rate = rates[Object.keys(rates)[0]];
+            if ( typeof first_rate === "udnefined" ) return false;
+            var first_rate_val = first_rate.rates[Object.keys(first_rate.rates)[0]];
+            if ( typeof first_rate_val === "udnefined" ) return false;
+            // End extract first rate block
+
+            var diffDays = Math.round(Math.abs((endDate.getTime() - startDate.getTime())/(24*60*60*1000)));
+            var errorMessage = 'STAY DURATION IS UNDER THE MINIMUM ALLOWED STAY';
+            if ( diffDays < 1 ) {
+                return showError(errorMessage);
+            }
+
+            if ( diffDays < first_rate.min_stay ) {
+                return showError(errorMessage);
+            }
+
+            var price = (diffDays - 1) * first_rate_val.nightly;
+            var ret = '<sup class="disclaimer__number__super">$</sup>' + price.toFixed(2);
+            return showPrice(ret);
+
+        });
+
+        function showError(error) {
+            $('.hide-on-error').hide();
+            $('#book-error-message').show();
+            $('#book-error-message').text(error);
+        }
+
+        function showPrice(price) {
+            $('.hide-on-error').show();
+            $('#book-error-message').hide();
+            $('.disclaimer__number').html(price);
+        }
+
     }
 
 

@@ -205,8 +205,6 @@ class VillaListing
         $property_details->details->min_rate = $min_rate;
         $property_details->details->max_rate = $max_rate;
 
-        echopre($property_details);die;
-
         $related = $this->properties->search('', 0, 3, [
             'not_ids' => [$property->id],
             'location_id' => $location->id,
@@ -235,6 +233,7 @@ class VillaListing
             'favorites' => $request->getAttribute('favorites'),
             'property' => $property,
             'property_details' => $property_details,
+            'property_details_string' => json_encode($property_details),
             'location' => $location,
             'feeds' => $request->getAttribute('feeds'),
             'related' => $related,

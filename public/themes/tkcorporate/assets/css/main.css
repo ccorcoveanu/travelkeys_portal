@@ -7776,6 +7776,13 @@ strong.-color-white {
   color: #00a2a7;
   text-decoration: none;
 }
+#book-error-message {
+  font-size: 1rem;
+  font-weight: 400;
+  list-style: none;
+  font-family: "BebasNeueBook", Arial, sans-serif;
+  font-style: normal;
+}
 .section {
   *zoom: 1;
   position: relative;
@@ -9292,10 +9299,6 @@ strong.-color-white {
   .search-results .filter-aside .filter--side__wrapper__inner.-first .filter--side__subtitle,
   .search-results.-is-accordion .filter-aside .filter--side__wrapper__inner.-first .filter--side__subtitle {
     margin-left: 0.625rem;
-  }
-  .search-results .filter-aside .filter--side__wrapper.-has-slider .no-slider__container,
-  .search-results.-is-accordion .filter-aside .filter--side__wrapper.-has-slider .no-slider__container {
-    left: -0.5rem;
   }
 }
 @media only screen and (max-width: 480px) {
