@@ -624,7 +624,13 @@ var travelkeys = {
                     navigationAsDateFormat : true,
                     nextText               : '',
                     prevText               : '',
-                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ]
+                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+                    onClose: function(dateText, inst) {
+                        if (inst.input.hasClass('js-mobile-checkin-calendar') && dateText.trim() !== '') {
+                            $('.js-mobile-checkout-calendar').datepicker('show');
+                        }
+                    }
+
                 });
             }
 

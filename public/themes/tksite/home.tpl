@@ -49,11 +49,11 @@
                 <h4 class="filter__title">Find the perfect destination</h4>
                 <form class="form filter__form" action="/villa-listing/search" method="get">
                     <div class="form__input__container filter__input__container -anchor-start-date">
-                        <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
+                        <input id="" class="js-datepicker form__input filter__input js-mobile-checkin-calendar" name="startdate" type="text" placeholder="Check in" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-end-date">
-                        <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
+                        <input class="js-datepicker form__input filter__input js-mobile-checkout-calendar" name="enddate" type="text" placeholder="Check out" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-counter">

@@ -620,7 +620,12 @@ var travelkeys = {
                     navigationAsDateFormat : true,
                     nextText               : '',
                     prevText               : '',
-                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ]
+                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+                    onClose: function(dateText, inst) {
+                        if (inst.input.hasClass('js-mobile-checkin-calendar') && dateText.trim() !== '') {
+                            $('.js-mobile-checkout-calendar').datepicker('show');
+                        }
+                    }
                 });
             }
 
@@ -644,6 +649,7 @@ var travelkeys = {
                     },
 
                     onSelect: function(dateText) {
+
                         var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $datesCheckin.val());
                         var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $datesCheckout.val());
                         var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
@@ -684,14 +690,22 @@ var travelkeys = {
                     beforeShow             : function () {
                         $(document).scrolTo(0, 0);
                     },
+
+                    onSelect: function(date) {
+                        console.log(inst);
+                    },
                     // Returns an array of disabled entries
                     beforeShowDay          : function (date) {
+                        console.log('test2');
                         if (date >= date1 && date <= date2) {
                             return [false, 'ui-unavailable', ''];
                         }
                         return [true, '', ''];
-                    }
+
+                    },
                 });
+
+
             }
         }
 
@@ -1767,15 +1781,17 @@ var travelkeys = {
                     google.maps.event.trigger(map, 'resize');
                     travelkeys.googleMap('centerMap');
 
-                    // Expands filters
-                    $filtersToggle.on('click', function() {
-                        $filterAside.addClass('-is-opened').addClass('-half');
-                        $sectionHeader.addClass('-is-opened');
-                    });
 
-                    $filtersButton.on('click', function() {
-                        $filterAside.removeClass('-half').addClass('-full');
-                    });
+                });
+
+                // Expands filters
+                $filtersToggle.on('click', function() {
+                    $filterAside.addClass('-is-opened').addClass('-half');
+                    $sectionHeader.addClass('-is-opened');
+                });
+
+                $filtersButton.on('click', function() {
+                    $filterAside.removeClass('-half').addClass('-full');
                 });
 
                 // Close Filters on click

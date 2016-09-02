@@ -71,11 +71,11 @@
                         <i class="icon icon__globe"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-start-date">
-                        <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
+                        <input class="js-datepicker form__input filter__input js-mobile-checkin-calendar" name="startdate" type="text" placeholder="Check in" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-end-date">
-                        <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
+                        <input class="js-datepicker form__input filter__input js-mobile-checkout-calendar" name="enddate" type="text" placeholder="Check out" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-counter">
