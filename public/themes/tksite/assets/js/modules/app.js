@@ -648,7 +648,7 @@ var travelkeys = {
                         return [true, date1 && ((date.getTime() === date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? 'ui-selected-range' : ''];
                     },
 
-                    onSelect: function(dateText) {
+                    onSelect: function(dateText, inst) {
 
                         var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $datesCheckin.val());
                         var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $datesCheckout.val());
@@ -667,7 +667,7 @@ var travelkeys = {
                             $(this).datepicker();
                         }
 
-                        $searchbarPeriod.text($datesCheckin.val() + ' - ' + $datesCheckout.val());
+                        $datesButton.text($datesCheckin.val() + ' - ' + $datesCheckout.val());
                     }
                 });
             }
@@ -690,13 +690,8 @@ var travelkeys = {
                     beforeShow             : function () {
                         $(document).scrolTo(0, 0);
                     },
-
-                    onSelect: function(date) {
-                        console.log(inst);
-                    },
                     // Returns an array of disabled entries
                     beforeShowDay          : function (date) {
-                        console.log('test2');
                         if (date >= date1 && date <= date2) {
                             return [false, 'ui-unavailable', ''];
                         }
