@@ -322,6 +322,17 @@
 				&.-position-left {
 					span(2/6)
 					text-align: left
+
+					+below(960px) {
+						background-color: #f6f6f6
+						margin-top: rem(25)
+						width: 100%
+						text-align: center
+
+						.form__input__container {
+							display: block
+						}
+					}
 				}
 
 				&.-position-right {
@@ -1064,6 +1075,7 @@
 	+below(960px) {
 		.section__header.-is-accordion {
 			border-bottom: 0
+			background-color: #f6f6f6;
 		}
 
 		.section__header__container {
@@ -1442,7 +1454,7 @@
 						padding-left: rem(10)
 
 						.no-slider__container {
-							left: rem(-6)
+							left: 0
 						}
 					}
 

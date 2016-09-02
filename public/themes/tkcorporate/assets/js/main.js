@@ -28805,10 +28805,11 @@ var travelkeys = {
                 map.set('disableDoubleClickZoom', false);
             });
 
+            var _load = 0; // Idiot fix for the missing data - prevent filter on first load so we won't show only first found villas on the map
             google.maps.event.addListener(map, 'idle', function() {
 
-                if ( !$('label[for="ck-map"]').length || !$('#ck-map:checked').length ) {
-
+                if ( !$('label[for="ck-map"]').length || !$('#ck-map:checked').length || !_load ) {
+                    _load = 1;
                     return false;
                 }
 
