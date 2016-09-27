@@ -45,10 +45,10 @@ class Home
 
         return $this->view->render($response, 'home.tpl', [
             'menu' => $request->getAttribute('menu'),
-            'map_items' => array_map(function ($element) use ($favorites) {
+            'map_items' => $mapItems ? array_map(function ($element) use ($favorites) {
                 $element->is_favorite = in_array($element->landing_property_id, $favorites);
                 return $element;
-            }, $mapItems), // Loop over array and add favorites flag
+            }, $mapItems) : [], // Loop over array and add favorites flag
             'page' => [
                 'title' => 'Luxury Villa Rentals & Vacation Rentals',
                 'body_classes' => 'home'
