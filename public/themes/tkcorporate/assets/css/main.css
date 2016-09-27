@@ -5615,6 +5615,9 @@ strong.-color-white {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.vip .hero--secondary {
+  height: 61.25rem;
+}
 @media only screen and (max-width: 960px) {
   .hero--secondary {
     height: 18.75rem;
@@ -5714,6 +5717,9 @@ strong.-color-white {
     font-size: 1.25rem;
     line-height: 1.625rem;
   }
+}
+.vip.concierge .hero--secondary {
+  background-image: url("http://cdn.travelkeys.com/sites/all/themes/travelkeysv5/images/slides/vip_1_mesamis_2212.jpg?obbgnm");
 }
 .concierge .form__container::after {
   top: 4.375rem;
@@ -7851,6 +7857,10 @@ strong.-color-white {
   max-width: 48rem;
   line-height: 1.7;
   color: #808080;
+}
+.section.-glued-top {
+  margin-top: 0;
+  padding-top: 0;
 }
 @media only screen and (max-width: 960px) {
   .section {
@@ -13824,6 +13834,238 @@ p.overview__item__description {
 .overview__disclaimer .-text-uppercase {
   text-transform: uppercase;
 }
+.premium_page p,
+.premium_page .section.-style-pattern p {
+  color: #4b4747;
+  font-family: "Caslon", Arial, sans-serif;
+  font-style: italic;
+}
+.premium_page p.welcome_premium,
+.premium_page .section.-style-pattern p.welcome_premium {
+  font-size: 1.875rem;
+  line-height: 2.1875rem;
+  margin-top: 3.75rem;
+  max-width: 71.875rem;
+}
+.premium_page .section.-style-pattern .benefit_details p {
+  color: #fff;
+}
+.premium_page .caption {
+  margin: 0 auto 50px auto;
+  display: table;
+}
+.premium_page .grey-line {
+  background: url("../images/gold_line.png") repeat-x 0 50%;
+  padding: 0 42px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.premium_page .caption img {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 22px;
+}
+.premium_page h1 {
+  color: #4b4747;
+  line-height: 1.2;
+  margin: 0 auto;
+  font-family: "BebasNeueBook", Arial, sans-serif;
+  font-size: 57px;
+  font-weight: 300;
+  font-style: normal;
+}
+.premium_page h1.hero--secondary__title {
+  color: #fff;
+  margin: 30px 0;
+}
+.premium_page h2 {
+  font-family: "Caslon", Arial, sans-serif;
+  font-style: italic;
+  color: #c0c0c0;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+}
+.premium_page h2.hero--secondary__subtitle {
+  color: #fff;
+  font-family: "Caslon", Arial, sans-serif;
+  font-style: italic;
+}
+.premium_page h4 {
+  font-family: Montserrat, Arial, sans-serif;
+  color: #008aa3;
+  text-transform: uppercase;
+}
+.premium_page .all_benefits {
+  margin: 60px 0 0 0;
+  display: table;
+  width: 100%;
+  word-spacing: -4px;
+  position: absolute;
+}
+.premium_page .benefit_block {
+  display: inline-block;
+  width: 20%;
+  word-spacing: normal;
+  vertical-align: top;
+  background: #191d21;
+  position: relative;
+  padding-bottom: 45px;
+}
+.premium_page .benefit_block h1 {
+  color: #fff;
+  font-size: 29px;
+  padding: 20px 15px;
+  line-height: 38px;
+}
+.premium_page .benefit_block h4 {
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+.premium_page .benefit_block p {
+  color: #fff;
+  padding: 0 15px 0 15px;
+  font-size: 17px;
+  margin: 0;
+  font-weight: bold;
+}
+.premium_page .benefit_block .detail_prev {
+  display: block;
+}
+.premium_page .benefit_block .benefit_details {
+  display: none;
+}
+.premium_page .benefit_block:hover {
+  transform: scale(1.1);
+  z-index: 3;
+}
+.premium_page .benefit_block:hover .detail_prev {
+  display: none;
+}
+.premium_page .benefit_block:hover .benefit_details {
+  display: block;
+}
+.premium_page .benefit_block {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+}
+.premium_page .benefit_block .benef_img {
+  position: relative;
+}
+.premium_page .benefit_block .benef_img img {
+  width: 100%;
+  height: 165px;
+  border-bottom: 3px solid #008aa3;
+}
+.premium_page .benefit_block .benef_shad {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0px 0px 250px 5px rgba(0,0,0,0.9);
+  -moz-box-shadow: inset 0px 0px 250px 5px rgba(0,0,0,0.9);
+  box-shadow: inset 0px 0px 250px 5px rgba(0,0,0,0.9);
+  top: 0;
+  left: 0;
+}
+.premium_page .find_benef_inside {
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 7px 13px;
+}
+.premium_page a.find_benef {
+  display: inline-block;
+  background: #02829a;
+  font-family: MontserratBold, Arial, sans-serif;
+  font-size: 13px;
+  padding: 3px;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+}
+.premium_page p.welcome_premium {
+  font-size: 30px;
+  margin-top: 60px;
+}
+.premium_page .premium_feat_container {
+  margin-top: 75px;
+}
+.premium_page .featured_premium .dest_title h2 {
+  font-family: "Caslon", Arial, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 30px 0 0 0;
+  overflow: hidden;
+}
+.premium_page .selected_premium {
+  display: inline-block;
+  margin-left: 20px;
+}
+.premium_page select#premium_destinations,
+.premium_page select#premium_destinations:active,
+.premium_page select#premium_destinations:focus {
+  border: 1px solid #cb9b2b;
+  color: #cb9b2b;
+  font-size: 16px;
+  height: 33px;
+  padding: 0 25px 0 0;
+  box-shadow: none;
+  background: url("../images/select_dest_pr_or.png") no-repeat 95% 50%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 0px;
+  text-overflow: '';
+  outline: none;
+}
+.premium_page .featured_premium .caption {
+  margin-top: 60px;
+}
+.premium_page .feat_block {
+  display: inline-block;
+  width: 33%;
+  font-size: 0px;
+  vertical-align: top;
+  margin-top: 60px;
+}
+.premium_page .feat_block img {
+  width: 100%;
+  height: 250px;
+}
+.premium_page .feat_block h4 {
+  font-size: 26px;
+  line-height: 36px;
+  padding: 0px 15px;
+  margin: 20px 0 5px;
+}
+.premium_page .feat_block p {
+  font-size: 21px;
+  padding: 10px 15px;
+  line-height: 25px;
+}
+.premium_page .feat_block .caption {
+  margin: 15px 0;
+  width: 100%;
+}
+.premium_page .feat_block .caption .grey-line {
+  background: url("../images/separ_line.png") repeat-x 0 50%;
+  height: 1px;
+}
+.premium_page .contact_premium {
+  padding: 90px 0 65px 0;
+  background: #fff;
+  text-align: center;
+}
+.white_border {
+  display: inline-block;
+  height: 4px;
+  width: 20%;
+  background: #fff;
+}
 .concierge {
   position: relative;
   margin-top: -0.25rem;
@@ -13843,6 +14085,10 @@ p.overview__item__description {
   .concierge .button--next-section.-shape-trapezoid {
     display: none;
   }
+}
+.vip.concierge .button--next-section.-shape-trapezoid {
+  top: -50px;
+  border-bottom-color: #fff;
 }
 .concierge__button {
   padding: 0.5rem 1.875rem;

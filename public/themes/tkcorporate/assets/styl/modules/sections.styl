@@ -75,6 +75,11 @@
 		}
 	}
 
+	&.-glued-top {
+		margin-top: 0
+		padding-top: 0
+	}
+
 	+below(960px) {
 		padding: rem(25) 0
 	}
@@ -5455,4 +5460,256 @@
 			text-transform: uppercase
 		}
 	}
+}
+
+// !VIP Cherypicks
+// ==|=========================================================================
+.premium_page {
+	p,
+	.section.-style-pattern p {
+		color: #4b4747
+		font-family: "Caslon", Arial, sans-serif
+		font-style: italic
+
+		&.welcome_premium {
+			font-size: rem(30)
+			line-height: rem(35)
+			margin-top: rem(60)
+			max-width: rem(1150)
+		}
+
+
+	}
+
+	.section.-style-pattern .benefit_details p {
+		color: #fff
+	}
+
+	.caption {
+		margin: 0 auto 50px auto
+		display: table
+	}
+	.grey-line {
+		background: url('../images/gold_line.png') repeat-x 0 50%;
+		padding: 0 42px;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.caption img {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 0 22px;
+	}
+	h1 {
+		color: #4b4747;
+		line-height: 1.2;
+		margin: 0 auto;
+		font-family: "BebasNeueBook", Arial, sans-serif;
+		font-size: 57px;
+		font-weight: 300;
+		font-style: normal;
+		&.hero--secondary__title {
+			color: #fff;
+			margin: 30px 0;
+		}
+	}
+
+	h2 {
+		font-family: "Caslon", Arial, sans-serif;
+		font-style: italic;
+		color: #c0c0c0;
+		margin: 0;
+		padding: 0;
+		font-size: 30px;
+		&.hero--secondary__subtitle {
+			color: #fff;
+			font-family: "Caslon", Arial, sans-serif;
+			font-style: italic;
+		}
+	}
+	h4 {
+		font-family: Montserrat, Arial, sans-serif;
+		color: #008aa3;
+		text-transform: uppercase;
+	}
+
+	.all_benefits {
+		margin: 60px 0 0 0;
+		display: table;
+		width: 100%;
+		word-spacing: -4px;
+		position: absolute;
+	}
+
+	.benefit_block {
+		display: inline-block;
+		width: 20%;
+		word-spacing: normal;
+		vertical-align: top;
+		background: #191d21;
+		position: relative;
+		padding-bottom: 45px;
+		h1 {
+			color: #fff;
+			font-size: 29px;
+			padding: 20px 15px;
+			line-height: 38px;
+		}
+		h4 {
+			color: #fff;
+			font-size: 13px;
+			font-weight: bold;
+		}
+		p {
+			color: #fff;
+			padding: 0 15px 0 15px;
+			font-size: 17px;
+			margin: 0;
+			font-weight: bold;
+		}
+		.detail_prev {
+			display: block;
+		}
+		.benefit_details {
+			display: none;
+		}
+
+		&:hover {
+			transform: scale(1.1)
+			z-index: 3
+
+			.detail_prev {
+				display: none;
+			}
+			.benefit_details {
+				display: block;
+			}
+		}
+	}
+	.benefit_block {
+		-webkit-transition: all .4s ease-in-out;
+		-moz-transition: all .4s ease-in-out;
+		-o-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+	}
+	.benefit_block .benef_img {
+		position: relative;
+	}
+	.benefit_block .benef_img img {
+		width: 100%;
+		height: 165px;
+		border-bottom: 3px solid #008aa3;
+	}
+	.benefit_block .benef_shad {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		-webkit-box-shadow: inset 0px 0px 250px 5px rgba(0,0,0,0.90);
+		-moz-box-shadow: inset 0px 0px 250px 5px rgba(0,0,0,0.90);
+		box-shadow: inset 0px 0px 250px 5px rgba(0,0,0,0.90);
+		top: 0;
+		left: 0;
+	}
+	.find_benef_inside {
+		border: 1px solid #fff;
+		display: inline-block;
+		padding: 7px 13px;
+	}
+	a.find_benef {
+		display: inline-block;
+		background: #02829a;
+		font-family: MontserratBold, Arial, sans-serif;
+		font-size: 13px;
+		padding: 3px;
+		margin-top: 30px;
+		letter-spacing: 1px;
+		color: #fff;
+		text-decoration: none;
+	}
+
+	p.welcome_premium {
+		font-size: 30px;
+		margin-top: 60px;
+	}
+
+	.premium_feat_container {
+		margin-top: 75px;
+
+	}
+
+	.featured_premium {
+		.dest_title h2 {
+			font-family: "Caslon", Arial, sans-serif;
+			font-style: italic;
+			font-weight: 600;
+			text-transform: capitalize;
+			margin: 30px 0 0 0;
+			overflow: hidden;
+		}
+	}
+	.selected_premium {
+		display: inline-block;
+		margin-left: 20px;
+	}
+	select#premium_destinations,
+	select#premium_destinations:active,
+	select#premium_destinations:focus {
+		border: 1px solid #cb9b2b;
+		color: #cb9b2b;
+		font-size: 16px;
+		height: 33px;
+		padding: 0 25px 0 0;
+		box-shadow: none;
+		background: url('../images/select_dest_pr_or.png') no-repeat 95% 50%;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		text-indent: 0px;
+		text-overflow: '';
+		outline: none;
+	}
+	.featured_premium .caption {
+		margin-top: 60px;
+	}
+	.feat_block {
+		display: inline-block;
+		width: 33%;
+		font-size: 0px;
+		vertical-align: top;
+		margin-top: 60px;
+		img {
+			width: 100%;
+			height: 250px;
+		}
+		h4 {
+			font-size: 26px;
+			line-height: 36px;
+			padding: 0px 15px;
+			margin: 20px 0 5px;
+		}
+		p {
+			font-size: 21px;
+			padding: 10px 15px;
+			line-height: 25px
+		}
+		.caption {
+			margin: 15px 0;
+			width: 100%;
+			.grey-line {
+				background: url('../images/separ_line.png') repeat-x 0 50%;
+				height: 1px;
+			}
+		}
+	}
+	.contact_premium {
+		padding: 90px 0 65px 0;
+		background: #fff;
+		text-align: center;
+	}
+}
+.white_border {
+	display: inline-block;
+	height: 4px;
+	width: 20%;
+	background: #fff;
 }
