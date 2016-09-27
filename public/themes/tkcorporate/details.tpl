@@ -44,11 +44,11 @@
                             <form class="form filter__form js-validate-form">
                                 <div class="filter--booking__section -anchor-filters">
                                     <div class="form__input__container filter__input__container -anchor-start-date">
-                                        <input class="js-datepicker form__input filter__input js-start-date" name="startdate" type="text" placeholder="Check in" readonly>
+                                        <input class="js-datepicker form__input filter__input js-start-date js-calculate-price" name="startdate" type="text" placeholder="Check in" readonly>
                                         <i class="icon icon__calendar"></i>
                                     </div>
                                     <div class="form__input__container filter__input__container -anchor-end-date">
-                                        <input class="js-datepicker form__input filter__input js-end-date" name="enddate" type="text" placeholder="Check out" readonly>
+                                        <input class="js-datepicker form__input filter__input js-end-date js-calculate-price" name="enddate" type="text" placeholder="Check out" readonly>
                                         <i class="icon icon__calendar"></i>
                                     </div>
                                     <div class="form__input__container filter__input__container -anchor-counter">
@@ -57,7 +57,7 @@
                                             <span class="js-counter-button js-counter-minus filter__input__container__handler -anchor-minus">
                                                 <i class="icon icon__minus"></i>-
                                             </span>
-                                        <select class="js-select2 -has-select2 form__input filter__input">
+                                        <select class="js-select2 -has-select2 form__input filter__input js-calculate-price js-guests">
                                             <option value="No. of guests" selected>Guests</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -70,24 +70,25 @@
                                         <span class="js-counter-button js-counter-plus filter__input__container__handler -anchor-plus"><i class="icon icon__plus"></i>+</span>
                                     </div>
                                 </div>
-                                <div class="disclaimer">
+                                <div class="disclaimer hide-on-error">
                                     <span class="disclaimer__title">Best rate guarantee, from:</span>
                                     <strong class="disclaimer__number">
                                         <sup class="disclaimer__number__super">$</sup>{$property_details->details->min_rate|default:'TBA'}
                                         <span class="disclaimer__number__text">/night</span>
                                     </strong>
                                 </div>
-                                <div class="disclaimer__picture">
+                                <div class="disclaimer__picture  hide-on-error">
                                     <img src="{$smarty.const.TEMPLATE_PATH}/assets/images/svg/no-sprite/no-fees.svg" alt="No booking fees. Ever!">
                                 </div>
                                 <div class="filter__button__wrapper">
                                     <a class="button" id="book-villa-modal">Book villa</a>
                                     <a class="button -color-black" href="#reserve_property_form" title="Request info">Request info</a>
                                 </div>
-                                <div class="disclaimer">
+                                <div class="disclaimer  hide-on-error">
                                     <span class="disclaimer__title"> Talk to a specialist(Toll Free)</span>
                                     <span>1.877.815.1242</span>
                                 </div>
+                                <div id="book-error-message" class="disclaimer"></div>
                                 <div class="filter--booking__section -anchor-details">
                                     <ul class="list">
                                         <li class="list__item">Inspected home</li>
@@ -562,6 +563,7 @@
             {/foreach}
         </div>
     </article>
+    <div id="prop_info" data-rates='{$property_details->rates|json_encode}'></div>
     <!-- Modals -->
     <div class="modal-container">
         <div id="email-modal" class="modal">

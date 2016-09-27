@@ -12,7 +12,7 @@
                 </div>
                 <div class="reach__item">
                     <strong class="reach__label">International:</strong>
-                    <span class="reach__value"><a class="reach__link" href="tel:4048153490" title="Call 404.815.3490">404.815.3490</a></span>
+                    <span class="reach__value"><a class="reach__link" href="tel:4048151242" title="Call 404.815.1242">404.815.1242</a></span>
                 </div>
             </div>
             <div class="reach__group">

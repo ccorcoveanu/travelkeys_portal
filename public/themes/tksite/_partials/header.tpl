@@ -44,9 +44,9 @@
                 </div>
             </nav>
             <ul class="js-contact header__contact">
-                <li class="header__contact__item"><small class="header__contact__text">Toll free</small><a class="header__contact__link" href="tel:18778151242" title="Call 1 877.815.1242">1 877.815.1242</a>
+                <li class="header__contact__item"><small class="header__contact__text">Toll free</small><a class="header__contact__link" href="tel:18778759877" title="Call 1.877.875.9877">1.877.875.9877</a>
                 </li>
-                <li class="header__contact__item"><small class="header__contact__text">International</small><a class="header__contact__link" href="tel:4048153490" title="Call 404.815.3490">404.815.3490</a>
+                <li class="header__contact__item"><small class="header__contact__text">International</small><a class="header__contact__link" href="tel:4048151242" title="Call 404.815.1242">404.815.1242</a>
                 </li>
                 <li class="header__contact__item"><small class="header__contact__text">United Kingdom</small><a class="header__contact__link" href="tel:08006226815" title="Call 0800.622.6815">0800.622.6815</a>
                 </li>

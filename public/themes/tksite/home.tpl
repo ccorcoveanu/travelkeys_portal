@@ -4,7 +4,7 @@
     <article class="hero">
         <div class="hero__container">
             <div class="container">
-                <h2 class="hero__title">Luxury Vacations Redefined</h2>
+                <h2 class="hero__title">Luxury Villa Experiences</h2>
                 <h4 class="filter__caption -hides-for-medium-down">Find the perfect villa for your vacation in {$location->name}:</h4>
                 <div class="js-searchbar searchbar -hides-for-medium-down">
                     <div class="searchbar__wrapper">
@@ -49,11 +49,11 @@
                 <h4 class="filter__title">Find the perfect destination</h4>
                 <form class="form filter__form" action="/villa-listing/search" method="get">
                     <div class="form__input__container filter__input__container -anchor-start-date">
-                        <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
+                        <input id="" class="js-datepicker form__input filter__input js-mobile-checkin-calendar" name="startdate" type="text" placeholder="Check in" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-end-date">
-                        <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
+                        <input class="js-datepicker form__input filter__input js-mobile-checkout-calendar" name="enddate" type="text" placeholder="Check out" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-counter">
@@ -165,7 +165,7 @@
                     <li class="concierge__list__item">Tours & activities</li>
                     <li class="concierge__list__item">Spa services</li>
                     <li class="concierge__list__item">Meet and greet</li>
-                    <li class="concierge__list__item">Chef / Cooking</li>
+                    <li class="concierge__list__item">Chef Services</li>
                     <li class="concierge__list__item">Special events</li>
                     <li class="concierge__list__item">Miscellaneous</li>
                 </ul>

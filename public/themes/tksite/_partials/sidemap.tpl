@@ -1,10 +1,10 @@
-<aside class="js-map-aside map-aside search-aside villa-search__section -hidden">
+<aside class="js-map-aside map-aside search-aside villa-search__section">
     <script async src="https://maps.googleapis.com/maps/api/js?v=3.exp&key={$smarty.const.GOOGLE_API_KEY}"></script>
     <div class="map">
         <div class="-position-top">
             <div class="container">
                 <div class="map__input">
-                    <input id="ck-map" class="checkbox" type="checkbox" name="map" value="map">
+                    <input id="ck-map" class="checkbox" type="checkbox" name="map" value="map" checked>
                     <label class="filter__option__label js-map-bounds" for="ck-map"><span></span>Use map to filter results</label>
                 </div>
             </div>

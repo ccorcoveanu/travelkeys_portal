@@ -49,7 +49,7 @@
                     </div>
                     <div class="box__wrapper">
                         <h2 class="box__title">No booking fees<br/>Ever.</h2>
-                        <p class="box__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p class="box__text">At Travel Keys, we do not charge the consumer booking fees merely for the privilege of reserving your villa rental. Why pay more?</p>
                     </div>
                 </div>
             </div>

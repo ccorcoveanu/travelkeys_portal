@@ -234,6 +234,8 @@ var travelkeys = {
         travelkeys.bookVilla();
 
         travelkeys.villasNearBy();
+
+        travelkeys.calculatePrice();
     },
 
     // Links handler
@@ -624,7 +626,13 @@ var travelkeys = {
                     navigationAsDateFormat : true,
                     nextText               : '',
                     prevText               : '',
-                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ]
+                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+                    onClose: function(dateText, inst) {
+                        if (inst.input.hasClass('js-mobile-checkin-calendar') && dateText.trim() !== '') {
+                            $('.js-mobile-checkout-calendar').datepicker('show');
+                        }
+                    }
+
                 });
             }
 
@@ -1474,10 +1482,11 @@ var travelkeys = {
                 map.set('disableDoubleClickZoom', false);
             });
 
+            var _load = 0; // Idiot fix for the missing data - prevent filter on first load so we won't show only first found villas on the map
             google.maps.event.addListener(map, 'idle', function() {
 
-                if ( !$('label[for="ck-map"]').length || !$('#ck-map:checked').length ) {
-
+                if ( !$('label[for="ck-map"]').length || !$('#ck-map:checked').length || !_load ) {
+                    _load = 1;
                     return false;
                 }
 
@@ -1801,15 +1810,17 @@ var travelkeys = {
                     google.maps.event.trigger(map, 'resize');
                     travelkeys.googleMap('centerMap');
 
-                    // Expands filters
-                    $filtersToggle.on('click', function() {
-                        $filterAside.addClass('-is-opened').addClass('-half');
-                        $sectionHeader.addClass('-is-opened');
-                    });
 
-                    $filtersButton.on('click', function() {
-                        $filterAside.removeClass('-half').addClass('-full');
-                    });
+                });
+
+                // Expands filters
+                $filtersToggle.on('click', function() {
+                    $filterAside.addClass('-is-opened').addClass('-half');
+                    $sectionHeader.addClass('-is-opened');
+                });
+
+                $filtersButton.on('click', function() {
+                    $filterAside.removeClass('-half').addClass('-full');
                 });
 
                 // Close Filters on click
@@ -2123,6 +2134,7 @@ var travelkeys = {
                 var stopPointPadding = 100;
                 var stopPointOffset = $scrollStopPoint.offset().top - $mapAside.outerHeight() - stopPointPadding;
 
+                $('#filters').css('min-height', $mapAside.css('height'));
 
                 if ($(window).scrollTop() > $filterAsideContainer.offset().top) {
                     $mapAside.addClass('-fixed-top');
@@ -2421,6 +2433,7 @@ var travelkeys = {
                 $('#load-more__display').slideDown();
 
                 var amenities = [];
+                var areas = [];
                 if ( document.getElementById('ck-beach').checked ) {
                     amenities.push('ck-beach');
                 }
@@ -2428,6 +2441,11 @@ var travelkeys = {
                 if ( document.getElementById('ck-city').checked ) {
                     amenities.push('ck-city');
                 }
+
+                $.each($('.ck-area:checked'), function() {
+                    areas.push($(this).val());
+                })
+
                 var filters = {
                     'amenities': amenities,
                     'reservations': {
@@ -2445,8 +2463,11 @@ var travelkeys = {
                         start: $('#range-slider__low').val(),
                         end: $('#range-slider__high').val()
                     },
-                    order: $('.order-villas__select:visible select option:selected').val()
+                    order: $('.order-villas__select:visible select option:selected').val(),
+                    areas: areas
                 };
+
+
 
                 if ( $('label[for="ck-map"]').length && $('#ck-map:checked').length ) {
                     filters.pins = JSON.parse($('#map-pins__input').val());
@@ -2634,6 +2655,54 @@ var travelkeys = {
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    },
+
+    calculatePrice: function() {
+        if ( !$('.js-calculate-price').length ) return false;
+
+        $('.js-calculate-price').on('change', function(evt) {
+            if ( !$('.js-start-date').val() || !$('.js-end-date').val() ) return false;
+
+            var startDate = new Date($('.js-start-date').val());
+            var endDate = new Date($('.js-end-date').val());
+            var guests = $('.js-guests option:selected').val();
+            var rates = $('#prop_info').data('rates');
+
+            // Extract first rate - this should be removed when rates are imported
+            var first_rate = rates[Object.keys(rates)[0]];
+            if ( typeof first_rate === "udnefined" ) return false;
+            var first_rate_val = first_rate.rates[Object.keys(first_rate.rates)[0]];
+            if ( typeof first_rate_val === "udnefined" ) return false;
+            // End extract first rate block
+
+            var diffDays = Math.round(Math.abs((endDate.getTime() - startDate.getTime())/(24*60*60*1000)));
+            var errorMessage = 'STAY DURATION IS UNDER THE MINIMUM ALLOWED STAY';
+            if ( diffDays < 1 ) {
+                return showError(errorMessage);
+            }
+
+            if ( diffDays < first_rate.min_stay ) {
+                return showError(errorMessage);
+            }
+
+            var price = (diffDays - 1) * first_rate_val.nightly;
+            var ret = '<sup class="disclaimer__number__super">$</sup>' + price.toFixed(2);
+            return showPrice(ret);
+
+        });
+
+        function showError(error) {
+            $('.hide-on-error').hide();
+            $('#book-error-message').show();
+            $('#book-error-message').text(error);
+        }
+
+        function showPrice(price) {
+            $('.hide-on-error').show();
+            $('#book-error-message').hide();
+            $('.disclaimer__number').html(price);
+        }
+
     }
 
 

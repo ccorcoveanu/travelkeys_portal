@@ -59,7 +59,7 @@
                         <span class="js-searchbar-period searchbar__period js-dates-button"></span>
                     </div>
                 </div>
-                <h4 class="hero__undertitle -hides-for-medium-down">Top Destinations: <a href="{$smarty.const.PROTOCOL}stmartin.{$smarty.const.SERVER_NAME}" title="St. Martin">St. Martin</a>, <a href="{$smarty.const.PROTOCOL}barbados.{$smarty.const.SERVER_NAME}" title="Barbados">Barbados</a>, <a href="{$smarty.const.PROTOCOL}maui.{$smarty.const.SERVER_NAME}" title="Maui">Maui</a>, <a href="{$smarty.const.PROTOCOL}california.{$smarty.const.SERVER_NAME}" title="California">California</a></h4>
+                <h4 class="hero__undertitle -hides-for-medium-down">Top Destinations: <a href="{$smarty.const.PROTOCOL}turks-and-caicos.{$smarty.const.SERVER_NAME}" title="Turks and Caicos">Turks and Caicos</a>, <a href="{$smarty.const.PROTOCOL}maui.{$smarty.const.SERVER_NAME}" title="Maui">Maui</a>, <a href="{$smarty.const.PROTOCOL}deer-valley-resort.{$smarty.const.SERVER_NAME}" title="Deer Valley Resort">Deer Valley Resort</a>, <a href="{$smarty.const.PROTOCOL}california.{$smarty.const.SERVER_NAME}" title="California">California</a></h4>
             </div>
         </div>
         <div class="filter__wrapper">
@@ -71,11 +71,11 @@
                         <i class="icon icon__globe"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-start-date">
-                        <input class="js-datepicker form__input filter__input" name="startdate" type="text" placeholder="Check in" readonly>
+                        <input class="js-datepicker form__input filter__input js-mobile-checkin-calendar" name="startdate" type="text" placeholder="Check in" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-end-date">
-                        <input class="js-datepicker form__input filter__input" name="enddate" type="text" placeholder="Check out" readonly>
+                        <input class="js-datepicker form__input filter__input js-mobile-checkout-calendar" name="enddate" type="text" placeholder="Check out" readonly>
                         <i class="icon icon__calendar"></i>
                     </div>
                     <div class="form__input__container filter__input__container -anchor-counter">

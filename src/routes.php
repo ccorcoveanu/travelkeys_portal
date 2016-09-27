@@ -26,6 +26,7 @@ $app->get('/terms-of-use', 'StaticPages:terms');
 $app->get('/privacy-policy', 'StaticPages:privacy');
 $app->get('/travel-agents', 'StaticPages:travelAgents');
 $app->get('/insurance', 'StaticPages:insurance');
+$app->get('/vip', 'StaticPages:vip');
 
 // Ajax calls
 $app->get('/ajax/filter', 'SearchAjax:filter');

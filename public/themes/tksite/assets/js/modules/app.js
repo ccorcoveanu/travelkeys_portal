@@ -620,7 +620,12 @@ var travelkeys = {
                     navigationAsDateFormat : true,
                     nextText               : '',
                     prevText               : '',
-                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ]
+                    dayNamesMin            : [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+                    onClose: function(dateText, inst) {
+                        if (inst.input.hasClass('js-mobile-checkin-calendar') && dateText.trim() !== '') {
+                            $('.js-mobile-checkout-calendar').datepicker('show');
+                        }
+                    }
                 });
             }
 
@@ -643,7 +648,8 @@ var travelkeys = {
                         return [true, date1 && ((date.getTime() === date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? 'ui-selected-range' : ''];
                     },
 
-                    onSelect: function(dateText) {
+                    onSelect: function(dateText, inst) {
+
                         var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $datesCheckin.val());
                         var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $datesCheckout.val());
                         var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
@@ -661,7 +667,7 @@ var travelkeys = {
                             $(this).datepicker();
                         }
 
-                        $searchbarPeriod.text($datesCheckin.val() + ' - ' + $datesCheckout.val());
+                        $datesButton.text($datesCheckin.val() + ' - ' + $datesCheckout.val());
                     }
                 });
             }
@@ -690,8 +696,11 @@ var travelkeys = {
                             return [false, 'ui-unavailable', ''];
                         }
                         return [true, '', ''];
-                    }
+
+                    },
                 });
+
+
             }
         }
 
@@ -1767,15 +1776,17 @@ var travelkeys = {
                     google.maps.event.trigger(map, 'resize');
                     travelkeys.googleMap('centerMap');
 
-                    // Expands filters
-                    $filtersToggle.on('click', function() {
-                        $filterAside.addClass('-is-opened').addClass('-half');
-                        $sectionHeader.addClass('-is-opened');
-                    });
 
-                    $filtersButton.on('click', function() {
-                        $filterAside.removeClass('-half').addClass('-full');
-                    });
+                });
+
+                // Expands filters
+                $filtersToggle.on('click', function() {
+                    $filterAside.addClass('-is-opened').addClass('-half');
+                    $sectionHeader.addClass('-is-opened');
+                });
+
+                $filtersButton.on('click', function() {
+                    $filterAside.removeClass('-half').addClass('-full');
                 });
 
                 // Close Filters on click
@@ -2369,6 +2380,7 @@ var travelkeys = {
                 $('#load-more__display').slideDown();
 
                 var amenities = [];
+                var areas = [];
                 if ( document.getElementById('ck-beach').checked ) {
                     amenities.push('ck-beach');
                 }
@@ -2376,6 +2388,11 @@ var travelkeys = {
                 if ( document.getElementById('ck-city').checked ) {
                     amenities.push('ck-city');
                 }
+
+                $.each($('.ck-area:checked'), function() {
+                    areas.push($(this).val());
+                })
+
                 var filters = {
                     'amenities': amenities,
                     'reservations': {
@@ -2393,7 +2410,8 @@ var travelkeys = {
                         start: $('#range-slider__low').val(),
                         end: $('#range-slider__high').val()
                     },
-                    order: $('.order-villas__select:visible select option:selected').val()
+                    order: $('.order-villas__select:visible select option:selected').val(),
+                    areas: areas
                 };
 
                 if ( loading && xhr_req) {

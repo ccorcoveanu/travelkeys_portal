@@ -1,5 +1,5 @@
-<div class="js-filter-aside__container filter-aside__container -fixed">
-    <aside id="search-aside" class="js-filter-aside search-aside filter-aside -hidden">
+<div class="js-filter-aside__container filter-aside__container -fixed {if isset($page.final_destination_page)}-fixed-top{/if}">
+    <aside id="search-aside" class="js-filter-aside search-aside filter-aside -hidden -fixed">
         <div class="filter filter--side">
             <form class="form filter__form">
                 <div class="filter--side__wrapper -helper-inline -first">
@@ -98,122 +98,28 @@
                                 <label class="filter__option__label" for="ck-beach"><span></span>Beachfront</label>
                             </li>
                             <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-city" name="ck-city">
-                                <label class="filter__option__label" for="ck-city"><span></span>City Breaks</label>
+                                <input class="checkbox" type="checkbox" id="ck-city" name="ck-ski">
+                                <label class="filter__option__label" for="ck-city"><span></span>SKI IN/OUT</label>
                             </li>
                         </ul>
 
                     </div>
                 </div>
                 <input type="hidden" value="" name="pins" id="map-pins__input" class="filter__input"/>
-                <!--<div class="filter--side__wrapper">
+                <div class="filter--side__wrapper">
                     <h3 class="filter__subtitle filter--side__subtitle">Areas</h3>
                     <div class="filter--side__wrapper__inner -last">
                         <ul class="js-expandable filter__options -is-expandable -rows-2">
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-ac" name="ck-ac" checked>
-                                <label class="filter__option__label" for="ck-ac"><span></span>Anse des Cayes</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cr" name="ck-cr">
-                                <label class="filter__option__label" for="ck-cr"><span></span>Camaruche</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cl" name="ck-cl">
-                                <label class="filter__option__label" for="ck-cl"><span></span>Colombier</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-go" name="ck-go">
-                                <label class="filter__option__label" for="ck-go"><span></span>Gouverneur</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-gf" name="ck-gf">
-                                <label class="filter__option__label" for="ck-gf"><span></span>Grand Fond</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-al" name="ck-al">
-                                <label class="filter__option__label" for="ck-al"><span></span>Anse des Lezards</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cl5" name="ck-cl5">
-                                <label class="filter__option__label" for="ck-cl5"><span></span>Colombier</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-fl" name="ck-fl">
-                                <label class="filter__option__label" for="ck-fl"><span></span>Flamands</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cs" name="ck-cs">
-                                <label class="filter__option__label" for="ck-cs"><span></span>Grand cul de Sac</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cs2" name="ck-cs2">
-                                <label class="filter__option__label" for="ck-cs2"><span></span>Grand cul de Sac</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cl2" name="ck-cl2">
-                                <label class="filter__option__label" for="ck-cl2"><span></span>Colombier</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-go2" name="ck-go2">
-                                <label class="filter__option__label" for="ck-go2"><span></span>Gouverneur</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-gf2" name="ck-gf2">
-                                <label class="filter__option__label" for="ck-gf2"><span></span>Grand Fond</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-al2" name="ck-al2">
-                                <label class="filter__option__label" for="ck-al2"><span></span>Anse des Lezards</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cl6" name="ck-cl6">
-                                <label class="filter__option__label" for="ck-cl6"><span></span>Colombier</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-fl2" name="ck-fl2">
-                                <label class="filter__option__label" for="ck-fl2"><span></span>Flamands</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cl3" name="ck-cl3">
-                                <label class="filter__option__label" for="ck-cl3"><span></span>Colombier</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-go3" name="ck-go3">
-                                <label class="filter__option__label" for="ck-go3"><span></span>Gouverneur</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-gf3" name="ck-gf3">
-                                <label class="filter__option__label" for="ck-gf3"><span></span>Grand Fond</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-al3" name="ck-al3">
-                                <label class="filter__option__label" for="ck-al3"><span></span>Anse des Lezards</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cl4" name="ck-cl4">
-                                <label class="filter__option__label" for="ck-cl4"><span></span>Colombier</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-fl3" name="ck-fl3">
-                                <label class="filter__option__label" for="ck-fl3"><span></span>Flamands</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-al4" name="ck-al4">
-                                <label class="filter__option__label" for="ck-al4"><span></span>Anse des Lezards</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-cl7" name="ck-cl7">
-                                <label class="filter__option__label" for="ck-cl7"><span></span>Colombier</label>
-                            </li>
-                            <li class="filter__option">
-                                <input class="checkbox" type="checkbox" id="ck-fl4" name="ck-fl4">
-                                <label class="filter__option__label" for="ck-fl4"><span></span>Flamands</label>
-                            </li>
+                            {foreach name='areas' item=$area from=$areas}
+                                <li class="filter__option">
+                                    <input class="checkbox ck-area" type="checkbox" id="ck-ac-{$area->id}" name="ck-ac" >
+                                    <label class="filter__option__label" for="ck-ac-{$area->id}"><span></span>{$area->name}</label>
+                                </li>
+                            {/foreach}
                         </ul>
                         <a class="js-button-expand button__expand" data-text-swap="Show less">Show more</a>
                     </div>
-                </div>-->
+                </div>
             </form>
             <div class="filter--side__wrapper -last">
                 <div class="filter__button__wrapper">
@@ -246,7 +152,7 @@
                     <i class="icon icon__option"></i>
                 </div>
             </div>
-            <div class="section__header__wrapper -position-right">
+            <div class="section__header__wrapper -position-right {if isset($page.final_destination_page)}-small{/if}">
                 <div class="form__input__container filter__input__container filter__input__container--alt -anchor-counter order-villas__select">
                     <select class="js-select2 js-select2-alt -has-select2 form__input filter__input">
                         <option value="name_asc" selected>Villa Name A-Z</option>
@@ -258,7 +164,7 @@
                     </select>
                     <i class="icon icon__option"></i>
                 </div>
-                <div class="js-search-toggle-container search-toggle__container -fixed-top">
+                <div class="js-search-toggle-container search-toggle__container {if !isset($page.final_destination_page)}-fixed-top{/if}">
                     <h3 class="search-toggle__title">Adjust your search results</h3>
                     <a class="js-search-toggle search-toggle -anchor-map -active">Map</a>
                     <a class="js-search-toggle search-toggle -anchor-filters">Filters</a>

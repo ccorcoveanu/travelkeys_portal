@@ -171,7 +171,7 @@ class StaticPages
     public function terms(Request $request, Response $response)
     {
         $location = null;
-        if ( SUBDOMAIN ) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'terms.tpl', [
             'page' => [
                 'title' => 'Terms of Use',
@@ -187,14 +187,14 @@ class StaticPages
     public function sitemap(Request $request, Response $response)
     {
         $location = null;
-        if ( SUBDOMAIN ) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'sitemap.tpl', []);
     }
 
     public function insurance(Request $request, Response $response)
     {
         $location = null;
-        if ( SUBDOMAIN ) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        if ( SUBDOMAIN ) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'insurance.tpl', [
             'page' => [
                 'title' => 'Insurance',
@@ -210,7 +210,7 @@ class StaticPages
     public function privacy(Request $request, Response $response)
     {
         $location = null;
-        if (SUBDOMAIN) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        if (SUBDOMAIN) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'privacy.tpl', [
             'page' => [
                 'title' => 'Privacy Policy',
@@ -226,11 +226,30 @@ class StaticPages
     public function travelAgents(Request $request, Response $response)
     {
         $location = null;
-        if (SUBDOMAIN) $location = $this->rlocation->bySlug(SUBDOMAIN);
+        if (SUBDOMAIN) $location = $this->location->bySlug(SUBDOMAIN);
         return $this->view->render($response, 'travel_agents.tpl', [
             'page' => [
                 'title' => 'Travel Insurance',
-                'body_classes' => 'travelagents',
+                'body_classes' => '',
+            ],
+            'menu' => $request->getAttribute('menu'),
+            'location' => $location,
+            'favorites' => $request->getAttribute('favorites'),
+            'feeds' => $request->getAttribute('feeds'),
+        ]);
+    }
+
+    public function vip(Request $request, Response $response)
+    {
+        $location = null;
+        if (SUBDOMAIN) $location = $this->location->bySlug(SUBDOMAIN);
+        return $this->view->render($response, 'vip.tpl', [
+            'page' => [
+                'title' => 'Vip',
+                'body_classes' => 'vip concierge premium_page',
+                'hero_sec_title' => 'WELCOME TO THE CLUB',
+                'hero_sec_image_cdn' => 'http://cdn.travelkeys.com/sites/all/themes/travelkeysv5/images/elite_members.png?obbgnm',
+                'hero_sec_description' => 'Welcome to TravelKeys Elite, an exclusive, invite-only club, reserved for our most discerning Villa-Vacation guests.',
             ],
             'menu' => $request->getAttribute('menu'),
             'location' => $location,
