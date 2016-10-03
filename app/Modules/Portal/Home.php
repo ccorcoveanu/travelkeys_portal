@@ -122,23 +122,31 @@ class Home
         if ( !$location ) {
             return $response->withRedirect(MAIN_SITE, 301);
         }
-        $favorites      = $request->getAttribute('favorites');
-        $search_items   = $this->properties->search('', 0, 20, ['location_id' => $location->id]);
-        $total_items    = $search_items['total'];
+
+        $favorites       = $request->getAttribute('favorites');
+        $search_items    = $this->properties->search('', 0, 20, ['location_id' => $location->id]);
+
+        //echopre($search_items);die;
+        $total_items     = $search_items['total'];
         $location->descriptionShort = $location->description;
         $location->image = 'http://www.travelkeys.com/sites/default/files/images/panos/pano-' . SUBDOMAIN . '-' . 'travelkeys.com.png';
+        $areas           = $this->location->children($location->id);
 
         if ( strlen($location->descriptionShort) > 150 ) {
             $location->descriptionShort = substr($location->descriptionShort, 0, 147) . '...';
         }
 
         // TODO: Should be fixed in API
-        $search_items = array_map(function ($item) {
+        $search_items = array_map(function ($item) use ( $favorites ) {
             $parts = explode('.', $item->image);
             $ext = $parts[count($parts) - 1];
             unset($parts[count($parts) - 1]);
             $item->image = implode('.', $parts) . '_l.' . $ext;
             $item->image_m = implode('.', $parts) . '_m.' . $ext;
+
+            // Add is favorite here
+            $item->is_favorite = in_array($item->id, $favorites);
+
             return $item;
         }, $search_items['items']);
 
@@ -157,6 +165,7 @@ class Home
             'total_items' => $total_items,
             'favorites' => $favorites,
             'feeds' => $request->getAttribute('feeds'),
+            'areas' => $areas
 
         ]);
     }

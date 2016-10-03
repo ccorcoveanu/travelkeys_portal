@@ -1514,6 +1514,8 @@ var travelkeys = {
             // Get Map Markers
             var $markers = $mapMarkers.find('.js-marker');
 
+            console.log($markers);
+
             // Add a markers reference
             map.markers = [];
 
