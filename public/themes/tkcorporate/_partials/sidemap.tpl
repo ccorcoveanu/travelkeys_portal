@@ -12,8 +12,10 @@
         <div class="map__container js-map-search"></div>
         <div class="map__markers js-map-markers">
             {block name='search_results'}
-                {foreach name='search_results_loop' item=$map_item from=$search_items}
-                    {include file='_partials/list_items/map_pin_item_property.tpl'}
+                {foreach name='search_results_loop' item=$map_item from=$map_items|default:$search_items}
+                    {if ( ($map_item->latitude && $map_item->longitude) && ($map_item->latitude != '0.0' && $map_item->longitude != '0.0'))}
+                        {include file='_partials/list_items/map_pin_item_property.tpl'}
+                    {/if}
                 {/foreach}
             {/block}
         </div>

@@ -116,8 +116,6 @@ class Search
             $extra_filters['order'] = $filters['order'];
         }
 
-        echopre($extra_filters);die;
-
         $search_items = $this->properties->search(
             $request->getParam('q', ''),
             $request->getParam('start', ''),

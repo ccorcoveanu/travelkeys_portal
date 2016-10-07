@@ -41,6 +41,7 @@ class Home
 
         $featured   = $this->location->featured();
         $mapItems   = $this->location->mapItems();
+
         $favorites  = $request->getAttribute('favorites');
 
         return $this->view->render($response, 'home.tpl', [
@@ -124,7 +125,8 @@ class Home
         }
 
         $favorites       = $request->getAttribute('favorites');
-        $search_items    = $this->properties->search('', 0, 20, ['location_id' => $location->id]);
+        $search_items    = $this->properties->search('', 0, 20, ['location_id' => $location->id, 'get_full_tree' => true]);
+        $all_items       = $search_items['all_items'];
 
         //echopre($search_items);die;
         $total_items     = $search_items['total'];
@@ -162,6 +164,7 @@ class Home
             'location' => $this->locationForView($location),
             'query' => $request->getParam('q', ''),
             'search_items' => $search_items,
+            'map_items' => $all_items,
             'total_items' => $total_items,
             'favorites' => $favorites,
             'feeds' => $request->getAttribute('feeds'),

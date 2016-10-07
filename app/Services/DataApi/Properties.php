@@ -89,6 +89,7 @@ class Properties extends DataApi
      */
     public function search($term = '', $start = '', $limit = '', $filters = [], $only_ids = false)
     {
+        $get_full_tree = false;
         $conditions = [
             [
                 'field' => 'name',
@@ -119,6 +120,11 @@ class Properties extends DataApi
                 'operator' => '=',
                 'value' => $filters['location_id']
             ];
+
+            // Only if we have a location_id, test for the need for parent tree
+            if ( isset($filters['get_full_tree']) && $filters['get_full_tree'] ) {
+                $get_full_tree = true;
+            }
         }
 
         if ( isset($filters['guests']) ) {
@@ -174,6 +180,7 @@ class Properties extends DataApi
             $order = $this->order($filters['order']);
         }
 
+
         return $this->call("{$this->resource}_getPropertiesFilters", [
             'conditions' => $conditions,
             'reservations' => isset($filters['reservations']) ? $filters['reservations'] : '',
@@ -182,7 +189,8 @@ class Properties extends DataApi
             'order' => $order,
             'only_ids' => $only_ids,
             'special' => isset($filters['specials']) ? $filters['specials'] : '',
-            'price' => isset($filters['price']) ? $filters['price'] : null,
+            'price' => isset($filters['price']) ? $filters['price'] : '',
+            'getparents' => $get_full_tree
         ]);
     }
 

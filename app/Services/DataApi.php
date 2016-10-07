@@ -91,7 +91,7 @@ class DataApi
     {
         // Add parameters as query_string for the GET method
         $query_string = $method_type === 'GET' ?
-            array_merge($params, ['method' => $method]) : ['method' => $method];
+            array_merge(['method' => $method], $params) : ['method' => $method];
 
         return $this->web_client->requestAsync($method_type, '', [
             'auth' => [
@@ -101,6 +101,7 @@ class DataApi
             'query' => $query_string
         ])->then(
             function (GuzzleHttp\Psr7\Response $res){
+
                 return GuzzleHttp\json_decode(
                     $res->getBody()->getContents()
                 );

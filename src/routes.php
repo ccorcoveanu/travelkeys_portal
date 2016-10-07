@@ -30,6 +30,7 @@ $app->get('/vip', 'StaticPages:vip');
 
 // Ajax calls
 $app->get('/ajax/filter', 'SearchAjax:filter');
+$app->post('/ajax/filter', 'SearchAjax:filter');
 
 // Form submissions
 $app->post('/form/newsletter', 'Forms:newsletter');

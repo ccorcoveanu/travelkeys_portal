@@ -124,6 +124,7 @@ class VillaListing
         }
 
         $search_items = $this->properties->search($request->getParam('q', ''), 0, 20, ['location_id' => $location_id]);
+        $all_items = $search_items['all_items'];
         $total_items  = $search_items['total'];
 
         // TODO: Should be fixed in API
@@ -143,6 +144,7 @@ class VillaListing
             ],
             'query' => $request->getParam('q', ''),
             'search_items' => $search_items,
+            'map_items' => $all_items,
             'total_items' => $total_items,
             'menu' => $request->getAttribute('menu'),
             'favorites' => $request->getAttribute('favorites'),

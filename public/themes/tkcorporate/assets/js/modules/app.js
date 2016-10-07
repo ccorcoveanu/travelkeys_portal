@@ -1514,8 +1514,6 @@ var travelkeys = {
             // Get Map Markers
             var $markers = $mapMarkers.find('.js-marker');
 
-            console.log($markers);
-
             // Add a markers reference
             map.markers = [];
 
@@ -1538,7 +1536,7 @@ var travelkeys = {
         // Add map markers function
         function addMarker($marker, map) {
             // Create new marker
-            var latlng = new google.maps.LatLng($marker.data('lat'), $marker.data('lng'));
+            var latlng = new google.maps.LatLng($marker.data('lat'), $marker.data('lng'), true);
             var marker = new google.maps.Marker({
                 position : latlng,
                 map      : map,
@@ -2479,7 +2477,7 @@ var travelkeys = {
                     xhr_req.abort();
                 }
 
-                xhr_req = $.getJSON('/ajax/filter', {
+                xhr_req = $.post('/ajax/filter', {
 
                     'q': $('input[name="q"]').val(),
                     'start': 0,
