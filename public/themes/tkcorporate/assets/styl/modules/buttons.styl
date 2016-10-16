@@ -349,6 +349,9 @@
 			margin-left: 0
 		}
 	}
+	&.scrolltoform {
+		position: relative;
+	}
 }
 
 .button__secondary {
@@ -507,5 +510,20 @@
 	&:hover {
 		color: $aqua
 		cursor: pointer
+	}
+}
+
+button.button[disabled], button.button[disabled]:hover {
+	color: #999;
+	background-color: #C0C0C0;
+	border-color: #e7e3e3;
+	-webkit-transition: background-color 200ms ease-out, color 200ms ease-out;
+	-moz-transition: background-color 200ms ease-out, color 200ms ease-out;
+	-o-transition: background-color 200ms ease-out, color 200ms ease-out;
+	-ms-transition: background-color 200ms ease-out, color 200ms ease-out;
+	transition: background-color 200ms ease-out, color 200ms ease-out;
+
+	.icon {
+		background-position: -42.375rem -42.71875rem;
 	}
 }

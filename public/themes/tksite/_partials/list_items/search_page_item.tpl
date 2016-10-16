@@ -30,7 +30,11 @@
                 <a class="button -color-black" href="{$smarty.const.PROTOCOL}{$search_item->subdomain}.{$smarty.const.MAIN_SITE_STRIP}/villa-listing/{$search_item->slug|default:''}" title="View villa">View villa</a>
             </div>
             <div class="featured__item__button">
-                <a data-calendarlink="http://manage.myvacationrentalmanager.com/villa/calendar/the-lahaina-dream/2016/07?width=760&height=650&iframe=1&showTitle=1&showKey=1" class="js-modal button -color-gray -has-calendar" href="#availability-modal" title="Calendar">Calendar<i class="icon icon__date-square"></i></a>
+                <button
+                        {if !$search_item->calendar_online} disabled {/if}
+                        data-calendarlink="http://manage.myvacationrentalmanager.com/villa/calendar/the-lahaina-dream/2016/07?width=760&height=650&iframe=1&showTitle=1&showKey=1"
+                        class="js-modal button -color-gray -has-calendar"
+                        href="#availability-modal" title="Calendar">Calendar<i class="icon icon__date-square"></i></button>
             </div>
         </div>
     </div>

@@ -274,13 +274,17 @@
                 </div>
                 <div class="availability__calendars">
                     <h2 class="section__title availability__title">Availability</h2>
-                    <div class="js-calendars-carousel calendars__carousel">
-                        <div class="js-calendar calendar"></div>
-                        <div class="js-calendar calendar"></div>
-                        <div class="js-calendar calendar"></div>
-                        <div class="js-calendar calendar"></div>
-                        <div class="js-calendar calendar"></div>
-                    </div>
+                    {if $property_details->details->calendar_online}
+                        <div class="js-calendars-carousel calendars__carousel">
+                            <div class="js-calendar calendar"></div>
+                            <div class="js-calendar calendar"></div>
+                            <div class="js-calendar calendar"></div>
+                            <div class="js-calendar calendar"></div>
+                            <div class="js-calendar calendar"></div>
+                        </div>
+                    {else}
+                        <a class="button button--ghost -color-aqua scrolltoform" href="#" title="Contact us">Contact us for availability</a>
+                    {/if}
                 </div>
             </div>
         </div>

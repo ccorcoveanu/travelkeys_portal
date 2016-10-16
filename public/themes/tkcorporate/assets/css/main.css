@@ -16704,6 +16704,9 @@ body.is-collapsed .map-aside.-fixed-top .map__input {
 .button.-shape-trapezoid i {
   margin-left: 0;
 }
+.button.scrolltoform {
+  position: relative;
+}
 .button__secondary {
   display: block;
   font-family: "Montserrat", Arial, sans-serif;
@@ -16841,6 +16844,21 @@ body.is-collapsed .map-aside.-fixed-top .map__input {
 .button__expand:hover {
   color: #00a2a7;
   cursor: pointer;
+}
+button.button[disabled],
+button.button[disabled]:hover {
+  color: #999;
+  background-color: #c0c0c0;
+  border-color: #e7e3e3;
+  -webkit-transition: background-color 200ms ease-out, color 200ms ease-out;
+  -moz-transition: background-color 200ms ease-out, color 200ms ease-out;
+  -o-transition: background-color 200ms ease-out, color 200ms ease-out;
+  -ms-transition: background-color 200ms ease-out, color 200ms ease-out;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+button.button[disabled] .icon,
+button.button[disabled]:hover .icon {
+  background-position: -42.375rem -42.71875rem;
 }
 .form__container {
   position: relative;
