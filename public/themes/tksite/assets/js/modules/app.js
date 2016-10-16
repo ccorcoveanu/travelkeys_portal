@@ -230,6 +230,9 @@ var travelkeys = {
 
         // Trigger search filtering
         travelkeys.filterSearch();
+
+        // Polyfill for pointer-events: none
+        travelkeys.disableClick();
     },
 
     // Links handler
@@ -2449,6 +2452,25 @@ var travelkeys = {
 
         return __init();
     },
+
+    disableClick: function() {
+        // if not IE or bigger than 10 - pointer events work
+        // Could use 'pointerEvents in document.documentElemnt.style' but chose this solution
+        // because of the false positive we get when using compatibility mode
+        if (!jQBrowser.msie || jQBrowser.versionNumber > 10) {
+            return;
+        }
+
+        $('a[data-pointer-events="none"]').on('click', function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+            this.style.zIndex = -1;
+            document.elementFromPoint(evt.clientX, evt.clientY).click();
+            this.style.zIndex = 3;
+            return false;
+
+        });
+    }
 };
 
 // !Document ready (loaded)

@@ -111,7 +111,7 @@
                     </a>
                 </div>
                 <div class="hero__carousel__wrapper">
-                    <a href="#" class="hero__carousel__action js-fancybox-action">
+                    <a href="#" class="hero__carousel__action js-fancybox-action" data-pointer-events="none">
                         <i class="icon icon__open"></i>
                     </a>
                     <div class="js-hero-carousel hero__carousel -has-fancybox">

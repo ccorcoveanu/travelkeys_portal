@@ -9631,7 +9631,7 @@ strong.-color-white {
   font-size: 1rem;
   color: #808080;
   margin-right: initial;
-  margin-left: initial;
+  margin-left: 0;
 }
 .information__tab {
   overflow: hidden;
@@ -19069,6 +19069,7 @@ textarea.form--letter__input {
 .filter--side .filter--side__wrapper__inner {
   display: inline-block;
   vertical-align: middle;
+  padding-bottom: 1.25rem;
 }
 @media only screen and (max-width: 670px) {
   .filter--side .filter--side__wrapper__inner {

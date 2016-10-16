@@ -123,8 +123,8 @@
             </form>
             <div class="filter--side__wrapper -last">
                 <div class="filter__button__wrapper">
-                    <a class="button -ui-confirm js-close-filters" href="#">Show villas</a>
-                    <a class="button -ui-cancel -hover-alt js-close-filters" href="#">Cancel</a>
+                    <a class="button -ui-confirm js-close-filters" href="#">Show villas</a><!--
+                    --><a class="button -ui-cancel -hover-alt js-close-filters" href="#">Cancel</a>
                 </div>
             </div>
         </div>
