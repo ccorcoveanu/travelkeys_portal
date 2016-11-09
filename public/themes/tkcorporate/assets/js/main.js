@@ -27560,7 +27560,10 @@ var travelkeys = {
 
         travelkeys.calculatePrice();
 
+        // Polyfill for pointer-events: none
         travelkeys.disableClick();
+
+        travelkeys.availability();
     },
 
     // Links handler
@@ -30046,6 +30049,91 @@ var travelkeys = {
             this.style.zIndex = 3;
             return false;
 
+        });
+    },
+
+    availability: function() {
+        if ( !$('.js-calendar-modal').length ) return;
+
+        $('.js-calendar-modal').datepicker({
+            e                      : 30,
+            format                 : 'mm/dd/yyyy',
+            startDate              : '-3d',
+            minDate                : 0,
+            navigationAsDateFormat : false,
+            dayNamesMin            : [ 'Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa' ],
+            showOtherMonths        : true,
+
+            numberOfMonths: [1, 12],
+            numberOfVisibleMoths: 3,
+
+            beforeShow             : function () {
+                $(document).scrolTo(0, 0);
+            },
+
+
+            // Returns an array of disabled entries
+            //beforeShowDay          : function (date) {
+                /*if (date >= date1 && date <= date2) {
+                    return [false, 'ui-unavailable', ''];
+                }
+                return [true, '', ''];*/
+            //}
+        });
+
+
+        $('.ui-datepicker-inline').slick({
+            dots          : false,
+            arrows        : false,
+            speed         : 800,
+            infinite      : true,
+            autoplay      : false,
+            autoplaySpeed : 5000,
+            responsive    : [
+                {
+                    breakpoint : 3000,
+                    settings   : {
+                        slidesToShow  : 1,
+                        centerMode    : true,
+                        centerPadding : '400px'
+                    }
+                },
+                {
+                    breakpoint : 2400,
+                    settings   : {
+                        slidesToShow  : 1,
+                        centerMode    : true,
+                        centerPadding : '250px'
+                    }
+                },
+                {
+                    breakpoint : 1680,
+                    settings   : {
+                        centerMode    : true,
+                        centerPadding : '100px'
+                    }
+                },
+                {
+                    breakpoint : 1440,
+                    settings   : {
+                        centerMode : false
+                    }
+                },
+                {
+                    breakpoint : 960,
+                    settings   : {
+                        slidesToShow  : 1,
+                        centerMode    : true,
+                        centerPadding : '80px'
+                    }
+                },
+                {
+                    breakpoint : 670,
+                    settings   : {
+                        centerMode : false
+                    }
+                }
+            ]
         });
     }
 

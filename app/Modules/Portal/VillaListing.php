@@ -84,12 +84,15 @@ class VillaListing
 
         // TODO: Should be fixed in API
         $favorite_items = array_map(function ($item) {
+
             $parts = explode('.', $item->image);
-            $ext = $parts[count($parts) - 1];
+            $ext   = $parts[count($parts) - 1];
             unset($parts[count($parts) - 1]);
-            $item->image = implode('.', $parts) . '_l.' . $ext;
+            $item->image   = implode('.', $parts) . '_l.' . $ext;
             $item->image_m = implode('.', $parts) . '_m.' . $ext;
+
             return $item;
+
         }, $favorite_items);
 
         return $this->view->render($response, 'search.tpl', [

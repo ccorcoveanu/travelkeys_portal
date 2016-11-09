@@ -53,15 +53,34 @@
                         </div>
                     </div>
                     <ul class="mega-nav">
+                        {assign 'counter' 0}
+                        {assign 'loop_counter' 0}
+                        {assign 'loop_length' $menu|count}
                         {foreach name='menu_items' from=$menu item=header }
                             {assign 'length' $header->children|count}
-                            {assign 'counter' 0}
-                            {if $length}
+                            {$loop_counter = $loop_counter+1}
+
+                            {if $length > 14}
                                 <li class="mega-nav__item">
-                                    <ul class="js-mega-sub mega-sub {if $length > 14}-double{/if}">
+                                    <ul class="js-mega-sub mega-sub -double">
                                         {include file='_partials/list_items/menu_items.tpl'}
                                     </ul>
                                 </li>
+                            {else}
+                                {if $counter == 0}
+                                    <li class="mega-nav__item">
+                                {/if}
+                                <ul class="js-mega-sub mega-sub">
+                                    {include file='_partials/list_items/menu_items.tpl'}
+                                </ul>
+                                {if $counter == 1 || $loop_counter == $loop_length}
+                                    </li>
+                                {/if}
+                                {if $counter == 0}
+                                    {assign 'counter' 1}
+                                {else}
+                                    {assign 'counter' 0}
+                                {/if}
                             {/if}
                         {/foreach}
                     </ul>

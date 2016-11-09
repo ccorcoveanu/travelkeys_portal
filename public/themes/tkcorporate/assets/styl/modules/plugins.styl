@@ -96,11 +96,32 @@
 	transition: top 300ms ease-out
 }
 
+.availability__calendars:after {
+	z-index: 100
+}
+.calendars__carousel {
+	position: relative
+	z-index: 110!important
+	.calendar {
+		overflow: hidden
+	}
+}
 .ui-datepicker {
 	background-color: #fff
 	border: 1px solid #c7c7c7
 	padding: rem(10) rem(15) rem(20)
 	width: rem(300)
+	max-width: 100%
+
+	&.ui-datepicker-inline {
+
+		text-align: left;
+		.ui-datepicker-group {
+			max-width: rem(200)
+
+			margin-right: 55px;
+		}
+	}
 
 	.ui-datepicker-today {
 		.ui-state-default {

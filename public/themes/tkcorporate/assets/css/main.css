@@ -3411,11 +3411,29 @@ th {
   z-index: 9999 !important;
   transition: top 300ms ease-out;
 }
+.availability__calendars:after {
+  z-index: 100;
+}
+.calendars__carousel {
+  position: relative;
+  z-index: 110 !important;
+}
+.calendars__carousel .calendar {
+  overflow: hidden;
+}
 .ui-datepicker {
   background-color: #fff;
   border: 1px solid #c7c7c7;
   padding: 0.625rem 0.9375rem 1.25rem;
   width: 18.75rem;
+  max-width: 100%;
+}
+.ui-datepicker.ui-datepicker-inline {
+  text-align: left;
+}
+.ui-datepicker.ui-datepicker-inline .ui-datepicker-group {
+  max-width: 12.5rem;
+  margin-right: 55px;
 }
 .ui-datepicker .ui-datepicker-today .ui-state-default {
   background: linear-gradient(135deg, #00a1a7 0%, #00a1a7 50%, #fff 51%, #fff 71%, #fff 100%);
